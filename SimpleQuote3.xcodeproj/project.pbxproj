@@ -7,15 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94781573A1EAC84D017FF70 /* Pods_SimpleQuote3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF5BD6957C90A5DA526E961 /* Pods_SimpleQuote3.framework */; };
 		D3B320F822BA217E00AB362A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B320F722BA217E00AB362A /* AppDelegate.swift */; };
 		D3B320FA22BA217E00AB362A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B320F922BA217E00AB362A /* MasterViewController.swift */; };
 		D3B320FC22BA217E00AB362A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B320FB22BA217E00AB362A /* DetailViewController.swift */; };
 		D3B320FF22BA217E00AB362A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B320FD22BA217E00AB362A /* Main.storyboard */; };
 		D3B3210122BA218000AB362A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3B3210022BA218000AB362A /* Assets.xcassets */; };
 		D3B3210422BA218000AB362A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B3210222BA218000AB362A /* LaunchScreen.storyboard */; };
+		D3B3211422BA226700AB362A /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3210C22BA226700AB362A /* ItemView.swift */; };
+		D3B3211522BA226700AB362A /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3210D22BA226700AB362A /* Footer.swift */; };
+		D3B3211622BA226700AB362A /* ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3210E22BA226700AB362A /* ItemView.xib */; };
+		D3B3211722BA226700AB362A /* NumberInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3210F22BA226700AB362A /* NumberInputView.swift */; };
+		D3B3211822BA226700AB362A /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3211022BA226700AB362A /* Header.swift */; };
+		D3B3211922BA226700AB362A /* DoubleInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3211122BA226700AB362A /* DoubleInputView.swift */; };
+		D3B3211A22BA226700AB362A /* Footer.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3211222BA226700AB362A /* Footer.xib */; };
+		D3B3211B22BA226700AB362A /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3211322BA226700AB362A /* Header.xib */; };
+		D3B3212822BA254500AB362A /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3211D22BA254500AB362A /* DoubleExtensions.swift */; };
+		D3B3212922BA254500AB362A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3211E22BA254500AB362A /* StringExtension.swift */; };
+		D3B3212A22BA254500AB362A /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3212022BA254500AB362A /* UserRepository.swift */; };
+		D3B3212B22BA254500AB362A /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3212122BA254500AB362A /* DataRepository.swift */; };
+		D3B3212C22BA254500AB362A /* LineItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3212322BA254500AB362A /* LineItemModel.swift */; };
+		D3B3212D22BA254500AB362A /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3212422BA254500AB362A /* Quote.swift */; };
+		D3B3212E22BA254500AB362A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3212522BA254500AB362A /* User.swift */; };
+		D3B3212F22BA254500AB362A /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3212722BA254500AB362A /* FileHandler.swift */; };
+		D3B3213122BA255D00AB362A /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3213022BA255C00AB362A /* AppConstants.swift */; };
+		D3B3213322BA25E300AB362A /* ResizeableTableViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3213222BA25E300AB362A /* ResizeableTableViewTableViewController.swift */; };
+		D3B3213622BA2CAB00AB362A /* ItemCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3213422BA2CAB00AB362A /* ItemCellTableViewCell.swift */; };
+		D3B3213722BA2CAB00AB362A /* ItemCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3213522BA2CAB00AB362A /* ItemCellTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C3487A8992F618903FC773E6 /* Pods-SimpleQuote3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleQuote3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleQuote3/Pods-SimpleQuote3.debug.xcconfig"; sourceTree = "<group>"; };
 		D3B320F422BA217E00AB362A /* SimpleQuote3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleQuote3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B320F722BA217E00AB362A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B320F922BA217E00AB362A /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +46,28 @@
 		D3B3210022BA218000AB362A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3B3210322BA218000AB362A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3B3210522BA218000AB362A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3B3210C22BA226700AB362A /* ItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		D3B3210D22BA226700AB362A /* Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
+		D3B3210E22BA226700AB362A /* ItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemView.xib; sourceTree = "<group>"; };
+		D3B3210F22BA226700AB362A /* NumberInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberInputView.swift; sourceTree = "<group>"; };
+		D3B3211022BA226700AB362A /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		D3B3211122BA226700AB362A /* DoubleInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleInputView.swift; sourceTree = "<group>"; };
+		D3B3211222BA226700AB362A /* Footer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Footer.xib; sourceTree = "<group>"; };
+		D3B3211322BA226700AB362A /* Header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Header.xib; sourceTree = "<group>"; };
+		D3B3211D22BA254500AB362A /* DoubleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
+		D3B3211E22BA254500AB362A /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		D3B3212022BA254500AB362A /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		D3B3212122BA254500AB362A /* DataRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
+		D3B3212322BA254500AB362A /* LineItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineItemModel.swift; sourceTree = "<group>"; };
+		D3B3212422BA254500AB362A /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		D3B3212522BA254500AB362A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D3B3212722BA254500AB362A /* FileHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
+		D3B3213022BA255C00AB362A /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		D3B3213222BA25E300AB362A /* ResizeableTableViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeableTableViewTableViewController.swift; sourceTree = "<group>"; };
+		D3B3213422BA2CAB00AB362A /* ItemCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellTableViewCell.swift; sourceTree = "<group>"; };
+		D3B3213522BA2CAB00AB362A /* ItemCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCellTableViewCell.xib; sourceTree = "<group>"; };
+		FAF5BD6957C90A5DA526E961 /* Pods_SimpleQuote3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleQuote3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD697654816688C19DFF8F39 /* Pods-SimpleQuote3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleQuote3.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleQuote3/Pods-SimpleQuote3.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +75,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C94781573A1EAC84D017FF70 /* Pods_SimpleQuote3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B8BB52F0BBD3544D9A7F9FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAF5BD6957C90A5DA526E961 /* Pods_SimpleQuote3.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1AEEE419FEAD44DA163B7C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C3487A8992F618903FC773E6 /* Pods-SimpleQuote3.debug.xcconfig */,
+				FD697654816688C19DFF8F39 /* Pods-SimpleQuote3.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D3B320EB22BA217E00AB362A = {
 			isa = PBXGroup;
 			children = (
 				D3B320F622BA217E00AB362A /* SimpleQuote3 */,
 				D3B320F522BA217E00AB362A /* Products */,
+				A1AEEE419FEAD44DA163B7C7 /* Pods */,
+				0B8BB52F0BBD3544D9A7F9FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +120,12 @@
 		D3B320F622BA217E00AB362A /* SimpleQuote3 */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3213022BA255C00AB362A /* AppConstants.swift */,
+				D3B3211C22BA254500AB362A /* Extensions */,
+				D3B3212222BA254500AB362A /* Models */,
+				D3B3212622BA254500AB362A /* Protocols */,
+				D3B3211F22BA254500AB362A /* Repositories */,
+				D3B3210B22BA226700AB362A /* Views */,
 				D3B320F722BA217E00AB362A /* AppDelegate.swift */,
 				D3B320F922BA217E00AB362A /* MasterViewController.swift */,
 				D3B320FB22BA217E00AB362A /* DetailViewController.swift */,
@@ -67,6 +137,60 @@
 			path = SimpleQuote3;
 			sourceTree = "<group>";
 		};
+		D3B3210B22BA226700AB362A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3210C22BA226700AB362A /* ItemView.swift */,
+				D3B3210D22BA226700AB362A /* Footer.swift */,
+				D3B3210E22BA226700AB362A /* ItemView.xib */,
+				D3B3210F22BA226700AB362A /* NumberInputView.swift */,
+				D3B3211022BA226700AB362A /* Header.swift */,
+				D3B3211122BA226700AB362A /* DoubleInputView.swift */,
+				D3B3211222BA226700AB362A /* Footer.xib */,
+				D3B3211322BA226700AB362A /* Header.xib */,
+				D3B3213222BA25E300AB362A /* ResizeableTableViewTableViewController.swift */,
+				D3B3213422BA2CAB00AB362A /* ItemCellTableViewCell.swift */,
+				D3B3213522BA2CAB00AB362A /* ItemCellTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D3B3211C22BA254500AB362A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3211D22BA254500AB362A /* DoubleExtensions.swift */,
+				D3B3211E22BA254500AB362A /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D3B3211F22BA254500AB362A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3212022BA254500AB362A /* UserRepository.swift */,
+				D3B3212122BA254500AB362A /* DataRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D3B3212222BA254500AB362A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3212322BA254500AB362A /* LineItemModel.swift */,
+				D3B3212422BA254500AB362A /* Quote.swift */,
+				D3B3212522BA254500AB362A /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D3B3212622BA254500AB362A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D3B3212722BA254500AB362A /* FileHandler.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3B3210822BA218000AB362A /* Build configuration list for PBXNativeTarget "SimpleQuote3" */;
 			buildPhases = (
+				F39E5F1E437B405DFB6D11F2 /* [CP] Check Pods Manifest.lock */,
 				D3B320F022BA217E00AB362A /* Sources */,
 				D3B320F122BA217E00AB362A /* Frameworks */,
 				D3B320F222BA217E00AB362A /* Resources */,
+				5666399B5B6ABB4344A76556 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,22 +251,83 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B3213722BA2CAB00AB362A /* ItemCellTableViewCell.xib in Resources */,
 				D3B3210422BA218000AB362A /* LaunchScreen.storyboard in Resources */,
 				D3B3210122BA218000AB362A /* Assets.xcassets in Resources */,
+				D3B3211A22BA226700AB362A /* Footer.xib in Resources */,
 				D3B320FF22BA217E00AB362A /* Main.storyboard in Resources */,
+				D3B3211B22BA226700AB362A /* Header.xib in Resources */,
+				D3B3211622BA226700AB362A /* ItemView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5666399B5B6ABB4344A76556 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleQuote3/Pods-SimpleQuote3-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleQuote3/Pods-SimpleQuote3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F39E5F1E437B405DFB6D11F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleQuote3-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D3B320F022BA217E00AB362A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B3212A22BA254500AB362A /* UserRepository.swift in Sources */,
+				D3B3213122BA255D00AB362A /* AppConstants.swift in Sources */,
 				D3B320FC22BA217E00AB362A /* DetailViewController.swift in Sources */,
 				D3B320FA22BA217E00AB362A /* MasterViewController.swift in Sources */,
+				D3B3212922BA254500AB362A /* StringExtension.swift in Sources */,
 				D3B320F822BA217E00AB362A /* AppDelegate.swift in Sources */,
+				D3B3211822BA226700AB362A /* Header.swift in Sources */,
+				D3B3213622BA2CAB00AB362A /* ItemCellTableViewCell.swift in Sources */,
+				D3B3212822BA254500AB362A /* DoubleExtensions.swift in Sources */,
+				D3B3211422BA226700AB362A /* ItemView.swift in Sources */,
+				D3B3213322BA25E300AB362A /* ResizeableTableViewTableViewController.swift in Sources */,
+				D3B3212E22BA254500AB362A /* User.swift in Sources */,
+				D3B3211722BA226700AB362A /* NumberInputView.swift in Sources */,
+				D3B3212F22BA254500AB362A /* FileHandler.swift in Sources */,
+				D3B3212B22BA254500AB362A /* DataRepository.swift in Sources */,
+				D3B3212C22BA254500AB362A /* LineItemModel.swift in Sources */,
+				D3B3211922BA226700AB362A /* DoubleInputView.swift in Sources */,
+				D3B3212D22BA254500AB362A /* Quote.swift in Sources */,
+				D3B3211522BA226700AB362A /* Footer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +471,7 @@
 		};
 		D3B3210922BA218000AB362A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3487A8992F618903FC773E6 /* Pods-SimpleQuote3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,12 +484,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.loop.to.infinity.SimpleQuote3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
 		D3B3210A22BA218000AB362A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD697654816688C19DFF8F39 /* Pods-SimpleQuote3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,7 +503,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.loop.to.infinity.SimpleQuote3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

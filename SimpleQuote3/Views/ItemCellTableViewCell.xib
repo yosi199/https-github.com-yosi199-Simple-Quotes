@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="100" id="KGk-i7-Jjw" customClass="ItemCellTableViewCell" customModule="SimpleQuote3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1194" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="1194" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGt-vU-Ebi">
+                        <rect key="frame" x="0.0" y="0.0" width="1194" height="99.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eM5-rE-q74" userLabel="Middle Bounds">
+                                <rect key="frame" x="0.0" y="49.5" width="1194" height="1"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="dBq-T7-31V"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6pF-gM-T1h" userLabel="Bottom Bounds">
+                                <rect key="frame" x="0.0" y="98.5" width="1194" height="1"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="sQG-dh-Fna"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKb-lM-TAG" userLabel="Top Bounds">
+                                <rect key="frame" x="0.0" y="0.0" width="1194" height="1"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="glR-ZJ-EGB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFo-4D-GyU" userLabel="Left Bounds">
+                                <rect key="frame" x="0.0" y="0.0" width="1" height="99.5"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="wFu-fv-qcK"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cav-7V-yAq" userLabel="Right Bounds">
+                                <rect key="frame" x="1193" y="0.0" width="1" height="99.5"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="iVl-8a-wRX"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add new item" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kmp-lt-r0i">
+                                <rect key="frame" x="16" y="6" width="1162" height="38.5"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXk-st-QHL">
+                                <rect key="frame" x="16" y="50.5" width="747" height="48"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nR1-rF-jTc">
+                                <rect key="frame" x="778" y="50.5" width="400" height="48"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="x1" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Lj3-Ls-g6X" customClass="NumberInputView" customModule="SimpleQuote3" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="92.5" height="48"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ta0-wr-nla" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
+                                        <rect key="frame" x="102.5" y="0.0" width="92.5" height="48"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="7X1-zp-Vc0" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
+                                        <rect key="frame" x="205" y="0.0" width="92.5" height="48"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                    </textField>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="AeQ-q2-8hy" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
+                                        <rect key="frame" x="307.5" y="0.0" width="92.5" height="48"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="5oL-3u-t8H"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gKb-lM-TAG" firstAttribute="leading" secondItem="hGt-vU-Ebi" secondAttribute="leading" id="1W3-wT-8ut"/>
+                            <constraint firstAttribute="trailing" secondItem="eM5-rE-q74" secondAttribute="trailing" id="2q8-V3-qUe"/>
+                            <constraint firstItem="cav-7V-yAq" firstAttribute="leading" secondItem="Kmp-lt-r0i" secondAttribute="trailing" constant="15" id="Eqn-h9-hvJ"/>
+                            <constraint firstItem="FXk-st-QHL" firstAttribute="top" secondItem="eM5-rE-q74" secondAttribute="bottom" id="FU7-Xh-v2i"/>
+                            <constraint firstItem="cav-7V-yAq" firstAttribute="top" secondItem="hGt-vU-Ebi" secondAttribute="top" id="FpU-4j-XWD"/>
+                            <constraint firstItem="gKb-lM-TAG" firstAttribute="top" secondItem="hGt-vU-Ebi" secondAttribute="top" id="Fwx-lp-vVm"/>
+                            <constraint firstItem="eM5-rE-q74" firstAttribute="top" secondItem="Kmp-lt-r0i" secondAttribute="bottom" constant="5" id="HaE-cj-D1c"/>
+                            <constraint firstAttribute="trailing" secondItem="gKb-lM-TAG" secondAttribute="trailing" id="JW4-aW-TBB"/>
+                            <constraint firstAttribute="trailing" secondItem="6pF-gM-T1h" secondAttribute="trailing" id="Jx8-tb-hRU"/>
+                            <constraint firstItem="6pF-gM-T1h" firstAttribute="top" secondItem="nR1-rF-jTc" secondAttribute="bottom" id="LY3-Ku-Ntr"/>
+                            <constraint firstAttribute="bottom" secondItem="6pF-gM-T1h" secondAttribute="bottom" id="RJe-iY-CTm"/>
+                            <constraint firstItem="eM5-rE-q74" firstAttribute="leading" secondItem="hGt-vU-Ebi" secondAttribute="leading" id="SAt-DC-NhO"/>
+                            <constraint firstItem="Kmp-lt-r0i" firstAttribute="leading" secondItem="gFo-4D-GyU" secondAttribute="trailing" constant="15" id="UTd-fH-ZRh"/>
+                            <constraint firstItem="nR1-rF-jTc" firstAttribute="leading" secondItem="FXk-st-QHL" secondAttribute="trailing" constant="15" id="Utp-ts-xLc"/>
+                            <constraint firstAttribute="bottom" secondItem="gFo-4D-GyU" secondAttribute="bottom" id="V5U-7T-7iN"/>
+                            <constraint firstItem="6pF-gM-T1h" firstAttribute="top" secondItem="FXk-st-QHL" secondAttribute="bottom" id="Xof-ny-Bg6"/>
+                            <constraint firstItem="cav-7V-yAq" firstAttribute="leading" secondItem="nR1-rF-jTc" secondAttribute="trailing" constant="15" id="dFJ-0G-Jk3"/>
+                            <constraint firstItem="nR1-rF-jTc" firstAttribute="top" secondItem="eM5-rE-q74" secondAttribute="bottom" id="dnX-fT-SM4"/>
+                            <constraint firstItem="FXk-st-QHL" firstAttribute="leading" secondItem="gFo-4D-GyU" secondAttribute="trailing" constant="15" id="gTy-vY-afJ"/>
+                            <constraint firstItem="gFo-4D-GyU" firstAttribute="top" secondItem="hGt-vU-Ebi" secondAttribute="top" id="lEB-Yf-9Wg"/>
+                            <constraint firstAttribute="bottom" secondItem="cav-7V-yAq" secondAttribute="bottom" id="n56-yu-sb9"/>
+                            <constraint firstItem="gFo-4D-GyU" firstAttribute="leading" secondItem="hGt-vU-Ebi" secondAttribute="leading" id="n8M-2w-XYw"/>
+                            <constraint firstItem="Kmp-lt-r0i" firstAttribute="top" secondItem="gKb-lM-TAG" secondAttribute="bottom" constant="5" id="rmt-le-o0S"/>
+                            <constraint firstItem="eM5-rE-q74" firstAttribute="centerX" secondItem="hGt-vU-Ebi" secondAttribute="centerX" id="sT3-G1-deh"/>
+                            <constraint firstAttribute="trailing" secondItem="cav-7V-yAq" secondAttribute="trailing" id="ss9-MX-59h"/>
+                            <constraint firstItem="eM5-rE-q74" firstAttribute="centerY" secondItem="hGt-vU-Ebi" secondAttribute="centerY" id="xWJ-fJ-a9v"/>
+                            <constraint firstItem="6pF-gM-T1h" firstAttribute="leading" secondItem="hGt-vU-Ebi" secondAttribute="leading" id="ydm-Jb-7rt"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="hGt-vU-Ebi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5k6-ph-UKt"/>
+                    <constraint firstAttribute="trailing" secondItem="hGt-vU-Ebi" secondAttribute="trailing" identifier="trailing" id="IxM-Im-H70"/>
+                    <constraint firstItem="hGt-vU-Ebi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" identifier="leading" id="rH8-SR-dN5"/>
+                    <constraint firstAttribute="bottom" secondItem="hGt-vU-Ebi" secondAttribute="bottom" id="vSX-MH-t49"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="descriptionField" destination="FXk-st-QHL" id="5M4-hW-577"/>
+                <outlet property="itemValue" destination="Ta0-wr-nla" id="weh-at-7dn"/>
+                <outlet property="leading" destination="rH8-SR-dN5" id="qF5-09-Atr"/>
+                <outlet property="quantity" destination="Lj3-Ls-g6X" id="9pf-J3-S3y"/>
+                <outlet property="taxValue" destination="7X1-zp-Vc0" id="GFL-ZU-U1h"/>
+                <outlet property="title" destination="Kmp-lt-r0i" id="wcl-AZ-TiA"/>
+                <outlet property="totalValue" destination="AeQ-q2-8hy" id="L8H-2H-3Jw"/>
+                <outlet property="trailing" destination="IxM-Im-H70" id="55T-z2-GGk"/>
+            </connections>
+            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
+        </tableViewCell>
+    </objects>
+</document>
