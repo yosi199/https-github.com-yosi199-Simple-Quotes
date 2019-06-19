@@ -45,6 +45,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         items.append(inputItemView.getItem())
         itemsTableView.reloadData()
         footer.isHidden = false
+        
         footerStackView.isHidden = false
         
         inputItemView.reset()
@@ -63,6 +64,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.view.layoutIfNeeded()
             })
         }
+        
+        footer.update(items: items)
         
     }
     @IBAction func editButtonClicked(_ sender: Any) {
@@ -97,7 +100,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCellTableViewCell
         
-        let item = items[indexPath.row]
+        let item = items[indexPath.section]
         cell.title.text = item.title
         cell.descriptionField.text = item.itemDescription
         cell.quantity.text = String(item.qty)
@@ -130,6 +133,41 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         items.remove(at: sourceIndexPath.row)
         items.insert(movedObject, at: destinationIndexPath.row)
         tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let item = items[indexPath.section]
+            confirmDelete(item: item, indexPath: indexPath)
+        }
+    }
+    
+    
+    func confirmDelete(item: LineItemModel, indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Delete Item", message: "Are you sure you want to delete \(item.title)?", preferredStyle: .actionSheet)
+        
+        
+        let DeleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {(alert: UIAlertAction!) in
+            self.items.remove(at: indexPath.section)
+            self.itemsTableView.reloadData()
+        })
+        
+        
+        let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(alert: UIAlertAction!) in })
+        
+        alert.addAction(DeleteAction)
+        alert.addAction(CancelAction)
+        
+        let rect = itemsTableView.rect(forSection: indexPath.section)
+        let frame = itemsTableView.convert(rect, to: itemsTableView.superview)
+        
+        
+        // Support display in iPad
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.permittedArrowDirections = .down
+        alert.popoverPresentationController?.sourceRect = CGRect(x: frame.midX , y: frame.midY - scrollView.contentOffset.y + (frame.height / 2) , width: 1.0, height: 1.0)
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

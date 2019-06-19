@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "DetailViewController.addButtonAction(_:):DetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "inputItemView.getItem()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailViewController.confirmDelete(item:indexPath:):DetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "itemsTableView.contentOffset.y">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailViewController.viewWillLayoutSubviews():DetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.content.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ItemCellTableViewCell.willTransition(to:):ItemCellTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "state.rawValue == UITableViewCell.StateMask">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailViewController.tableView(_:cellForRowAt:):DetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell as ItemCellTableViewCell">
+            </PersistentString>
+            <PersistentString
+               value = "cell is ItemCellTableViewCell">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "DetailViewController.viewDidLayoutSubviews():DetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "itemsTableView.rowHeight">
+            </PersistentString>
+            <PersistentString
+               value = "itemsTableView.sectionFooterHeight">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

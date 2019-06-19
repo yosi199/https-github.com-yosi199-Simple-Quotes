@@ -32,7 +32,7 @@ class Footer: UIView {
         contentView.fixInView(self)
     }
     
-    func update(items: List<LineItemModel>){
+    func update(items: [LineItemModel]){
         var total = 0.0
         items.forEach { (item) in
             total += item.total
