@@ -236,11 +236,16 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Quote" id="mOI-FS-AaM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="b2g-Dn-QN8">
-                            <connections>
-                                <action selector="editButtonClicked:" destination="JEX-9P-axG" id="fR7-JI-0w8"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Review" id="f0b-29-ugq"/>
+                            <barButtonItem systemItem="save" id="TRg-Lr-7C3"/>
+                            <barButtonItem systemItem="edit" id="b2g-Dn-QN8">
+                                <connections>
+                                    <action selector="editButtonClicked:" destination="JEX-9P-axG" id="fR7-JI-0w8"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="action" id="b7E-R1-wgf"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="HVi-89-zBM" id="vW6-zJ-RcC"/>
