@@ -8,6 +8,7 @@
 
 import UIKit
 import PDFKit
+import CoreGraphics
 
 class PDFController: UIViewController, FileHandler {
     
@@ -79,7 +80,10 @@ class PDFController: UIViewController, FileHandler {
         client(pageSize: pageSize)
         date(pageSize: pageSize)
         invoice(pageSize: pageSize)
-
+        descriptionString(pageSize: pageSize)
+        total(pageSize: pageSize)
+        line(pageSize: pageSize)
+        
         
         // Closes the current PDF context and ends writing to the file.
         UIGraphicsEndPDFContext()
@@ -105,7 +109,7 @@ class PDFController: UIViewController, FileHandler {
     
     private func company(pageSize:CGSize){
         let companyName = "Company X"
-
+        
         let font = UIFont.boldSystemFont(ofSize: 17)
         
         // Let's draw the title of the PDF on top of the page.
@@ -161,6 +165,45 @@ class PDFController: UIViewController, FileHandler {
         let stringSize = attributedInvoice.size()
         let stringRect = CGRect(x: 50, y: 250, width: stringSize.width, height: stringSize.height)
         attributedInvoice.draw(in: stringRect)
+    }
+    
+    func descriptionString(pageSize:CGSize){
+        let descriptionTitle = "Description"
+        
+        let font = UIFont.boldSystemFont(ofSize: 17)
+        
+        // Let's draw the title of the PDF on top of the page.
+        let attributedDescriptionTitle = NSAttributedString(string: descriptionTitle, attributes: [NSAttributedString.Key.font: font])
+        let stringSize = attributedDescriptionTitle.size()
+        let stringRect = CGRect(x: 50, y: 330, width: stringSize.width, height: stringSize.height)
+        attributedDescriptionTitle.draw(in: stringRect)
+    }
+    
+    func total(pageSize:CGSize){
+        let total = "Total"
+        
+        let font = UIFont.boldSystemFont(ofSize: 17)
+        
+        // Let's draw the title of the PDF on top of the page.
+        let attributedTotal = NSAttributedString(string: total, attributes: [NSAttributedString.Key.font: font])
+        let stringSize = attributedTotal.size()
+        let stringRect = CGRect(x: (pageSize.width-50) - stringSize.width, y: 330, width: stringSize.width, height: stringSize.height)
+        attributedTotal.draw(in: stringRect)
+    }
+    
+    func line(pageSize:CGSize) {
+        
+        /* Get the current graphics context */
+        if let currentContext = UIGraphicsGetCurrentContext(){
+            /* Set the width for the line */
+            currentContext.setLineWidth(0.8)
+            /* Start the line at this point */
+            currentContext.move(to: CGPoint( x: 50.0, y: 360))
+            /* And end it at this point */
+            currentContext.addLine(to: CGPoint(x: pageSize.width - 50.0, y: 360))
+            /* Use the context's current color to draw the line */
+            currentContext.strokePath()
+        }
     }
 }
 
