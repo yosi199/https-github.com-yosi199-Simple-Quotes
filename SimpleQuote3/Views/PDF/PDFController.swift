@@ -9,7 +9,7 @@
 import UIKit
 import PDFKit
 
-class PDFController: UIViewController {
+class PDFController: UIViewController, FileHandler {
     
     private var filePath: URL?
     var quote: Quote? = nil
@@ -27,23 +27,12 @@ class PDFController: UIViewController {
         pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        
-        create()
-        if let path = self.getFilePath() {
-            let document =  PDFDocument(url: path)!
+        if let path = getFilePath() {
+            let document =  PDFDocument(url: path)
             pdfView.document = document
-        }
-    }
-    
-    private func getFilePath() -> URL? {
-        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-        return documentsDirectory.appendingPathComponent("foo.pdf")
-    }
-    
-    private func createActualPDFFile(){
-        if let path = getFilePath()?.path{
-            // Creates a new PDF file at the specified path.
-            UIGraphicsBeginPDFContextToFile(path, self.view.frame, getMetaData())
+            beginWritingPDFContext(path: path)
+            create()
+            
         }
     }
     
@@ -64,17 +53,40 @@ class PDFController: UIViewController {
         return pdfMetadata
     }
     
+    private func getFilePath() -> URL? {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+        return documentsDirectory.appendingPathComponent("invoice.pdf") // MARK: get name dynamically from quote
+    }
+    
+    private func beginWritingPDFContext(path:URL){
+        UIGraphicsBeginPDFContextToFile(path.path, self.view.frame, getMetaData())
+    }
+    
     private func create(){
         
-        let pdfTitle = "Quote"
-        
-        createActualPDFFile()
-        
         // Creates a new page in the current PDF context.
+        //        UIGraphicsBeginPDFPageWithInfo(self.view.frame, nil)
         UIGraphicsBeginPDFPage()
         
         // Default size of the page is 612x72.
         let pageSize = self.view.frame.size
+        
+        // set title
+        setTitle(pageSize: pageSize)
+        logo(pageSize: pageSize)
+        company(pageSize: pageSize)
+        email(pageSize: pageSize)
+        client(pageSize: pageSize)
+        date(pageSize: pageSize)
+        invoice(pageSize: pageSize)
+
+        
+        // Closes the current PDF context and ends writing to the file.
+        UIGraphicsEndPDFContext()
+    }
+    
+    private func setTitle(pageSize: CGSize){
+        let pdfTitle = "Quote"
         let font = UIFont.preferredFont(forTextStyle: .largeTitle)
         
         // Let's draw the title of the PDF on top of the page.
@@ -82,9 +94,74 @@ class PDFController: UIViewController {
         let stringSize = attributedPDFTitle.size()
         let stringRect = CGRect(x: (pageSize.width / 2) - (stringSize.width / 2), y: 20, width: stringSize.width, height: stringSize.height)
         attributedPDFTitle.draw(in: stringRect)
-        
-        // Closes the current PDF context and ends writing to the file.
-        UIGraphicsEndPDFContext()
     }
     
+    private func logo(pageSize: CGSize){
+        if let image = UIImage(named: "stumbleupon"){
+            let rect = CGRect(x: 50, y: 100, width: 57, height: 57)
+            image.scale(with: CGSize(width: 57, height: 57))?.draw(in: rect)
+        }
+    }
+    
+    private func company(pageSize:CGSize){
+        let companyName = "Company X"
+
+        let font = UIFont.boldSystemFont(ofSize: 17)
+        
+        // Let's draw the title of the PDF on top of the page.
+        let attributedCompanyName = NSAttributedString(string: companyName, attributes: [NSAttributedString.Key.font: font])
+        let stringSize = attributedCompanyName.size()
+        let stringRect = CGRect(x: 50, y: 180, width: stringSize.width, height: stringSize.height)
+        attributedCompanyName.draw(in: stringRect)
+    }
+    
+    private func email(pageSize:CGSize){
+        let email = "companyX@gmail.com"
+        
+        let font = UIFont.systemFont(ofSize: 17)
+        
+        // Let's draw the title of the PDF on top of the page.
+        let attributedEmail = NSAttributedString(string: email, attributes: [NSAttributedString.Key.font: font])
+        let stringSize = attributedEmail.size()
+        let stringRect = CGRect(x: 50, y: 210, width: stringSize.width, height: stringSize.height)
+        attributedEmail.draw(in: stringRect)
+    }
+    
+    private func client(pageSize:CGSize){
+        let email = "To: John Snow"
+        
+        let font = UIFont.systemFont(ofSize: 17)
+        
+        // Let's draw the title of the PDF on top of the page.
+        let attributedEmail = NSAttributedString(string: email, attributes: [NSAttributedString.Key.font: font])
+        let stringSize = attributedEmail.size()
+        let stringRect = CGRect(x: (pageSize.width / 2), y: 180, width: stringSize.width, height: stringSize.height)
+        attributedEmail.draw(in: stringRect)
+    }
+    
+    private func date(pageSize:CGSize){
+        let date = "Date: 29.6.2019"
+        
+        let font = UIFont.systemFont(ofSize: 17)
+        
+        // Let's draw the title of the PDF on top of the page.
+        let attributedDate = NSAttributedString(string: date, attributes: [NSAttributedString.Key.font: font])
+        let stringSize = attributedDate.size()
+        let stringRect = CGRect(x: (pageSize.width / 2), y: 210, width: stringSize.width, height: stringSize.height)
+        attributedDate.draw(in: stringRect)
+    }
+    
+    private func invoice(pageSize:CGSize){
+        let invoice = "INVC-001"
+        
+        let font = UIFont.systemFont(ofSize: 17)
+        
+        // Let's draw the title of the PDF on top of the page.
+        let attributedInvoice = NSAttributedString(string: invoice, attributes: [NSAttributedString.Key.font: font])
+        let stringSize = attributedInvoice.size()
+        let stringRect = CGRect(x: 50, y: 250, width: stringSize.width, height: stringSize.height)
+        attributedInvoice.draw(in: stringRect)
+    }
 }
+
+
