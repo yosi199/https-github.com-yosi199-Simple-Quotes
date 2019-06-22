@@ -3,14 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "DetailViewController.addButtonAction(_:):DetailViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "inputItemView.getItem()">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "DetailViewController.confirmDelete(item:indexPath:):DetailViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -27,10 +19,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ItemCellTableViewCell.willTransition(to:):ItemCellTableViewCell.swift">
+         contextName = "DetailViewController.addButtonAction(_:):DetailViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "state.rawValue == UITableViewCell.StateMask">
+               value = "inputItemView.getItem()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -53,6 +45,22 @@
             </PersistentString>
             <PersistentString
                value = "itemsTableView.sectionFooterHeight">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ItemCellTableViewCell.willTransition(to:):ItemCellTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "state.rawValue == UITableViewCell.StateMask">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PDFController.viewDidLoad():PDFController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "document">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

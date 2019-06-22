@@ -25,6 +25,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var editButton: UIBarButtonItem!
     
     private var items = [LineItemModel]()
+    private var imageToTransfer: UIImage? = nil
     
     override func viewDidLoad() {
         
@@ -66,8 +67,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         footer.update(items: items)
-        
     }
+    
     @IBAction func editButtonClicked(_ sender: Any) {
         self.itemsTableView.isEditing.toggle()
     }
@@ -168,6 +169,20 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         alert.popoverPresentationController?.sourceRect = CGRect(x: frame.midX , y: frame.midY - scrollView.contentOffset.y + (frame.height / 2) , width: 1.0, height: 1.0)
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let controller = segue.destination as? PDFController else { return }
+        
+        let quote = Quote()
+        for item in self.items {
+            quote.items.append(item)
+        }
+        controller.quote = quote
+    }
+    
+    @IBAction func screenshow(_ sender: Any) {
+        performSegue(withIdentifier: "pdf", sender: self)
     }
 }
 

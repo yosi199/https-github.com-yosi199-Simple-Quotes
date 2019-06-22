@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C94781573A1EAC84D017FF70 /* Pods_SimpleQuote3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF5BD6957C90A5DA526E961 /* Pods_SimpleQuote3.framework */; };
+		D34E57ED22BBA48200121217 /* PDFWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34E57EC22BBA48200121217 /* PDFWriter.swift */; };
+		D34E57EF22BBA5F000121217 /* PDFController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34E57EE22BBA5F000121217 /* PDFController.swift */; };
 		D3B320F822BA217E00AB362A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B320F722BA217E00AB362A /* AppDelegate.swift */; };
 		D3B320FA22BA217E00AB362A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B320F922BA217E00AB362A /* MasterViewController.swift */; };
 		D3B320FC22BA217E00AB362A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B320FB22BA217E00AB362A /* DetailViewController.swift */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		C3487A8992F618903FC773E6 /* Pods-SimpleQuote3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleQuote3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleQuote3/Pods-SimpleQuote3.debug.xcconfig"; sourceTree = "<group>"; };
+		D34E57EC22BBA48200121217 /* PDFWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFWriter.swift; sourceTree = "<group>"; };
+		D34E57EE22BBA5F000121217 /* PDFController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFController.swift; sourceTree = "<group>"; };
 		D3B320F422BA217E00AB362A /* SimpleQuote3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleQuote3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B320F722BA217E00AB362A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B320F922BA217E00AB362A /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D34E57EB22BBA04D00121217 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				D34E57EC22BBA48200121217 /* PDFWriter.swift */,
+				D34E57EE22BBA5F000121217 /* PDFController.swift */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
 		D3B320EB22BA217E00AB362A = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +153,7 @@
 		D3B3210B22BA226700AB362A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D34E57EB22BBA04D00121217 /* PDF */,
 				D3B3210C22BA226700AB362A /* ItemView.swift */,
 				D3B3210D22BA226700AB362A /* Footer.swift */,
 				D3B3210E22BA226700AB362A /* ItemView.xib */,
@@ -323,9 +337,11 @@
 				D3B3212E22BA254500AB362A /* User.swift in Sources */,
 				D3B3211722BA226700AB362A /* NumberInputView.swift in Sources */,
 				D3B3212F22BA254500AB362A /* FileHandler.swift in Sources */,
+				D34E57EF22BBA5F000121217 /* PDFController.swift in Sources */,
 				D3B3212B22BA254500AB362A /* DataRepository.swift in Sources */,
 				D3B3212C22BA254500AB362A /* LineItemModel.swift in Sources */,
 				D3B3211922BA226700AB362A /* DoubleInputView.swift in Sources */,
+				D34E57ED22BBA48200121217 /* PDFWriter.swift in Sources */,
 				D3B3212D22BA254500AB362A /* Quote.swift in Sources */,
 				D3B3211522BA226700AB362A /* Footer.swift in Sources */,
 			);

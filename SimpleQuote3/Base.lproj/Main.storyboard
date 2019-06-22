@@ -237,14 +237,16 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Quote" id="mOI-FS-AaM">
                         <rightBarButtonItems>
-                            <barButtonItem title="Review" id="f0b-29-ugq"/>
-                            <barButtonItem systemItem="save" id="TRg-Lr-7C3"/>
+                            <barButtonItem title="Review" id="f0b-29-ugq">
+                                <connections>
+                                    <action selector="screenshow:" destination="JEX-9P-axG" id="dKe-mJ-hdc"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="edit" id="b2g-Dn-QN8">
                                 <connections>
                                     <action selector="editButtonClicked:" destination="JEX-9P-axG" id="fR7-JI-0w8"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="action" id="b7E-R1-wgf"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -259,11 +261,27 @@
                         <outlet property="inputItemView" destination="75T-KB-fid" id="WRY-eV-o12"/>
                         <outlet property="itemsTableView" destination="YqS-dN-D1y" id="sz0-6Z-Vzp"/>
                         <outlet property="scrollView" destination="fFT-5I-pgN" id="c2y-Ox-6b3"/>
+                        <segue destination="8tY-lk-M1f" kind="show" identifier="pdf" id="Gri-yv-bt9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708.6330935251799" y="128.643216080402"/>
+            <point key="canvasLocation" x="696" y="129"/>
+        </scene>
+        <!--Controller-->
+        <scene sceneID="OjK-uH-9TC">
+            <objects>
+                <viewController id="8tY-lk-M1f" customClass="PDFController" customModule="SimpleQuote3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AYM-nG-5tr">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hhw-vJ-pFc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7WJ-hu-Kcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1445" y="129"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -329,6 +347,7 @@
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
                         <rect key="frame" x="0.0" y="24" width="834" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <connections>
                         <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="GKi-kA-LjT"/>
