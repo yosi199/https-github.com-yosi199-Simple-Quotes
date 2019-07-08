@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -26,6 +27,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     private var items = [LineItemModel]()
     private var imageToTransfer: UIImage? = nil
+    private let realm = try! Realm()
     
     override func viewDidLoad() {
         
@@ -173,12 +175,25 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let controller = segue.destination as? PDFController else { return }
-        
+        controller.quote = saveQuote()
+    }
+    
+    private func saveQuote() -> Quote{
         let quote = Quote()
         for item in self.items {
             quote.items.append(item)
         }
-        controller.quote = quote
+        
+        quote.address = header.address.text ?? ""
+        quote.clientName = header.clientName.text ?? ""
+        quote.companyName = header.companyName.text ?? ""
+        quote.date = header.date.text ?? ""
+        quote.email = header.email.text ?? ""
+        
+        try! realm.write {
+            realm.add(quote)
+        }
+        return quote
     }
     
     @IBAction func screenshow(_ sender: Any) {

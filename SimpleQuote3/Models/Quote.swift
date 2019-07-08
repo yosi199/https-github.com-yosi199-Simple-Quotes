@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class Quote : Object {
-    @objc dynamic var id: String = ""
+    @objc dynamic var id: String = UUID().uuidString
     
     let items = List<LineItemModel>()
     
