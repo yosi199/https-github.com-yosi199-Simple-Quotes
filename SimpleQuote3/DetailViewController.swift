@@ -187,6 +187,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let DeleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {(alert: UIAlertAction!) in
             self.items.remove(at: indexPath.section)
+            if (self.items.count == 0) {
+                self.footer.isHidden = true
+                self.footerStackView.isHidden = true
+            }
             self.itemsTableView.reloadData()
         })
         
