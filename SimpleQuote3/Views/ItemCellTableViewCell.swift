@@ -22,32 +22,35 @@ class ItemCellTableViewCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
     }
     
     required override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        commonInit()
-    }
-    
-    private func commonInit(){
-        
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        commonInit()
         // Initialization code
+        interactionState(enabled: false)
+    }
+    
+    func interactionState(enabled: Bool){
+        isUserInteractionEnabled = enabled
+        title.isUserInteractionEnabled = enabled
+        descriptionField.isUserInteractionEnabled = enabled
+        quantity.isUserInteractionEnabled = enabled
+        itemValue.isUserInteractionEnabled = enabled
+        totalValue.isUserInteractionEnabled = enabled
+        taxValue.isUserInteractionEnabled = enabled
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
     }
     
     override func willTransition(to state: UITableViewCell.StateMask) {
-      
+        
         if(state.contains(.showingEditControl)){
             
             leading.constant = leading.constant + 20

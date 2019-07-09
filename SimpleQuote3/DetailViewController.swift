@@ -28,6 +28,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     private var items = [LineItemModel]()
     private var imageToTransfer: UIImage? = nil
     private let realm = try! Realm()
+    private var quote = Quote()
     
     override func viewDidLoad() {
         
@@ -44,14 +45,48 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    func loadQuote(existing: Quote){
+        
+        // first reset
+        reset()
+        self.quote = existing
+        // header
+        header.clientName.text = quote.clientName
+        header.address.text = quote.address
+        header.companyName.text = quote.companyName
+        header.date.text = quote.date
+        header.email.text = quote.email
+        header.id.text = quote.invoiceId
+        
+        // line items
+        quote.items.forEach { item in
+            addLineItem(item: item)
+        }
+        
+        itemsTableView.reloadData()
+    }
+    
+    private func reset(){
+        header.clientName.text = ""
+        header.address.text = ""
+        header.companyName.text = ""
+        header.date.text = ""
+        header.email.text = ""
+        header.id.text = ""
+        self.items.removeAll()
+    }
+    
     @IBAction func addButtonAction(_ sender: Any) {
-        items.append(inputItemView.getItem())
+        addLineItem(item: inputItemView.getItem())
+        inputItemView.reset()
+    }
+    
+    private func addLineItem(item: LineItemModel){
+        items.append(item)
         itemsTableView.reloadData()
         footer.isHidden = false
         
         footerStackView.isHidden = false
-        
-        inputItemView.reset()
     }
     
     override func viewDidLayoutSubviews() {
@@ -73,6 +108,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func editButtonClicked(_ sender: Any) {
         self.itemsTableView.isEditing.toggle()
+        self.itemsTableView.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -110,7 +146,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.itemValue.text = String(item.value)
         cell.taxValue.text = String(item.tax)
         cell.totalValue.text = String(item.total)
-        
+        cell.interactionState(enabled: tableView.isEditing)
         return cell
     }
     
@@ -149,7 +185,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func confirmDelete(item: LineItemModel, indexPath: IndexPath) {
         let alert = UIAlertController(title: "Delete Item", message: "Are you sure you want to delete \(item.title)?", preferredStyle: .actionSheet)
         
-        
         let DeleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {(alert: UIAlertAction!) in
             self.items.remove(at: indexPath.section)
             self.itemsTableView.reloadData()
@@ -179,19 +214,19 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     private func saveQuote() -> Quote{
-        let quote = Quote()
-        for item in self.items {
-            quote.items.append(item)
-        }
-        
-        quote.address = header.address.text ?? ""
-        quote.clientName = header.clientName.text ?? ""
-        quote.companyName = header.companyName.text ?? ""
-        quote.date = header.date.text ?? ""
-        quote.email = header.email.text ?? ""
-        
         try! realm.write {
-            realm.add(quote)
+            quote.items.removeAll()
+            for item in self.items {
+                quote.items.append(item)
+            }
+            
+            quote.address = header.address.text ?? ""
+            quote.clientName = header.clientName.text ?? ""
+            quote.companyName = header.companyName.text ?? ""
+            quote.date = header.date.text ?? ""
+            quote.email = header.email.text ?? ""
+            
+            realm.add(quote, update: .all)
         }
         return quote
     }

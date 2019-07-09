@@ -17,13 +17,12 @@ class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     private lazy var items:  Results<Quote> = {
         return realm.objects(Quote.self)
     }()
-
+    
     override func viewDidLoad() {
-         tableView.register(UINib(nibName: "QuoteCellItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell1")
-        
         tableView.dataSource = self
         tableView.delegate = self
-
+        
+        tableView.register(UINib(nibName: "QuoteCellItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell1")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,10 +31,17 @@ class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as? QuoteCellItemTableViewCell else {  return UITableViewCell() }
-        cell.clientName.text = items[indexPath.row].clientName
-        cell.date.text = items[indexPath.row].date
+        let item = items[indexPath.row]
+        cell.clientName.text = item.clientName
+        cell.date.text = item.date
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let detailViewController = parent?.splitViewController?.children[1].children[0] as? DetailViewController else { return }
+        let item = items[indexPath.row]
+        detailViewController.loadQuote(existing: item)
+    }
 }
+
 
