@@ -38,7 +38,7 @@ class Header: UIView, FileHandler {
         Bundle.main.loadNibNamed(NAME, owner: self, options: nil)
         containerView.fixInView(self)
         
-        setCurrentDate()
+        self.date.text = Date().getCurrentDate()
         setLogo()
     }
     
@@ -66,12 +66,5 @@ class Header: UIView, FileHandler {
         }
     }
     
-    private func setCurrentDate(){
-        let date = Date()
-        let format = DateFormatter()
-        format.dateStyle = .medium
-        format.timeStyle = .none
-        let formattedDate = format.string(from: date)
-        self.date.text = formattedDate
-    }
+
 }

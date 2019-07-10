@@ -29,4 +29,9 @@ class DataRepository {
             realm.add(quote)
             debugPrint("added quote id \(quote.id) to realm successfully")
     }
+    
+    func remove(quote:Quote){
+        debugPrint("Removing quote \(quote.id) from db")
+        realm.delete(quote)
+    }
 }

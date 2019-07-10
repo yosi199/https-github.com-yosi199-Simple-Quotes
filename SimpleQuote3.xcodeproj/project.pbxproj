@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C7D156322BE89BD008D4CF8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */; };
+		4CDEFCB622D5DCE400177660 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEFCB522D5DCE400177660 /* DateExtensions.swift */; };
 		4CF6353822D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */; };
 		4CF6353922D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */; };
 		C94781573A1EAC84D017FF70 /* Pods_SimpleQuote3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF5BD6957C90A5DA526E961 /* Pods_SimpleQuote3.framework */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		4CDEFCB522D5DCE400177660 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCellItemTableViewCell.swift; sourceTree = "<group>"; };
 		4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteCellItemTableViewCell.xib; sourceTree = "<group>"; };
 		C3487A8992F618903FC773E6 /* Pods-SimpleQuote3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleQuote3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleQuote3/Pods-SimpleQuote3.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				D3B3211D22BA254500AB362A /* DoubleExtensions.swift */,
 				D3B3211E22BA254500AB362A /* StringExtension.swift */,
 				4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */,
+				4CDEFCB522D5DCE400177660 /* DateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				D3B3213122BA255D00AB362A /* AppConstants.swift in Sources */,
 				D3B320FC22BA217E00AB362A /* DetailViewController.swift in Sources */,
 				D3B320FA22BA217E00AB362A /* MasterViewController.swift in Sources */,
+				4CDEFCB622D5DCE400177660 /* DateExtensions.swift in Sources */,
 				D3B3212922BA254500AB362A /* StringExtension.swift in Sources */,
 				D3B320F822BA217E00AB362A /* AppDelegate.swift in Sources */,
 				D3B3211822BA226700AB362A /* Header.swift in Sources */,

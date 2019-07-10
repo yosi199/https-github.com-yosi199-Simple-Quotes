@@ -18,7 +18,12 @@ class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return realm.objects(Quote.self)
     }()
     
+    private lazy var detailViewController: DetailViewController = {
+        return parent?.splitViewController?.children[1].children[0] as! DetailViewController
+    }()
+    
     override func viewDidLoad() {
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -26,7 +31,18 @@ class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         title = "Menu"
     }
+    @IBAction func addClicked(_ sender: Any) {
+        try! realm.write {
+            let emptyQuote = Quote.getEmpty()
+            DataRepository.shared.saveQuote(quote: emptyQuote)
+            detailViewController.loadQuote(existing: emptyQuote)
+            reloadData()
+        }
+    }
     
+    @IBAction func deleteClicked(_ sender: Any) {
+        tableView.isEditing.toggle()
+    }
     func reloadData(){
         tableView.reloadData()
     }
@@ -50,6 +66,19 @@ class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         guard let detailViewController = parent?.splitViewController?.children[1].children[0] as? DetailViewController else { return }
         let item = items[indexPath.row]
         detailViewController.loadQuote(existing: item)
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            try! realm.write {
+                DataRepository.shared.remove(quote: items[indexPath.row])
+                reloadData()
+            }
+        }
     }
 }
 

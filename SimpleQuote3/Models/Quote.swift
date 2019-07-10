@@ -25,6 +25,18 @@ class Quote : Object {
     override static func primaryKey() -> String? {
         return "id"
     }
+    
+    static func getEmpty() -> Quote{
+        let quote = Quote()
+        quote.address = "Address N/A"
+        quote.clientName = "Client Name"
+        quote.companyName = "Company Name"
+        quote.date = Date().getCurrentDate()
+        quote.email = "clientmail@mail.xyz"
+        quote.id = UUID().uuidString
+        quote.invoiceId = "AAA"
+        return quote
+    }
 }
 
 extension Quote {

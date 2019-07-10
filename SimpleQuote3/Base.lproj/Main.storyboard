@@ -322,7 +322,20 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="lQe-Uf-IaM">
+                                <connections>
+                                    <action selector="addClicked:" destination="7bK-jq-Zjz" id="gZC-oT-RfV"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="3ng-fq-0ZU">
+                                <connections>
+                                    <action selector="deleteClicked:" destination="7bK-jq-Zjz" id="Gmx-7b-dd5"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="r7i-6Z-zg0" id="OYA-wW-1HU"/>
                     </connections>
