@@ -23,10 +23,14 @@ class PDFController: UIViewController, FileHandler {
     private var pageSize: CGSize = CGSize.zero
     private var maxY: CGFloat = 0
     
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    
     var quote: Quote? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "PDF"
         
         pdfView = PDFView(frame: self.view.frame)
         
@@ -42,11 +46,31 @@ class PDFController: UIViewController, FileHandler {
             pdf.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
             pdf.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         }
+    }
+    
+    @IBAction func shareAction(_ sender: UIView) {
+        let fileManager = FileManager.default
+        let stringUrl = filePath?.absoluteString ?? ""
         
+        do {
+            let pdfDoc = try Data(contentsOf:URL(string: stringUrl)!)
+            fileManager.createFile(atPath: stringUrl, contents: pdfDoc, attributes: nil)
+        } catch {
+            
+        }
+        
+        if fileManager.fileExists(atPath: stringUrl){
+            
+        }
+        //        let document = NSData(contentsOfFile: filePath?.absoluteString ?? "")
+        //        let activityVC = UIActivityViewController(activityItems: [document], applicationActivities: nil)
+        //        activityVC.popoverPresentationController?.barButtonItem = shareButton
+        //        self.present(activityVC, animated: true, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if let path = getFilePath(), let pdf = pdfView {
+            filePath = path
             beginWritingPDFContext(path: path)
             create()
             let document =  PDFDocument(url: path)
