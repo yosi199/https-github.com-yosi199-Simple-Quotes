@@ -50,22 +50,20 @@ class PDFController: UIViewController, FileHandler {
     
     @IBAction func shareAction(_ sender: UIView) {
         let fileManager = FileManager.default
-        let stringUrl = filePath?.absoluteString ?? ""
+        let stringUrl = filePath?.path ?? ""
         
         do {
-            let pdfDoc = try Data(contentsOf:URL(string: stringUrl)!)
+            let pdfDoc = try Data(contentsOf:filePath!)
             fileManager.createFile(atPath: stringUrl, contents: pdfDoc, attributes: nil)
+            if fileManager.fileExists(atPath: stringUrl){
+//                let document = NSData(contentsOfFile: stringUrl)
+                let activityVC = UIActivityViewController(activityItems: [filePath!], applicationActivities: nil)
+                activityVC.popoverPresentationController?.barButtonItem = shareButton
+                self.present(activityVC, animated: true, completion: nil)
+            }
         } catch {
-            
+            debugPrint("failed creating file")
         }
-        
-        if fileManager.fileExists(atPath: stringUrl){
-            
-        }
-        //        let document = NSData(contentsOfFile: filePath?.absoluteString ?? "")
-        //        let activityVC = UIActivityViewController(activityItems: [document], applicationActivities: nil)
-        //        activityVC.popoverPresentationController?.barButtonItem = shareButton
-        //        self.present(activityVC, animated: true, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -262,7 +262,7 @@
                         <outlet property="itemsTableView" destination="YqS-dN-D1y" id="sz0-6Z-Vzp"/>
                         <outlet property="notes" destination="kof-N0-eEQ" id="Dt0-Dn-D8p"/>
                         <outlet property="scrollView" destination="fFT-5I-pgN" id="c2y-Ox-6b3"/>
-                        <segue destination="lIN-zc-6Be" kind="show" identifier="pdf" id="Gri-yv-bt9"/>
+                        <segue destination="8tY-lk-M1f" kind="show" identifier="pdf" id="bPH-Y6-J95"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -281,7 +281,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="1Pv-rA-j29">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Anp-HA-ch7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Anp-HA-ch7">
                             <connections>
                                 <action selector="shareAction:" destination="8tY-lk-M1f" id="rGe-OX-VQj"/>
                             </connections>
@@ -294,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7WJ-hu-Kcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2198.5611510791368" y="128.643216080402"/>
+            <point key="canvasLocation" x="1378" y="129"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -373,24 +373,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-45" y="129"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="5Uq-0W-gIx">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lIN-zc-6Be" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DbC-cv-m3F">
-                        <rect key="frame" x="0.0" y="24" width="834" height="50"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="8tY-lk-M1f" kind="relationship" relationship="rootViewController" id="oeh-3d-ubo"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HAG-bq-Nfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1444.6043165467627" y="128.643216080402"/>
         </scene>
     </scenes>
 </document>
