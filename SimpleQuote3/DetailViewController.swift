@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DetailViewController: UIViewController {
     
     @IBOutlet weak var content: UIView!
     @IBOutlet weak var header: Header!
@@ -24,6 +24,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var footerBottomConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var notes: UITextView!
     
     private var items = [LineItemModel]()
     private var imageToTransfer: UIImage? = nil
@@ -45,6 +46,28 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    private func saveQuote() -> Quote{
+        try! realm.write {
+            quote.items.removeAll()
+            for item in self.items {
+                quote.items.append(item)
+            }
+            
+            quote.address = header.address.text ?? ""
+            quote.clientName = header.clientName.text ?? ""
+            quote.companyName = header.companyName.text ?? ""
+            quote.date = header.date.text ?? ""
+            quote.email = header.email.text ?? ""
+            quote.notes = notes.text ?? ""
+            quote.invoiceId = header.id.text ?? ""
+            
+            realm.add(quote, update: .all)
+            guard let master = parent?.splitViewController?.children[0].children[0] as? MasterViewController else { return }
+            master.reloadData()
+        }
+        return quote
+    }
+    
     func loadQuote(existing: Quote){
         
         // first reset
@@ -58,10 +81,16 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         header.email.text = quote.email
         header.id.text = quote.invoiceId
         
+        title = quote.invoiceId
+        addButton.isHidden = false
+        
         // line items
         quote.items.forEach { item in
             addLineItem(item: item)
         }
+        
+        // Client notes
+        notes.text = quote.notes
         
         itemsTableView.reloadData()
     }
@@ -85,7 +114,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         items.append(item)
         itemsTableView.reloadData()
         footer.isHidden = false
-        
         footerStackView.isHidden = false
     }
     
@@ -110,77 +138,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.itemsTableView.isEditing.toggle()
         self.itemsTableView.reloadData()
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return items.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 5
-    }
-    
-    // Make the background color show through
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.white
-        return headerView
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = UIView()
-        footerView.backgroundColor = UIColor.white
-        return footerView
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCellTableViewCell
-        
-        let item = items[indexPath.section]
-        cell.title.text = item.title
-        cell.descriptionField.text = item.itemDescription
-        cell.quantity.text = String(item.qty)
-        cell.itemValue.text = String(item.value)
-        cell.taxValue.text = String(item.tax)
-        cell.totalValue.text = String(item.total)
-        cell.interactionState(enabled: tableView.isEditing)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
-    // Set the spacing between sections
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 5
-    }
-    
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
-    
-    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-    
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let movedObject = self.items[sourceIndexPath.row]
-        items.remove(at: sourceIndexPath.row)
-        items.insert(movedObject, at: destinationIndexPath.row)
-        tableView.reloadData()
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let item = items[indexPath.section]
-            confirmDelete(item: item, indexPath: indexPath)
-        }
-    }
-    
     
     func confirmDelete(item: LineItemModel, indexPath: IndexPath) {
         let alert = UIAlertController(title: "Delete Item", message: "Are you sure you want to delete \(item.title)?", preferredStyle: .actionSheet)
@@ -217,26 +174,83 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         controller.quote = saveQuote()
     }
     
-    private func saveQuote() -> Quote{
-        try! realm.write {
-            quote.items.removeAll()
-            for item in self.items {
-                quote.items.append(item)
-            }
-            
-            quote.address = header.address.text ?? ""
-            quote.clientName = header.clientName.text ?? ""
-            quote.companyName = header.companyName.text ?? ""
-            quote.date = header.date.text ?? ""
-            quote.email = header.email.text ?? ""
-            
-            realm.add(quote, update: .all)
-        }
-        return quote
-    }
-    
     @IBAction func screenshow(_ sender: Any) {
         performSegue(withIdentifier: "pdf", sender: self)
+    }
+}
+
+
+//MARK - TableView Stuff
+
+extension DetailViewController: UITableViewDelegate , UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 5
+    }
+    
+    // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.white
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        footerView.backgroundColor = UIColor.white
+        return footerView
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCellTableViewCell
+        
+        let item = items[indexPath.section]
+        cell.title.text = item.title
+        cell.descriptionField.text = item.itemDescription
+        cell.quantity.text = String(item.qty)
+        cell.itemValue.text = String(item.value.rounded(toPlaces: 2))
+        cell.taxValue.text = String(item.tax)
+        cell.totalValue.text = String(item.total.rounded(toPlaces: 2))
+        cell.interactionState(enabled: tableView.isEditing)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = self.items[sourceIndexPath.row]
+        items.remove(at: sourceIndexPath.row)
+        items.insert(movedObject, at: destinationIndexPath.row)
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let item = items[indexPath.section]
+            confirmDelete(item: item, indexPath: indexPath)
+        }
     }
 }
 

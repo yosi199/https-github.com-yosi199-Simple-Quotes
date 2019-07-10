@@ -12,6 +12,8 @@ class QuoteCellItemTableViewCell: UITableViewCell {
    
     @IBOutlet weak var clientName: UILabel!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var itemsCount: UILabel!
+    @IBOutlet weak var totalValue: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

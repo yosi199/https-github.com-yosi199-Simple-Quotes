@@ -260,6 +260,7 @@
                         <outlet property="heightConstraint" destination="UbR-gw-eHN" id="ZCT-9i-Wn0"/>
                         <outlet property="inputItemView" destination="75T-KB-fid" id="WRY-eV-o12"/>
                         <outlet property="itemsTableView" destination="YqS-dN-D1y" id="sz0-6Z-Vzp"/>
+                        <outlet property="notes" destination="kof-N0-eEQ" id="Dt0-Dn-D8p"/>
                         <outlet property="scrollView" destination="fFT-5I-pgN" id="c2y-Ox-6b3"/>
                         <segue destination="8tY-lk-M1f" kind="show" identifier="pdf" id="Gri-yv-bt9"/>
                     </connections>

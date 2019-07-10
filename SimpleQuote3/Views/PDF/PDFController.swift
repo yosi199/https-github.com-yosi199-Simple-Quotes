@@ -12,43 +12,55 @@ import CoreGraphics
 
 class PDFController: UIViewController, FileHandler {
     
+    private var pdfView: PDFView? = nil
+    
     private var filePath: URL?
     private let fontTitle = UIFont.preferredFont(forTextStyle: .largeTitle)
     private let fontBold = UIFont.boldSystemFont(ofSize: 17)
     private let fontNormal = UIFont.systemFont(ofSize: 17)
+    private let fontSmall = UIFont.systemFont(ofSize: 14)
+    
     private var pageSize: CGSize = CGSize.zero
+    private var maxY: CGFloat = 0
     
     var quote: Quote? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pdfView = PDFView(frame: self.view.frame)
-        pdfView.translatesAutoresizingMaskIntoConstraints = false
-        pdfView.frame.size = self.view.frame.size
-        self.view.addSubview(pdfView)
+        pdfView = PDFView(frame: self.view.frame)
         
-        pdfView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        pdfView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        pdfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        pdfView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        if let pdf = pdfView{
+            pdf.translatesAutoresizingMaskIntoConstraints = false
+            pdf.autoScales = true
+            pdf.maxScaleFactor = 4.0
+            pdf.minScaleFactor = pdf.scaleFactorForSizeToFit
+            self.view.addSubview(pdf)
+            
+            pdf.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+            pdf.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+            pdf.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+            pdf.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        }
         
-        if let path = getFilePath() {
-            let document =  PDFDocument(url: path)
-            pdfView.document = document
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let path = getFilePath(), let pdf = pdfView {
             beginWritingPDFContext(path: path)
             create()
-            
+            let document =  PDFDocument(url: path)
+            pdf.document = document
         }
     }
     
     private func getMetaData() -> [AnyHashable : Any] {
         let pdfMetadata = [
             // The name of the application creating the PDF.
-            kCGPDFContextCreator: "Your iOS App",
+            kCGPDFContextCreator: APP_NAME,
             
             // The name of the PDF's author.
-            kCGPDFContextAuthor: "Foo Bar",
+            kCGPDFContextAuthor: APP_NAME,
             
             // The title of the PDF.
             kCGPDFContextTitle: "Lorem Ipsum",
@@ -65,7 +77,7 @@ class PDFController: UIViewController, FileHandler {
     }
     
     private func beginWritingPDFContext(path:URL){
-        UIGraphicsBeginPDFContextToFile(path.path, self.view.frame, getMetaData())
+        UIGraphicsBeginPDFContextToFile(path.path, self.view.bounds, getMetaData())
     }
     
     private func create(){
@@ -75,7 +87,7 @@ class PDFController: UIViewController, FileHandler {
         UIGraphicsBeginPDFPage()
         
         // Default size of the page is 612x72.
-        self.pageSize = self.view.frame.size
+        self.pageSize = UIGraphicsGetPDFContextBounds().size
         
         // set title
         setTitle()
@@ -92,6 +104,7 @@ class PDFController: UIViewController, FileHandler {
         value()
         tax()
         drawItems()
+        notes()
         
         // Closes the current PDF context and ends writing to the file.
         UIGraphicsEndPDFContext()
@@ -205,25 +218,54 @@ class PDFController: UIViewController, FileHandler {
                 let stringRect = CGRect(x: 50, y: 380 + (CGFloat(index) * (size.height * 1.5)), width: size.width, height: size.height)
                 property.draw(in: stringRect)
                 
+                maxY = max(maxY, stringRect.maxY)
+                
                 let qty = TextBox(text: String(item.qty), font: fontNormal).getAttributedText()
                 let qtySize = qty.size()
                 let qtyRect = CGRect(x: pageSize.width / 2, y: 380 + (CGFloat(index) * (qtySize.height * 1.5)), width: qtySize.width, height: qtySize.height)
                 qty.draw(in: qtyRect)
                 
-                let value = TextBox(text: String(item.value), font: fontNormal).getAttributedText()
+                maxY = max(maxY, qtyRect.maxY)
+                
+                let value = TextBox(text: String(item.value.rounded(toPlaces: 2)), font: fontNormal).getAttributedText()
                 let valueSize = value.size()
                 let valueRect = CGRect(x: pageSize.width / 2 + 80, y: 380 + (CGFloat(index) * (valueSize.height * 1.5)), width: valueSize.width, height: valueSize.height)
                 value.draw(in: valueRect)
+                
+                maxY = max(maxY, valueRect.maxY)
                 
                 let tax = TextBox(text: String(item.tax), font: fontNormal).getAttributedText()
                 let taxSize = tax.size()
                 let taxRect = CGRect(x: pageSize.width / 2 + 160, y: 380 + (CGFloat(index) * (taxSize.height * 1.5)), width: taxSize.width, height: taxSize.height)
                 tax.draw(in: taxRect)
                 
-                let total = TextBox(text: String(item.total), font: fontNormal).getAttributedText()
+                maxY = max(maxY, taxRect.maxY)
+                
+                let style = NSMutableParagraphStyle()
+                style.alignment = NSTextAlignment.right
+                let total = NSAttributedString(string: String(item.total.rounded(toPlaces: 2)), attributes: [NSAttributedString.Key.font: fontNormal, NSAttributedString.Key.paragraphStyle: style])
+                
                 let totalSize = total.size()
-                let totalRect = CGRect(x: (pageSize.width-50) - size.width, y: 380 + (CGFloat(index) * (totalSize.height * 1.5)), width: totalSize.width, height: totalSize.height)
+                let totalRect = CGRect(x: pageSize.width - 50 - totalSize.width, y: 380 + (CGFloat(index) * (totalSize.height * 1.5)), width: totalSize.width, height: totalSize.height)
                 total.draw(in: totalRect)
+                
+                maxY = max(maxY, totalRect.maxY)
+            }
+        }
+    }
+    
+    func notes(){
+        if let noteString = quote?.notes{
+            if(!noteString.isEmpty){
+                let notesTitle = TextBox(text: "Notes:", font: fontNormal).getAttributedText()
+                let notesTitleSize = notesTitle.size()
+                let notesTitleRect = CGRect(x: 50, y: maxY + 200 + notesTitleSize.height * 1.5, width: notesTitleSize.width, height: notesTitleSize.height)
+                notesTitle.draw(in: notesTitleRect)
+                
+                let notes = TextBox(text: noteString, font: fontSmall).getAttributedText()
+                let notesSize = notes.size()
+                let notesRect = CGRect(x: 50, y: notesTitleRect.maxY + notesSize.height, width: notesSize.width, height: notesSize.height)
+                notes.draw(in: notesRect)
             }
         }
     }

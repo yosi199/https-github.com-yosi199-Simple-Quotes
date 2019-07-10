@@ -23,6 +23,12 @@ class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         
         tableView.register(UINib(nibName: "QuoteCellItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell1")
+        
+        title = "Menu"
+    }
+    
+    func reloadData(){
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,6 +40,9 @@ class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let item = items[indexPath.row]
         cell.clientName.text = item.clientName
         cell.date.text = item.date
+        cell.itemsCount.text = "Items: \(String(item.items.count))"
+        let sum: Double = item.items.sum(ofProperty: "total")
+        cell.totalValue.text = String(sum.rounded(toPlaces: 2))
         return cell
     }
     

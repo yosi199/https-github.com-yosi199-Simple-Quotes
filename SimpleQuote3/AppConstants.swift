@@ -9,3 +9,4 @@
 import Foundation
 
 let COMPANY_LOGO = "company_logo"
+let APP_NAME = "Simple Quote"
