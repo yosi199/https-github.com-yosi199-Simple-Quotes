@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C68875A22DB8F9D00B16462 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68875922DB8F9D00B16462 /* SettingsViewController.swift */; };
 		4C7D156322BE89BD008D4CF8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */; };
 		4CDEFCB622D5DCE400177660 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEFCB522D5DCE400177660 /* DateExtensions.swift */; };
 		4CF6353822D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C68875922DB8F9D00B16462 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		4CDEFCB522D5DCE400177660 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCellItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				D3B3210B22BA226700AB362A /* Views */,
 				D3B320F722BA217E00AB362A /* AppDelegate.swift */,
 				D3B320F922BA217E00AB362A /* MasterViewController.swift */,
+				4C68875922DB8F9D00B16462 /* SettingsViewController.swift */,
 				D3B320FB22BA217E00AB362A /* DetailViewController.swift */,
 				D3B320FD22BA217E00AB362A /* Main.storyboard */,
 				D3B3210022BA218000AB362A /* Assets.xcassets */,
@@ -344,6 +347,7 @@
 				4CDEFCB622D5DCE400177660 /* DateExtensions.swift in Sources */,
 				D3B3212922BA254500AB362A /* StringExtension.swift in Sources */,
 				D3B320F822BA217E00AB362A /* AppDelegate.swift in Sources */,
+				4C68875A22DB8F9D00B16462 /* SettingsViewController.swift in Sources */,
 				D3B3211822BA226700AB362A /* Header.swift in Sources */,
 				D3B3213622BA2CAB00AB362A /* ItemCellTableViewCell.swift in Sources */,
 				D3B3212822BA254500AB362A /* DoubleExtensions.swift in Sources */,

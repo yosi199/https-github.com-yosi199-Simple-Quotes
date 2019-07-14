@@ -23,7 +23,6 @@ class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }()
     
     override func viewDidLoad() {
-        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -31,6 +30,13 @@ class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         title = "Menu"
     }
+    
+    @IBAction func settings(_ sender: Any) {
+        let settingsVC = self.storyboard?.instantiateViewController(withIdentifier: "settings") as! SettingsViewController
+        settingsVC.modalPresentationStyle = UIModalPresentationStyle.formSheet
+        self.present(settingsVC, animated: true, completion: nil)
+    }
+    
     @IBAction func addClicked(_ sender: Any) {
         try! realm.write {
             let emptyQuote = Quote.getEmpty()
