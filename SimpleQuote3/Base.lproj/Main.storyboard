@@ -17,6 +17,10 @@
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="24" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="7bK-jq-Zjz" kind="relationship" relationship="rootViewController" id="tsl-Nk-0bq"/>
@@ -337,17 +341,20 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="Fill 4" id="em0-Sq-jkX">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="settings:" destination="7bK-jq-Zjz" id="KVB-mC-TKQ"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="lQe-Uf-IaM">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="addClicked:" destination="7bK-jq-Zjz" id="gZC-oT-RfV"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="trash" id="3ng-fq-0ZU">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="deleteClicked:" destination="7bK-jq-Zjz" id="Gmx-7b-dd5"/>
                                 </connections>
@@ -496,8 +503,8 @@
                         <viewLayoutGuide key="safeArea" id="vrC-kF-AM7"/>
                     </view>
                     <connections>
-                        <outlet property="currencySymbol" destination="Iiq-SL-xOM" id="bxV-NV-T33"/>
-                        <outlet property="defaultTax" destination="SNT-5g-uin" id="hji-aE-Wgf"/>
+                        <outlet property="currencySymbol" destination="3cJ-vD-B1l" id="O1D-Kv-7RG"/>
+                        <outlet property="defaultTax" destination="hjK-Pa-asA" id="Uxz-tc-ddb"/>
                         <outlet property="logo" destination="u3d-Bn-Plz" id="pGA-Al-MPr"/>
                     </connections>
                 </viewController>

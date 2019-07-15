@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler {
     
     @IBOutlet weak var content: UIView!
     @IBOutlet weak var header: Header!
@@ -31,7 +31,15 @@ class DetailViewController: UIViewController {
     private let realm = try! Realm()
     private var quote = Quote()
     
+    private let imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
+        
+        let chooseImageTap = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
+        self.header.logo.addGestureRecognizer(chooseImageTap)
+        self.header.logo.isUserInteractionEnabled = true
+        
+        imagePicker.delegate = self
         
         itemsTableView.register(UINib(nibName: "ItemCellTableViewCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
         itemsTableView.rowHeight = UITableView.automaticDimension
@@ -44,6 +52,22 @@ class DetailViewController: UIViewController {
         inputItemView.showButton = { show in
             self.addButton.isHidden = !show
         }
+    }
+    
+    @objc func chooseImage(){
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.header.logo.contentMode = .scaleAspectFit
+            self.header.logo.image = pickedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
     
     private func saveQuote() -> Quote{

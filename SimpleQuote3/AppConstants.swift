@@ -10,3 +10,7 @@ import Foundation
 
 let COMPANY_LOGO = "company_logo"
 let APP_NAME = "Simple Quote"
+
+
+let SETTINGS_CURRENCY_SYMBOL = "currencySymbol"
+let SETTINGS_DEFAULT_TAX = "defaultTax"

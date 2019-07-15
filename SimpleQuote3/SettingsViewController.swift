@@ -11,9 +11,9 @@ import MobileCoreServices
 
 class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler {
     
+    @IBOutlet weak var currencySymbol: UITextField!
+    @IBOutlet weak var defaultTax: UITextField!
     
-    @IBOutlet weak var defaultTax: NSLayoutConstraint!
-    @IBOutlet weak var currencySymbol: NSLayoutConstraint!
     @IBOutlet weak var logo: UIImageView!
     
     private let imagePicker = UIImagePickerController()
@@ -111,6 +111,8 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     }
     
     @IBAction func save(_ sender: Any) {
+        UserDefaults.standard.set(currencySymbol.text, forKey: SETTINGS_CURRENCY_SYMBOL)
+        UserDefaults.standard.set(defaultTax.text, forKey: SETTINGS_DEFAULT_TAX)
         dismiss(animated: true, completion: nil)
     }
     

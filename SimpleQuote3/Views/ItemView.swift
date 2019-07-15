@@ -147,7 +147,7 @@ class ItemView: UIView {
     
     private func calculateTotal() {
         let sum = Double(self.item.qty) * (self.item.value)
-        let tax = (sum * (userRepo.getUser()?.documentData?.taxPercentage ?? 0)) / 100
+        let tax = (sum * (UserDefaults.standard.double(forKey: SETTINGS_DEFAULT_TAX) )) / 100
         self.item.tax = tax
         self.item.total = sum + tax
         debugPrint(self.item.total)

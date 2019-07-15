@@ -140,7 +140,7 @@ class PDFController: UIViewController, FileHandler {
     }
     
     private func logo(){
-        if let image = UIImage(named: "stumbleupon"){
+        if let image = UIImage(contentsOfFile: getFileForName(name: COMPANY_LOGO).path){
             let rect = CGRect(x: 50, y: 100, width: 57, height: 57)
             image.scale(with: CGSize(width: 57, height: 57))?.draw(in: rect)
         }
