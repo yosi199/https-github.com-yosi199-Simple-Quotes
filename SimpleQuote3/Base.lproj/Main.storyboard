@@ -496,6 +496,8 @@
                         <viewLayoutGuide key="safeArea" id="vrC-kF-AM7"/>
                     </view>
                     <connections>
+                        <outlet property="currencySymbol" destination="Iiq-SL-xOM" id="bxV-NV-T33"/>
+                        <outlet property="defaultTax" destination="SNT-5g-uin" id="hji-aE-Wgf"/>
                         <outlet property="logo" destination="u3d-Bn-Plz" id="pGA-Al-MPr"/>
                     </connections>
                 </viewController>

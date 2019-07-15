@@ -9,10 +9,14 @@
 import UIKit
 import MobileCoreServices
 
-class SettingsViewController: UIViewController, UIDropInteractionDelegate, FileHandler {
+class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler {
     
-
+    
+    @IBOutlet weak var defaultTax: NSLayoutConstraint!
+    @IBOutlet weak var currencySymbol: NSLayoutConstraint!
     @IBOutlet weak var logo: UIImageView!
+    
+    private let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +26,34 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, FileH
         logo.addInteraction(dropInteraction)
         setLogo()
         
+        let chooseImageTap = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
+        logo.addGestureRecognizer(chooseImageTap)
+        
+        imagePicker.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func chooseImage(){
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            logo.contentMode = .scaleAspectFit
+            logo.image = pickedImage
+            saveImageFile(data: pickedImage.pngData(), withName: COMPANY_LOGO)
+            
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
         return session.hasItemsConforming(toTypeIdentifiers: [kUTTypeImage as String]) && session.items.count == 1
-//        return session.canLoadObjects(ofClass: UIImage.self)
+        //        return session.canLoadObjects(ofClass: UIImage.self)
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
@@ -92,7 +118,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, FileH
         dismiss(animated: true, completion: nil)
     }
     
-    private func setLogo(){
+    private func setLogo() {
         if let image = UIImage(contentsOfFile: getFileForName(name: COMPANY_LOGO).path){
             logo.image = image
         }
