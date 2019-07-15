@@ -373,11 +373,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgE-uS-i5a">
                                 <rect key="frame" x="0.0" y="24" width="834" height="1150"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stumbleupon" translatesAutoresizingMaskIntoConstraints="NO" id="u3d-Bn-Plz">
-                                        <rect key="frame" x="377" y="130" width="80" height="80"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray-wide multiple" translatesAutoresizingMaskIntoConstraints="NO" id="u3d-Bn-Plz">
+                                        <rect key="frame" x="317" y="130" width="200" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="59G-Mx-nfO"/>
-                                            <constraint firstAttribute="width" constant="80" id="Sak-nh-Jx7"/>
+                                            <constraint firstAttribute="width" constant="200" id="Sak-nh-Jx7"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap or drag another image to replace logo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FB-tt-6g2">
@@ -386,10 +386,10 @@
                                         <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Symbol:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWJ-25-onh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Symbol:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWJ-25-onh">
                                         <rect key="frame" x="40" y="280" width="200" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="cuG-e3-PjA"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="cuG-e3-PjA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -407,10 +407,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tax (%):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKs-K9-b8d">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tax (%):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKs-K9-b8d">
                                         <rect key="frame" x="40" y="345.5" width="200" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="9rN-RS-44f"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="9rN-RS-44f"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -424,7 +424,7 @@
                                     </label>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BhK-Hb-SMM">
                                         <rect key="frame" x="0.0" y="0.0" width="834" height="50"/>
-                                        <color key="barTintColor" red="0.95684283971786499" green="0.79274570941925049" blue="0.28390505909919739" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="barTintColor" red="0.95686274509803915" green="0.792156862745098" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Settings" id="NPP-nD-9HE">
                                                 <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wRY-tr-V8n">
@@ -467,7 +467,7 @@
                                     <constraint firstAttribute="trailing" secondItem="3cJ-vD-B1l" secondAttribute="trailing" constant="40" id="Cch-ij-2bL"/>
                                     <constraint firstItem="KPs-CI-tAd" firstAttribute="centerX" secondItem="ZgE-uS-i5a" secondAttribute="centerX" id="Ct6-qN-7g9"/>
                                     <constraint firstItem="3cJ-vD-B1l" firstAttribute="centerY" secondItem="PWJ-25-onh" secondAttribute="centerY" id="Iiq-SL-xOM"/>
-                                    <constraint firstItem="Vdy-87-qtl" firstAttribute="leading" secondItem="ZgE-uS-i5a" secondAttribute="leading" constant="40" id="K0n-hh-ctL"/>
+                                    <constraint firstItem="Vdy-87-qtl" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ZgE-uS-i5a" secondAttribute="leading" constant="40" id="K0n-hh-ctL"/>
                                     <constraint firstItem="u3d-Bn-Plz" firstAttribute="centerX" secondItem="ZgE-uS-i5a" secondAttribute="centerX" id="L6M-t7-df5"/>
                                     <constraint firstItem="3cJ-vD-B1l" firstAttribute="leading" secondItem="PWJ-25-onh" secondAttribute="trailing" constant="25" id="RSy-Gg-vth"/>
                                     <constraint firstItem="hjK-Pa-asA" firstAttribute="centerY" secondItem="UKs-K9-b8d" secondAttribute="centerY" id="SNT-5g-uin"/>
@@ -475,8 +475,8 @@
                                     <constraint firstItem="Vdy-87-qtl" firstAttribute="top" secondItem="PWJ-25-onh" secondAttribute="bottom" constant="5" id="Tw3-bS-5OD"/>
                                     <constraint firstAttribute="bottom" secondItem="KPs-CI-tAd" secondAttribute="bottom" constant="25" id="Vrt-ZS-Axv"/>
                                     <constraint firstItem="PWJ-25-onh" firstAttribute="leading" secondItem="ZgE-uS-i5a" secondAttribute="leading" constant="40" id="W8q-O6-vwT"/>
-                                    <constraint firstAttribute="trailing" secondItem="Vdy-87-qtl" secondAttribute="trailing" constant="40" id="cCK-wK-Gd0"/>
-                                    <constraint firstAttribute="trailing" secondItem="V11-eo-vRW" secondAttribute="trailing" constant="40" id="gbh-08-UFb"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Vdy-87-qtl" secondAttribute="trailing" constant="40" id="cCK-wK-Gd0"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="V11-eo-vRW" secondAttribute="trailing" constant="40" id="gbh-08-UFb"/>
                                     <constraint firstAttribute="trailing" secondItem="BhK-Hb-SMM" secondAttribute="trailing" id="itx-YX-F7D"/>
                                     <constraint firstItem="PWJ-25-onh" firstAttribute="top" secondItem="u3d-Bn-Plz" secondAttribute="bottom" constant="70" id="nJF-7u-QlG"/>
                                     <constraint firstItem="BhK-Hb-SMM" firstAttribute="leading" secondItem="ZgE-uS-i5a" secondAttribute="leading" id="pFz-FR-9u9"/>
@@ -523,6 +523,6 @@
     </scenes>
     <resources>
         <image name="Fill 4" width="28" height="30"/>
-        <image name="stumbleupon" width="418" height="306"/>
+        <image name="gray-wide multiple" width="437" height="345"/>
     </resources>
 </document>
