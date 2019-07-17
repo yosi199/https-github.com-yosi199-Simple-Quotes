@@ -11,11 +11,13 @@ import MobileCoreServices
 
 class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler {
     
+    static let EVENT_SETTINGS_CHANGED = "settingsChanged"
+    
     @IBOutlet weak var currencySymbol: UITextField!
     @IBOutlet weak var defaultTax: UITextField!
-    
     @IBOutlet weak var logo: UIImageView!
     
+    private let viewModel = SettingsViewModel()
     private let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -24,7 +26,6 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
         let dropInteraction = UIDropInteraction(delegate: self)
         logo.isUserInteractionEnabled = true
         logo.addInteraction(dropInteraction)
-        setLogo()
         
         let chooseImageTap = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
         logo.addGestureRecognizer(chooseImageTap)
@@ -45,7 +46,6 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
             logo.contentMode = .scaleAspectFit
             logo.image = pickedImage
             saveImageFile(data: pickedImage.pngData(), withName: COMPANY_LOGO)
-            
         }
         
         dismiss(animated: true, completion: nil)
@@ -113,6 +113,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     @IBAction func save(_ sender: Any) {
         UserDefaults.standard.set(currencySymbol.text, forKey: SETTINGS_CURRENCY_SYMBOL)
         UserDefaults.standard.set(defaultTax.text, forKey: SETTINGS_DEFAULT_TAX)
+        NotificationCenter.default.post(name: Notification.Name(SettingsViewController.EVENT_SETTINGS_CHANGED), object: nil)
         dismiss(animated: true, completion: nil)
     }
     
@@ -120,9 +121,12 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
         dismiss(animated: true, completion: nil)
     }
     
-    private func setLogo() {
-        if let image = UIImage(contentsOfFile: getFileForName(name: COMPANY_LOGO).path){
-            logo.image = image
+    override func viewWillAppear(_ animated: Bool) {
+        self.currencySymbol.text = viewModel.currency
+        self.defaultTax.text = viewModel.tax
+        
+        if let image = viewModel.image {
+            self.logo.image = image
         }
     }
 }

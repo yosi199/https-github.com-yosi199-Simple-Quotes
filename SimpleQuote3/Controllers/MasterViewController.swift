@@ -18,8 +18,8 @@ class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return realm.objects(Quote.self)
     }()
     
-    private lazy var detailViewController: DetailViewController = {
-        return parent?.splitViewController?.children[1].children[0] as! DetailViewController
+    private lazy var detailViewController: QuoteViewController = {
+        return parent?.splitViewController?.children[1].children[0] as! QuoteViewController
     }()
     
     override func viewDidLoad() {
@@ -69,7 +69,7 @@ class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let detailViewController = parent?.splitViewController?.children[1].children[0] as? DetailViewController else { return }
+        guard let detailViewController = parent?.splitViewController?.children[1].children[0] as? QuoteViewController else { return }
         let item = items[indexPath.row]
         detailViewController.loadQuote(existing: item)
     }

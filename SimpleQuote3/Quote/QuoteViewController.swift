@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class DetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler {
+class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler {
     
     @IBOutlet weak var content: UIView!
     @IBOutlet weak var header: Header!
@@ -30,6 +30,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
     private var imageToTransfer: UIImage? = nil
     private let realm = try! Realm()
     private var quote = Quote()
+    private let viewModel = QuoteViewModel()
     
     private let imagePicker = UIImagePickerController()
     
@@ -51,6 +52,10 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         inputItemView.showButton = { show in
             self.addButton.isHidden = !show
+        }
+        
+        viewModel.settingsChanged = {
+            self.loadQuote(existing: self.quote)
         }
     }
     
@@ -103,7 +108,10 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         header.companyName.text = quote.companyName
         header.date.text = quote.date
         header.email.text = quote.email
-        header.id.text = quote.invoiceId
+        header.id.text = viewModel.getInvoiceID()
+        if let image = viewModel.getLogoImage() {
+            header.logo.image = image
+        }
         
         title = quote.invoiceId
         addButton.isHidden = false
@@ -206,7 +214,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
 
 //MARK - TableView Stuff
 
-extension DetailViewController: UITableViewDelegate , UITableViewDataSource{
+extension QuoteViewController: UITableViewDelegate , UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return items.count
     }
@@ -240,7 +248,8 @@ extension DetailViewController: UITableViewDelegate , UITableViewDataSource{
         cell.descriptionField.text = item.itemDescription
         cell.quantity.text = String(item.qty)
         cell.itemValue.text = String(item.value.rounded(toPlaces: 2))
-        cell.taxValue.text = String(item.tax)
+        //        cell.taxValue.text = String(UserDefaults.standard.double(forKey: SETTINGS_DEFAULT_TAX).rounded(toPlaces: 2))
+        cell.taxValue.text = String(item.tax.rounded(toPlaces: 2))
         cell.totalValue.text = String(item.total.rounded(toPlaces: 2))
         cell.interactionState(enabled: tableView.isEditing)
         return cell

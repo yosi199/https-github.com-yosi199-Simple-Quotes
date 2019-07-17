@@ -14,3 +14,4 @@ let APP_NAME = "Simple Quote"
 
 let SETTINGS_CURRENCY_SYMBOL = "currencySymbol"
 let SETTINGS_DEFAULT_TAX = "defaultTax"
+let SETTINGS_INVOICE_ID = "invoiceID"
