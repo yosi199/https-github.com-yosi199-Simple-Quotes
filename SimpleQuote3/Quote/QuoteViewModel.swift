@@ -12,6 +12,7 @@ import UIKit
 class QuoteViewModel: FileHandler {
     
     private let notificationCenter = NotificationCenter.default
+    private let userDefaults = UserDefaults.standard
     var quote: Quote = Quote()
     var settingsChanged: (()-> Void)?
     
@@ -29,7 +30,15 @@ class QuoteViewModel: FileHandler {
     }
     
     func getInvoiceID() -> String {
-        return UserDefaults.standard.string(forKey: SETTINGS_INVOICE_ID) ?? "CMX" + quote.id
+        return userDefaults.string(forKey: SETTINGS_INVOICE_ID) ?? "CMX" + quote.id
+    }
+    
+    func getCurrencySymbol() -> String {
+        return userDefaults.string(forKey: SETTINGS_CURRENCY_SYMBOL) ?? "$"
+    }
+    
+    func getTaxPercentage() -> String {
+        return userDefaults.string(forKey: SETTINGS_DEFAULT_TAX) ?? "0"
     }
     
 }

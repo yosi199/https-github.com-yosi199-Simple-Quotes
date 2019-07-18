@@ -18,20 +18,19 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var footer: Footer!
     @IBOutlet weak var itemsTableView: ResizeableTableViewTableViewController!
     @IBOutlet weak var footerStackView: UIStackView!
-    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var footerBottomConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var notes: UITextView!
+    @IBOutlet weak var currencySymbolText: UILabel!
+    @IBOutlet weak var taxPercentageText: UILabel!
     
     private var items = [LineItemModel]()
     private var imageToTransfer: UIImage? = nil
     private let realm = try! Realm()
     private var quote = Quote()
     private let viewModel = QuoteViewModel()
-    
     private let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -39,6 +38,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let chooseImageTap = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
         self.header.logo.addGestureRecognizer(chooseImageTap)
         self.header.logo.isUserInteractionEnabled = true
+        self.updateFinancialInfo()
         
         imagePicker.delegate = self
         
@@ -55,8 +55,13 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
         
         viewModel.settingsChanged = {
-            self.loadQuote(existing: self.quote)
+            self.updateFinancialInfo()
         }
+    }
+    
+    private func updateFinancialInfo(){
+        currencySymbolText.text = "Currency: \(self.viewModel.getCurrencySymbol())"
+        taxPercentageText.text = "Tax Percentage: \(self.viewModel.getTaxPercentage())%"
     }
     
     @objc func chooseImage(){
