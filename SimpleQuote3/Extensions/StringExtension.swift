@@ -8,7 +8,14 @@
 
 import Foundation
 
+extension Optional where Wrapped == String {
+    func orEmpty() -> String! {
+        return self ?? ""
+    }
+}
+
 extension String {
+    
     func isValidDouble(maxDecimalPlaces: Int) -> Bool {
         // Use NumberFormatter to check if we can turn the string into a number
         // and to get the locale specific decimal separator.

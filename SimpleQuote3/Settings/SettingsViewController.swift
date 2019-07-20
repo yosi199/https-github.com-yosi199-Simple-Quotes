@@ -16,6 +16,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     @IBOutlet weak var currencySymbol: UITextField!
     @IBOutlet weak var defaultTax: UITextField!
     @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var idPrefixInput: UITextField!
     
     private let viewModel = SettingsViewModel()
     private let imagePicker = UIImagePickerController()
@@ -111,8 +112,9 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     }
     
     @IBAction func save(_ sender: Any) {
-        UserDefaults.standard.set(currencySymbol.text, forKey: SETTINGS_CURRENCY_SYMBOL)
-        UserDefaults.standard.set(defaultTax.text, forKey: SETTINGS_DEFAULT_TAX)
+        viewModel.currency = currencySymbol.text ?? "$"
+        viewModel.tax = defaultTax.text ?? "0"
+        viewModel.quoteID = idPrefixInput.text ?? "CMX"
         NotificationCenter.default.post(name: Notification.Name(SettingsViewController.EVENT_SETTINGS_CHANGED), object: nil)
         dismiss(animated: true, completion: nil)
     }
@@ -124,6 +126,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     override func viewWillAppear(_ animated: Bool) {
         self.currencySymbol.text = viewModel.currency
         self.defaultTax.text = viewModel.tax
+        self.idPrefixInput.text = viewModel.quoteID
         
         if let image = viewModel.image {
             self.logo.image = image

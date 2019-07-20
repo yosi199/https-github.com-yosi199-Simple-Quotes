@@ -553,6 +553,7 @@
                     <connections>
                         <outlet property="currencySymbol" destination="3cJ-vD-B1l" id="O1D-Kv-7RG"/>
                         <outlet property="defaultTax" destination="hjK-Pa-asA" id="Uxz-tc-ddb"/>
+                        <outlet property="idPrefixInput" destination="XUi-4o-ab9" id="eyh-vG-dwt"/>
                         <outlet property="logo" destination="u3d-Bn-Plz" id="pGA-Al-MPr"/>
                     </connections>
                 </viewController>

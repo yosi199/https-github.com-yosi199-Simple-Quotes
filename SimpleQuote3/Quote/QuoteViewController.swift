@@ -29,7 +29,6 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     private var items = [LineItemModel]()
     private var imageToTransfer: UIImage? = nil
     private let realm = try! Realm()
-    private var quote = Quote()
     private let viewModel = QuoteViewModel()
     private let imagePicker = UIImagePickerController()
     
@@ -56,12 +55,14 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         viewModel.settingsChanged = {
             self.updateFinancialInfo()
+            self.header.id.text = self.viewModel.getInvoiceID()
         }
     }
     
     private func updateFinancialInfo(){
         currencySymbolText.text = "Currency: \(self.viewModel.getCurrencySymbol())"
         taxPercentageText.text = "Tax Percentage: \(self.viewModel.getTaxPercentage())%"
+        reloadInputViews()
     }
     
     @objc func chooseImage(){
@@ -80,56 +81,37 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         dismiss(animated: true, completion: nil)
     }
     
-    private func saveQuote() -> Quote{
-        try! realm.write {
-            quote.items.removeAll()
-            for item in self.items {
-                quote.items.append(item)
-            }
-            
-            quote.address = header.address.text ?? ""
-            quote.clientName = header.clientName.text ?? ""
-            quote.companyName = header.companyName.text ?? ""
-            quote.date = header.date.text ?? ""
-            quote.email = header.email.text ?? ""
-            quote.notes = notes.text ?? ""
-            quote.invoiceId = header.id.text ?? ""
-            
-            realm.add(quote, update: .all)
-            guard let master = parent?.splitViewController?.children[0].children[0] as? MasterViewController else { return }
-            master.reloadData()
-        }
-        return quote
-    }
-    
     func loadQuote(existing: Quote){
         
         // first reset
         reset()
-        self.quote = existing
-        // header
-        header.clientName.text = quote.clientName
-        header.address.text = quote.address
-        header.companyName.text = quote.companyName
-        header.date.text = quote.date
-        header.email.text = quote.email
+        self.viewModel.quote =  existing
+        
+        setupViews()
+        itemsTableView.reloadData()
+    }
+    
+    private func setupViews(){
+        header.clientName.text = self.viewModel.quote.clientName
+        header.address.text = self.viewModel.quote.address
+        header.companyName.text = self.viewModel.quote.companyName
+        header.date.text = self.viewModel.quote.date
+        header.email.text = self.viewModel.quote.email
         header.id.text = viewModel.getInvoiceID()
         if let image = viewModel.getLogoImage() {
             header.logo.image = image
         }
         
-        title = quote.invoiceId
+        title = self.viewModel.quote.invoiceId
         addButton.isHidden = false
         
         // line items
-        quote.items.forEach { item in
+        self.viewModel.quote.items.forEach { item in
             addLineItem(item: item)
         }
         
         // Client notes
-        notes.text = quote.notes
-        
-        itemsTableView.reloadData()
+        notes.text = self.viewModel.quote.notes
     }
     
     private func reset(){
@@ -208,14 +190,30 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let controller = segue.destination as? PDFController else { return }
-        controller.quote = saveQuote()
+        saveQuote()
+        controller.quote = self.viewModel.quote
     }
     
     @IBAction func screenshow(_ sender: Any) {
         performSegue(withIdentifier: "pdf", sender: self)
     }
+    
+    private func saveQuote(){
+        try! realm.write {
+            self.viewModel.quote.address = self.header.address.text.orEmpty()
+            self.viewModel.quote.clientName = self.header.clientName.text.orEmpty()
+            self.viewModel.quote.companyName = self.header.companyName.text.orEmpty()
+            self.viewModel.quote.date = self.header.date.text.orEmpty()
+            self.viewModel.quote.email = self.header.email.text.orEmpty()
+            self.viewModel.quote.invoiceId = self.header.id.text.orEmpty()
+            self.viewModel.quote.notes = self.notes.text.orEmpty()
+            
+            viewModel.quote.items.removeAll()
+            self.items.forEach { (item) in self.viewModel.quote.items.append(item) }
+        }
+        self.viewModel.saveQuote()
+    }
 }
-
 
 //MARK - TableView Stuff
 
@@ -253,7 +251,6 @@ extension QuoteViewController: UITableViewDelegate , UITableViewDataSource{
         cell.descriptionField.text = item.itemDescription
         cell.quantity.text = String(item.qty)
         cell.itemValue.text = String(item.value.rounded(toPlaces: 2))
-        //        cell.taxValue.text = String(UserDefaults.standard.double(forKey: SETTINGS_DEFAULT_TAX).rounded(toPlaces: 2))
         cell.taxValue.text = String(item.tax.rounded(toPlaces: 2))
         cell.totalValue.text = String(item.total.rounded(toPlaces: 2))
         cell.interactionState(enabled: tableView.isEditing)

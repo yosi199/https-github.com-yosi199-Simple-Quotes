@@ -11,6 +11,9 @@ import RealmSwift
 
 class DataRepository {
     static let shared = DataRepository()
+    static let NEW_QUOTE_SAVED = "newQuoteSaved"
+    
+    private let notificationCenter = NotificationCenter.default
     private let realm: Realm
     
     private init() {
@@ -26,8 +29,10 @@ class DataRepository {
     }
     
     func saveQuote(quote: Quote) {
-            realm.add(quote)
-            debugPrint("added quote id \(quote.id) to realm successfully")
+        realm.add(quote)
+        // TODO - pass the quote in the notification so that anyone that listens to it will get the new quote
+        NotificationCenter.default.post(name: Notification.Name(DataRepository.NEW_QUOTE_SAVED), object: nil)
+        debugPrint("added quote id \(quote.id) to realm successfully")
     }
     
     func remove(quote:Quote){

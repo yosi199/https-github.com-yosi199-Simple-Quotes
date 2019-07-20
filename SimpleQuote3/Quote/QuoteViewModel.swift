@@ -8,11 +8,14 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class QuoteViewModel: FileHandler {
     
     private let notificationCenter = NotificationCenter.default
     private let userDefaults = UserDefaults.standard
+    private let realm = try! Realm()
+
     var quote: Quote = Quote()
     var settingsChanged: (()-> Void)?
     
@@ -41,4 +44,7 @@ class QuoteViewModel: FileHandler {
         return userDefaults.string(forKey: SETTINGS_DEFAULT_TAX) ?? "0"
     }
     
+    func saveQuote() {
+        DataRepository.shared.saveQuote(quote: quote)
+    }
 }

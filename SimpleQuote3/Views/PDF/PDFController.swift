@@ -256,7 +256,7 @@ class PDFController: UIViewController, FileHandler {
                 
                 maxY = max(maxY, valueRect.maxY)
                 
-                let tax = TextBox(text: String(item.tax), font: fontNormal).getAttributedText()
+                let tax = TextBox(text: String(item.tax.rounded(toPlaces: 2)), font: fontNormal).getAttributedText()
                 let taxSize = tax.size()
                 let taxRect = CGRect(x: pageSize.width / 2 + 160, y: 380 + (CGFloat(index) * (taxSize.height * 1.5)), width: taxSize.width, height: taxSize.height)
                 tax.draw(in: taxRect)
