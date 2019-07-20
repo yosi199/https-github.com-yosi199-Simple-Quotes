@@ -114,7 +114,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     @IBAction func save(_ sender: Any) {
         viewModel.currency = currencySymbol.text ?? "$"
         viewModel.tax = defaultTax.text ?? "0"
-        viewModel.quoteID = idPrefixInput.text ?? "CMX"
+        viewModel.quoteIDPrefix = idPrefixInput.text ?? "CMX"
         NotificationCenter.default.post(name: Notification.Name(SettingsViewController.EVENT_SETTINGS_CHANGED), object: nil)
         dismiss(animated: true, completion: nil)
     }
@@ -126,7 +126,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     override func viewWillAppear(_ animated: Bool) {
         self.currencySymbol.text = viewModel.currency
         self.defaultTax.text = viewModel.tax
-        self.idPrefixInput.text = viewModel.quoteID
+        self.idPrefixInput.text = viewModel.quoteIDPrefix
         
         if let image = viewModel.image {
             self.logo.image = image

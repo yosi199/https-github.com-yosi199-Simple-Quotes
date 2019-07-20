@@ -9,27 +9,31 @@
 import Foundation
 import UIKit
 
-class SettingsViewModel : FileHandler {
+class SettingsViewModel  {
     
     private let userDefaults = UserDefaults.standard
     
     var currency: String  {
-        get { return userDefaults.string(forKey: SETTINGS_CURRENCY_SYMBOL) ?? "$" }
-        set { userDefaults.set(newValue, forKey: SETTINGS_CURRENCY_SYMBOL) }
+        get { return DataRepository.Defaults.shared.currency }
+        set { DataRepository.Defaults.shared.currency = newValue}
     }
     
     var tax: String {
-        get { return String(userDefaults.double(forKey: SETTINGS_DEFAULT_TAX).rounded(toPlaces: 2)) }
-        set { userDefaults.set(newValue, forKey: SETTINGS_DEFAULT_TAX) }
+        get { return DataRepository.Defaults.shared.tax }
+        set { DataRepository.Defaults.shared.tax = newValue}
     }
     
     var image: UIImage? {
-        get { return UIImage(contentsOfFile: getFileForName(name: COMPANY_LOGO).path) }
-        set { saveImageFile(data: newValue?.pngData(), withName: COMPANY_LOGO) }
+        get { return DataRepository.Defaults.shared.image }
+        set { DataRepository.Defaults.shared.image = newValue}
     }
     
-    var quoteID: String {
-        get { return userDefaults.string(forKey: SETTINGS_INVOICE_ID) ?? "CMX" }
-        set { userDefaults.set(newValue, forKey: SETTINGS_INVOICE_ID) }
+    var quoteIDPrefix: String {
+        get { return DataRepository.Defaults.shared.quoteIDPrefix }
+        set { DataRepository.Defaults.shared.quoteIDPrefix = newValue}
+    }
+    
+    var quoteIdString: String {
+        get { return DataRepository.Defaults.shared.quoteIdString }
     }
 }

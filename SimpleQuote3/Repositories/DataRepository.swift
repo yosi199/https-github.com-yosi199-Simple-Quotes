@@ -29,14 +29,46 @@ class DataRepository {
     }
     
     func saveQuote(quote: Quote) {
-        realm.add(quote)
-        // TODO - pass the quote in the notification so that anyone that listens to it will get the new quote
-        NotificationCenter.default.post(name: Notification.Name(DataRepository.NEW_QUOTE_SAVED), object: nil)
-        debugPrint("added quote id \(quote.id) to realm successfully")
+        try! realm.write {
+            realm.add(quote)
+            // TODO - pass the quote in the notification so that anyone that listens to it will get the new quote
+            NotificationCenter.default.post(name: Notification.Name(DataRepository.NEW_QUOTE_SAVED), object: nil)
+            debugPrint("added quote id \(quote.id) to realm successfully")
+        }
     }
     
     func remove(quote:Quote){
         debugPrint("Removing quote \(quote.id) from db")
         realm.delete(quote)
+    }
+    
+    class Defaults: FileHandler {
+        static let shared = Defaults()
+        
+        private let userDefaults = UserDefaults.standard
+        
+        var currency: String  {
+            get { return userDefaults.string(forKey: SETTINGS_CURRENCY_SYMBOL) ?? "$" }
+            set { userDefaults.set(newValue, forKey: SETTINGS_CURRENCY_SYMBOL) }
+        }
+        
+        var tax: String {
+            get { return String(userDefaults.double(forKey: SETTINGS_DEFAULT_TAX).rounded(toPlaces: 2)) }
+            set { userDefaults.set(newValue, forKey: SETTINGS_DEFAULT_TAX) }
+        }
+        
+        var image: UIImage? {
+            get { return UIImage(contentsOfFile: getFileForName(name: COMPANY_LOGO).path) }
+            set { saveImageFile(data: newValue?.pngData(), withName: COMPANY_LOGO) }
+        }
+        
+        var quoteIDPrefix: String {
+            get { return userDefaults.string(forKey: SETTINGS_INVOICE_ID_PREFIX) ?? "CMX" }
+            set { userDefaults.set(newValue, forKey: SETTINGS_INVOICE_ID_PREFIX) }
+        }
+        
+        var quoteIdString: String {
+            get { return "\(String(describing: userDefaults.string(forKey: SETTINGS_INVOICE_ID_PREFIX) ?? "CMX"))\(String(describing: userDefaults.integer(forKey: SETTINGS_INVOICE_ID_COUNTER)))" }
+        }
     }
 }

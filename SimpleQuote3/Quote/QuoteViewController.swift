@@ -31,6 +31,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     private let realm = try! Realm()
     private let viewModel = QuoteViewModel()
     private let imagePicker = UIImagePickerController()
+    private lazy var menu: MenuViewController = { return parent?.splitViewController?.children[0].children[0] as! MenuViewController }()
     
     override func viewDidLoad() {
         
@@ -212,6 +213,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
             self.items.forEach { (item) in self.viewModel.quote.items.append(item) }
         }
         self.viewModel.saveQuote()
+        self.menu.reloadData()
     }
 }
 

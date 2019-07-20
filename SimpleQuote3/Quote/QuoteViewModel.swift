@@ -33,7 +33,7 @@ class QuoteViewModel: FileHandler {
     }
     
     func getInvoiceID() -> String {
-        return userDefaults.string(forKey: SETTINGS_INVOICE_ID) ?? "CMX" + quote.id
+        return DataRepository.Defaults.shared.quoteIdString
     }
     
     func getCurrencySymbol() -> String {

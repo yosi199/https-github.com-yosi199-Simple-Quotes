@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
     
@@ -29,6 +29,17 @@ class MasterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.register(UINib(nibName: "QuoteCellItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell1")
         
         title = "Menu"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        maybeFirstTime()
+    }
+    
+    private func maybeFirstTime(){
+        let isFirstLaunch = (UIApplication.shared.delegate as! AppDelegate).firstLaunch
+        if(isFirstLaunch){
+            settings(self)
+        }
     }
     
     @IBAction func settings(_ sender: Any) {
