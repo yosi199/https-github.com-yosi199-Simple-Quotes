@@ -70,5 +70,10 @@ class DataRepository {
         var quoteIdString: String {
             get { return "\(String(describing: userDefaults.string(forKey: SETTINGS_INVOICE_ID_PREFIX) ?? "CMX"))\(String(describing: userDefaults.integer(forKey: SETTINGS_INVOICE_ID_COUNTER)))" }
         }
+        
+        var companyName: String {
+            get { return userDefaults.string(forKey: SETTINGS_COMPANY_NAME) ?? "Company X" }
+            set { userDefaults.set(newValue, forKey: SETTINGS_COMPANY_NAME) }
+        }
     }
 }

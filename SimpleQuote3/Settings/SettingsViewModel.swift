@@ -36,4 +36,9 @@ class SettingsViewModel  {
     var quoteIdString: String {
         get { return DataRepository.Defaults.shared.quoteIdString }
     }
+    
+    var companyName: String {
+        get { return DataRepository.Defaults.shared.companyName }
+        set { DataRepository.Defaults.shared.companyName = newValue}
+    }
 }

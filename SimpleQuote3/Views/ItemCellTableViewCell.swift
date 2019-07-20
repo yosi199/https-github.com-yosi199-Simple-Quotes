@@ -44,6 +44,15 @@ class ItemCellTableViewCell: UITableViewCell {
         taxValue.isUserInteractionEnabled = enabled
     }
     
+    func loadCell(item: LineItemModel){
+        title.text = item.title
+        descriptionField.text = item.itemDescription
+        quantity.text = String(item.qty)
+        itemValue.text = String(item.value.rounded(toPlaces: 2))
+        taxValue.text = String(item.tax.rounded(toPlaces: 2))
+        totalValue.text = String(item.total.rounded(toPlaces: 2))
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

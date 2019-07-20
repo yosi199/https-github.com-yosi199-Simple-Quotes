@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     @IBOutlet weak var defaultTax: UITextField!
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var idPrefixInput: UITextField!
+    @IBOutlet weak var companyName: UITextField!
     
     private let viewModel = SettingsViewModel()
     private let imagePicker = UIImagePickerController()
@@ -46,7 +47,6 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             logo.contentMode = .scaleAspectFit
             logo.image = pickedImage
-            saveImageFile(data: pickedImage.pngData(), withName: COMPANY_LOGO)
         }
         
         dismiss(animated: true, completion: nil)
@@ -115,6 +115,8 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
         viewModel.currency = currencySymbol.text ?? "$"
         viewModel.tax = defaultTax.text ?? "0"
         viewModel.quoteIDPrefix = idPrefixInput.text ?? "CMX"
+        viewModel.companyName = companyName.text.orEmpty()
+        saveImageFile(data: logo.image?.pngData(), withName: COMPANY_LOGO)
         NotificationCenter.default.post(name: Notification.Name(SettingsViewController.EVENT_SETTINGS_CHANGED), object: nil)
         dismiss(animated: true, completion: nil)
     }
@@ -127,6 +129,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
         self.currencySymbol.text = viewModel.currency
         self.defaultTax.text = viewModel.tax
         self.idPrefixInput.text = viewModel.quoteIDPrefix
+        self.companyName.text = viewModel.companyName
         
         if let image = viewModel.image {
             self.logo.image = image

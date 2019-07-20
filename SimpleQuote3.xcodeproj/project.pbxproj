@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C68875A22DB8F9D00B16462 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68875922DB8F9D00B16462 /* SettingsViewController.swift */; };
+		4C68875C22E343E400B16462 /* LineItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68875B22E343E400B16462 /* LineItemsList.swift */; };
 		4C7D156322BE89BD008D4CF8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */; };
 		4CDEFCB622D5DCE400177660 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEFCB522D5DCE400177660 /* DateExtensions.swift */; };
 		4CF6353822D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		4C68875922DB8F9D00B16462 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4C68875B22E343E400B16462 /* LineItemsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineItemsList.swift; sourceTree = "<group>"; };
 		4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		4CDEFCB522D5DCE400177660 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCellItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				D3B320FB22BA217E00AB362A /* QuoteViewController.swift */,
 				D3209AAE22DFAF9100AA9C23 /* QuoteViewModel.swift */,
+				4C68875B22E343E400B16462 /* LineItemsList.swift */,
 			);
 			path = Quote;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				D3B3211822BA226700AB362A /* Header.swift in Sources */,
 				D3B3213622BA2CAB00AB362A /* ItemCellTableViewCell.swift in Sources */,
 				D3B3212822BA254500AB362A /* DoubleExtensions.swift in Sources */,
+				4C68875C22E343E400B16462 /* LineItemsList.swift in Sources */,
 				D3B3211422BA226700AB362A /* ItemView.swift in Sources */,
 				D3B3213322BA25E300AB362A /* ResizeableTableViewTableViewController.swift in Sources */,
 				D3B3212E22BA254500AB362A /* User.swift in Sources */,

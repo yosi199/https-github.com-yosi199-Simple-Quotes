@@ -23,9 +23,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }()
     
     override func viewDidLoad() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        
         tableView.register(UINib(nibName: "QuoteCellItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell1")
         
         title = "Menu"
@@ -49,12 +46,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func addClicked(_ sender: Any) {
-        try! realm.write {
             let emptyQuote = Quote.getEmpty()
             DataRepository.shared.saveQuote(quote: emptyQuote)
             detailViewController.loadQuote(existing: emptyQuote)
             reloadData()
-        }
     }
     
     @IBAction func deleteClicked(_ sender: Any) {
