@@ -33,7 +33,20 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
         logo.addGestureRecognizer(chooseImageTap)
         
         imagePicker.delegate = self
+        
+        self.defaultTax.delegate = DoubleInputValidator.shared
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.currencySymbol.text = viewModel.currency
+        self.defaultTax.text = viewModel.tax
+        self.idPrefixInput.text = viewModel.quoteIDPrefix
+        self.companyName.text = viewModel.companyName
+        
+        if let image = viewModel.image {
+            self.logo.image = image
+        }
     }
     
     @objc func chooseImage(){
@@ -123,16 +136,5 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.currencySymbol.text = viewModel.currency
-        self.defaultTax.text = viewModel.tax
-        self.idPrefixInput.text = viewModel.quoteIDPrefix
-        self.companyName.text = viewModel.companyName
-        
-        if let image = viewModel.image {
-            self.logo.image = image
-        }
     }
 }

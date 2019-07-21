@@ -44,6 +44,7 @@
 		D3B3213322BA25E300AB362A /* ResizeableTableViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3213222BA25E300AB362A /* ResizeableTableViewTableViewController.swift */; };
 		D3B3213622BA2CAB00AB362A /* ItemCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3213422BA2CAB00AB362A /* ItemCellTableViewCell.swift */; };
 		D3B3213722BA2CAB00AB362A /* ItemCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3213522BA2CAB00AB362A /* ItemCellTableViewCell.xib */; };
+		D3EAA40722E47F50000DD4CE /* DoubleInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAA40622E47F50000DD4CE /* DoubleInputValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		D3B3213222BA25E300AB362A /* ResizeableTableViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeableTableViewTableViewController.swift; sourceTree = "<group>"; };
 		D3B3213422BA2CAB00AB362A /* ItemCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellTableViewCell.swift; sourceTree = "<group>"; };
 		D3B3213522BA2CAB00AB362A /* ItemCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCellTableViewCell.xib; sourceTree = "<group>"; };
+		D3EAA40622E47F50000DD4CE /* DoubleInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleInputValidator.swift; sourceTree = "<group>"; };
 		FAF5BD6957C90A5DA526E961 /* Pods_SimpleQuote3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleQuote3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD697654816688C19DFF8F39 /* Pods-SimpleQuote3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleQuote3.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleQuote3/Pods-SimpleQuote3.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +178,7 @@
 		D3B320F622BA217E00AB362A /* SimpleQuote3 */ = {
 			isa = PBXGroup;
 			children = (
+				D3EAA40822E48087000DD4CE /* Helpers */,
 				D34E57EB22BBA04D00121217 /* PDF */,
 				D3209AB022DFB37900AA9C23 /* Settings */,
 				D3209AAD22DFAF5900AA9C23 /* Quote */,
@@ -251,6 +254,14 @@
 				D3B3212722BA254500AB362A /* FileHandler.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D3EAA40822E48087000DD4CE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D3EAA40622E47F50000DD4CE /* DoubleInputValidator.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +385,7 @@
 			files = (
 				D3B3212A22BA254500AB362A /* UserRepository.swift in Sources */,
 				4C7D156322BE89BD008D4CF8 /* UIImageExtensions.swift in Sources */,
+				D3EAA40722E47F50000DD4CE /* DoubleInputValidator.swift in Sources */,
 				D3B3213122BA255D00AB362A /* AppConstants.swift in Sources */,
 				D3209AAF22DFAF9100AA9C23 /* QuoteViewModel.swift in Sources */,
 				D3B320FC22BA217E00AB362A /* QuoteViewController.swift in Sources */,

@@ -51,6 +51,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
             self.updateFinancialInfo()
             self.header.id.text = self.viewModel.getInvoiceID()
             self.header.logo.image = self.viewModel.getLogoImage()
+            self.header.companyName.text = self.viewModel.getCompanyName()
             self.title = self.viewModel.getInvoiceID()
         }
         

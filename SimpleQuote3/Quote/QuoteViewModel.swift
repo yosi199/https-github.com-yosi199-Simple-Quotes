@@ -44,7 +44,14 @@ class QuoteViewModel: FileHandler {
         return userDefaults.string(forKey: SETTINGS_DEFAULT_TAX) ?? "0"
     }
     
+    func getCompanyName() -> String {
+        return userDefaults.string(forKey: SETTINGS_COMPANY_NAME) ?? ""
+    }
+    
     func saveQuote() {
         DataRepository.shared.saveQuote(quote: quote)
+        
+        let currentInvoiceCounter = userDefaults.integer(forKey: SETTINGS_INVOICE_ID_COUNTER)
+        userDefaults.set(currentInvoiceCounter + 1, forKey: SETTINGS_INVOICE_ID_COUNTER)
     }
 }

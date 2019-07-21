@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/Quote/QuoteViewModel.swift"
-            timestampString = "585242591.378147"
+            timestampString = "585400878.615221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -266,12 +266,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/Quote/QuoteViewController.swift"
-            timestampString = "585242591.378204"
+            timestampString = "585400878.61561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "confirmDelete(item:indexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
