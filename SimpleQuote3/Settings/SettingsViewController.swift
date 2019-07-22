@@ -20,22 +20,23 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     @IBOutlet weak var companyName: UITextField!
     
     private let viewModel = SettingsViewModel()
-    private let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let dropInteraction = UIDropInteraction(delegate: self)
-        logo.isUserInteractionEnabled = true
         logo.addInteraction(dropInteraction)
         
         let chooseImageTap = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
         logo.addGestureRecognizer(chooseImageTap)
-        
-        imagePicker.delegate = self
+        logo.isUserInteractionEnabled = true
         
         self.defaultTax.delegate = DoubleInputValidator.shared
         // Do any additional setup after loading the view.
+        
+                if let image = viewModel.image {
+                    self.logo.image = image
+                }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,12 +45,11 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
         self.idPrefixInput.text = viewModel.quoteIDPrefix
         self.companyName.text = viewModel.companyName
         
-        if let image = viewModel.image {
-            self.logo.image = image
-        }
     }
     
     @objc func chooseImage(){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         
@@ -57,17 +57,15 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            logo.contentMode = .scaleAspectFit
-            logo.image = pickedImage
-        }
-        
-        dismiss(animated: true, completion: nil)
+            if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                self.logo.contentMode = .scaleAspectFit
+                self.logo.image = pickedImage
+            }
+            picker.dismiss(animated: true, completion: nil)
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
         return session.hasItemsConforming(toTypeIdentifiers: [kUTTypeImage as String]) && session.items.count == 1
-        //        return session.canLoadObjects(ofClass: UIImage.self)
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {

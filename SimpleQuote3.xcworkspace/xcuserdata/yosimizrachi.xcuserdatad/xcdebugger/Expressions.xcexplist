@@ -11,6 +11,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "SettingsViewController.imagePickerController(_:didFinishPickingMediaWithInfo:):SettingsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "pickedImage.absoluteString">
+            </PersistentString>
+            <PersistentString
+               value = "pickedImage.pngData()?.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DetailViewController.viewWillLayoutSubviews():DetailViewController.swift">
          <PersistentStrings>
             <PersistentString
