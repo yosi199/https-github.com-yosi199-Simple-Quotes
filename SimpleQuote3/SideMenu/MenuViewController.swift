@@ -77,7 +77,7 @@ class MenuViewController: UIViewController {
         menuList.isEditing.toggle()
         
         if(menuList.isEditing){
-            self.deleteButton.tintColor = UIColor.white
+            self.deleteButton.tintColor = UIColor.red
         } else{
             self.deleteButton.tintColor = UIColor.black
         }
