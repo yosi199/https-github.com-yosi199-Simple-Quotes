@@ -37,6 +37,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         setupItemsTable()
         setupInteractions()
         setupCallbacks()
+        setupNotifications()
         updateViews()
     }
     private func setupInteractions(){
@@ -46,7 +47,12 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.imagePicker.delegate = self
     }
     
-    private func setupCallbacks(){
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func setupCallbacks() {
         inputItemView.showButton = { show in
             self.addButton.isHidden = !show
         }
@@ -207,5 +213,19 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
         
         footer.update(items: self.itemsTableView.items)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= (keyboardSize.height / 3)
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
 }
