@@ -359,7 +359,6 @@
                     <connections>
                         <outlet property="deleteButton" destination="3ng-fq-0ZU" id="Z4d-oD-eNu"/>
                         <outlet property="menuList" destination="r7i-6Z-zg0" id="sQk-5D-hHE"/>
-                        <outlet property="tableView" destination="r7i-6Z-zg0" id="OYA-wW-1HU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>

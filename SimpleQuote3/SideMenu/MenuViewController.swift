@@ -30,6 +30,13 @@ class MenuViewController: UIViewController {
         menuList.register(UINib(nibName: "QuoteCellItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell1")
         menuList.delegate = menuList
         menuList.dataSource = menuList
+    
+        var itemsArray = [Quote]()
+        self.vm.getItems().forEach { quote in
+            itemsArray.append(quote)
+        }
+        
+        menuList.items = itemsArray
     }
     
     private func setupCallbacks(){
