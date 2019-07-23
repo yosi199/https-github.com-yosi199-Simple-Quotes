@@ -12,6 +12,10 @@ extension Optional where Wrapped == String {
     func orEmpty() -> String! {
         return self ?? ""
     }
+    
+    func orOther(other: String) -> String {
+        return self ?? other
+    }
 }
 
 extension String {

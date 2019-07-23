@@ -14,28 +14,16 @@ class Quote : Object {
     
     let items = List<LineItemModel>()
     
-    @objc dynamic  var invoiceId: String = ""
-    @objc dynamic  var companyName: String = ""
-    @objc dynamic  var clientName: String = ""
-    @objc dynamic  var date: String = ""
-    @objc dynamic  var address: String = ""
-    @objc dynamic  var email: String = ""
-    @objc dynamic  var notes: String = ""
+    @objc dynamic  var invoiceId: String = "CMX1"
+    @objc dynamic  var companyName: String = "Company Name"
+    @objc dynamic  var clientName: String = "Client Name"
+    @objc dynamic  var date: String = Date().getCurrentDate()
+    @objc dynamic  var address: String = "Address N/A"
+    @objc dynamic  var email: String = "clientmail@mail.xyz"
+    @objc dynamic  var notes: String = "Client notes"
     
     override static func primaryKey() -> String? {
         return "id"
-    }
-    
-    static func getEmpty() -> Quote{
-        let quote = Quote()
-        quote.address = "Address N/A"
-        quote.clientName = "Client Name"
-        quote.companyName = "Company Name"
-        quote.date = Date().getCurrentDate()
-        quote.email = "clientmail@mail.xyz"
-        quote.id = UUID().uuidString
-        quote.invoiceId = "AAA"
-        return quote
     }
 }
 

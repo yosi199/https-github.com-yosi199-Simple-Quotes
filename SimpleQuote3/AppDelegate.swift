@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             UserDefaults.standard.set(true, forKey: firstLaunchKey)
             UserDefaults.standard.set(1, forKey: SETTINGS_INVOICE_ID_COUNTER)
         }
+
         // Override point for customization after application launch.
         let splitViewController = window!.rootViewController as! UISplitViewController
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController

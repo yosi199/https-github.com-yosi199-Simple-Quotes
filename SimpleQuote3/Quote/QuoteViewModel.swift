@@ -15,13 +15,15 @@ class QuoteViewModel: FileHandler {
     private let notificationCenter = NotificationCenter.default
     private let userDefaults = UserDefaults.standard
     private let realm = try! Realm()
-
+    
     var quote: Quote = Quote()
     var settingsChanged: (()-> Void)?
     
     init() {
-       notificationCenter
+        notificationCenter
             .addObserver(self, selector: #selector(onSettingsChanged), name: Notification.Name(SettingsViewController.EVENT_SETTINGS_CHANGED), object: nil)
+        
+        quote.invoiceId = userDefaults.string(forKey: SETTINGS_INVOICE_ID_COUNTER).orOther(other: "1")
     }
     
     @objc func onSettingsChanged(){
@@ -33,7 +35,7 @@ class QuoteViewModel: FileHandler {
     }
     
     func getInvoiceID() -> String {
-        return DataRepository.Defaults.shared.quoteIdString
+        return DataRepository.Defaults.shared.quoteIDPrefix + quote.invoiceId
     }
     
     func getCurrencySymbol() -> String {

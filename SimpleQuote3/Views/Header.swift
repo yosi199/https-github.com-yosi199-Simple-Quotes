@@ -41,30 +41,10 @@ class Header: UIView, FileHandler {
         self.date.text = Date().getCurrentDate()
         setLogo()
     }
-    
-    func saveData(quote: Quote){
-        quote.companyName = companyName.text ?? ""
-        quote.address = address.text ?? ""
-        quote.clientName = clientName.text ?? ""
-        quote.date = date.text ?? ""
-        quote.email = email.text ?? ""
-        quote.invoiceId = id.text ?? ""
-    }
-    
-    func restore(quote: Quote){
-        companyName.text = quote.companyName
-        address.text = quote.address
-        clientName.text = quote.clientName
-        date.text = quote.date
-        email.text = quote.email
-        id.text = quote.invoiceId
-    }
-    
+
     private func setLogo(){
         if let image = UIImage(contentsOfFile: getFileForName(name: COMPANY_LOGO).path){
             logo.image = image
         }
     }
-    
-
 }

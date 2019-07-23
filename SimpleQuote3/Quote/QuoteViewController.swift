@@ -28,32 +28,29 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     private var imageToTransfer: UIImage? = nil
     private let realm = try! Realm()
-    private let viewModel = QuoteViewModel()
+    private let vm = QuoteViewModel()
     private let imagePicker = UIImagePickerController()
     private lazy var menu: MenuViewController = { return parent?.splitViewController?.children[0].children[0] as! MenuViewController }()
     
     override func viewDidLoad() {
-        
+        setupItemsTable()
+        setupInteractions()
+        setupCallbacks()
+        updateViews()
+    }
+    private func setupInteractions(){
         let chooseImageTap = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
         self.header.logo.addGestureRecognizer(chooseImageTap)
         self.header.logo.isUserInteractionEnabled = true
-        self.updateFinancialInfo()
-        
-        imagePicker.delegate = self
-        
-        self.setupItemsTable()
-        
+        self.imagePicker.delegate = self
+    }
+    
+    private func setupCallbacks(){
         inputItemView.showButton = { show in
             self.addButton.isHidden = !show
         }
         
-        viewModel.settingsChanged = {
-            self.updateFinancialInfo()
-            self.header.id.text = self.viewModel.getInvoiceID()
-            self.header.logo.image = self.viewModel.getLogoImage()
-            self.header.companyName.text = self.viewModel.getCompanyName()
-            self.title = self.viewModel.getInvoiceID()
-        }
+        vm.settingsChanged = { self.viewDidLoad() }
         
         itemsTableView.deleteCallback = { item, index in
             self.confirmDelete(item: item, indexPath: index)
@@ -69,16 +66,37 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         itemsTableView.dataSource = itemsTableView
     }
     
-    private func updateFinancialInfo(){
-        currencySymbolText.text = "Currency: \(self.viewModel.getCurrencySymbol())"
-        taxPercentageText.text = "Tax Percentage: \(self.viewModel.getTaxPercentage())%"
-        reloadInputViews()
+    private func updateViews(){
+        
+        title = vm.getInvoiceID()
+        
+        // Header
+        header.address.text = vm.quote.address
+        header.clientName.text = vm.quote.clientName
+        header.companyName.text = vm.quote.companyName
+        header.date.text = vm.quote.date
+        header.email.text = vm.quote.email
+        header.logo.image = vm.getLogoImage()
+        header.id.text = vm.getInvoiceID()
+        
+        vm.quote.items.forEach { item in
+            self.itemsTableView.items.append(item)
+        }
+        itemsTableView.reloadData()
+        
+        toggleFooter()
+    }
+    
+    private func toggleFooter(){
+        if(itemsTableView.items.count>0){
+            footer.isHidden = false
+            footerStackView.isHidden = false
+        }
     }
     
     @objc func chooseImage(){
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
-        
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -87,63 +105,78 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
             self.header.logo.contentMode = .scaleAspectFit
             self.header.logo.image = pickedImage
         }
-        
         dismiss(animated: true, completion: nil)
     }
     
     func loadQuote(existing: Quote){
-        
-        // first reset
-        reset()
-        self.viewModel.quote =  existing
-        
-        setupViews()
-        itemsTableView.reloadData()
+        self.vm.quote =  existing
+        self.viewDidLoad()
     }
     
-    private func setupViews(){
-        header.clientName.text = self.viewModel.quote.clientName
-        header.address.text = self.viewModel.quote.address
-        header.companyName.text = self.viewModel.quote.companyName
-        header.date.text = self.viewModel.quote.date
-        header.email.text = self.viewModel.quote.email
-        header.id.text = viewModel.getInvoiceID()
-        if let image = viewModel.getLogoImage() {
-            header.logo.image = image
-        }
-        
-        title = self.viewModel.quote.invoiceId
-        addButton.isHidden = false
-        
-        // line items
-        self.viewModel.quote.items.forEach { item in
-            addLineItem(item: item)
-        }
-        
-        // Client notes
-        notes.text = self.viewModel.quote.notes
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let controller = segue.destination as? PDFController else { return }
+        saveQuote()
+        controller.quote = self.vm.quote
     }
     
-    private func reset(){
-        header.clientName.text = ""
-        header.address.text = ""
-        header.companyName.text = ""
-        header.date.text = ""
-        header.email.text = ""
-        header.id.text = ""
-        self.itemsTableView.clearItems()
+    @IBAction func screenshow(_ sender: Any) {
+        performSegue(withIdentifier: "pdf", sender: self)
+    }
+    
+    private func saveQuote(){
+        try! realm.write {
+            self.vm.quote.address = self.header.address.text.orEmpty()
+            self.vm.quote.clientName = self.header.clientName.text.orEmpty()
+            self.vm.quote.companyName = self.header.companyName.text.orEmpty()
+            self.vm.quote.date = self.header.date.text.orEmpty()
+            self.vm.quote.email = self.header.email.text.orEmpty()
+            self.vm.quote.notes = self.notes.text.orEmpty()
+            
+            vm.quote.items.removeAll()
+            self.itemsTableView.items.forEach { (item) in self.vm.quote.items.append(item) }
+        }
+        self.vm.saveQuote()
+        self.menu.reloadData()
+    }
+    
+    func confirmDelete(item: LineItemModel, indexPath: IndexPath) {
+        let rect = itemsTableView.rect(forSection: indexPath.section)
+        let frame = itemsTableView.convert(rect, to: itemsTableView.superview)
+        let alert =  AlertDeletion.Builder(frame: frame)
+            .setTitle(title: "Delete Item")
+            .setMessage(message: "Are you sure you want to delete \(item.title)?")
+            .setConfirmationHandler { (UIAlertAction) in
+                self.itemsTableView.items.remove(at: indexPath.section)
+                if (self.itemsTableView.items.count == 0) {
+                    self.footer.isHidden = true
+                    self.footerStackView.isHidden = true
+                }
+                self.itemsTableView.reloadData()
+            }.build()
+            .prepare()
+        
+        
+        // Support display in iPad
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.permittedArrowDirections = .down
+        alert.popoverPresentationController?.sourceRect = CGRect(x: frame.midX , y: frame.midY - scrollView.contentOffset.y + (frame.height / 2) , width: 1.0, height: 1.0)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func addButtonAction(_ sender: Any) {
         addLineItem(item: inputItemView.getItem())
-        inputItemView.reset()
+        self.itemsTableView.reloadData()
     }
     
     private func addLineItem(item: LineItemModel){
         self.itemsTableView.items.append(item)
-        itemsTableView.reloadData()
-        footer.isHidden = false
-        footerStackView.isHidden = false
+        toggleFooter()
+    }
+    
+    @IBAction func editButtonClicked(_ sender: Any) {
+        self.itemsTableView.isEditing.toggle()
+        self.itemsTableView.reloadData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -161,67 +194,5 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
         
         footer.update(items: self.itemsTableView.items)
-    }
-    
-    @IBAction func editButtonClicked(_ sender: Any) {
-        self.itemsTableView.isEditing.toggle()
-        self.itemsTableView.reloadData()
-    }
-    
-    func confirmDelete(item: LineItemModel, indexPath: IndexPath) {
-        let alert = UIAlertController(title: "Delete Item", message: "Are you sure you want to delete \(item.title)?", preferredStyle: .actionSheet)
-        
-        let DeleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {(alert: UIAlertAction!) in
-            self.itemsTableView.items.remove(at: indexPath.section)
-            if (self.itemsTableView.items.count == 0) {
-                self.footer.isHidden = true
-                self.footerStackView.isHidden = true
-            }
-            self.itemsTableView.reloadData()
-        })
-        
-        
-        let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(alert: UIAlertAction!) in })
-        
-        alert.addAction(DeleteAction)
-        alert.addAction(CancelAction)
-        
-        let rect = itemsTableView.rect(forSection: indexPath.section)
-        let frame = itemsTableView.convert(rect, to: itemsTableView.superview)
-        
-        
-        // Support display in iPad
-        alert.popoverPresentationController?.sourceView = self.view
-        alert.popoverPresentationController?.permittedArrowDirections = .down
-        alert.popoverPresentationController?.sourceRect = CGRect(x: frame.midX , y: frame.midY - scrollView.contentOffset.y + (frame.height / 2) , width: 1.0, height: 1.0)
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let controller = segue.destination as? PDFController else { return }
-        saveQuote()
-        controller.quote = self.viewModel.quote
-    }
-    
-    @IBAction func screenshow(_ sender: Any) {
-        performSegue(withIdentifier: "pdf", sender: self)
-    }
-    
-    private func saveQuote(){
-        try! realm.write {
-            self.viewModel.quote.address = self.header.address.text.orEmpty()
-            self.viewModel.quote.clientName = self.header.clientName.text.orEmpty()
-            self.viewModel.quote.companyName = self.header.companyName.text.orEmpty()
-            self.viewModel.quote.date = self.header.date.text.orEmpty()
-            self.viewModel.quote.email = self.header.email.text.orEmpty()
-            self.viewModel.quote.invoiceId = self.header.id.text.orEmpty()
-            self.viewModel.quote.notes = self.notes.text.orEmpty()
-            
-            viewModel.quote.items.removeAll()
-            self.itemsTableView.items.forEach { (item) in self.viewModel.quote.items.append(item) }
-        }
-        self.viewModel.saveQuote()
-        self.menu.reloadData()
     }
 }

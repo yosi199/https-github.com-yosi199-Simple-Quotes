@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "QuoteViewModel.getInvoiceID():QuoteViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = " quote.invoiceId">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DetailViewController.confirmDelete(item:indexPath:):DetailViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -14,10 +22,10 @@
          contextName = "SettingsViewController.imagePickerController(_:didFinishPickingMediaWithInfo:):SettingsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "pickedImage.absoluteString">
+               value = "pickedImage.pngData()?.count">
             </PersistentString>
             <PersistentString
-               value = "pickedImage.pngData()?.count">
+               value = "pickedImage.absoluteString">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -34,6 +42,14 @@
          <PersistentStrings>
             <PersistentString
                value = "inputItemView.getItem()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "QuoteViewModel.init():QuoteViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "quote.invoiceId">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

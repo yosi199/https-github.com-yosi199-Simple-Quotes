@@ -13,6 +13,7 @@ import CoreGraphics
 class PDFController: UIViewController, FileHandler {
     
     private var pdfView: PDFView? = nil
+    private let userDefaults = UserDefaults.standard
     
     private var filePath: URL?
     private let fontTitle = UIFont.preferredFont(forTextStyle: .largeTitle)
@@ -141,7 +142,7 @@ class PDFController: UIViewController, FileHandler {
     
     private func logo(){
         if let image = UIImage(contentsOfFile: getFileForName(name: COMPANY_LOGO).path){
-            let rect = CGRect(x: 50, y: 100, width: 57, height: 57)
+            let rect = CGRect(x: 50, y: 80, width: 100, height: 100)
             image.scale(with: CGSize(width: 57, height: 57))?.draw(in: rect)
         }
     }
@@ -175,7 +176,8 @@ class PDFController: UIViewController, FileHandler {
     }
     
     private func invoice(){
-        let property = TextBox(text: quote?.invoiceId ??  "INVC-001", font: fontNormal).getAttributedText()
+        let text = DataRepository.Defaults.shared.quoteIDPrefix + (quote?.invoiceId ?? "1")
+        let property = TextBox(text: text, font: fontNormal).getAttributedText()
         let size = property.size()
         let stringRect = CGRect(x: 50, y: 250, width: size.width, height: size.height)
         property.draw(in: stringRect)
