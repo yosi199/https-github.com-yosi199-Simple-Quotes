@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
             endingLineNumber = "50"
-            landmarkName = "setSelected(_:animated:)"
+            landmarkName = "loadCell(item:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/Views/ItemView.swift"
-            timestampString = "585085719.444051"
+            timestampString = "585581737.9060349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "reset()"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/SideMenu/MenuViewController.swift"
-            timestampString = "585573772.720211"
+            timestampString = "585581737.906544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -351,7 +351,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkName = "saveContext()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

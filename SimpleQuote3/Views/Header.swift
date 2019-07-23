@@ -21,9 +21,7 @@ class Header: UIView, FileHandler {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var companyName: UITextField!
     @IBOutlet weak var logo: UIImageView!
-    
-    private let userRepo = UserRepository.shared
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()

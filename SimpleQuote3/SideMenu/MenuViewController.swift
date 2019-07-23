@@ -14,7 +14,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var tableView: UITableView!
     
     private let realm = try! Realm()
-    private lazy var items:  Results<Quote> = {
+    private lazy var items: Results<Quote> = {
         return realm.objects(Quote.self)
     }()
     

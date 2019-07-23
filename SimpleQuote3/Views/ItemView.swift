@@ -19,7 +19,6 @@ class ItemView: UIView {
     @IBOutlet weak var totalValue: UITextField!
     @IBOutlet weak var taxValue: UITextField!
     
-    private let userRepo = UserRepository.shared
     private var item = LineItemModel()
 
     var showButton: ((_ model: Bool)-> Void)?
