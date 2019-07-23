@@ -43,6 +43,7 @@ class MenuList : ResizeableTableViewTableViewController, UITableViewDelegate , U
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let item = items[indexPath.row]
+            items.remove(at: indexPath.row)
             deleteQuoteCallback?(item, indexPath)
             isEditing.toggle()
             reloadData()

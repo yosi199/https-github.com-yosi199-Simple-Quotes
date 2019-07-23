@@ -16,8 +16,12 @@ class MenuViewModel {
         return realm.objects(Quote.self)
     }()
     
-    func getItems() -> Results<Quote> {
-        return items
+    func getItems() -> [Quote] {
+        var itemsArray = [Quote]()
+        items.forEach { quote in
+            itemsArray.append(quote)
+        }
+        return itemsArray
     }
     
     func addNew() -> Quote {

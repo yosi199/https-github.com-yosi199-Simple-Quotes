@@ -272,7 +272,7 @@
                         <outlet property="reviewButton" destination="f0b-29-ugq" id="pIS-nn-hrz"/>
                         <outlet property="scrollView" destination="fFT-5I-pgN" id="c2y-Ox-6b3"/>
                         <outlet property="taxPercentageText" destination="QXy-fs-4lJ" id="Orc-S0-Cxk"/>
-                        <segue destination="8tY-lk-M1f" kind="show" identifier="pdf" id="bPH-Y6-J95"/>
+                        <segue destination="8tY-lk-M1f" kind="presentation" identifier="pdf" id="bPH-Y6-J95"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -286,7 +286,33 @@
                     <view key="view" contentMode="scaleToFill" id="AYM-nG-5tr">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omR-eK-eV6">
+                                <rect key="frame" x="0.0" y="24" width="834" height="50"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="PDF" id="uqh-ni-aDG">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="1Mw-yI-6O0">
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="BH1-bg-VqF" kind="unwind" unwindAction="unwindFromPdf:" id="E48-gp-2o6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Aao-hq-M6G">
+                                            <connections>
+                                                <action selector="shareAction:" destination="8tY-lk-M1f" id="gzj-j5-aWr"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="omR-eK-eV6" firstAttribute="trailing" secondItem="hhw-vJ-pFc" secondAttribute="trailing" id="E6C-hw-90T"/>
+                            <constraint firstItem="omR-eK-eV6" firstAttribute="top" secondItem="hhw-vJ-pFc" secondAttribute="top" id="jpE-kS-Cex"/>
+                            <constraint firstItem="omR-eK-eV6" firstAttribute="leading" secondItem="hhw-vJ-pFc" secondAttribute="leading" id="v01-vN-P5C"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hhw-vJ-pFc"/>
                     </view>
                     <toolbarItems/>
@@ -299,10 +325,12 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="shareButton" destination="Anp-HA-ch7" id="gVP-Bc-0o2"/>
+                        <outlet property="navigationBar" destination="omR-eK-eV6" id="QAe-BC-QI1"/>
+                        <outlet property="shareButton" destination="Aao-hq-M6G" id="erh-uu-gud"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7WJ-hu-Kcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BH1-bg-VqF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1378" y="129"/>
         </scene>
@@ -358,7 +386,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="deleteButton" destination="3ng-fq-0ZU" id="Z4d-oD-eNu"/>
-                        <outlet property="menuList" destination="r7i-6Z-zg0" id="sQk-5D-hHE"/>
+                        <outlet property="menuList" destination="r7i-6Z-zg0" id="Ywv-UQ-gbo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -373,7 +401,6 @@
                         <rect key="frame" x="0.0" y="24" width="834" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="GKi-kA-LjT"/>
@@ -613,4 +640,5 @@
         <image name="Fill 4" width="28" height="30"/>
         <image name="gray-wide multiple" width="437" height="345"/>
     </resources>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

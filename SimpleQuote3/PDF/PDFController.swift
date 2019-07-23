@@ -24,6 +24,7 @@ class PDFController: UIViewController, FileHandler {
     private var pageSize: CGSize = CGSize.zero
     private var maxY: CGFloat = 0
     
+    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
     var quote: Quote? = nil
@@ -44,12 +45,12 @@ class PDFController: UIViewController, FileHandler {
             
             pdf.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
             pdf.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-            pdf.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+            pdf.topAnchor.constraint(equalTo: navigationBar.bottomAnchor).isActive = true
             pdf.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         }
     }
-    
-    @IBAction func shareAction(_ sender: UIView) {
+    @IBAction func shareAction(_ sender: Any) {
+
         let fileManager = FileManager.default
         let stringUrl = filePath?.path ?? ""
         
@@ -57,7 +58,7 @@ class PDFController: UIViewController, FileHandler {
             let pdfDoc = try Data(contentsOf:filePath!)
             fileManager.createFile(atPath: stringUrl, contents: pdfDoc, attributes: nil)
             if fileManager.fileExists(atPath: stringUrl){
-//                let document = NSData(contentsOfFile: stringUrl)
+                //                let document = NSData(contentsOfFile: stringUrl)
                 let activityVC = UIActivityViewController(activityItems: [filePath!], applicationActivities: nil)
                 activityVC.popoverPresentationController?.barButtonItem = shareButton
                 self.present(activityVC, animated: true, completion: nil)

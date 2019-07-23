@@ -87,6 +87,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         header.logo.image = vm.getLogoImage()
         header.id.text = vm.getInvoiceID()
         
+        self.itemsTableView.items.removeAll()
         vm.quote.items.forEach { item in
             self.itemsTableView.items.append(item)
         }
@@ -94,6 +95,9 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         self.editButton.isEnabled = !vm.quote.items.isEmpty
         self.reviewButton.isEnabled = !vm.quote.items.isEmpty
+        self.addButton.isHidden = vm.quote.items.isEmpty
+        self.footer.isHidden = vm.quote.items.isEmpty
+        self.footerStackView.isHidden = vm.quote.items.isEmpty
         
         toggleFooter()
     }
@@ -250,5 +254,10 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     func textFieldDidEndEditing(_ textField: UITextField){
         activeField = nil
+    }
+    
+    @IBAction func unwindFromPdf(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source
+        // Use data from the view controller which initiated the unwind segue
     }
 }

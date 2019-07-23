@@ -30,13 +30,7 @@ class MenuViewController: UIViewController {
         menuList.register(UINib(nibName: "QuoteCellItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell1")
         menuList.delegate = menuList
         menuList.dataSource = menuList
-    
-        var itemsArray = [Quote]()
-        self.vm.getItems().forEach { quote in
-            itemsArray.append(quote)
-        }
-        
-        menuList.items = itemsArray
+        menuList.items = vm.getItems()
     }
     
     private func setupCallbacks(){
@@ -69,7 +63,9 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func addClicked(_ sender: Any) {
-        detailViewController.loadQuote(existing: self.vm.addNew())
+        let quote = self.vm.addNew()
+        detailViewController.loadQuote(existing: quote)
+        menuList.items = vm.getItems()
         reloadData()
     }
     
@@ -82,6 +78,7 @@ class MenuViewController: UIViewController {
             self.deleteButton.tintColor = UIColor.black
         }
     }
+    
     func reloadData(){
         menuList.reloadData()
     }
