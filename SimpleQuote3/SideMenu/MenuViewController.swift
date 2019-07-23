@@ -9,22 +9,37 @@
 import UIKit
 import RealmSwift
 
-class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MenuViewController: UIViewController {
     
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var menuList: MenuList!
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
     
-    private let realm = try! Realm()
-    private lazy var items:  Results<Quote> = {
-        return realm.objects(Quote.self)
-    }()
-    
+    private let vm = MenuViewModel()
     private lazy var detailViewController: QuoteViewController = {
         return parent?.splitViewController?.children[1].children[0] as! QuoteViewController
     }()
     
     override func viewDidLoad() {
-        tableView.register(UINib(nibName: "QuoteCellItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell1")
         title = "Menu"
+        
+        setupMenuList()
+        setupCallbacks()
+    }
+    
+    private func setupMenuList(){
+        menuList.register(UINib(nibName: "QuoteCellItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell1")
+        menuList.delegate = menuList
+        menuList.dataSource = menuList
+    }
+    
+    private func setupCallbacks(){
+        menuList.loadQuoteCallback = { quote, index in
+            self.detailViewController.loadQuote(existing: quote)
+        }
+        
+        menuList.deleteQuoteCallback = { quote, index in
+            self.vm.delete(quote: quote)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,51 +62,21 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func addClicked(_ sender: Any) {
-        let emptyQuote = Quote()
-        DataRepository.shared.saveQuote(quote: emptyQuote)
-        detailViewController.loadQuote(existing: emptyQuote)
+        detailViewController.loadQuote(existing: self.vm.addNew())
         reloadData()
     }
     
     @IBAction func deleteClicked(_ sender: Any) {
-        tableView.isEditing.toggle()
+        menuList.isEditing.toggle()
+        
+        if(menuList.isEditing){
+            self.deleteButton.tintColor = UIColor.white
+        } else{
+            self.deleteButton.tintColor = UIColor.black
+        }
     }
     func reloadData(){
-        tableView.reloadData()
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as? QuoteCellItemTableViewCell else {  return UITableViewCell() }
-        let item = items[indexPath.row]
-        cell.clientName.text = item.clientName
-        cell.date.text = item.date
-        cell.itemsCount.text = "Items: \(String(item.items.count))"
-        let sum: Double = item.items.sum(ofProperty: "total")
-        cell.totalValue.text = String(sum.rounded(toPlaces: 2))
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let detailViewController = parent?.splitViewController?.children[1].children[0] as? QuoteViewController else { return }
-        let item = items[indexPath.row]
-        detailViewController.loadQuote(existing: item)
-    }
-    
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            try! realm.write {
-                DataRepository.shared.remove(quote: items[indexPath.row])
-                reloadData()
-            }
-        }
+        menuList.reloadData()
     }
 }
 

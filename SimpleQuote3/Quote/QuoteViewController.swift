@@ -11,6 +11,7 @@ import RealmSwift
 
 class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler {
     
+    @IBOutlet weak var reviewButton: UIBarButtonItem!
     @IBOutlet weak var content: UIView!
     @IBOutlet weak var header: Header!
     @IBOutlet weak var inputItemView: ItemView!
@@ -84,6 +85,9 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
         itemsTableView.reloadData()
         
+        self.editButton.isEnabled = !vm.quote.items.isEmpty
+        self.reviewButton.isEnabled = !vm.quote.items.isEmpty
+        
         toggleFooter()
     }
     
@@ -147,6 +151,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
             .setMessage(message: "Are you sure you want to delete \(item.title)?")
             .setConfirmationHandler { (UIAlertAction) in
                 self.itemsTableView.items.remove(at: indexPath.section)
+                self.editButtonClicked(self)
                 if (self.itemsTableView.items.count == 0) {
                     self.footer.isHidden = true
                     self.footerStackView.isHidden = true
@@ -171,12 +176,20 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     private func addLineItem(item: LineItemModel){
         self.itemsTableView.items.append(item)
+        self.reviewButton.isEnabled = true
+        self.editButton.isEnabled = true
         toggleFooter()
     }
     
     @IBAction func editButtonClicked(_ sender: Any) {
         self.itemsTableView.isEditing.toggle()
         self.itemsTableView.reloadData()
+        
+        if(self.itemsTableView.isEditing){
+            self.editButton.tintColor = UIColor.red
+        } else {
+            self.editButton.tintColor = UIColor.black
+        }
     }
     
     override func viewDidLayoutSubviews() {

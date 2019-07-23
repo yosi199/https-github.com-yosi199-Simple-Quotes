@@ -244,12 +244,12 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Quote" id="mOI-FS-AaM">
                         <rightBarButtonItems>
-                            <barButtonItem title="Review" id="f0b-29-ugq">
+                            <barButtonItem enabled="NO" title="Review" id="f0b-29-ugq">
                                 <connections>
                                     <action selector="screenshow:" destination="JEX-9P-axG" id="dKe-mJ-hdc"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="edit" id="b2g-Dn-QN8">
+                            <barButtonItem enabled="NO" systemItem="edit" id="b2g-Dn-QN8">
                                 <connections>
                                     <action selector="editButtonClicked:" destination="JEX-9P-axG" id="fR7-JI-0w8"/>
                                 </connections>
@@ -260,7 +260,7 @@
                         <outlet property="addButton" destination="HVi-89-zBM" id="vW6-zJ-RcC"/>
                         <outlet property="content" destination="d11-nw-JJu" id="WPH-Jq-dwt"/>
                         <outlet property="currencySymbolText" destination="kLp-sS-OZa" id="teC-4t-ntJ"/>
-                        <outlet property="editButton" destination="b2g-Dn-QN8" id="NCW-hI-AMF"/>
+                        <outlet property="editButton" destination="b2g-Dn-QN8" id="Tkp-Gw-fzZ"/>
                         <outlet property="footer" destination="LAH-SW-lSd" id="25Q-xV-X7y"/>
                         <outlet property="footerBottomConstraint" destination="lt9-dn-gfR" id="seD-lv-5cy"/>
                         <outlet property="footerStackView" destination="KLu-rk-ZzC" id="lyu-IX-W8u"/>
@@ -269,6 +269,7 @@
                         <outlet property="inputItemView" destination="75T-KB-fid" id="WRY-eV-o12"/>
                         <outlet property="itemsTableView" destination="YqS-dN-D1y" id="sz0-6Z-Vzp"/>
                         <outlet property="notes" destination="kof-N0-eEQ" id="Dt0-Dn-D8p"/>
+                        <outlet property="reviewButton" destination="f0b-29-ugq" id="pIS-nn-hrz"/>
                         <outlet property="scrollView" destination="fFT-5I-pgN" id="c2y-Ox-6b3"/>
                         <outlet property="taxPercentageText" destination="QXy-fs-4lJ" id="Orc-S0-Cxk"/>
                         <segue destination="8tY-lk-M1f" kind="show" identifier="pdf" id="bPH-Y6-J95"/>
@@ -323,7 +324,7 @@
         <scene sceneID="smW-Zh-WAh">
             <objects>
                 <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MenuViewController" customModule="SimpleQuote3" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r7i-6Z-zg0" customClass="ResizeableTableViewTableViewController" customModule="SimpleQuote3" customModuleProvider="target">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r7i-6Z-zg0" customClass="MenuList" customModule="SimpleQuote3" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -356,6 +357,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="deleteButton" destination="3ng-fq-0ZU" id="Z4d-oD-eNu"/>
+                        <outlet property="menuList" destination="r7i-6Z-zg0" id="sQk-5D-hHE"/>
                         <outlet property="tableView" destination="r7i-6Z-zg0" id="OYA-wW-1HU"/>
                     </connections>
                 </tableViewController>
