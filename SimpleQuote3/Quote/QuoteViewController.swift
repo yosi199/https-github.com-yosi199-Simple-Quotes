@@ -26,6 +26,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var notes: UITextView!
     @IBOutlet weak var currencySymbolText: UILabel!
     @IBOutlet weak var taxPercentageText: UILabel!
+    @IBOutlet weak var emptyState: UILabel!
     
     private var activeField: UITextField?
     private var imageToTransfer: UIImage? = nil
@@ -35,11 +36,13 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     private lazy var menu: MenuViewController = { return parent?.splitViewController?.children[0].children[0] as! MenuViewController }()
     
     override func viewDidLoad() {
-        setupItemsTable()
-        setupInteractions()
-        setupCallbacks()
-        setupNotifications()
-        updateViews()
+        if(vm.quote != nil ){
+            setupItemsTable()
+            setupInteractions()
+            setupCallbacks()
+            setupNotifications()
+            updateViews()
+        }
     }
     private func setupInteractions(){
         let chooseImageTap = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
@@ -256,8 +259,14 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         activeField = nil
     }
     
-    @IBAction func unwindFromPdf(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source
-        // Use data from the view controller which initiated the unwind segue
+    @IBAction func unwindFromPdf(_ unwindSegue: UIStoryboardSegue) {}
+    
+    func showContent(show: Bool) {
+        scrollView.isHidden = !show
+        scrollView.isUserInteractionEnabled = show
+        emptyState.isHidden = show
+        
+        if (show) { title = vm.getInvoiceID() }
+        else { title = ""}
     }
 }

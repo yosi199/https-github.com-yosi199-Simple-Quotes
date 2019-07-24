@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         firstLaunch = !UserDefaults.standard.bool(forKey: firstLaunchKey)
         if(firstLaunch){
             UserDefaults.standard.set(true, forKey: firstLaunchKey)
-            UserDefaults.standard.set(1, forKey: SETTINGS_INVOICE_ID_COUNTER)
         }
 
         // Override point for customization after application launch.

@@ -45,7 +45,6 @@ class MenuList : ResizeableTableViewTableViewController, UITableViewDelegate , U
             let item = items[indexPath.row]
             items.remove(at: indexPath.row)
             deleteQuoteCallback?(item, indexPath)
-            isEditing.toggle()
             reloadData()
         }
     }

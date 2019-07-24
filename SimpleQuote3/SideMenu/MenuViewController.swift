@@ -40,11 +40,23 @@ class MenuViewController: UIViewController {
         
         menuList.deleteQuoteCallback = { quote, index in
             self.vm.delete(quote: quote)
+            self.detailViewController.showContent(show: !self.vm.isEmpty())
+            
+            DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
+                if(self.vm.isEmpty()){
+                    self.menuList.isEditing.toggle()
+                    self.changeEditingColor()
+                }
+            })
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         maybeFirstTime()
+        
+        if(vm.isEmpty()){
+            addClicked(self)
+        }
     }
     
     private func maybeFirstTime(){
@@ -67,14 +79,18 @@ class MenuViewController: UIViewController {
         detailViewController.loadQuote(existing: quote)
         menuList.items = vm.getItems()
         reloadData()
+        self.detailViewController.showContent(show: !self.vm.isEmpty())
     }
     
     @IBAction func deleteClicked(_ sender: Any) {
         menuList.isEditing.toggle()
-        
-        if(menuList.isEditing){
+        changeEditingColor()
+    }
+    
+    private func changeEditingColor() {
+        if(self.menuList.isEditing) {
             self.deleteButton.tintColor = UIColor.red
-        } else{
+        } else {
             self.deleteButton.tintColor = UIColor.black
         }
     }

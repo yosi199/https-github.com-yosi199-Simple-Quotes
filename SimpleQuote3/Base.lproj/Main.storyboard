@@ -30,14 +30,22 @@
             </objects>
             <point key="canvasLocation" x="-38" y="-630"/>
         </scene>
-        <!--Detail-->
+        <!--Quote-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="QuoteViewController" customModule="SimpleQuote3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Quote" id="JEX-9P-axG" customClass="QuoteViewController" customModule="SimpleQuote3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYE-GF-d0A">
+                                <rect key="frame" x="193" y="565.5" width="448.5" height="63.5"/>
+                                <string key="text">There are no quotes available to display, 
+Create a new one to start editing.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFT-5I-pgN">
                                 <rect key="frame" x="0.0" y="74" width="834" height="1100"/>
                                 <subviews>
@@ -237,7 +245,9 @@
                             <constraint firstItem="fFT-5I-pgN" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" id="Bd7-Jc-oJl"/>
                             <constraint firstItem="fFT-5I-pgN" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="S7V-iE-jes"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="fFT-5I-pgN" secondAttribute="trailing" id="YE3-6z-SmO"/>
+                            <constraint firstItem="CYE-GF-d0A" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="bot-Lq-Zte"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="fFT-5I-pgN" secondAttribute="bottom" id="cOd-xl-g1F"/>
+                            <constraint firstItem="CYE-GF-d0A" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="hNT-Qq-DyH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
@@ -261,6 +271,7 @@
                         <outlet property="content" destination="d11-nw-JJu" id="WPH-Jq-dwt"/>
                         <outlet property="currencySymbolText" destination="kLp-sS-OZa" id="teC-4t-ntJ"/>
                         <outlet property="editButton" destination="b2g-Dn-QN8" id="Tkp-Gw-fzZ"/>
+                        <outlet property="emptyState" destination="CYE-GF-d0A" id="cpM-9E-Pvo"/>
                         <outlet property="footer" destination="LAH-SW-lSd" id="25Q-xV-X7y"/>
                         <outlet property="footerBottomConstraint" destination="lt9-dn-gfR" id="seD-lv-5cy"/>
                         <outlet property="footerStackView" destination="KLu-rk-ZzC" id="lyu-IX-W8u"/>
@@ -401,6 +412,7 @@
                         <rect key="frame" x="0.0" y="24" width="834" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="GKi-kA-LjT"/>

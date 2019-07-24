@@ -14,7 +14,7 @@ class Quote : Object {
     
     let items = List<LineItemModel>()
     
-    @objc dynamic  var invoiceId: String = "CMX1"
+    @objc dynamic  var invoiceId: String = "0"
     @objc dynamic  var companyName: String = "Company Name"
     @objc dynamic  var clientName: String = "Client Name"
     @objc dynamic  var date: String = Date().getCurrentDate()
