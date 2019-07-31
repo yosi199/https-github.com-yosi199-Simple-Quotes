@@ -19,9 +19,10 @@ class ItemView: UIView {
     @IBOutlet weak var totalValue: UITextField!
     @IBOutlet weak var taxValue: UITextField!
     
+    private var activeField: UITextField?
     private let userRepo = UserRepository.shared
     private var item = LineItemModel()
-
+    
     var showButton: ((_ model: Bool)-> Void)?
     
     override init(frame: CGRect) {
@@ -54,7 +55,7 @@ class ItemView: UIView {
         updatePreviews()
         
         addTextListeners()
-    }
+  }
     
     func getItem() -> LineItemModel {
         return item
@@ -82,17 +83,18 @@ class ItemView: UIView {
         if (item.total>0) {
             self.showButton?(true)
         }
-                
+        
         addTextListeners()
     }
     
     private func addTextListeners(){
+        
         quantity.addTarget(self, action: #selector(self.onQtyChanged), for: .editingChanged)
         quantity.addTarget(self, action: #selector(self.updateViews), for: .editingDidEnd)
-
+        
         itemValue.addTarget(self, action: #selector(self.onValueChanged), for: .editingChanged)
         itemValue.addTarget(self, action: #selector(self.updateViews), for: .editingDidEnd)
-
+        
         taxValue.addTarget(self, action: #selector(self.onTaxChanged), for: .editingChanged)
         taxValue.addTarget(self, action: #selector(self.updateViews), for: .editingDidEnd)
         
@@ -103,10 +105,10 @@ class ItemView: UIView {
     private func removeTextListeners(){
         quantity.removeTarget(self, action: #selector(self.onQtyChanged), for: .editingChanged)
         quantity.removeTarget(self, action: #selector(self.updateViews), for: .editingDidEnd)
-
+        
         itemValue.removeTarget(self, action: #selector(self.onValueChanged), for: .editingChanged)
         itemValue.removeTarget(self, action: #selector(self.updateViews), for: .editingDidEnd)
-
+        
         taxValue.removeTarget(self, action: #selector(self.onTaxChanged), for: .editingChanged)
         taxValue.removeTarget(self, action: #selector(self.updateViews), for: .editingDidEnd)
         
@@ -165,3 +167,5 @@ extension UIView {
         NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: container, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
     }
 }
+
+

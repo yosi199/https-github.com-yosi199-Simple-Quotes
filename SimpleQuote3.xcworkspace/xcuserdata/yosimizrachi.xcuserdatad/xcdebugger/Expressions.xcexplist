@@ -3,6 +3,50 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "DetailViewController.viewWillLayoutSubviews():DetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.content.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ItemCellTableViewCell.willTransition(to:):ItemCellTableViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "state.rawValue == UITableViewCell.StateMask">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "QuoteViewController.keyboardWillShow(notification:):QuoteViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "QuoteViewController.textViewDidEndEditing(_:):QuoteViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scrollView.contentInset">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.scrollIndicatorInsets">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "SettingsViewController.imagePickerController(_:didFinishPickingMediaWithInfo:):SettingsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "pickedImage.absoluteString">
+            </PersistentString>
+            <PersistentString
+               value = "pickedImage.pngData()?.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "QuoteViewController.keyboardWillHide(notification:):QuoteViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "QuoteViewModel.getInvoiceID():QuoteViewModel.swift">
          <PersistentStrings>
             <PersistentString
@@ -19,21 +63,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "SettingsViewController.imagePickerController(_:didFinishPickingMediaWithInfo:):SettingsViewController.swift">
+         contextName = "QuoteViewModel.init():QuoteViewModel.swift">
          <PersistentStrings>
             <PersistentString
-               value = "pickedImage.pngData()?.count">
-            </PersistentString>
-            <PersistentString
-               value = "pickedImage.absoluteString">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "DetailViewController.viewWillLayoutSubviews():DetailViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.content.frame.size.height">
+               value = "quote.invoiceId">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -42,14 +75,6 @@
          <PersistentStrings>
             <PersistentString
                value = "inputItemView.getItem()">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "QuoteViewModel.init():QuoteViewModel.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "quote.invoiceId">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -65,6 +90,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "QuoteViewController.keyboardWasShown(notification:):QuoteViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scrollView.contentInset">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.scrollIndicatorInsets">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "DetailViewController.viewDidLayoutSubviews():DetailViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -76,18 +112,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ItemCellTableViewCell.willTransition(to:):ItemCellTableViewCell.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "state.rawValue == UITableViewCell.StateMask">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "PDFController.viewDidLoad():PDFController.swift">
          <PersistentStrings>
             <PersistentString
                value = "document">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "QuoteViewController.keyboardWillBeHidden(notification:):QuoteViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scrollView.contentInset">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.scrollIndicatorInsets">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

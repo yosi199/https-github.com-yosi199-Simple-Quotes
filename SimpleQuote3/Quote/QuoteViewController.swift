@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler {
+class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler, UITextViewDelegate {
     
     @IBOutlet weak var reviewButton: UIBarButtonItem!
     @IBOutlet weak var content: UIView!
@@ -28,7 +28,6 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var taxPercentageText: UILabel!
     @IBOutlet weak var emptyState: UILabel!
     
-    private var activeField: UITextField?
     private var imageToTransfer: UIImage? = nil
     private let realm = try! Realm()
     private let vm = QuoteViewModel()
@@ -49,11 +48,11 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.header.logo.addGestureRecognizer(chooseImageTap)
         self.header.logo.isUserInteractionEnabled = true
         self.imagePicker.delegate = self
+        self.notes.delegate = self
     }
     
-    private func setupNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    private func setupNotifications(){
+        registerForKeyboardNotifications()
     }
     
     private func setupCallbacks() {
@@ -210,7 +209,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewDidLayoutSubviews() {
         let newHeight = CGFloat(110 * self.itemsTableView.items.count)
-        debugPrint(newHeight)
+        
         
         if(footerBottomConstraint.constant != 15){
             footerBottomConstraint.constant = 15
@@ -226,42 +225,6 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         footer.update(items: self.itemsTableView.items)
     }
     
-    @objc func keyboardWillShow(notification: NSNotification){
-        //Need to calculate keyboard exact size due to Apple suggestions
-        var info = notification.userInfo!
-        let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize!.height, right: 0.0)
-        
-        self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
-        
-        var aRect : CGRect = self.view.frame
-        aRect.size.height -= keyboardSize!.height
-        if let activeField = self.activeField {
-            if (!aRect.contains(activeField.frame.origin)){
-                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification){
-        //Once keyboard disappears, restore original positions
-        var info = notification.userInfo!
-        let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: -keyboardSize!.height, right: 0.0)
-        self.scrollView.contentInset = contentInsets
-        self.scrollView.scrollIndicatorInsets = contentInsets
-        self.view.endEditing(true)
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField){
-        activeField = textField
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField){
-        activeField = nil
-    }
-    
     @IBAction func unwindFromPdf(_ unwindSegue: UIStoryboardSegue) {}
     
     func showContent(show: Bool) {
@@ -271,5 +234,26 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         if (show) { title = vm.getInvoiceID() }
         else { title = ""}
+    }
+    
+    func registerForKeyboardNotifications(){
+        //Adding notifies on keyboard appearing
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= (keyboardSize.height / 1.75)
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
 }

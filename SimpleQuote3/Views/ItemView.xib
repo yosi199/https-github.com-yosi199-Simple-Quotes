@@ -81,24 +81,36 @@
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                             <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="3sn-zB-rP6"/>
+                            </connections>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="DPz-mj-vUR" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
                             <rect key="frame" x="102.5" y="0.0" width="92.5" height="61.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="l59-gR-OMl"/>
+                            </connections>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="PUo-Vv-6Yo" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
                             <rect key="frame" x="205" y="0.0" width="92.5" height="61.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="puJ-MW-Nt4"/>
+                            </connections>
                         </textField>
                         <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="h5H-Yu-H97" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
                             <rect key="frame" x="307.5" y="0.0" width="92.5" height="61.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="tWm-f1-2GU"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <constraints>
