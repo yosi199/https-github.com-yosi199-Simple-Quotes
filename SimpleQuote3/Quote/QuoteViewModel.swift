@@ -22,8 +22,7 @@ class QuoteViewModel: FileHandler {
     init() {
         notificationCenter
             .addObserver(self, selector: #selector(onSettingsChanged), name: Notification.Name(SettingsViewController.EVENT_SETTINGS_CHANGED), object: nil)
-        
-//        quote.invoiceId = userDefaults.string(forKey: SETTINGS_INVOICE_ID_COUNTER).orOther(other: "0")
+        userDefaults.setValue(4.0, forKey: SETTINGS_DEFAULT_TAX)
     }
     
     @objc func onSettingsChanged(){

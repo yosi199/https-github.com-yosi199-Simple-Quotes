@@ -59,6 +59,18 @@ Create a new one to start editing.</string>
                                                     <constraint firstAttribute="height" constant="150" id="cwL-Or-fZe"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency: $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLp-sS-OZa">
+                                                <rect key="frame" x="100" y="206" width="71.5" height="16"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax Percentage: 4%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXy-fs-4lJ">
+                                                <rect key="frame" x="179.5" y="206" width="120" height="16"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lT-KC-O9I" userLabel="header section">
                                                 <rect key="frame" x="100" y="230" width="634" height="40"/>
                                                 <subviews>
@@ -131,13 +143,6 @@ Create a new one to start editing.</string>
                                                     <action selector="addButtonAction:" destination="JEX-9P-axG" eventType="touchUpInside" id="B6C-vb-Elb"/>
                                                 </connections>
                                             </button>
-                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAH-SW-lSd" customClass="Footer" customModule="SimpleQuote3" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="511" width="634" height="50"/>
-                                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="opF-Mm-5kY"/>
-                                                </constraints>
-                                            </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="634" placeholderIntrinsicHeight="80" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YqS-dN-D1y" customClass="LineItemsList" customModule="SimpleQuote3" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="485" width="634" height="1"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -147,6 +152,13 @@ Create a new one to start editing.</string>
                                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <sections/>
                                             </tableView>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAH-SW-lSd" customClass="Footer" customModule="SimpleQuote3" customModuleProvider="target">
+                                                <rect key="frame" x="100" y="511" width="634" height="50"/>
+                                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="opF-Mm-5kY"/>
+                                                </constraints>
+                                            </view>
                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KLu-rk-ZzC">
                                                 <rect key="frame" x="100" y="616" width="634" height="175"/>
                                                 <subviews>
@@ -186,18 +198,6 @@ Create a new one to start editing.</string>
                                                     <constraint firstAttribute="height" constant="175" id="IO0-a9-6G1"/>
                                                 </constraints>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency: $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLp-sS-OZa">
-                                                <rect key="frame" x="100" y="206" width="71.5" height="16"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax Percentage: 4%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXy-fs-4lJ">
-                                                <rect key="frame" x="179.5" y="206" width="120" height="16"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -276,7 +276,7 @@ Create a new one to start editing.</string>
                         <outlet property="footerBottomConstraint" destination="lt9-dn-gfR" id="seD-lv-5cy"/>
                         <outlet property="footerStackView" destination="KLu-rk-ZzC" id="lyu-IX-W8u"/>
                         <outlet property="header" destination="ZCm-rE-d6L" id="zqL-ac-NiR"/>
-                        <outlet property="heightConstraint" destination="UbR-gw-eHN" id="ZCT-9i-Wn0"/>
+                        <outlet property="heightConstraint" destination="UbR-gw-eHN" id="t4q-1o-Ntd"/>
                         <outlet property="inputItemView" destination="75T-KB-fid" id="WRY-eV-o12"/>
                         <outlet property="itemsTableView" destination="YqS-dN-D1y" id="sz0-6Z-Vzp"/>
                         <outlet property="notes" destination="kof-N0-eEQ" id="Dt0-Dn-D8p"/>

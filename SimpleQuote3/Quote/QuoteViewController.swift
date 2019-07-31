@@ -105,13 +105,6 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         toggleFooter()
     }
     
-    private func toggleFooter(){
-        if(itemsTableView.items.count>0){
-            footer.isHidden = false
-            footerStackView.isHidden = false
-        }
-    }
-    
     @objc func chooseImage(){
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
@@ -127,6 +120,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     func loadQuote(existing: Quote){
+        self.itemsTableView.clearItems()
         self.vm.quote =  existing
         self.viewDidLoad()
     }
@@ -192,7 +186,15 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.itemsTableView.items.append(item)
         self.reviewButton.isEnabled = true
         self.editButton.isEnabled = true
+        inputItemView.reset()
         toggleFooter()
+    }
+    
+    private func toggleFooter(){
+        if(itemsTableView.items.count>0) {
+            footer.isHidden = false
+            footerStackView.isHidden = false
+        }
     }
     
     @IBAction func editButtonClicked(_ sender: Any) {
@@ -207,7 +209,8 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     override func viewDidLayoutSubviews() {
-        let newHeight = CGFloat(110 *    self.itemsTableView.items.count)
+        let newHeight = CGFloat(110 * self.itemsTableView.items.count)
+        debugPrint(newHeight)
         
         if(footerBottomConstraint.constant != 15){
             footerBottomConstraint.constant = 15
