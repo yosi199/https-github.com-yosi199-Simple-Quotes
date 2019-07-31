@@ -100,6 +100,8 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.addButton.isHidden = vm.quote.items.isEmpty
         self.footer.isHidden = vm.quote.items.isEmpty
         self.footerStackView.isHidden = vm.quote.items.isEmpty
+        self.currencySymbolText.text = "Currency: \(vm.getCurrencySymbol())"
+        self.taxPercentageText.text = "Tax Percentage: \(vm.getTaxPercentage())%"
         
         toggleFooter()
     }
