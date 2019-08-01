@@ -34,7 +34,7 @@ class QuoteViewModel: FileHandler {
     }
     
     func getInvoiceID() -> String {
-        return DataRepository.Defaults.shared.quoteIdString
+        return DataRepository.Defaults.shared.quoteIDPrefix + quote.invoiceId
     }
     
     func getCurrencySymbol() -> String {

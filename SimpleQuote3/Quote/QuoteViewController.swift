@@ -43,6 +43,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
             updateViews()
         }
     }
+    
     private func setupInteractions(){
         let chooseImageTap = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
         self.header.logo.addGestureRecognizer(chooseImageTap)
@@ -257,5 +258,10 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
+    }
+    
+    
+    func getCurrentQuote() -> Quote? {
+        return self.vm.quote
     }
 }

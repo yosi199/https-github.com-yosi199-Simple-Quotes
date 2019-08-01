@@ -24,6 +24,11 @@ class MenuViewController: UIViewController {
         
         setupMenuList()
         setupCallbacks()
+        
+        menuList.layer.shadowColor = UIColor.black.cgColor
+        menuList.layer.shadowOpacity = 1
+        menuList.layer.shadowOffset = .zero
+        menuList.layer.shadowRadius = 10
     }
     
     private func setupMenuList(){
@@ -57,14 +62,25 @@ class MenuViewController: UIViewController {
         if(vm.isEmpty()){
             addClicked(self)
         }
+        
+        
+        // Reselects a row.
+        if let quote = detailViewController.getCurrentQuote(){
+            // quotes id's are starting from 1 while our list starts from 0 so we must decrement before
+            // use otherwise we will select wrong line in our list.
+            let quoteIndex = (Int(quote.invoiceId) ?? 1) - 1
+            let index = IndexPath(row: quoteIndex, section: 0)
+            self.menuList.selectRow(at: index, animated: true, scrollPosition: UITableView.ScrollPosition.none)
+        }
     }
     
     private func maybeFirstTime(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            let isFirstLaunch = (UIApplication.shared.delegate as! AppDelegate).firstLaunch
-            if(isFirstLaunch){
-                self.settings(self)
-            }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let isFirstLaunch = appDelegate.firstTime
+        if(isFirstLaunch){
+            appDelegate.firstTime = false
+            self.settings(self)
+            
         }
     }
     

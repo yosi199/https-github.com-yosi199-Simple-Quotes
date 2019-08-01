@@ -12,13 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
     
     private let firstLaunchKey = "firstLaunched"
+    private var firstLaunch = false
+    var firstTime = false
     var window: UIWindow?
-    var firstLaunch = false
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         firstLaunch = !UserDefaults.standard.bool(forKey: firstLaunchKey)
         if(firstLaunch){
             UserDefaults.standard.set(true, forKey: firstLaunchKey)
+            firstTime = true
         }
 
         // Override point for customization after application launch.

@@ -135,4 +135,5 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+
 }

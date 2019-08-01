@@ -27,12 +27,12 @@ class MenuViewModel {
     }
     
     func addNew() -> Quote {
-        let counter = userDefaults.integer(forKey: SETTINGS_INVOICE_ID_COUNTER)
-        userDefaults.set(counter + 1 , forKey: SETTINGS_INVOICE_ID_COUNTER)
+        let counter = userDefaults.integer(forKey: SETTINGS_INVOICE_ID_COUNTER) + 1
+        userDefaults.set(counter , forKey: SETTINGS_INVOICE_ID_COUNTER)
         var emptyQuote: Quote!
         try! realm.write {
             emptyQuote = Quote()
-            emptyQuote.invoiceId = defaults.quoteIdString
+            emptyQuote.invoiceId = String(counter)
         }
         DataRepository.shared.saveQuote(quote: emptyQuote)
         return emptyQuote

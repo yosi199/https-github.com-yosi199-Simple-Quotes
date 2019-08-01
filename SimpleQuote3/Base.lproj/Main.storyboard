@@ -254,7 +254,7 @@ Create a new one to start editing.</string>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Quote" id="mOI-FS-AaM">
                         <rightBarButtonItems>
-                            <barButtonItem enabled="NO" title="Review" id="f0b-29-ugq">
+                            <barButtonItem enabled="NO" title="Save &amp; Review" id="f0b-29-ugq">
                                 <connections>
                                     <action selector="screenshow:" destination="JEX-9P-axG" id="dKe-mJ-hdc"/>
                                 </connections>
@@ -366,7 +366,7 @@ Create a new one to start editing.</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r7i-6Z-zg0" customClass="MenuList" customModule="SimpleQuote3" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections/>
                         <connections>
                             <outlet property="dataSource" destination="7bK-jq-Zjz" id="Gho-Na-rnu"/>
@@ -434,7 +434,7 @@ Create a new one to start editing.</string>
                                 <rect key="frame" x="0.0" y="24" width="834" height="1150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7k-lt-xPn">
-                                        <rect key="frame" x="0.0" y="0.0" width="834" height="1136.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="834" height="736.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray-wide multiple" translatesAutoresizingMaskIntoConstraints="NO" id="fPz-MU-ymw">
                                                 <rect key="frame" x="317" y="131" width="200" height="80"/>
@@ -504,7 +504,7 @@ Create a new one to start editing.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All values can be changed later when filling the quote." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XW6-JJ-66W">
-                                                <rect key="frame" x="243.5" y="1069.5" width="347.5" height="17"/>
+                                                <rect key="frame" x="243.5" y="669.5" width="347.5" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -553,7 +553,7 @@ Create a new one to start editing.</string>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signature:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se2-2c-ypn">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signature:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se2-2c-ypn">
                                                 <rect key="frame" x="40" y="599" width="82.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="textColor"/>
@@ -585,7 +585,7 @@ Create a new one to start editing.</string>
                                             <constraint firstItem="og7-Oe-S7L" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="JaK-If-SEN"/>
                                             <constraint firstItem="lPn-JH-HhH" firstAttribute="top" secondItem="fPz-MU-ymw" secondAttribute="bottom" constant="75" id="MhA-m5-uto"/>
                                             <constraint firstItem="og7-Oe-S7L" firstAttribute="top" secondItem="SB8-g9-o3H" secondAttribute="bottom" constant="25" id="N1R-s1-Q0m"/>
-                                            <constraint firstItem="XW6-JJ-66W" firstAttribute="top" secondItem="se2-2c-ypn" secondAttribute="bottom" constant="450" id="NaS-JI-g5J"/>
+                                            <constraint firstItem="XW6-JJ-66W" firstAttribute="top" secondItem="se2-2c-ypn" secondAttribute="bottom" constant="50" id="NaS-JI-g5J"/>
                                             <constraint firstItem="SB8-g9-o3H" firstAttribute="top" secondItem="lPn-JH-HhH" secondAttribute="bottom" constant="5" id="PMp-Cp-uec"/>
                                             <constraint firstAttribute="bottom" secondItem="XW6-JJ-66W" secondAttribute="bottom" constant="50" id="Qbu-4f-DI4"/>
                                             <constraint firstAttribute="trailing" secondItem="XoD-Sd-yQq" secondAttribute="trailing" constant="40" id="RW0-kp-g8U"/>
