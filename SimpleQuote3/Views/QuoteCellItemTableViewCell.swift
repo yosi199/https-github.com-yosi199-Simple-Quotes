@@ -28,4 +28,17 @@ class QuoteCellItemTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func loadItem(item: Quote){
+        self.clientName.text = item.clientName
+        self.date.text = item.date
+        self.itemsCount.text = "Items: \(String(item.items.count))"
+        let sum: Double = item.items.sum(ofProperty: "total")
+        self.totalValue.text = String(sum.rounded(toPlaces: 2).toCurrency(locale: getLocale()))
+    }
+    
+    private func getLocale() -> Locale {
+        let identifier = DataRepository.Defaults.shared.localeIdentifier
+        return Locale(identifier: identifier)
+    }
+    
 }

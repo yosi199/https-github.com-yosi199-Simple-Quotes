@@ -38,7 +38,8 @@ class Footer: UIView {
             total += item.total
         }
         self.itemsCount.text = "\(items.count) Items"
-        self.total.text = "Total: \(String(total.rounded(toPlaces: 2)))"
+        let locale = Locale(identifier: DataRepository.Defaults.shared.localeIdentifier)
+        self.total.text = "Total: \(String(total.rounded(toPlaces: 2).toCurrency(locale: locale)))"
     }
 
 }

@@ -41,4 +41,9 @@ class SettingsViewModel  {
         get { return DataRepository.Defaults.shared.companyName }
         set { DataRepository.Defaults.shared.companyName = newValue}
     }
+    
+    var localeIdentifier: String {
+        get { return DataRepository.Defaults.shared.localeIdentifier }
+        set { DataRepository.Defaults.shared.localeIdentifier = newValue}
+    }
 }

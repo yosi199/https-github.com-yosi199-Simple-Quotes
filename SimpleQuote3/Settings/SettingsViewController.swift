@@ -13,30 +13,56 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     
     static let EVENT_SETTINGS_CHANGED = "settingsChanged"
     
-    @IBOutlet weak var currencySymbol: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var currencySymbol: UILabel!
     @IBOutlet weak var defaultTax: UITextField!
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var idPrefixInput: UITextField!
     @IBOutlet weak var companyName: UITextField!
+    @IBOutlet weak var currencyTable: CurrencyList!
     
+    @IBOutlet weak var currencyTableWidthConstraint: NSLayoutConstraint!
     private let viewModel = SettingsViewModel()
+    private var selectedLocale: Locale?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let dropInteraction = UIDropInteraction(delegate: self)
-        logo.addInteraction(dropInteraction)
-        
-        let chooseImageTap = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
-        logo.addGestureRecognizer(chooseImageTap)
-        logo.isUserInteractionEnabled = true
+        self.currencyTable.register(UINib(nibName: "CurrencyCell".self, bundle: nil), forCellReuseIdentifier: "currencyCell")
+        self.currencyTable.delegate = currencyTable
+        self.currencyTable.dataSource = currencyTable
         
         self.defaultTax.delegate = DoubleInputValidator.shared
         // Do any additional setup after loading the view.
         
-                if let image = viewModel.image {
-                    self.logo.image = image
-                }
+        setupInteractions()
+        setupCallbacks()
+        
+        if let image = viewModel.image {
+            self.logo.image = image
+        }
+    }
+    
+    private func setupInteractions(){
+        let dropInteraction = UIDropInteraction(delegate: self)
+        self.logo.addInteraction(dropInteraction)
+        
+        let chooseImageTap = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
+        self.logo.addGestureRecognizer(chooseImageTap)
+        self.logo.isUserInteractionEnabled = true
+        
+        let chooseCurrencyTap = UITapGestureRecognizer(target: self, action: #selector(showCurrencyAlert))
+        self.currencySymbol.addGestureRecognizer(chooseCurrencyTap)
+        self.currencySymbol.isUserInteractionEnabled = true
+    }
+    
+    private func setupCallbacks(){
+        currencyTable.currencySelected = { locale, currency in
+            self.animateCurrencyTableWidth(constant: 0)
+            self.currencySymbol.text = currency
+            self.selectedLocale = locale
+            self.scrollView.isScrollEnabled = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,11 +83,11 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                self.logo.contentMode = .scaleAspectFit
-                self.logo.image = pickedImage
-            }
-            picker.dismiss(animated: true, completion: nil)
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.logo.contentMode = .scaleAspectFit
+            self.logo.image = pickedImage
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
@@ -127,6 +153,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
         viewModel.tax = defaultTax.text ?? "0"
         viewModel.quoteIDPrefix = idPrefixInput.text ?? "CMX"
         viewModel.companyName = companyName.text.orEmpty()
+        viewModel.localeIdentifier = selectedLocale?.identifier ?? Locale.current.identifier
         saveImageFile(data: logo.image?.pngData(), withName: COMPANY_LOGO)
         NotificationCenter.default.post(name: Notification.Name(SettingsViewController.EVENT_SETTINGS_CHANGED), object: nil)
         dismiss(animated: true, completion: nil)
@@ -135,5 +162,15 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
+    
+    @objc func showCurrencyAlert(){
+        animateCurrencyTableWidth(constant: 250)
+        self.scrollView.isScrollEnabled = false
+    }
+    
+    private func animateCurrencyTableWidth(constant: CGFloat){
+        currencyTableWidthConstraint.constant = constant
+        UIView.animate(withDuration: 0.15, animations: {self.view.layoutIfNeeded()}, completion: nil)
+    }
+    
 }

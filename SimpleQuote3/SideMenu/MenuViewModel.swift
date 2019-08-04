@@ -10,13 +10,24 @@ import Foundation
 import RealmSwift
 
 class MenuViewModel {
-    
+    private let notificationCenter = NotificationCenter.default
     private let userDefaults = UserDefaults.standard
     private let defaults = DataRepository.Defaults.shared
     private let realm = try! Realm()
     private lazy var items:  Results<Quote> = {
         return realm.objects(Quote.self)
     }()
+    
+    var settingsChanged: (()-> Void)?
+    
+    init() {
+        notificationCenter
+            .addObserver(self, selector: #selector(onSettingsChanged), name: Notification.Name(SettingsViewController.EVENT_SETTINGS_CHANGED), object: nil)
+    }
+    
+    @objc func onSettingsChanged(){
+        settingsChanged?()
+    }
     
     func getItems() -> [Quote] {
         var itemsArray = [Quote]()

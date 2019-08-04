@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             UserDefaults.standard.set(true, forKey: firstLaunchKey)
             firstTime = true
         }
+        
+        //warm up
+        let _ = CurrencyHelper.shared.getLocale(forCurrencyCode: "")
 
         // Override point for customization after application launch.
         let splitViewController = window!.rootViewController as! UISplitViewController
@@ -57,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-        guard let topAsDetailController = secondaryAsNavController.topViewController as? QuoteViewController else { return false }
+        guard (secondaryAsNavController.topViewController as? QuoteViewController) != nil else { return false }
         return false
     }
     

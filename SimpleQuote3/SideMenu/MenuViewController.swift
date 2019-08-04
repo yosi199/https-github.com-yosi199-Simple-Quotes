@@ -24,11 +24,6 @@ class MenuViewController: UIViewController {
         
         setupMenuList()
         setupCallbacks()
-        
-        menuList.layer.shadowColor = UIColor.black.cgColor
-        menuList.layer.shadowOpacity = 1
-        menuList.layer.shadowOffset = .zero
-        menuList.layer.shadowRadius = 10
     }
     
     private func setupMenuList(){
@@ -44,6 +39,7 @@ class MenuViewController: UIViewController {
         }
         
         menuList.deleteQuoteCallback = { quote, index in
+            self.selectFirst()
             self.vm.delete(quote: quote)
             self.detailViewController.showContent(show: !self.vm.isEmpty())
             
@@ -54,15 +50,18 @@ class MenuViewController: UIViewController {
                 }
             })
         }
+        
+        self.vm.settingsChanged = {
+            self.reloadData()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         maybeFirstTime()
         
         if(vm.isEmpty()){
-            addClicked(self)
+            detailViewController.showContent(show: false)
         }
-        
         
         // Reselects a row.
         if let quote = detailViewController.getCurrentQuote(){
@@ -71,6 +70,16 @@ class MenuViewController: UIViewController {
             let quoteIndex = (Int(quote.invoiceId) ?? 1) - 1
             let index = IndexPath(row: quoteIndex, section: 0)
             self.menuList.selectRow(at: index, animated: true, scrollPosition: UITableView.ScrollPosition.none)
+        } else {
+            selectFirst()
+        }
+    }
+    
+    private func selectFirst(){
+        if(!self.vm.getItems().isEmpty) {
+            let index = IndexPath(row: 0, section: 0)
+            self.menuList.selectRow(at: index, animated: true, scrollPosition: UITableView.ScrollPosition.none)
+            self.detailViewController.loadQuote(existing: self.vm.getItems().first!)
         }
     }
     
@@ -80,7 +89,6 @@ class MenuViewController: UIViewController {
         if(isFirstLaunch){
             appDelegate.firstTime = false
             self.settings(self)
-            
         }
     }
     

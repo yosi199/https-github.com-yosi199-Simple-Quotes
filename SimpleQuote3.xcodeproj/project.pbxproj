@@ -16,6 +16,11 @@
 		C94781573A1EAC84D017FF70 /* Pods_SimpleQuote3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF5BD6957C90A5DA526E961 /* Pods_SimpleQuote3.framework */; };
 		D3209AAF22DFAF9100AA9C23 /* QuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3209AAE22DFAF9100AA9C23 /* QuoteViewModel.swift */; };
 		D3209AB222DFB38E00AA9C23 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3209AB122DFB38E00AA9C23 /* SettingsViewModel.swift */; };
+		D340142022F6A6C100328CBE /* CurrencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340141F22F6A6C100328CBE /* CurrencyList.swift */; };
+		D340142322F6A78600328CBE /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340142122F6A78600328CBE /* CurrencyCell.swift */; };
+		D340142422F6A78600328CBE /* CurrencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D340142222F6A78600328CBE /* CurrencyCell.xib */; };
+		D340142622F6B74300328CBE /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340142522F6B74300328CBE /* Countries.swift */; };
+		D340142822F6BF5300328CBE /* CurrencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340142722F6BF5300328CBE /* CurrencyHelper.swift */; };
 		D34E57ED22BBA48200121217 /* PDFWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34E57EC22BBA48200121217 /* PDFWriter.swift */; };
 		D34E57EF22BBA5F000121217 /* PDFController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34E57EE22BBA5F000121217 /* PDFController.swift */; };
 		D393E8CB22E707D300E8F034 /* AlertDeletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393E8CA22E707D300E8F034 /* AlertDeletion.swift */; };
@@ -60,6 +65,12 @@
 		C3487A8992F618903FC773E6 /* Pods-SimpleQuote3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleQuote3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleQuote3/Pods-SimpleQuote3.debug.xcconfig"; sourceTree = "<group>"; };
 		D3209AAE22DFAF9100AA9C23 /* QuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewModel.swift; sourceTree = "<group>"; };
 		D3209AB122DFB38E00AA9C23 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		D340141F22F6A6C100328CBE /* CurrencyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyList.swift; sourceTree = "<group>"; };
+		D340142122F6A78600328CBE /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		D340142222F6A78600328CBE /* CurrencyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCell.xib; sourceTree = "<group>"; };
+		D340142522F6B74300328CBE /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		D340142722F6BF5300328CBE /* CurrencyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHelper.swift; sourceTree = "<group>"; };
+		D340142922F6C56D00328CBE /* FlagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FlagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34E57EC22BBA48200121217 /* PDFWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFWriter.swift; sourceTree = "<group>"; };
 		D34E57EE22BBA5F000121217 /* PDFController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFController.swift; sourceTree = "<group>"; };
 		D393E8CA22E707D300E8F034 /* AlertDeletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDeletion.swift; sourceTree = "<group>"; };
@@ -113,6 +124,7 @@
 		0B8BB52F0BBD3544D9A7F9FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D340142922F6C56D00328CBE /* FlagKit.framework */,
 				FAF5BD6957C90A5DA526E961 /* Pods_SimpleQuote3.framework */,
 			);
 			name = Frameworks;
@@ -152,6 +164,7 @@
 			children = (
 				4C68875922DB8F9D00B16462 /* SettingsViewController.swift */,
 				D3209AB122DFB38E00AA9C23 /* SettingsViewModel.swift */,
+				D340141F22F6A6C100328CBE /* CurrencyList.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -222,6 +235,8 @@
 				D3B3213522BA2CAB00AB362A /* ItemCellTableViewCell.xib */,
 				4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */,
 				4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */,
+				D340142122F6A78600328CBE /* CurrencyCell.swift */,
+				D340142222F6A78600328CBE /* CurrencyCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +267,7 @@
 				D3B3212322BA254500AB362A /* LineItemModel.swift */,
 				D3B3212422BA254500AB362A /* Quote.swift */,
 				D3B3212522BA254500AB362A /* User.swift */,
+				D340142522F6B74300328CBE /* Countries.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -269,6 +285,7 @@
 			children = (
 				D3EAA40622E47F50000DD4CE /* DoubleInputValidator.swift */,
 				D393E8CA22E707D300E8F034 /* AlertDeletion.swift */,
+				D340142722F6BF5300328CBE /* CurrencyHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -337,6 +354,7 @@
 				D3B3210422BA218000AB362A /* LaunchScreen.storyboard in Resources */,
 				D3B3210122BA218000AB362A /* Assets.xcassets in Resources */,
 				D3B3211A22BA226700AB362A /* Footer.xib in Resources */,
+				D340142422F6A78600328CBE /* CurrencyCell.xib in Resources */,
 				D3B320FF22BA217E00AB362A /* Main.storyboard in Resources */,
 				D3B3211B22BA226700AB362A /* Header.xib in Resources */,
 				D3B3211622BA226700AB362A /* ItemView.xib in Resources */,
@@ -410,8 +428,11 @@
 				D393E8DE22E7521000E8F034 /* MenuViewModel.swift in Sources */,
 				D3B3212822BA254500AB362A /* DoubleExtensions.swift in Sources */,
 				4C68875C22E343E400B16462 /* LineItemsList.swift in Sources */,
+				D340142322F6A78600328CBE /* CurrencyCell.swift in Sources */,
+				D340142022F6A6C100328CBE /* CurrencyList.swift in Sources */,
 				D3B3211422BA226700AB362A /* ItemView.swift in Sources */,
 				D3B3213322BA25E300AB362A /* ResizeableTableViewTableViewController.swift in Sources */,
+				D340142822F6BF5300328CBE /* CurrencyHelper.swift in Sources */,
 				D3B3212E22BA254500AB362A /* User.swift in Sources */,
 				D3B3211722BA226700AB362A /* NumberInputView.swift in Sources */,
 				D3B3212F22BA254500AB362A /* FileHandler.swift in Sources */,
@@ -423,6 +444,7 @@
 				D34E57ED22BBA48200121217 /* PDFWriter.swift in Sources */,
 				D3B3212D22BA254500AB362A /* Quote.swift in Sources */,
 				D3B3211522BA226700AB362A /* Footer.swift in Sources */,
+				D340142622F6B74300328CBE /* Countries.swift in Sources */,
 				D3209AB222DFB38E00AA9C23 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

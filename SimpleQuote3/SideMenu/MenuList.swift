@@ -23,11 +23,7 @@ class MenuList : ResizeableTableViewTableViewController, UITableViewDelegate , U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath) as? QuoteCellItemTableViewCell else {  return UITableViewCell() }
         let item = items[indexPath.row]
-        cell.clientName.text = item.clientName
-        cell.date.text = item.date
-        cell.itemsCount.text = "Items: \(String(item.items.count))"
-        let sum: Double = item.items.sum(ofProperty: "total")
-        cell.totalValue.text = String(sum.rounded(toPlaces: 2))
+        cell.loadItem(item: item)
         return cell
     }
     

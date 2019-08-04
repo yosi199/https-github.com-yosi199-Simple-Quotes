@@ -48,8 +48,13 @@ class DataRepository {
         private let userDefaults = UserDefaults.standard
         
         var currency: String  {
-            get { return userDefaults.string(forKey: SETTINGS_CURRENCY_SYMBOL) ?? "$" }
+            get { return userDefaults.string(forKey: SETTINGS_CURRENCY_SYMBOL) ?? Locale.current.currencySymbol ?? "$"  }
             set { userDefaults.set(newValue, forKey: SETTINGS_CURRENCY_SYMBOL) }
+        }
+        
+        var localeIdentifier: String {
+            get { return userDefaults.string(forKey: SETTINGS_LOCALE_IDENTIFIER) ?? Locale.current.identifier }
+            set { userDefaults.set(newValue, forKey: SETTINGS_LOCALE_IDENTIFIER) }
         }
         
         var tax: String {

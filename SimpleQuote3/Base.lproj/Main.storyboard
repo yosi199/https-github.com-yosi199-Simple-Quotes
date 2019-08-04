@@ -38,10 +38,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYE-GF-d0A">
-                                <rect key="frame" x="193" y="565.5" width="448.5" height="63.5"/>
-                                <string key="text">There are no quotes available to display, 
-Create a new one to start editing.</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYE-GF-d0A">
+                                <rect key="frame" x="100" y="549.5" width="634" height="95.5"/>
+                                <string key="text">There are no quotes available yet. 
+Create a new one by pressing the '+' button to start editing.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -243,8 +243,10 @@ Create a new one to start editing.</string>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fFT-5I-pgN" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" id="Bd7-Jc-oJl"/>
+                            <constraint firstItem="CYE-GF-d0A" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="100" id="J0O-83-P3o"/>
                             <constraint firstItem="fFT-5I-pgN" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="S7V-iE-jes"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="fFT-5I-pgN" secondAttribute="trailing" id="YE3-6z-SmO"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="CYE-GF-d0A" secondAttribute="trailing" constant="100" id="bhy-gi-43F"/>
                             <constraint firstItem="CYE-GF-d0A" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="bot-Lq-Zte"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="fFT-5I-pgN" secondAttribute="bottom" id="cOd-xl-g1F"/>
                             <constraint firstItem="CYE-GF-d0A" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="hNT-Qq-DyH"/>
@@ -290,10 +292,10 @@ Create a new one to start editing.</string>
             </objects>
             <point key="canvasLocation" x="696" y="129"/>
         </scene>
-        <!--Controller-->
+        <!--PDF-->
         <scene sceneID="OjK-uH-9TC">
             <objects>
-                <viewController id="8tY-lk-M1f" customClass="PDFController" customModule="SimpleQuote3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="PDF" id="8tY-lk-M1f" customClass="PDFController" customModule="SimpleQuote3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AYM-nG-5tr">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -430,7 +432,7 @@ Create a new one to start editing.</string>
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L1I-Ut-Anb">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1I-Ut-Anb">
                                 <rect key="frame" x="0.0" y="24" width="834" height="1150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7k-lt-xPn">
@@ -467,12 +469,6 @@ Create a new one to start editing.</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rxv-ex-rW4">
-                                                <rect key="frame" x="280" y="419" width="514" height="17"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Company X" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EwV-zG-ttM">
                                                 <rect key="frame" x="280" y="288" width="514" height="17"/>
                                                 <nil key="textColor"/>
@@ -565,19 +561,32 @@ Create a new one to start editing.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-iv-uXY">
+                                                <rect key="frame" x="280" y="419" width="514" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-Ns-5F5" customClass="CurrencyList" customModule="SimpleQuote3" customModuleProvider="target">
+                                                <rect key="frame" x="834" y="50" width="0.0" height="686.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" id="VkV-uZ-MYT"/>
+                                                </constraints>
+                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="882-3P-Pe9" firstAttribute="leading" relation="lessThanOrEqual" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="1a6-ME-Ffk"/>
+                                            <constraint firstAttribute="trailing" secondItem="BKc-Ns-5F5" secondAttribute="trailing" id="2Xn-PL-dM5"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="882-3P-Pe9" secondAttribute="trailing" constant="40" id="2jN-Af-0sn"/>
                                             <constraint firstItem="dB4-it-KTx" firstAttribute="top" secondItem="og7-Oe-S7L" secondAttribute="bottom" constant="5" id="3gS-oO-WQe"/>
                                             <constraint firstItem="EwV-zG-ttM" firstAttribute="leading" secondItem="lPn-JH-HhH" secondAttribute="trailing" constant="40" id="5Og-jh-cHf"/>
-                                            <constraint firstItem="rxv-ex-rW4" firstAttribute="leading" secondItem="5bg-nS-EQ0" secondAttribute="trailing" constant="40" id="7KY-BA-8Kd"/>
                                             <constraint firstItem="V5U-kq-chQ" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" id="7i9-FI-PPm"/>
-                                            <constraint firstItem="rxv-ex-rW4" firstAttribute="centerY" secondItem="5bg-nS-EQ0" secondAttribute="centerY" id="84N-MY-MtH"/>
                                             <constraint firstItem="OFC-iF-dAF" firstAttribute="top" secondItem="882-3P-Pe9" secondAttribute="bottom" constant="25" id="99y-Ib-ntR"/>
                                             <constraint firstItem="5bg-nS-EQ0" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="B13-UC-99v"/>
                                             <constraint firstAttribute="trailing" secondItem="sVR-vx-pbi" secondAttribute="trailing" constant="25" id="C2V-c4-16s"/>
+                                            <constraint firstAttribute="trailing" secondItem="ICd-iv-uXY" secondAttribute="trailing" constant="40" id="DGv-dr-EEb"/>
                                             <constraint firstItem="se2-2c-ypn" firstAttribute="top" secondItem="cDk-fS-bPw" secondAttribute="bottom" constant="75" id="G8h-YO-neq"/>
                                             <constraint firstAttribute="trailing" secondItem="SB8-g9-o3H" secondAttribute="trailing" constant="40" id="Gsm-Yd-9MO"/>
                                             <constraint firstItem="XW6-JJ-66W" firstAttribute="centerX" secondItem="w7k-lt-xPn" secondAttribute="centerX" id="Guu-oy-Tfe"/>
@@ -588,6 +597,7 @@ Create a new one to start editing.</string>
                                             <constraint firstItem="XW6-JJ-66W" firstAttribute="top" secondItem="se2-2c-ypn" secondAttribute="bottom" constant="50" id="NaS-JI-g5J"/>
                                             <constraint firstItem="SB8-g9-o3H" firstAttribute="top" secondItem="lPn-JH-HhH" secondAttribute="bottom" constant="5" id="PMp-Cp-uec"/>
                                             <constraint firstAttribute="bottom" secondItem="XW6-JJ-66W" secondAttribute="bottom" constant="50" id="Qbu-4f-DI4"/>
+                                            <constraint firstAttribute="bottom" secondItem="BKc-Ns-5F5" secondAttribute="bottom" id="RFn-9C-loh"/>
                                             <constraint firstAttribute="trailing" secondItem="XoD-Sd-yQq" secondAttribute="trailing" constant="40" id="RW0-kp-g8U"/>
                                             <constraint firstAttribute="trailing" secondItem="dB4-it-KTx" secondAttribute="trailing" constant="40" id="VGF-1j-9CM"/>
                                             <constraint firstItem="XoD-Sd-yQq" firstAttribute="leading" secondItem="OFC-iF-dAF" secondAttribute="trailing" constant="40" id="WpX-L7-TIT"/>
@@ -595,13 +605,14 @@ Create a new one to start editing.</string>
                                             <constraint firstItem="V5U-kq-chQ" firstAttribute="top" secondItem="w7k-lt-xPn" secondAttribute="top" id="Wsf-UI-FZf"/>
                                             <constraint firstItem="fPz-MU-ymw" firstAttribute="centerX" secondItem="w7k-lt-xPn" secondAttribute="centerX" id="XiQ-Dm-Oem"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="cDk-fS-bPw" secondAttribute="trailing" constant="40" id="YRH-AP-rle"/>
-                                            <constraint firstAttribute="trailing" secondItem="rxv-ex-rW4" secondAttribute="trailing" constant="40" id="Zc6-aw-gMv"/>
                                             <constraint firstItem="se2-2c-ypn" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="aAm-L8-uCN"/>
                                             <constraint firstItem="K3D-th-qxO" firstAttribute="leading" secondItem="og7-Oe-S7L" secondAttribute="trailing" constant="40" id="fPJ-1O-lgs"/>
                                             <constraint firstItem="dB4-it-KTx" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="hEQ-GL-Anc"/>
+                                            <constraint firstItem="ICd-iv-uXY" firstAttribute="centerY" secondItem="5bg-nS-EQ0" secondAttribute="centerY" id="igf-8f-xXv"/>
                                             <constraint firstAttribute="trailing" secondItem="EwV-zG-ttM" secondAttribute="trailing" constant="40" id="jkI-Mx-1NE"/>
                                             <constraint firstItem="5bg-nS-EQ0" firstAttribute="top" secondItem="dB4-it-KTx" secondAttribute="bottom" constant="25" id="l72-SO-ZBr"/>
                                             <constraint firstItem="fPz-MU-ymw" firstAttribute="top" secondItem="sVR-vx-pbi" secondAttribute="bottom" constant="40" id="n0I-1t-jMR"/>
+                                            <constraint firstItem="ICd-iv-uXY" firstAttribute="leading" secondItem="5bg-nS-EQ0" secondAttribute="trailing" constant="40" id="nnM-Ny-hKR"/>
                                             <constraint firstItem="OFC-iF-dAF" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="oGs-Ua-55K"/>
                                             <constraint firstItem="sVR-vx-pbi" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="25" id="pcf-6u-nCo"/>
                                             <constraint firstAttribute="trailing" secondItem="V5U-kq-chQ" secondAttribute="trailing" id="pg6-sB-8RN"/>
@@ -611,6 +622,7 @@ Create a new one to start editing.</string>
                                             <constraint firstItem="K3D-th-qxO" firstAttribute="centerY" secondItem="og7-Oe-S7L" secondAttribute="centerY" id="tTv-vL-mYo"/>
                                             <constraint firstItem="EwV-zG-ttM" firstAttribute="centerY" secondItem="lPn-JH-HhH" secondAttribute="centerY" id="tXQ-gx-3zW"/>
                                             <constraint firstItem="lPn-JH-HhH" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="tcf-zS-Ssn"/>
+                                            <constraint firstItem="BKc-Ns-5F5" firstAttribute="top" secondItem="V5U-kq-chQ" secondAttribute="bottom" id="tpE-QO-tFQ"/>
                                             <constraint firstItem="sVR-vx-pbi" firstAttribute="top" secondItem="V5U-kq-chQ" secondAttribute="bottom" constant="25" id="upu-dJ-cA4"/>
                                             <constraint firstAttribute="trailing" secondItem="K3D-th-qxO" secondAttribute="trailing" constant="40" id="vOg-RH-d8y"/>
                                         </constraints>
@@ -637,15 +649,18 @@ Create a new one to start editing.</string>
                     </view>
                     <connections>
                         <outlet property="companyName" destination="EwV-zG-ttM" id="4KX-qZ-UNk"/>
-                        <outlet property="currencySymbol" destination="rxv-ex-rW4" id="QId-Gf-rHo"/>
+                        <outlet property="currencySymbol" destination="ICd-iv-uXY" id="HI3-41-DR1"/>
+                        <outlet property="currencyTable" destination="BKc-Ns-5F5" id="cwd-DQ-A04"/>
+                        <outlet property="currencyTableWidthConstraint" destination="VkV-uZ-MYT" id="XXZ-ia-65X"/>
                         <outlet property="defaultTax" destination="XoD-Sd-yQq" id="3B4-X5-eGa"/>
                         <outlet property="idPrefixInput" destination="K3D-th-qxO" id="nMn-Qc-XGj"/>
                         <outlet property="logo" destination="fPz-MU-ymw" id="sHD-f0-t4a"/>
+                        <outlet property="scrollView" destination="L1I-Ut-Anb" id="j3b-g3-48i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EC8-hF-CxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901" y="-1398"/>
+            <point key="canvasLocation" x="900.7194244604317" y="-1398.4924623115578"/>
         </scene>
     </scenes>
     <resources>
