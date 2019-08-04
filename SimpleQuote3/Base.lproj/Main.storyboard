@@ -39,9 +39,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYE-GF-d0A">
-                                <rect key="frame" x="100" y="549.5" width="634" height="95.5"/>
+                                <rect key="frame" x="100" y="565.5" width="634" height="63.5"/>
                                 <string key="text">There are no quotes available yet. 
-Create a new one by pressing the '+' button to start editing.</string>
+Create a new one by pressing the '+' button.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -635,6 +635,7 @@ Create a new one by pressing the '+' button to start editing.</string>
                                     <constraint firstAttribute="bottom" secondItem="w7k-lt-xPn" secondAttribute="bottom" id="Ipd-94-ubS"/>
                                     <constraint firstItem="w7k-lt-xPn" firstAttribute="top" secondItem="L1I-Ut-Anb" secondAttribute="top" id="MQQ-Ko-4WR"/>
                                     <constraint firstAttribute="trailing" secondItem="w7k-lt-xPn" secondAttribute="trailing" id="PbG-7E-qgr"/>
+                                    <constraint firstAttribute="bottom" secondItem="w7k-lt-xPn" secondAttribute="bottom" id="m2n-DQ-KUp"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

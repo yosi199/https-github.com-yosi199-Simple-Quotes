@@ -40,6 +40,7 @@ class MenuViewController: UIViewController {
         
         menuList.deleteQuoteCallback = { quote, index in
             self.vm.delete(quote: quote)
+            self.detailViewController.clearQuote()
             self.selectFirst()
             self.detailViewController.showContent(show: !self.vm.isEmpty())
             
@@ -65,9 +66,7 @@ class MenuViewController: UIViewController {
         
         // Reselects a row.
         if let quote = detailViewController.getCurrentQuote(){
-            // quotes id's are starting from 1 while our list starts from 0 so we must decrement before
-            // use otherwise we will select wrong line in our list.
-            let quoteIndex = (Int(quote.invoiceId) ?? 1) - 1
+            let quoteIndex = menuList.items.firstIndex(of: quote) ?? 0
             let index = IndexPath(row: quoteIndex, section: 0)
             self.menuList.selectRow(at: index, animated: true, scrollPosition: UITableView.ScrollPosition.none)
         } else {

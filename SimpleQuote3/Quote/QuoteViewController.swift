@@ -35,6 +35,8 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     private lazy var menu: MenuViewController = { return parent?.splitViewController?.children[0].children[0] as! MenuViewController }()
     
     override func viewDidLoad() {
+        self.splitViewController?.preferredDisplayMode = UISplitViewController.DisplayMode.primaryOverlay
+        
         if(vm.quote != nil ){
             setupItemsTable()
             setupInteractions()
@@ -98,6 +100,11 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         self.editButton.isEnabled = !vm.quote.items.isEmpty
         self.reviewButton.isEnabled = !vm.quote.items.isEmpty
+        if(vm.quote.items.isEmpty) {
+            self.reviewButton.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        } else {
+            self.reviewButton.tintColor = #colorLiteral(red: 0, green: 0.1698517203, blue: 0.9812178016, alpha: 1)
+        }
         self.addButton.isHidden = vm.quote.items.isEmpty
         self.footer.isHidden = vm.quote.items.isEmpty
         self.footerStackView.isHidden = vm.quote.items.isEmpty
@@ -187,6 +194,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     private func addLineItem(item: LineItemModel){
         self.itemsTableView.items.append(item)
         self.reviewButton.isEnabled = true
+        self.reviewButton.tintColor = #colorLiteral(red: 0, green: 0.1698517203, blue: 0.9812178016, alpha: 1)
         self.editButton.isEnabled = true
         inputItemView.reset()
         toggleFooter()
@@ -243,7 +251,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         //Adding notifies on keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-
+        
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -263,5 +271,9 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     func getCurrentQuote() -> Quote? {
         return self.vm.quote
+    }
+    
+    func clearQuote(){
+        self.vm.quote = nil
     }
 }
