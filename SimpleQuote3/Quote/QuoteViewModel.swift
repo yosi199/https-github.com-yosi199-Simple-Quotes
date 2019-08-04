@@ -22,7 +22,9 @@ class QuoteViewModel: FileHandler {
     init() {
         notificationCenter
             .addObserver(self, selector: #selector(onSettingsChanged), name: Notification.Name(SettingsViewController.EVENT_SETTINGS_CHANGED), object: nil)
-        userDefaults.setValue(4.0, forKey: SETTINGS_DEFAULT_TAX)
+        if(Double(DataRepository.Defaults.shared.tax) == 0){
+            userDefaults.setValue(4.0, forKey: SETTINGS_DEFAULT_TAX)
+        }
     }
     
     @objc func onSettingsChanged(){

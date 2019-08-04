@@ -15,7 +15,8 @@ class MenuViewModel {
     private let defaults = DataRepository.Defaults.shared
     private let realm = try! Realm()
     private lazy var items:  Results<Quote> = {
-        return realm.objects(Quote.self)
+        
+        return realm.objects(Quote.self).sorted(byKeyPath: "invoiceId", ascending: false)
     }()
     
     var settingsChanged: (()-> Void)?

@@ -28,6 +28,8 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.selectedLocale = Locale(identifier: viewModel.localeIdentifier)
+        
         self.currencyTable.register(UINib(nibName: "CurrencyCell".self, bundle: nil), forCellReuseIdentifier: "currencyCell")
         self.currencyTable.delegate = currencyTable
         self.currencyTable.dataSource = currencyTable

@@ -39,8 +39,8 @@ class MenuViewController: UIViewController {
         }
         
         menuList.deleteQuoteCallback = { quote, index in
-            self.selectFirst()
             self.vm.delete(quote: quote)
+            self.selectFirst()
             self.detailViewController.showContent(show: !self.vm.isEmpty())
             
             DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
@@ -103,6 +103,7 @@ class MenuViewController: UIViewController {
         detailViewController.loadQuote(existing: quote)
         menuList.items = vm.getItems()
         reloadData()
+        self.selectFirst()
         self.detailViewController.showContent(show: !self.vm.isEmpty())
     }
     
