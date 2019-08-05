@@ -15,7 +15,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     
     private let vm = MenuViewModel()
-    private lazy var detailViewController: QuoteViewController = {
+    lazy var detailViewController: QuoteViewController = {
         return parent?.splitViewController?.children[1].children[0] as! QuoteViewController
     }()
     

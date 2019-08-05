@@ -151,7 +151,8 @@ class ItemView: UIView {
         let sum = Double(self.item.qty) * (self.item.value)
         let tax = (sum * (UserDefaults.standard.double(forKey: SETTINGS_DEFAULT_TAX) )) / 100
         self.item.tax = tax
-        self.item.total = sum + tax
+//        self.item.total = sum + tax
+        self.item.total = sum
         debugPrint(self.item.total)
     }
 }

@@ -134,7 +134,8 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     override var preferredContentSize: CGSize {
         get {
             let landscape = UIApplication.shared.statusBarOrientation.isLandscape
-            if let fullSize = self.presentingViewController?.view.bounds.size {
+            let menuVC = self.presentingViewController?.children[0] as? MenuViewController
+            if let fullSize = menuVC?.detailViewController.view.bounds.size {
                 if(landscape){
                     return CGSize(width: fullSize.width * 0.5,
                                   height: fullSize.height * 0.75)

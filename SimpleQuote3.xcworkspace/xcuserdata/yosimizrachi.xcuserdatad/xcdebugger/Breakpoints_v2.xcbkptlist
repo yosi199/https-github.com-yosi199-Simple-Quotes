@@ -10,27 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/Quote/QuoteViewController.swift"
-            timestampString = "586626775.847909"
+            timestampString = "586706897.850014"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
-            landmarkName = "viewDidLayoutSubviews()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SimpleQuote3/Quote/QuoteViewController.swift"
-            timestampString = "586626775.847983"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "updateViews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/Quote/QuoteViewController.swift"
-            timestampString = "586626775.848038"
+            timestampString = "586706897.850089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "updateViews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/AppDelegate.swift"
-            timestampString = "586621446.103671"
+            timestampString = "586705605.3567671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -74,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/SideMenu/MenuViewController.swift"
-            timestampString = "586626775.848119"
+            timestampString = "586704615.556236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -90,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/SideMenu/MenuViewController.swift"
-            timestampString = "586626775.8482"
+            timestampString = "586704615.556288"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -405,7 +389,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/Settings/SettingsViewController.swift"
-            timestampString = "586626775.848899"
+            timestampString = "586675430.50552"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -421,11 +405,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/Settings/SettingsViewController.swift"
-            timestampString = "586626775.848953"
+            timestampString = "586675430.505567"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "save(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -437,7 +421,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/SideMenu/MenuViewController.swift"
-            timestampString = "586626775.849003"
+            timestampString = "586704615.5565619"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -453,7 +437,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/SideMenu/MenuViewController.swift"
-            timestampString = "586626775.849066"
+            timestampString = "586704615.5566109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -485,7 +469,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/SideMenu/MenuViewController.swift"
-            timestampString = "586626775.849178"
+            timestampString = "586704615.556673"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -501,7 +485,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/SideMenu/MenuViewController.swift"
-            timestampString = "586626775.849232"
+            timestampString = "586704615.556718"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -565,7 +549,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/SideMenu/MenuViewController.swift"
-            timestampString = "586626775.849409"
+            timestampString = "586704615.556803"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -581,7 +565,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/Settings/SettingsViewController.swift"
-            timestampString = "586626775.849461"
+            timestampString = "586675430.505841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -597,11 +581,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/Settings/SettingsViewController.swift"
-            timestampString = "586626775.849506"
+            timestampString = "586675430.505879"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "save(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -693,7 +677,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/SideMenu/MenuViewController.swift"
-            timestampString = "586626775.849745"
+            timestampString = "586704615.556987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -709,7 +693,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/SideMenu/MenuViewController.swift"
-            timestampString = "586626775.849788"
+            timestampString = "586704615.557055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -725,7 +709,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/SideMenu/MenuViewController.swift"
-            timestampString = "586626775.84983"
+            timestampString = "586704615.5571049"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -741,7 +725,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/AppDelegate.swift"
-            timestampString = "586621446.105781"
+            timestampString = "586705605.357138"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -753,15 +737,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/Quote/QuoteViewController.swift"
-            timestampString = "586626775.849889"
+            timestampString = "586706897.8506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
             landmarkName = "getCurrentQuote()"
             landmarkType = "7">
          </BreakpointContent>
@@ -773,11 +757,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/Quote/QuoteViewController.swift"
-            timestampString = "586626775.849932"
+            timestampString = "586706897.850704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
             landmarkName = "showContent(show:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -785,31 +769,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/Quote/QuoteViewController.swift"
-            timestampString = "586626775.849974"
+            timestampString = "586706897.8507529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "loadQuote(existing:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SimpleQuote3/Quote/QuoteViewController.swift"
-            timestampString = "586626775.850015"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -817,16 +785,128 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleQuote3/Quote/QuoteViewController.swift"
-            timestampString = "586626775.850055"
+            timestampString = "586706897.8508559"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "updateViews()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleQuote3/Settings/SettingsViewController.swift"
+            timestampString = "586675430.506325"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "preferredContentSize"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleQuote3/Settings/SettingsViewController.swift"
+            timestampString = "586675430.506363"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "preferredContentSize"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleQuote3/Settings/SettingsViewController.swift"
+            timestampString = "586675430.5064009"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "preferredContentSize"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleQuote3/Settings/SettingsViewController.swift"
+            timestampString = "586675430.506438"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "preferredContentSize"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleQuote3/Quote/QuoteViewController.swift"
+            timestampString = "586706897.850952"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "editDiscount()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleQuote3/Quote/QuoteViewController.swift"
+            timestampString = "586706897.851"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "setupInteractions()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SimpleQuote3/Quote/DiscountVC.swift"
+            timestampString = "586706897.8510489"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "onValueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

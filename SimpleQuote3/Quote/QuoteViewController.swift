@@ -28,6 +28,12 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var taxPercentageText: UILabel!
     @IBOutlet weak var emptyState: UILabel!
     
+    @IBOutlet weak var taxAmount: UILabel!
+    @IBOutlet weak var subTotalAmount: UILabel!
+    @IBOutlet weak var discountAmount: UILabel!
+    @IBOutlet weak var editDiscountButton: UIImageView!
+    @IBOutlet weak var editTaxButton: UIImageView!
+    
     private var imageToTransfer: UIImage? = nil
     private let realm = try! Realm()
     private let vm = QuoteViewModel()
@@ -52,6 +58,9 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.header.logo.isUserInteractionEnabled = true
         self.imagePicker.delegate = self
         self.notes.delegate = self
+        
+        let editDiscountTap = UITapGestureRecognizer(target: self, action: #selector(editDiscount))
+        self.editDiscountButton.addGestureRecognizer(editDiscountTap)
     }
     
     private func setupNotifications(){
@@ -103,7 +112,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         if(vm.quote.items.isEmpty) {
             self.reviewButton.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         } else {
-            self.reviewButton.tintColor = #colorLiteral(red: 0, green: 0.1698517203, blue: 0.9812178016, alpha: 1)
+            self.reviewButton.tintColor = #colorLiteral(red: 0, green: 0.168627451, blue: 0.9803921569, alpha: 1)
         }
         self.addButton.isHidden = vm.quote.items.isEmpty
         self.footer.isHidden = vm.quote.items.isEmpty
@@ -118,6 +127,16 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @objc func editDiscount(){
+        let popover = self.storyboard?.instantiateViewController(withIdentifier: "editDiscountVC") as! DiscountVC
+        popover.quote = vm.quote
+        popover.modalPresentationStyle = UIModalPresentationStyle.popover
+        popover.popoverPresentationController?.permittedArrowDirections = .any
+        popover.popoverPresentationController?.sourceRect = self.discountAmount.frame
+        popover.popoverPresentationController?.sourceView = self.discountAmount
+        self.present(popover, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -200,7 +219,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         toggleFooter()
     }
     
-    private func toggleFooter(){
+    private func toggleFooter() {
         if(itemsTableView.items.count>0) {
             footer.isHidden = false
             footerStackView.isHidden = false
@@ -221,7 +240,6 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLayoutSubviews() {
         let newHeight = CGFloat(110 * self.itemsTableView.items.count)
         
-        
         if(footerBottomConstraint.constant != 15){
             footerBottomConstraint.constant = 15
         }
@@ -233,7 +251,24 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
             })
         }
         
-        footer.update(items: self.itemsTableView.items)
+        updateSummary()
+    }
+    
+    private func updateSummary(){
+        let locale = Locale(identifier: DataRepository.Defaults.shared.localeIdentifier)
+        
+        var subTotal = 0.0
+        for item in self.itemsTableView.items {
+           subTotal = subTotal + item.total
+        }
+
+        self.discountAmount.text = String(0.0.rounded(toPlaces: 2).toCurrency(locale: locale))
+        self.subTotalAmount.text = String(subTotal.rounded(toPlaces: 2).toCurrency(locale: locale))
+        
+        let tax = (subTotal * (UserDefaults.standard.double(forKey: SETTINGS_DEFAULT_TAX) ) / 100)
+        self.taxAmount.text = String(tax.rounded(toPlaces: 2).toCurrency(locale: locale))
+        
+        self.footer.total.text = String((subTotal + tax).rounded(toPlaces: 2).toCurrency(locale: locale))
     }
     
     @IBAction func unwindFromPdf(_ unwindSegue: UIStoryboardSegue) {}
@@ -251,7 +286,6 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         //Adding notifies on keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -268,12 +302,11 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
     }
     
-    
     func getCurrentQuote() -> Quote? {
         return self.vm.quote
     }
     
-    func clearQuote(){
+    func clearQuote() {
         self.vm.quote = nil
     }
 }

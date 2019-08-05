@@ -32,8 +32,11 @@ class QuoteCellItemTableViewCell: UITableViewCell {
         self.clientName.text = item.clientName
         self.date.text = item.date
         self.itemsCount.text = "Items: \(String(item.items.count))"
+        
         let sum: Double = item.items.sum(ofProperty: "total")
-        self.totalValue.text = String(sum.rounded(toPlaces: 2).toCurrency(locale: getLocale()))
+        let tax = (sum * (UserDefaults.standard.double(forKey: SETTINGS_DEFAULT_TAX) ) / 100)
+
+        self.totalValue.text = String((sum + tax).rounded(toPlaces: 2).toCurrency(locale: getLocale()))
     }
     
     private func getLocale() -> Locale {
