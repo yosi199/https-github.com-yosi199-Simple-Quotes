@@ -54,4 +54,18 @@ class QuoteViewModel: FileHandler {
     func saveQuote() {
         DataRepository.shared.saveQuote(quote: quote)
     }
+    
+    func getSubTotal(items: [LineItemModel]) -> Double {
+        var subTotal = 0.0
+        for item in items {
+            subTotal = subTotal + item.total
+        }
+        return subTotal
+    }
+    
+    func updateDiscount(value: Double){
+        try! realm.write {
+            quote.discount = value
+        }
+    }
 }

@@ -21,6 +21,7 @@ class Quote : Object {
     @objc dynamic  var address: String = "Address N/A"
     @objc dynamic  var email: String = "clientmail@mail.xyz"
     @objc dynamic  var notes: String = "Client notes"
+    @objc dynamic  var discount: Double = 0.0
     
     override static func primaryKey() -> String? {
         return "id"

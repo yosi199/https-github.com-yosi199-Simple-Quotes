@@ -130,12 +130,21 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @objc func editDiscount(){
+        unregisterForKeyboardNotifications()
         let popover = self.storyboard?.instantiateViewController(withIdentifier: "editDiscountVC") as! DiscountVC
-        popover.quote = vm.quote
+        // TODO - replace quote with TOTAL VALUE instead - it won't work if it's a newly created quote that hasn't been saved yet
+        popover.subTotal = self.vm.getSubTotal(items: self.itemsTableView.items)
+        popover.discountCallback = { value in
+            self.vm.updateDiscount(value: value)
+            self.updateSummary()
+        }
+        
         popover.modalPresentationStyle = UIModalPresentationStyle.popover
         popover.popoverPresentationController?.permittedArrowDirections = .any
         popover.popoverPresentationController?.sourceRect = self.discountAmount.frame
         popover.popoverPresentationController?.sourceView = self.discountAmount
+        popover.popoverPresentationController?.backgroundColor = #colorLiteral(red: 0.1215686275, green: 0.1294117647, blue: 0.1411764706, alpha: 1)
+        
         self.present(popover, animated: true, completion: nil)
     }
     
@@ -254,21 +263,17 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         updateSummary()
     }
     
-    private func updateSummary(){
+    private func updateSummary(discount: Double = 0){
         let locale = Locale(identifier: DataRepository.Defaults.shared.localeIdentifier)
         
-        var subTotal = 0.0
-        for item in self.itemsTableView.items {
-           subTotal = subTotal + item.total
-        }
-
-        self.discountAmount.text = String(0.0.rounded(toPlaces: 2).toCurrency(locale: locale))
+        let subTotal = self.vm.getSubTotal(items: self.itemsTableView.items)
+        self.discountAmount.text = String(vm.quote.discount.rounded(toPlaces: 2).toCurrency(locale: locale))
         self.subTotalAmount.text = String(subTotal.rounded(toPlaces: 2).toCurrency(locale: locale))
         
         let tax = (subTotal * (UserDefaults.standard.double(forKey: SETTINGS_DEFAULT_TAX) ) / 100)
         self.taxAmount.text = String(tax.rounded(toPlaces: 2).toCurrency(locale: locale))
         
-        self.footer.total.text = String((subTotal + tax).rounded(toPlaces: 2).toCurrency(locale: locale))
+        self.footer.total.text = String((subTotal - vm.quote.discount + tax).rounded(toPlaces: 2).toCurrency(locale: locale))
     }
     
     @IBAction func unwindFromPdf(_ unwindSegue: UIStoryboardSegue) {}
@@ -286,6 +291,11 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         //Adding notifies on keyboard appearing
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func unregisterForKeyboardNotifications(){
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
