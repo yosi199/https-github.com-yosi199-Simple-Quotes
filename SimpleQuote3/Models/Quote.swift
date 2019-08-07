@@ -13,7 +13,7 @@ class Quote : Object {
     @objc dynamic var id: String = UUID().uuidString
     
     @objc dynamic  var invoiceId: String = "0"
-    @objc dynamic  var companyName: String = "Company Name"
+    @objc dynamic  var companyName: String = COMPANY_NAME_STRING
     @objc dynamic  var clientName: String = "Client Name"
     @objc dynamic  var date: String = Date().getCurrentDate()
     @objc dynamic  var address: String = "Address N/A"

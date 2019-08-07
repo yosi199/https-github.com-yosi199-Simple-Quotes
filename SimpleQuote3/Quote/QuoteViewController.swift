@@ -68,7 +68,10 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
             self.addButton.isHidden = !show
         }
         
-        vm.settingsChanged = { self.viewDidLoad() }
+        vm.settingsChanged = {
+            // override
+            self.vm.quote.companyName = self.vm.getCompanyName()
+            self.viewDidLoad() }
         
         itemsTableView.deleteCallback = { item, index in
             self.confirmDelete(item: item, indexPath: index)

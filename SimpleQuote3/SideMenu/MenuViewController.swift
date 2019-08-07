@@ -61,15 +61,26 @@ class MenuViewController: UIViewController {
         
         if(vm.isEmpty()){
             detailViewController.showContent(show: false)
+            return
         }
         
         // Reselects a row.
-        if let quote = detailViewController.getCurrentQuote(){
-            let quoteIndex = menuList.items.firstIndex(of: quote) ?? 0
+        if let quote = detailViewController.getCurrentQuote() {
+            reselectOrLoadExisting(quote: quote)
+        } else {
+            selectFirst()
+        }
+    }
+    
+    private func reselectOrLoadExisting(quote: Quote){
+        // make sure we actually have this quote in our list
+        if let quoteIndex = menuList.items.firstIndex(where: { (value) -> Bool in
+            value.id == quote.id
+        }){
             let index = IndexPath(row: quoteIndex, section: 0)
             self.menuList.selectRow(at: index, animated: true, scrollPosition: UITableView.ScrollPosition.none)
         } else {
-            selectFirst()
+            detailViewController.loadQuote(existing: menuList.items.first!)
         }
     }
     

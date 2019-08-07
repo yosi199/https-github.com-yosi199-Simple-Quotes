@@ -16,15 +16,24 @@ class QuoteViewModel: FileHandler {
     private let userDefaults = UserDefaults.standard
     private let realm = try! Realm()
     
-    var quote: Quote = Quote()
+    var quote: Quote {
+        didSet {
+            if(self.quote.companyName == COMPANY_NAME_STRING){
+                self.quote.companyName = getCompanyName()
+            }
+        }
+    }
     var settingsChanged: (()-> Void)?
     
     init() {
+        self.quote = Quote()
+        
         notificationCenter
             .addObserver(self, selector: #selector(onSettingsChanged), name: Notification.Name(SettingsViewController.EVENT_SETTINGS_CHANGED), object: nil)
         if(Double(DataRepository.Defaults.shared.tax) == 0){
             userDefaults.setValue(4.0, forKey: SETTINGS_DEFAULT_TAX)
         }
+        
     }
     
     @objc func onSettingsChanged(){

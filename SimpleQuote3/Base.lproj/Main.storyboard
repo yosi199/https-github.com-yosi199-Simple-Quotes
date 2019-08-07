@@ -436,24 +436,25 @@ Create a new one by pressing the '+' button.</string>
                                         <rect key="frame" x="48" y="90.5" width="404" height="31"/>
                                         <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="thumbTintColor" red="0.0" green="0.16862745098039217" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="thumbTintColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="onValueChanged:" destination="azq-rw-GXa" eventType="valueChanged" id="C0j-qe-vSw"/>
                                         </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biZ-EN-xAb">
                                         <rect key="frame" x="175" y="140" width="150" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.16862745100000001" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="cGu-kT-xl9"/>
                                             <constraint firstAttribute="width" constant="150" id="vfc-Es-OKt"/>
                                         </constraints>
                                         <state key="normal" title="Save">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="discountValue" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="499" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XW0-Vb-5Lu">
                                         <rect key="frame" x="350" y="30" width="100" height="20.5"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="uJC-zi-5VL"/>
                                         </constraints>
@@ -463,6 +464,7 @@ Create a new one by pressing the '+' button.</string>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="discountPercentage" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O2w-tA-XeL">
                                         <rect key="frame" x="350" y="60.5" width="100" height="20.5"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="Wix-XC-PaM"/>
                                         </constraints>

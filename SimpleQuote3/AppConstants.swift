@@ -10,7 +10,7 @@ import Foundation
 
 let COMPANY_LOGO = "company_logo"
 let APP_NAME = "Simple Quote"
-
+let COMPANY_NAME_STRING = "Company Name"
 
 let SETTINGS_CURRENCY_SYMBOL = "currencySymbol"
 let SETTINGS_LOCALE_IDENTIFIER = "localeIdentifier"
