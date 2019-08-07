@@ -30,7 +30,7 @@ class DataRepository {
     
     func saveQuote(quote: Quote) {
         try! realm.write {
-            realm.add(quote)
+            realm.add(quote, update: .all)
             // TODO - pass the quote in the notification so that anyone that listens to it will get the new quote
             NotificationCenter.default.post(name: Notification.Name(DataRepository.NEW_QUOTE_SAVED), object: nil)
             debugPrint("added quote id \(quote.id) to realm successfully")

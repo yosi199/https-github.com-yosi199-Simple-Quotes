@@ -135,7 +135,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         // TODO - replace quote with TOTAL VALUE instead - it won't work if it's a newly created quote that hasn't been saved yet
         popover.subTotal = self.vm.getSubTotal(items: self.itemsTableView.items)
         popover.discountCallback = { value in
-            self.vm.updateDiscount(value: value)
+            self.vm.quote.discount = value
             self.updateSummary()
         }
         
@@ -158,7 +158,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     func loadQuote(existing: Quote){
         self.itemsTableView.clearItems()
-        self.vm.quote =  existing
+        self.vm.quote = Quote(value: existing)
         self.viewDidLoad()
     }
     
@@ -267,13 +267,13 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let locale = Locale(identifier: DataRepository.Defaults.shared.localeIdentifier)
         
         let subTotal = self.vm.getSubTotal(items: self.itemsTableView.items)
-        self.discountAmount.text = String(vm.quote.discount.rounded(toPlaces: 2).toCurrency(locale: locale))
+        self.discountAmount.text = String(vm.getDiscount().rounded(toPlaces: 2).toCurrency(locale: locale))
         self.subTotalAmount.text = String(subTotal.rounded(toPlaces: 2).toCurrency(locale: locale))
         
         let tax = (subTotal * (UserDefaults.standard.double(forKey: SETTINGS_DEFAULT_TAX) ) / 100)
         self.taxAmount.text = String(tax.rounded(toPlaces: 2).toCurrency(locale: locale))
         
-        self.footer.total.text = String((subTotal - vm.quote.discount + tax).rounded(toPlaces: 2).toCurrency(locale: locale))
+        self.footer.total.text = String((subTotal - vm.getDiscount() + tax).rounded(toPlaces: 2).toCurrency(locale: locale))
     }
     
     @IBAction func unwindFromPdf(_ unwindSegue: UIStoryboardSegue) {}

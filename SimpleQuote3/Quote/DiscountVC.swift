@@ -42,6 +42,7 @@ class DiscountVC: UIViewController, UITextFieldDelegate {
     @objc func save() {
         let discountValue = Double(self.discountSlider.value)
         self.discountCallback?(discountValue)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onValueChanged(_ sender: Any) {

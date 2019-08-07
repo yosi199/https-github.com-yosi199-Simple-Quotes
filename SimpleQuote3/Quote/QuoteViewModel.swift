@@ -51,6 +51,14 @@ class QuoteViewModel: FileHandler {
         return userDefaults.string(forKey: SETTINGS_COMPANY_NAME) ?? ""
     }
     
+    func getDiscount() -> Double {
+        if let quote = quote {
+            return quote.discount
+        } else{
+            return 0
+        }
+    }
+    
     func saveQuote() {
         DataRepository.shared.saveQuote(quote: quote)
     }
@@ -61,11 +69,5 @@ class QuoteViewModel: FileHandler {
             subTotal = subTotal + item.total
         }
         return subTotal
-    }
-    
-    func updateDiscount(value: Double){
-        try! realm.write {
-            quote.discount = value
-        }
     }
 }
