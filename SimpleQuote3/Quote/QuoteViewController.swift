@@ -35,21 +35,17 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var editTaxButton: UIImageView!
     
     private var imageToTransfer: UIImage? = nil
-    private let realm = try! Realm()
     private let vm = QuoteViewModel()
     private let imagePicker = UIImagePickerController()
     private lazy var menu: MenuViewController = { return parent?.splitViewController?.children[0].children[0] as! MenuViewController }()
     
     override func viewDidLoad() {
         self.splitViewController?.preferredDisplayMode = UISplitViewController.DisplayMode.primaryOverlay
-        
-        if(vm.quote != nil ){
-            setupItemsTable()
-            setupInteractions()
-            setupCallbacks()
-            setupNotifications()
-            updateViews()
-        }
+        setupItemsTable()
+        setupInteractions()
+        setupCallbacks()
+        setupNotifications()
+        updateViews()
     }
     
     private func setupInteractions(){
@@ -90,35 +86,34 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     private func updateViews(){
         
+        let quote = vm.quote
+        
         title = vm.getInvoiceID()
         
         // Header
-        header.address.text = vm.quote.address
-        header.clientName.text = vm.quote.clientName
-        header.companyName.text = vm.quote.companyName
-        header.date.text = vm.quote.date
-        header.email.text = vm.quote.email
+        header.address.text = quote.address
+        header.clientName.text = quote.clientName
+        header.companyName.text = quote.companyName
+        header.date.text = quote.date
+        header.email.text = quote.email
         header.logo.image = vm.getLogoImage()
         header.id.text = vm.getInvoiceID()
         
-        self.itemsTableView.items.removeAll()
-        vm.quote.items.forEach { item in
-            self.itemsTableView.items.append(item)
-        }
+        itemsTableView.items = vm.quote.items.toArray()
         itemsTableView.reloadData()
         
-        self.editButton.isEnabled = !vm.quote.items.isEmpty
-        self.reviewButton.isEnabled = !vm.quote.items.isEmpty
+        editButton.isEnabled = !vm.quote.items.isEmpty
+        reviewButton.isEnabled = !vm.quote.items.isEmpty
         if(vm.quote.items.isEmpty) {
             self.reviewButton.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         } else {
             self.reviewButton.tintColor = #colorLiteral(red: 0, green: 0.168627451, blue: 0.9803921569, alpha: 1)
         }
-        self.addButton.isHidden = vm.quote.items.isEmpty
-        self.footer.isHidden = vm.quote.items.isEmpty
-        self.footerStackView.isHidden = vm.quote.items.isEmpty
-        self.currencySymbolText.text = "Currency: \(vm.getCurrencySymbol())"
-        self.taxPercentageText.text = "Tax Percentage: \(vm.getTaxPercentage())%"
+        addButton.isHidden = vm.quote.items.isEmpty
+        footer.isHidden = vm.quote.items.isEmpty
+        footerStackView.isHidden = vm.quote.items.isEmpty
+        currencySymbolText.text = "Currency: \(vm.getCurrencySymbol())"
+        taxPercentageText.text = "Tax Percentage: \(vm.getTaxPercentage())%"
         
         toggleFooter()
     }
@@ -133,9 +128,10 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         unregisterForKeyboardNotifications()
         let popover = self.storyboard?.instantiateViewController(withIdentifier: "editDiscountVC") as! DiscountVC
         // TODO - replace quote with TOTAL VALUE instead - it won't work if it's a newly created quote that hasn't been saved yet
-        popover.subTotal = self.vm.getSubTotal(items: self.itemsTableView.items)
-        popover.discountCallback = { value in
-            self.vm.quote.discount = value
+        popover.subTotal = self.itemsTableView.items.getSubTotal()
+        popover.discountCallback = { value, percent in
+            self.vm.quote.discountAmount = value
+            self.vm.quote.discountPercentage = percent
             self.updateSummary()
         }
         
@@ -157,7 +153,6 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     func loadQuote(existing: Quote){
-        self.itemsTableView.clearItems()
         self.vm.quote = Quote(value: existing)
         self.viewDidLoad()
     }
@@ -173,17 +168,15 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     private func saveQuote(){
-        try! realm.write {
-            self.vm.quote.address = self.header.address.text.orEmpty()
-            self.vm.quote.clientName = self.header.clientName.text.orEmpty()
-            self.vm.quote.companyName = self.header.companyName.text.orEmpty()
-            self.vm.quote.date = self.header.date.text.orEmpty()
-            self.vm.quote.email = self.header.email.text.orEmpty()
-            self.vm.quote.notes = self.notes.text.orEmpty()
-            
-            vm.quote.items.removeAll()
-            self.itemsTableView.items.forEach { (item) in self.vm.quote.items.append(item) }
-        }
+        
+        self.vm.quote.address = self.header.address.text.orEmpty()
+        self.vm.quote.clientName = self.header.clientName.text.orEmpty()
+        self.vm.quote.companyName = self.header.companyName.text.orEmpty()
+        self.vm.quote.date = self.header.date.text.orEmpty()
+        self.vm.quote.email = self.header.email.text.orEmpty()
+        self.vm.quote.notes = self.notes.text.orEmpty()
+        self.vm.quote.items = self.itemsTableView.items.toList()
+        
         self.vm.saveQuote()
         self.menu.reloadData()
     }
@@ -263,17 +256,18 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         updateSummary()
     }
     
-    private func updateSummary(discount: Double = 0){
+    private func updateSummary(){
         let locale = Locale(identifier: DataRepository.Defaults.shared.localeIdentifier)
         
-        let subTotal = self.vm.getSubTotal(items: self.itemsTableView.items)
-        self.discountAmount.text = String(vm.getDiscount().rounded(toPlaces: 2).toCurrency(locale: locale))
+        let subTotal = self.itemsTableView.items.getSubTotal()
+        self.discountAmount.text = String(vm.quote.discountAmount.rounded(toPlaces: 2).toCurrency(locale: locale))
         self.subTotalAmount.text = String(subTotal.rounded(toPlaces: 2).toCurrency(locale: locale))
         
-        let tax = (subTotal * (UserDefaults.standard.double(forKey: SETTINGS_DEFAULT_TAX) ) / 100)
-        self.taxAmount.text = String(tax.rounded(toPlaces: 2).toCurrency(locale: locale))
+        self.vm.quote.taxPercentage = UserDefaults.standard.double(forKey: SETTINGS_DEFAULT_TAX)
+        self.vm.quote.taxAmount = ((subTotal - self.vm.quote.discountAmount) * self.vm.quote.taxPercentage) / 100
+        self.taxAmount.text = String(self.vm.quote.taxAmount.rounded(toPlaces: 2).toCurrency(locale: locale))
         
-        self.footer.total.text = String((subTotal - vm.getDiscount() + tax).rounded(toPlaces: 2).toCurrency(locale: locale))
+        self.footer.total.text = String((subTotal - vm.quote.discountAmount + self.vm.quote.taxAmount).rounded(toPlaces: 2).toCurrency(locale: locale))
     }
     
     @IBAction func unwindFromPdf(_ unwindSegue: UIStoryboardSegue) {}
@@ -314,9 +308,5 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     func getCurrentQuote() -> Quote? {
         return self.vm.quote
-    }
-    
-    func clearQuote() {
-        self.vm.quote = nil
     }
 }

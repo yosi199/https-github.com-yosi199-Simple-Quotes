@@ -12,8 +12,6 @@ import RealmSwift
 class Quote : Object {
     @objc dynamic var id: String = UUID().uuidString
     
-    let items = List<LineItemModel>()
-    
     @objc dynamic  var invoiceId: String = "0"
     @objc dynamic  var companyName: String = "Company Name"
     @objc dynamic  var clientName: String = "Client Name"
@@ -21,7 +19,13 @@ class Quote : Object {
     @objc dynamic  var address: String = "Address N/A"
     @objc dynamic  var email: String = "clientmail@mail.xyz"
     @objc dynamic  var notes: String = "Client notes"
-    @objc dynamic  var discount: Double = 0.0
+    
+    // Money related
+    var items = List<LineItemModel>()
+    @objc dynamic  var discountAmount: Double = 0.0
+    @objc dynamic  var discountPercentage: Double = 0.0
+    @objc dynamic  var taxAmount: Double = 0.0
+    @objc dynamic  var taxPercentage: Double = 0.0
     
     override static func primaryKey() -> String? {
         return "id"
@@ -31,5 +35,33 @@ class Quote : Object {
 extension Quote {
     func isNew() -> Bool {
         return id.isEmpty
+    }
+    
+    func getTotal() -> Double {
+        return (items.sum(ofProperty: "total") - discountAmount) + taxAmount
+    }
+}
+
+extension List where Element == LineItemModel {
+    func toArray() -> [LineItemModel]{
+        var array = [LineItemModel]()
+        forEach { item in
+            array.append(item)
+        }
+        return array
+    }
+}
+
+extension Array where Element == LineItemModel {
+    func getSubTotal() -> Double {
+        return reduce(0, {$0 + $1.total})
+    }
+    
+    func toList() -> List<LineItemModel> {
+        let list = List<LineItemModel>()
+        forEach { item in
+            list.append(item)
+        }
+        return list
     }
 }

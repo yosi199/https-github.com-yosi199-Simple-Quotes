@@ -16,7 +16,7 @@ class QuoteViewModel: FileHandler {
     private let userDefaults = UserDefaults.standard
     private let realm = try! Realm()
     
-    var quote: Quote!
+    var quote: Quote = Quote()
     var settingsChanged: (()-> Void)?
     
     init() {
@@ -51,23 +51,10 @@ class QuoteViewModel: FileHandler {
         return userDefaults.string(forKey: SETTINGS_COMPANY_NAME) ?? ""
     }
     
-    func getDiscount() -> Double {
-        if let quote = quote {
-            return quote.discount
-        } else{
-            return 0
-        }
-    }
-    
     func saveQuote() {
         DataRepository.shared.saveQuote(quote: quote)
-    }
-    
-    func getSubTotal(items: [LineItemModel]) -> Double {
-        var subTotal = 0.0
-        for item in items {
-            subTotal = subTotal + item.total
-        }
-        return subTotal
+        // Once we are saving the quote - it becomes a manged object so if we
+        // want to keep using it we must, again - get an umanged object
+        self.quote = Quote(value: quote)
     }
 }

@@ -40,7 +40,6 @@ class MenuViewController: UIViewController {
         
         menuList.deleteQuoteCallback = { quote, index in
             self.vm.delete(quote: quote)
-            self.detailViewController.clearQuote()
             self.selectFirst()
             self.detailViewController.showContent(show: !self.vm.isEmpty())
             

@@ -16,7 +16,7 @@ class DiscountVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var discountPercentageInput: UITextField!
     
     var subTotal: Double = 0.0
-    var discountCallback: ((_ discountValue: Double) -> Void)?
+    var discountCallback: ((_ discountAmount: Double, _ discountPercentage: Double) -> Void)?
     
     private let locale = Locale(identifier: DataRepository.Defaults.shared.localeIdentifier)
         
@@ -40,8 +40,9 @@ class DiscountVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc func save() {
-        let discountValue = Double(self.discountSlider.value)
-        self.discountCallback?(discountValue)
+        let value = Double(self.discountSlider.value)
+        let percentage = (value * Double(self.subTotal)) / 100
+        self.discountCallback?(value, percentage)
         dismiss(animated: true, completion: nil)
     }
     
