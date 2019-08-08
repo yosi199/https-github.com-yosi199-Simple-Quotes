@@ -18,7 +18,8 @@ class QuoteViewModel: FileHandler {
     
     var quote: Quote {
         didSet {
-            if(self.quote.companyName == COMPANY_NAME_STRING){
+            // A user can change the company name per quote.
+            if(self.quote.companyName == COMPANY_NAME_STRING && getCompanyName().isNotEmpty()){
                 self.quote.companyName = getCompanyName()
             }
         }

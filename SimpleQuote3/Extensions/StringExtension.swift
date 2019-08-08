@@ -46,4 +46,12 @@ extension String {
         
         return false // couldn't turn string into a valid number
     }
+    
+    func isNotEmpty() -> Bool {
+        return self != ""
+    }
+    
+    func isEmpty() -> Bool {
+        return self == ""
+    }
 }
