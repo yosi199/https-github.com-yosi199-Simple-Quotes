@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler, UITextViewDelegate {
+class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler, UITextViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var reviewButton: UIBarButtonItem!
     @IBOutlet weak var content: UIView!
@@ -34,6 +34,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var editDiscountButton: UIImageView!
     @IBOutlet weak var editTaxButton: UIImageView!
     
+    private let keyboardHelper = KeyboardScrollHelper()
     private var imageToTransfer: UIImage? = nil
     private let vm = QuoteViewModel()
     private let imagePicker = UIImagePickerController()
@@ -44,9 +45,12 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         setupItemsTable()
         setupInteractions()
         setupCallbacks()
-        setupNotifications()
+        setupDelegations()
         updateViews()
+        keyboardHelper.register(hostView: self.view, scrollView: self.scrollView)
     }
+    
+    deinit {keyboardHelper.unregister()}
     
     private func setupInteractions(){
         let chooseImageTap = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
@@ -57,10 +61,6 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         let editDiscountTap = UITapGestureRecognizer(target: self, action: #selector(editDiscount))
         self.editDiscountButton.addGestureRecognizer(editDiscountTap)
-    }
-    
-    private func setupNotifications(){
-        registerForKeyboardNotifications()
     }
     
     private func setupCallbacks() {
@@ -85,6 +85,24 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         itemsTableView.isScrollEnabled = false
         itemsTableView.delegate = itemsTableView
         itemsTableView.dataSource = itemsTableView
+    }
+    
+    private func setupDelegations(){
+        self.header.address.delegate = self
+        self.header.clientName.delegate = self
+        self.header.companyName.delegate = self
+        self.header.date.delegate = self
+        self.header.email.delegate = self
+        self.header.id.delegate = self
+        
+        self.inputItemView.descriptionField.delegate = self
+        self.inputItemView.itemValue.delegate = self
+        self.inputItemView.quantity.delegate = self
+        self.inputItemView.taxValue.delegate = self
+        self.inputItemView.title.delegate = self
+        self.inputItemView.totalValue.delegate = self
+        
+        self.notes.delegate = self
     }
     
     private func updateViews(){
@@ -128,7 +146,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @objc func editDiscount(){
-        unregisterForKeyboardNotifications()
+        keyboardHelper.unregister()
         let popover = self.storyboard?.instantiateViewController(withIdentifier: "editDiscountVC") as! DiscountVC
         // TODO - replace quote with TOTAL VALUE instead - it won't work if it's a newly created quote that hasn't been saved yet
         popover.subTotal = self.itemsTableView.items.getSubTotal()
@@ -284,32 +302,31 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         else { title = ""}
     }
     
-    func registerForKeyboardNotifications(){
-        //Adding notifies on keyboard appearing
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    func unregisterForKeyboardNotifications(){
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= (keyboardSize.height / 1.75)
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
-    }
     
     func getCurrentQuote() -> Quote? {
         return self.vm.quote
     }
+    
+    // MARK: Delegation helper to send events to the keyboard helper class
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        var view: UIView = textView
+        if(view.superview != self.view){
+            view = (self.notes.superview?.superview!)!
+        }
+        keyboardHelper.textFieldDidBeginEditing(field: view)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        keyboardHelper.textFieldDidBeginEditing(field: textField)
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        keyboardHelper.textFieldDidEndEditing(field: textView)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        keyboardHelper.textFieldDidEndEditing(field: textField)
+    }
+    
+    
 }

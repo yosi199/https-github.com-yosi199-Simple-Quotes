@@ -10,6 +10,7 @@
 		4C68875A22DB8F9D00B16462 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68875922DB8F9D00B16462 /* SettingsViewController.swift */; };
 		4C68875C22E343E400B16462 /* LineItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68875B22E343E400B16462 /* LineItemsList.swift */; };
 		4C7D156322BE89BD008D4CF8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */; };
+		4CC94E5722FBFAE700E786CC /* KeyboardScrollHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5622FBFAE700E786CC /* KeyboardScrollHelper.swift */; };
 		4CDEFCB622D5DCE400177660 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEFCB522D5DCE400177660 /* DateExtensions.swift */; };
 		4CF6353822D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */; };
 		4CF6353922D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */; };
@@ -61,6 +62,7 @@
 		4C68875922DB8F9D00B16462 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4C68875B22E343E400B16462 /* LineItemsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineItemsList.swift; sourceTree = "<group>"; };
 		4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		4CC94E5622FBFAE700E786CC /* KeyboardScrollHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardScrollHelper.swift; sourceTree = "<group>"; };
 		4CDEFCB522D5DCE400177660 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCellItemTableViewCell.swift; sourceTree = "<group>"; };
 		4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteCellItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				4C68875B22E343E400B16462 /* LineItemsList.swift */,
 				D35429AF22F86288003ED36C /* DiscountVC.swift */,
 				D35429B122F86B60003ED36C /* DiscountVM.swift */,
+				4CC94E5622FBFAE700E786CC /* KeyboardScrollHelper.swift */,
 			);
 			path = Quote;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3B3212A22BA254500AB362A /* UserRepository.swift in Sources */,
+				4CC94E5722FBFAE700E786CC /* KeyboardScrollHelper.swift in Sources */,
 				4C7D156322BE89BD008D4CF8 /* UIImageExtensions.swift in Sources */,
 				D3EAA40722E47F50000DD4CE /* DoubleInputValidator.swift in Sources */,
 				D3B3213122BA255D00AB362A /* AppConstants.swift in Sources */,
