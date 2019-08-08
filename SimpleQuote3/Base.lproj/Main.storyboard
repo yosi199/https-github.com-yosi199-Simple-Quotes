@@ -542,10 +542,22 @@ Create a new one by pressing the '+' button.</string>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ob-Jn-yZX">
+                                <rect key="frame" x="0.0" y="74" width="834" height="1050"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Ob-Jn-yZX" firstAttribute="leading" secondItem="hhw-vJ-pFc" secondAttribute="leading" id="2gA-md-Yaz"/>
+                            <constraint firstItem="hhw-vJ-pFc" firstAttribute="bottom" secondItem="6Ob-Jn-yZX" secondAttribute="bottom" id="6BZ-1h-jEl"/>
                             <constraint firstItem="omR-eK-eV6" firstAttribute="trailing" secondItem="hhw-vJ-pFc" secondAttribute="trailing" id="E6C-hw-90T"/>
+                            <constraint firstItem="hhw-vJ-pFc" firstAttribute="trailing" secondItem="6Ob-Jn-yZX" secondAttribute="trailing" id="XBl-6R-RFK"/>
+                            <constraint firstItem="6Ob-Jn-yZX" firstAttribute="top" secondItem="omR-eK-eV6" secondAttribute="bottom" id="gub-th-dwX"/>
                             <constraint firstItem="omR-eK-eV6" firstAttribute="top" secondItem="hhw-vJ-pFc" secondAttribute="top" id="jpE-kS-Cex"/>
                             <constraint firstItem="omR-eK-eV6" firstAttribute="leading" secondItem="hhw-vJ-pFc" secondAttribute="leading" id="v01-vN-P5C"/>
                         </constraints>
@@ -563,6 +575,7 @@ Create a new one by pressing the '+' button.</string>
                     <connections>
                         <outlet property="navigationBar" destination="omR-eK-eV6" id="QAe-BC-QI1"/>
                         <outlet property="shareButton" destination="Aao-hq-M6G" id="erh-uu-gud"/>
+                        <outlet property="webview" destination="6Ob-Jn-yZX" id="6wY-5T-iMU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7WJ-hu-Kcs" userLabel="First Responder" sceneMemberID="firstResponder"/>

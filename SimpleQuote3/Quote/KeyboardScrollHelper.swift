@@ -46,7 +46,7 @@ class KeyboardScrollHelper {
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             
             var aRect : CGRect = view.frame
             aRect.size.height -= keyboardSize!.height

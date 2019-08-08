@@ -50,7 +50,11 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         keyboardHelper.register(hostView: self.view, scrollView: self.scrollView)
     }
     
-    deinit {keyboardHelper.unregister()}
+    deinit { unregisterKeyboardHelper()}
+    
+    func unregisterKeyboardHelper(){
+        keyboardHelper.unregister()
+    }
     
     private func setupInteractions(){
         let chooseImageTap = UITapGestureRecognizer(target: self, action: #selector(chooseImage))

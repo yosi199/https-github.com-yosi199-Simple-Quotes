@@ -102,6 +102,8 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func settings(_ sender: Any) {
+        detailViewController.unregisterKeyboardHelper()
+        
         let settingsVC = self.storyboard?.instantiateViewController(withIdentifier: "settings") as! SettingsViewController
         settingsVC.modalPresentationStyle = UIModalPresentationStyle.formSheet
         self.present(settingsVC, animated: true, completion: nil)

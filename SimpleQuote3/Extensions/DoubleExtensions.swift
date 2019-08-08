@@ -26,4 +26,8 @@ extension Double {
             return String(self)
         }
     }
+    
+    func toString() -> String {
+        return String(self)
+    }
 }

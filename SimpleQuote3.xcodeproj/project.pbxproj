@@ -11,6 +11,10 @@
 		4C68875C22E343E400B16462 /* LineItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68875B22E343E400B16462 /* LineItemsList.swift */; };
 		4C7D156322BE89BD008D4CF8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */; };
 		4CC94E5722FBFAE700E786CC /* KeyboardScrollHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5622FBFAE700E786CC /* KeyboardScrollHelper.swift */; };
+		4CC94E5922FC15FE00E786CC /* PDFController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5822FC15FE00E786CC /* PDFController.swift */; };
+		4CC94E5B22FC5E8A00E786CC /* TextFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5A22FC5E8A00E786CC /* TextFactory.swift */; };
+		4CC94E5D22FC671B00E786CC /* Template1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5C22FC671B00E786CC /* Template1.swift */; };
+		4CC94E5F22FC67C100E786CC /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5E22FC67C100E786CC /* Template.swift */; };
 		4CDEFCB622D5DCE400177660 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEFCB522D5DCE400177660 /* DateExtensions.swift */; };
 		4CF6353822D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */; };
 		4CF6353922D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */; };
@@ -22,8 +26,6 @@
 		D340142422F6A78600328CBE /* CurrencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D340142222F6A78600328CBE /* CurrencyCell.xib */; };
 		D340142622F6B74300328CBE /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340142522F6B74300328CBE /* Countries.swift */; };
 		D340142822F6BF5300328CBE /* CurrencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340142722F6BF5300328CBE /* CurrencyHelper.swift */; };
-		D34E57ED22BBA48200121217 /* PDFWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34E57EC22BBA48200121217 /* PDFWriter.swift */; };
-		D34E57EF22BBA5F000121217 /* PDFController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34E57EE22BBA5F000121217 /* PDFController.swift */; };
 		D35429B022F86288003ED36C /* DiscountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35429AF22F86288003ED36C /* DiscountVC.swift */; };
 		D35429B222F86B60003ED36C /* DiscountVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35429B122F86B60003ED36C /* DiscountVM.swift */; };
 		D393E8CB22E707D300E8F034 /* AlertDeletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393E8CA22E707D300E8F034 /* AlertDeletion.swift */; };
@@ -63,6 +65,10 @@
 		4C68875B22E343E400B16462 /* LineItemsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineItemsList.swift; sourceTree = "<group>"; };
 		4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		4CC94E5622FBFAE700E786CC /* KeyboardScrollHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardScrollHelper.swift; sourceTree = "<group>"; };
+		4CC94E5822FC15FE00E786CC /* PDFController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFController.swift; sourceTree = "<group>"; };
+		4CC94E5A22FC5E8A00E786CC /* TextFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFactory.swift; sourceTree = "<group>"; };
+		4CC94E5C22FC671B00E786CC /* Template1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template1.swift; sourceTree = "<group>"; };
+		4CC94E5E22FC67C100E786CC /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		4CDEFCB522D5DCE400177660 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCellItemTableViewCell.swift; sourceTree = "<group>"; };
 		4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteCellItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -75,8 +81,6 @@
 		D340142522F6B74300328CBE /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		D340142722F6BF5300328CBE /* CurrencyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHelper.swift; sourceTree = "<group>"; };
 		D340142922F6C56D00328CBE /* FlagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FlagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D34E57EC22BBA48200121217 /* PDFWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFWriter.swift; sourceTree = "<group>"; };
-		D34E57EE22BBA5F000121217 /* PDFController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFController.swift; sourceTree = "<group>"; };
 		D35429AF22F86288003ED36C /* DiscountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountVC.swift; sourceTree = "<group>"; };
 		D35429B122F86B60003ED36C /* DiscountVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountVM.swift; sourceTree = "<group>"; };
 		D393E8CA22E707D300E8F034 /* AlertDeletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDeletion.swift; sourceTree = "<group>"; };
@@ -181,8 +185,10 @@
 		D34E57EB22BBA04D00121217 /* PDF */ = {
 			isa = PBXGroup;
 			children = (
-				D34E57EC22BBA48200121217 /* PDFWriter.swift */,
-				D34E57EE22BBA5F000121217 /* PDFController.swift */,
+				4CC94E5822FC15FE00E786CC /* PDFController.swift */,
+				4CC94E5A22FC5E8A00E786CC /* TextFactory.swift */,
+				4CC94E5C22FC671B00E786CC /* Template1.swift */,
+				4CC94E5E22FC67C100E786CC /* Template.swift */,
 			);
 			path = PDF;
 			sourceTree = "<group>";
@@ -383,11 +389,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleQuote3/Pods-SimpleQuote3-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/TPPDF/TPPDF.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPPDF.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -431,6 +439,7 @@
 				D3B3212922BA254500AB362A /* StringExtension.swift in Sources */,
 				D3B320F822BA217E00AB362A /* AppDelegate.swift in Sources */,
 				D393E8CB22E707D300E8F034 /* AlertDeletion.swift in Sources */,
+				4CC94E5922FC15FE00E786CC /* PDFController.swift in Sources */,
 				4C68875A22DB8F9D00B16462 /* SettingsViewController.swift in Sources */,
 				D3B3211822BA226700AB362A /* Header.swift in Sources */,
 				D3B3213622BA2CAB00AB362A /* ItemCellTableViewCell.swift in Sources */,
@@ -448,12 +457,13 @@
 				D3B3212E22BA254500AB362A /* User.swift in Sources */,
 				D3B3211722BA226700AB362A /* NumberInputView.swift in Sources */,
 				D3B3212F22BA254500AB362A /* FileHandler.swift in Sources */,
-				D34E57EF22BBA5F000121217 /* PDFController.swift in Sources */,
 				D3B3212B22BA254500AB362A /* DataRepository.swift in Sources */,
+				4CC94E5F22FC67C100E786CC /* Template.swift in Sources */,
+				4CC94E5D22FC671B00E786CC /* Template1.swift in Sources */,
 				4CF6353822D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift in Sources */,
 				D3B3212C22BA254500AB362A /* LineItemModel.swift in Sources */,
 				D3B3211922BA226700AB362A /* DoubleInputView.swift in Sources */,
-				D34E57ED22BBA48200121217 /* PDFWriter.swift in Sources */,
+				4CC94E5B22FC5E8A00E786CC /* TextFactory.swift in Sources */,
 				D3B3212D22BA254500AB362A /* Quote.swift in Sources */,
 				D3B3211522BA226700AB362A /* Footer.swift in Sources */,
 				D340142622F6B74300328CBE /* Countries.swift in Sources */,
