@@ -154,6 +154,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let popover = self.storyboard?.instantiateViewController(withIdentifier: "editDiscountVC") as! DiscountVC
         // TODO - replace quote with TOTAL VALUE instead - it won't work if it's a newly created quote that hasn't been saved yet
         popover.subTotal = self.itemsTableView.items.getSubTotal()
+        popover.currentDiscount = self.vm.quote.discountAmount
         popover.discountCallback = { value, percent in
             self.vm.quote.discountAmount = value
             self.vm.quote.discountPercentage = percent

@@ -14,6 +14,7 @@ class QuoteCellItemTableViewCell: UITableViewCell {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var itemsCount: UILabel!
     @IBOutlet weak var totalValue: UILabel!
+    @IBOutlet weak var invoiceID: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -32,6 +33,7 @@ class QuoteCellItemTableViewCell: UITableViewCell {
         self.clientName.text = item.clientName
         self.date.text = item.date
         self.itemsCount.text = "Items: \(String(item.items.count))"
+        self.invoiceID.text = "\(DataRepository.Defaults.shared.quoteIDPrefix)\(item.invoiceId)"
         self.totalValue.text = item.getTotal().rounded(toPlaces: 2).toCurrency(locale: getLocale())
     }
     

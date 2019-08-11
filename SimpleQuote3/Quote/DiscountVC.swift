@@ -16,6 +16,7 @@ class DiscountVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var discountPercentageInput: UITextField!
     
     var subTotal: Double = 0.0
+    var currentDiscount: Double = 0.0
     var discountCallback: ((_ discountAmount: Double, _ discountPercentage: Double) -> Void)?
     
     private let locale = Locale(identifier: DataRepository.Defaults.shared.localeIdentifier)
@@ -31,6 +32,8 @@ class DiscountVC: UIViewController, UITextFieldDelegate {
         self.discountSlider.maximumValue = Float(maxValue)
         self.discountValueInput.text = String(0.0.toCurrency(locale: locale))
         self.discountPercentageInput.text = "%0"
+        self.discountSlider.value = Float(currentDiscount)
+        onValueChanged(self)
         
         let frameTap = UITapGestureRecognizer(target: self, action: #selector(self.tappedOutside))
         self.view.addGestureRecognizer(frameTap)

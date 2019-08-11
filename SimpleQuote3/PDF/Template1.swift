@@ -46,13 +46,22 @@ class Template1: Template {
         document.add(section: section2)
         
         // Some spacing from headers
-        document.add(space: 80)
+        document.add(space: 50)
+        
+        // Customer info
+        let group = PDFGroup(allowsBreaks: false, backgroundColor: #colorLiteral(red: 0.9568627451, green: 0.7921568627, blue: 0.2823529412, alpha: 1), backgroundImage: nil, backgroundShape: nil, outline: .none, padding: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 100))
+        group.add(attributedText: factory.bold(text: "CUSTOMER", size: .small))
+        document.add(group: group)
+        document.add(space: 10)
+        
+        // Some spacing from customer info
+        document.add(space: 50)
         
     }
     
     func setContent(document: PDFDocument) {
         // Items data table - where we list all of the LineItemModels.
-        document.add(.contentCenter, table: table())
+        document.add(.contentCenter, table: lineItemsTable())
         
         document.add(space: 100)
         
@@ -97,7 +106,7 @@ class Template1: Template {
     }
     
     func setFooter(document: PDFDocument) {
-        document.add(.footerCenter, attributedText: factory.normal(text: "Created with \(APP_NAME) app.", size: .medium))
+        document.add(.footerCenter, attributedText: factory.normal(text: "Created with \(APP_NAME) app.", size: .small))
     }
     
     private func buildData() -> ([[String]], [[PDFTableCellAlignment]]) {
@@ -117,7 +126,7 @@ class Template1: Template {
         return(values: value, alignments: alignments)
     }
     
-    private func table() -> PDFTable{
+    private func lineItemsTable() -> PDFTable{
         
         // Create a table
         let table = PDFTable()
