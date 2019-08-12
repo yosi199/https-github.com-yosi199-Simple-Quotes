@@ -18,13 +18,13 @@ class UserRepository {
         try! self.realm = Realm()
     }
     
-    func getUser() -> User? {
-        return realm.objects(User.self).first
+    func getUser() -> User {
+        return realm.objects(User.self).first ?? User()
     }
     
-    func setUser() {
+    func setUser(user: User) {
         try! realm.write {
-            realm.create(User.self)
+            realm.add(user, update: .all)
             debugPrint("created user successfully)")
         }
     }

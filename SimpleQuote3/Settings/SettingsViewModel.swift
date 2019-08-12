@@ -13,6 +13,8 @@ class SettingsViewModel  {
     
     private let userDefaults = UserDefaults.standard
     
+    var user: User = User(value: UserRepository.shared.getUser())
+    
     var currency: String  {
         get { return DataRepository.Defaults.shared.currency }
         set { DataRepository.Defaults.shared.currency = newValue}
@@ -45,5 +47,9 @@ class SettingsViewModel  {
     var localeIdentifier: String {
         get { return DataRepository.Defaults.shared.localeIdentifier }
         set { DataRepository.Defaults.shared.localeIdentifier = newValue}
+    }
+    
+    func saveUser(user: User){
+        UserRepository.shared.setUser(user: user)
     }
 }

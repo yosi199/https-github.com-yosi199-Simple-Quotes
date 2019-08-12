@@ -20,28 +20,50 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     @IBOutlet weak var idPrefixInput: UITextField!
     @IBOutlet weak var companyName: UITextField!
     @IBOutlet weak var currencyTable: CurrencyList!
-    
+    @IBOutlet weak var phoneNumber: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var address: UITextField!
     @IBOutlet weak var currencyTableWidthConstraint: NSLayoutConstraint!
+    
     private let viewModel = SettingsViewModel()
+    private var user: User?
+    
     private var selectedLocale: Locale?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.user = viewModel.user
         
-        self.selectedLocale = Locale(identifier: viewModel.localeIdentifier)
-        
-        self.currencyTable.register(UINib(nibName: "CurrencyCell".self, bundle: nil), forCellReuseIdentifier: "currencyCell")
-        self.currencyTable.delegate = currencyTable
-        self.currencyTable.dataSource = currencyTable
-        
-        self.defaultTax.delegate = DoubleInputValidator.shared
-        // Do any additional setup after loading the view.
-        
-        setupInteractions()
-        setupCallbacks()
-        
-        if let image = viewModel.image {
-            self.logo.image = image
+        if let user = self.user {
+            
+            self.selectedLocale = Locale(identifier: viewModel.localeIdentifier)
+            
+            self.currencyTable.register(UINib(nibName: "CurrencyCell".self, bundle: nil), forCellReuseIdentifier: "currencyCell")
+            self.currencyTable.delegate = currencyTable
+            self.currencyTable.dataSource = currencyTable
+            
+            if(user.address.isNotEmpty()){
+                self.address.text = user.address
+            }
+            
+            if(user.phone.isNotEmpty()){
+                self.phoneNumber.text = user.phone
+            }
+            
+            if(user.email.isNotEmpty()){
+                self.email.text = user.email
+            }
+            
+            self.defaultTax.delegate = DoubleInputValidator.shared
+            // Do any additional setup after loading the view.
+            
+            setupInteractions()
+            setupCallbacks()
+            
+            if let image = viewModel.image {
+                self.logo.image = image
+            }
+            
         }
     }
     
@@ -152,14 +174,21 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     }
     
     @IBAction func save(_ sender: Any) {
+        let user = User(value: self.user)
         viewModel.currency = currencySymbol.text ?? "$"
         viewModel.tax = defaultTax.text ?? "0"
         viewModel.quoteIDPrefix = idPrefixInput.text ?? "CMX"
         viewModel.companyName = companyName.text.orEmpty()
         viewModel.localeIdentifier = selectedLocale?.identifier ?? Locale.current.identifier
+        
+        user.address = address.text ?? ""
+        user.email = email.text ?? ""
+        user.phone = phoneNumber.text ?? ""
+        viewModel.saveUser(user: user)
         saveImageFile(data: logo.image?.pngData(), withName: COMPANY_LOGO)
         NotificationCenter.default.post(name: Notification.Name(SettingsViewController.EVENT_SETTINGS_CHANGED), object: nil)
         dismiss(animated: true, completion: nil)
+        
     }
     
     @IBAction func cancel(_ sender: Any) {

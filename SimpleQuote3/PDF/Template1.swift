@@ -23,8 +23,8 @@ class Template1: Template {
         document.add(.headerLeft, attributedText: factory.normal(text: "\(quote.companyName)", size: .extra))
         if let uiImage = UIImage(contentsOfFile: getFileForName(name: COMPANY_LOGO).path){
             let image = PDFImage(image: uiImage)
-            image.size = CGSize(width: 80, height: 80)
-            image.quality = 0.8
+            image.size = CGSize(width: 50, height: 50)
+            image.quality = 1.0
             image.sizeFit = .widthHeight
             document.add(.headerRight, image: image)
         }
