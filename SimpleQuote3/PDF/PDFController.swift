@@ -33,15 +33,19 @@ class PDFController: UIViewController {
         super.viewDidLoad()
         
         // If for some reason our quote is unavailable - go back
+        let user = UserRepository.shared.getUser()
         guard let quote = self.quote else {
             // TODO - show error alert
             dismiss(animated: true, completion: nil)
             return }
-        self.template =  Template1(quote: quote)
+        self.template =  Template1(quote: quote, user: user)
+        
         let document = PDFDocument(format: .a4)
+
         template?.setHeader(document: document)
         template?.setContent(document: document)
         template?.setFooter(document: document)
+        
   
         generate(document: document)
     }

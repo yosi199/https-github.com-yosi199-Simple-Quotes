@@ -34,6 +34,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var editDiscountButton: UIImageView!
     @IBOutlet weak var editTaxButton: UIImageView!
     
+    private let progress = ProgressView()
     private let keyboardHelper = KeyboardScrollHelper()
     private var imageToTransfer: UIImage? = nil
     private let vm = QuoteViewModel()
@@ -127,6 +128,8 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         itemsTableView.items = vm.quote.items.toArray()
         itemsTableView.reloadData()
         
+        notes.text = vm.quote.notes
+        
         editButton.isEnabled = !vm.quote.items.isEmpty
         reviewButton.isEnabled = !vm.quote.items.isEmpty
         if(vm.quote.items.isEmpty) {
@@ -185,16 +188,19 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let controller = segue.destination as? PDFController else { return }
-        saveQuote()
         controller.quote = self.vm.quote
     }
     
     @IBAction func screenshow(_ sender: Any) {
-        performSegue(withIdentifier: "pdf", sender: self)
+        self.progress.show(parent: self)
+        DispatchQueue.main.async {
+            self.saveQuote()
+            self.performSegue(withIdentifier: "pdf", sender: self)
+            self.progress.hide(parent: self)
+        }
     }
     
     private func saveQuote(){
-        
         self.vm.quote.address = self.header.address.text.orEmpty()
         self.vm.quote.clientName = self.header.clientName.text.orEmpty()
         self.vm.quote.companyName = self.header.companyName.text.orEmpty()
@@ -203,8 +209,15 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.vm.quote.notes = self.notes.text.orEmpty()
         self.vm.quote.items = self.itemsTableView.items.toList()
         
+        self.saveImage()
         self.vm.saveQuote()
         self.menu.reloadData()
+    }
+    
+    private func saveImage(){
+        let imagePath = "\(self.vm.quote.invoiceId)Image"
+        self.vm.quote.imagePath = imagePath
+        self.saveImageFile(data: self.header.logo.image?.pngData(), withName: imagePath)
     }
     
     func confirmDelete(item: LineItemModel, indexPath: IndexPath) {
@@ -306,7 +319,6 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         if (show) { title = vm.getInvoiceID() }
         else { title = ""}
     }
-    
     
     func getCurrentQuote() -> Quote? {
         return self.vm.quote

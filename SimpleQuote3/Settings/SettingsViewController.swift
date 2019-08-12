@@ -25,6 +25,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     @IBOutlet weak var address: UITextField!
     @IBOutlet weak var currencyTableWidthConstraint: NSLayoutConstraint!
     
+    private let progress = ProgressView()
     private let viewModel = SettingsViewModel()
     private var user: User?
     
@@ -174,7 +175,9 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     }
     
     @IBAction func save(_ sender: Any) {
-        let user = User(value: self.user)
+        self.progress.show(parent: self)
+        
+        let user = User(value: self.user!)
         viewModel.currency = currencySymbol.text ?? "$"
         viewModel.tax = defaultTax.text ?? "0"
         viewModel.quoteIDPrefix = idPrefixInput.text ?? "CMX"
@@ -185,10 +188,20 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
         user.email = email.text ?? ""
         user.phone = phoneNumber.text ?? ""
         viewModel.saveUser(user: user)
-        saveImageFile(data: logo.image?.pngData(), withName: COMPANY_LOGO)
+        let image = self.logo.image
+        DispatchQueues.serialQueue.async(execute: {
+            let imageData = image?.pngData()
+            self.saveImageFile(data: imageData, withName: COMPANY_LOGO)
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                self.progress.hide(parent: self)
+                self.finishActivity()
+            }
+        })
+    }
+    
+    func finishActivity(){
         NotificationCenter.default.post(name: Notification.Name(SettingsViewController.EVENT_SETTINGS_CHANGED), object: nil)
-        dismiss(animated: true, completion: nil)
-        
+        self.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -204,5 +217,4 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
         currencyTableWidthConstraint.constant = constant
         UIView.animate(withDuration: 0.15, animations: {self.view.layoutIfNeeded()}, completion: nil)
     }
-    
 }

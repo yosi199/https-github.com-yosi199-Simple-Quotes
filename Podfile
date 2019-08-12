@@ -9,6 +9,8 @@ target 'SimpleQuote3' do
   
       pod 'RealmSwift'
       pod 'TPPDF' 
+      pod 'Firebase/Analytics'
+
 
 
 

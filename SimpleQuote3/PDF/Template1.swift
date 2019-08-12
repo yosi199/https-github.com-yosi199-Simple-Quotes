@@ -10,60 +10,70 @@ import Foundation
 import TPPDF
 
 class Template1: Template {
+    private static let SMALL_SPACE: CGFloat = 50
+    private static let MEDIUM_SPACE: CGFloat = 100
+    
     private let factory = TextFactory.shared
     private let locale = Locale(identifier: DataRepository.Defaults.shared.localeIdentifier)
     let quote: Quote
+    let user: User
     
-    init(quote: Quote) {
+    init(quote: Quote, user: User) {
         self.quote = quote
+        self.user = user
     }
     
     func setHeader(document: PDFDocument) {
         // Header/Title
         document.add(.headerLeft, attributedText: factory.normal(text: "\(quote.companyName)", size: .extra))
-        if let uiImage = UIImage(contentsOfFile: getFileForName(name: COMPANY_LOGO).path){
+        if let uiImage = UIImage(contentsOfFile: getFileForName(name: quote.imagePath).path){
             let image = PDFImage(image: uiImage)
             image.size = CGSize(width: 50, height: 50)
             image.quality = 1.0
             image.sizeFit = .widthHeight
             document.add(.headerRight, image: image)
         }
+        document.add(space: Template1.SMALL_SPACE)
         
         // Header section split
+        // Company Info
         let section = PDFSection(columnWidths: [0.5, 0.5])
-        section.columns[0].add(.left, attributedText: factory.normal(text: "\(quote.address)"))
+        section.columns[0].add(.left, attributedText: factory.normal(text: "\(user.address)"))
         section.columns[0].add(space: 2)
+        section.columns[0].add(.left, attributedText: factory.normal(text: "\(user.email)"))
+        section.columns[0].add(space: 2)
+        section.columns[0].add(.left, attributedText: factory.normal(text: "\(user.phone)"))
         
         section.columns[1].add(.right, attributedText: factory.normal(text: "\(quote.date)"))
         section.columns[1].add(space: 2)
+        section.columns[1].add(.right, attributedText: factory.normal(text: "\(DataRepository.Defaults.shared.quoteIDPrefix) \(quote.invoiceId)"))
         
         document.add(section: section)
         
-        // Header section split 2
-        let section2 = PDFSection(columnWidths: [0.5, 0.5])
-        section.columns[0].add(.left, attributedText: factory.normal(text: "\(quote.email)"))
-        section.columns[1].add(.right, attributedText: factory.normal(text: "\(DataRepository.Defaults.shared.quoteIDPrefix) \(quote.invoiceId)"))
-        document.add(section: section2)
-        
         // Some spacing from headers
-        document.add(space: 50)
+        document.add(space: Template1.SMALL_SPACE)
         
         // Customer info
         let group = PDFGroup(allowsBreaks: false, backgroundColor: #colorLiteral(red: 0.9568627451, green: 0.7921568627, blue: 0.2823529412, alpha: 1), backgroundImage: nil, backgroundShape: nil, outline: .none, padding: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 100))
         group.add(attributedText: factory.bold(text: "CUSTOMER", size: .small))
         document.add(group: group)
         document.add(space: 10)
+        let customerSection = PDFSection(columnWidths: [0.5])
+        document.add(section: customerSection)
+        customerSection.columns[0].add(.left, attributedText: factory.normal(text: "\(quote.clientName)"))
+        customerSection.columns[0].add(.left, attributedText: factory.normal(text: "\(quote.address)"))
+        customerSection.columns[0].add(.left, attributedText: factory.normal(text: "\(quote.email)"))
         
         // Some spacing from customer info
-        document.add(space: 50)
+        document.add(space: Template1.SMALL_SPACE)
         
     }
     
     func setContent(document: PDFDocument) {
         // Items data table - where we list all of the LineItemModels.
         document.add(.contentCenter, table: lineItemsTable())
-        
-        document.add(space: 100)
+    
+        document.add(space: Template1.SMALL_SPACE)
         
         // Notes and Summary sections
         let summarySection = PDFSection(columnWidths: [0.6, 0.2, 0.2])
@@ -182,7 +192,6 @@ class Template1: Template {
         
         // Set table padding and margin
         table.padding = 5.0
-        //        table.margin = 10.0
         
         // In case of a linebreak during rendering we want to have table headers on each page.
         table.showHeadersOnEveryPage = true

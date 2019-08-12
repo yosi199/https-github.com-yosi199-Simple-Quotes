@@ -47,12 +47,15 @@
          contextName = "SettingsViewController.imagePickerController(_:didFinishPickingMediaWithInfo:):SettingsViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "pickedImage.pngData()?.count">
-            </PersistentString>
-            <PersistentString
                value = "pickedImage.absoluteString">
             </PersistentString>
+            <PersistentString
+               value = "pickedImage.pngData()?.count">
+            </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "QuoteViewModel.getLogoImage():QuoteViewModel.swift">
       </ContextState>
       <ContextState
          contextName = "QuoteViewModel.getInvoiceID():QuoteViewModel.swift">
@@ -124,6 +127,14 @@
          <PersistentStrings>
             <PersistentString
                value = "document">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "QuoteViewController.maybeSaveImage():QuoteViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

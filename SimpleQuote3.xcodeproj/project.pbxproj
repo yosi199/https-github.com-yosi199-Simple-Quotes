@@ -31,6 +31,9 @@
 		D393E8CB22E707D300E8F034 /* AlertDeletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393E8CA22E707D300E8F034 /* AlertDeletion.swift */; };
 		D393E8DC22E750A400E8F034 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393E8DB22E750A400E8F034 /* MenuList.swift */; };
 		D393E8DE22E7521000E8F034 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393E8DD22E7521000E8F034 /* MenuViewModel.swift */; };
+		D3A0907D23017936004C6E88 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3A0907C23017936004C6E88 /* GoogleService-Info.plist */; };
+		D3A0907F2301933B004C6E88 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0907E2301933B004C6E88 /* ProgressView.swift */; };
+		D3A0908123019C92004C6E88 /* DispatchQueues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0908023019C92004C6E88 /* DispatchQueues.swift */; };
 		D3B320F822BA217E00AB362A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B320F722BA217E00AB362A /* AppDelegate.swift */; };
 		D3B320FA22BA217E00AB362A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B320F922BA217E00AB362A /* MenuViewController.swift */; };
 		D3B320FC22BA217E00AB362A /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B320FB22BA217E00AB362A /* QuoteViewController.swift */; };
@@ -86,6 +89,9 @@
 		D393E8CA22E707D300E8F034 /* AlertDeletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDeletion.swift; sourceTree = "<group>"; };
 		D393E8DB22E750A400E8F034 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
 		D393E8DD22E7521000E8F034 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		D3A0907C23017936004C6E88 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D3A0907E2301933B004C6E88 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		D3A0908023019C92004C6E88 /* DispatchQueues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueues.swift; sourceTree = "<group>"; };
 		D3B320F422BA217E00AB362A /* SimpleQuote3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleQuote3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3B320F722BA217E00AB362A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3B320F922BA217E00AB362A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +236,8 @@
 				D3B3210022BA218000AB362A /* Assets.xcassets */,
 				D3B3210222BA218000AB362A /* LaunchScreen.storyboard */,
 				D3B3210522BA218000AB362A /* Info.plist */,
+				D3A0907C23017936004C6E88 /* GoogleService-Info.plist */,
+				D3A0908023019C92004C6E88 /* DispatchQueues.swift */,
 			);
 			path = SimpleQuote3;
 			sourceTree = "<group>";
@@ -252,6 +260,7 @@
 				4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */,
 				D340142122F6A78600328CBE /* CurrencyCell.swift */,
 				D340142222F6A78600328CBE /* CurrencyCell.xib */,
+				D3A0907E2301933B004C6E88 /* ProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -372,6 +381,7 @@
 				D340142422F6A78600328CBE /* CurrencyCell.xib in Resources */,
 				D3B320FF22BA217E00AB362A /* Main.storyboard in Resources */,
 				D3B3211B22BA226700AB362A /* Header.xib in Resources */,
+				D3A0907D23017936004C6E88 /* GoogleService-Info.plist in Resources */,
 				D3B3211622BA226700AB362A /* ItemView.xib in Resources */,
 				4CF6353922D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib in Resources */,
 			);
@@ -387,15 +397,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleQuote3/Pods-SimpleQuote3-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/TPPDF/TPPDF.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPPDF.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -451,7 +465,9 @@
 				D35429B222F86B60003ED36C /* DiscountVM.swift in Sources */,
 				D340142022F6A6C100328CBE /* CurrencyList.swift in Sources */,
 				D3B3211422BA226700AB362A /* ItemView.swift in Sources */,
+				D3A0907F2301933B004C6E88 /* ProgressView.swift in Sources */,
 				D3B3213322BA25E300AB362A /* ResizeableTableViewTableViewController.swift in Sources */,
+				D3A0908123019C92004C6E88 /* DispatchQueues.swift in Sources */,
 				D340142822F6BF5300328CBE /* CurrencyHelper.swift in Sources */,
 				D35429B022F86288003ED36C /* DiscountVC.swift in Sources */,
 				D3B3212E22BA254500AB362A /* User.swift in Sources */,

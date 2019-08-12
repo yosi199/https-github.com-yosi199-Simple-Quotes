@@ -42,9 +42,11 @@ class QuoteViewModel: FileHandler {
     }
     
     func getLogoImage() -> UIImage? {
-        return UIImage(contentsOfFile: getFileForName(name: COMPANY_LOGO).path)
+        let fromQuote = UIImage(contentsOfFile: getFileForName(name: quote.imagePath).path)
+        let defaultImage = UIImage(contentsOfFile: getFileForName(name: COMPANY_LOGO).path)
+        return fromQuote ?? defaultImage
     }
-    
+        
     func getInvoiceID() -> String {
         return DataRepository.Defaults.shared.quoteIDPrefix + quote.invoiceId
     }
@@ -59,6 +61,10 @@ class QuoteViewModel: FileHandler {
     
     func getCompanyName() -> String {
         return userDefaults.string(forKey: SETTINGS_COMPANY_NAME) ?? ""
+    }
+    
+    func saveImageToQuote(image: UIImage){
+        
     }
     
     func saveQuote() {
