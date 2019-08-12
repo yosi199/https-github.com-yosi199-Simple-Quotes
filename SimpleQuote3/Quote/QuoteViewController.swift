@@ -193,11 +193,16 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBAction func screenshow(_ sender: Any) {
         self.progress.show(parent: self)
-        DispatchQueue.main.async {
-            self.saveQuote()
-            self.performSegue(withIdentifier: "pdf", sender: self)
-            self.progress.hide(parent: self)
+        
+        let imagePath = "\(self.vm.quote.invoiceId)Image"
+        
+        if let image = self.header.logo.image {
+                self.saveImage(image: image, imagePath: imagePath)
         }
+        self.vm.quote.imagePath = imagePath
+        self.saveQuote()
+        self.performSegue(withIdentifier: "pdf", sender: self)
+        self.progress.hide(parent: self)
     }
     
     private func saveQuote(){
@@ -209,15 +214,12 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.vm.quote.notes = self.notes.text.orEmpty()
         self.vm.quote.items = self.itemsTableView.items.toList()
         
-        self.saveImage()
         self.vm.saveQuote()
         self.menu.reloadData()
     }
     
-    private func saveImage(){
-        let imagePath = "\(self.vm.quote.invoiceId)Image"
-        self.vm.quote.imagePath = imagePath
-        self.saveImageFile(data: self.header.logo.image?.pngData(), withName: imagePath)
+    private func saveImage(image: UIImage, imagePath: String){
+        self.saveImageFile(data: image.pngData(), withName: imagePath)
     }
     
     func confirmDelete(item: LineItemModel, indexPath: IndexPath) {

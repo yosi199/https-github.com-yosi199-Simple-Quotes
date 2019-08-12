@@ -129,7 +129,6 @@ Create a new one by pressing the '+' button.</string>
                                                 <rect key="frame" x="534" y="420" width="200" height="40"/>
                                                 <color key="backgroundColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="XGc-5D-cfi"/>
                                                     <constraint firstAttribute="height" constant="40" id="kV2-vw-5RH"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
@@ -320,6 +319,7 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstAttribute="trailing" secondItem="LAH-SW-lSd" secondAttribute="trailing" constant="100" id="OKc-fV-XRk"/>
                                             <constraint firstItem="kLp-sS-OZa" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="Ocs-6b-M0k"/>
                                             <constraint firstAttribute="trailing" secondItem="4lT-KC-O9I" secondAttribute="trailing" constant="100" id="QIa-Br-K8F"/>
+                                            <constraint firstItem="HVi-89-zBM" firstAttribute="leading" relation="lessThanOrEqual" secondItem="d11-nw-JJu" secondAttribute="leading" constant="534" id="QJX-o6-S4y"/>
                                             <constraint firstItem="ZCm-rE-d6L" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" id="RB6-aM-3vf"/>
                                             <constraint firstItem="YqS-dN-D1y" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="SXX-cH-hmv"/>
                                             <constraint firstItem="mpx-P7-Ter" firstAttribute="leading" secondItem="L8I-sI-aTM" secondAttribute="trailing" constant="15" id="TKU-GP-DXY"/>
@@ -329,11 +329,12 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="QRO-ni-Vbz" firstAttribute="centerY" secondItem="bov-ZX-9wU" secondAttribute="centerY" id="ixr-Cp-3HP"/>
                                             <constraint firstItem="QXy-fs-4lJ" firstAttribute="leading" secondItem="kLp-sS-OZa" secondAttribute="trailing" constant="8" id="jKN-3J-f5R"/>
                                             <constraint firstItem="75T-KB-fid" firstAttribute="top" secondItem="4lT-KC-O9I" secondAttribute="bottom" constant="25" id="k22-4l-6q3"/>
-                                            <constraint firstAttribute="trailing" secondItem="HVi-89-zBM" secondAttribute="trailing" constant="100" id="k4U-4B-Jmj"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="HVi-89-zBM" secondAttribute="trailing" constant="100" id="k4U-4B-Jmj"/>
                                             <constraint firstAttribute="trailing" secondItem="ZCm-rE-d6L" secondAttribute="trailing" id="l6C-0c-xHj"/>
                                             <constraint firstItem="L8I-sI-aTM" firstAttribute="top" secondItem="YqS-dN-D1y" secondAttribute="bottom" constant="50" id="l8y-sH-8Qs"/>
                                             <constraint firstAttribute="bottom" secondItem="KLu-rk-ZzC" secondAttribute="bottom" constant="244" id="lt9-dn-gfR"/>
                                             <constraint firstItem="4lT-KC-O9I" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="maA-se-4er"/>
+                                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="QXy-fs-4lJ" secondAttribute="trailing" constant="50" id="pyZ-g9-MaE"/>
                                             <constraint firstAttribute="trailing" secondItem="YqS-dN-D1y" secondAttribute="trailing" constant="100" id="sFh-v3-dkd"/>
                                             <constraint firstItem="QRO-ni-Vbz" firstAttribute="centerX" secondItem="mpx-P7-Ter" secondAttribute="centerX" id="u1K-xF-bWO"/>
                                             <constraint firstItem="L8I-sI-aTM" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="yUg-C7-X7n"/>
@@ -421,13 +422,13 @@ Create a new one by pressing the '+' button.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="500" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qth-xj-hkY">
-                                        <rect key="frame" x="50" y="30" width="47" height="20.5"/>
+                                        <rect key="frame" x="50" y="30" width="250" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUL-Fx-w9e">
-                                        <rect key="frame" x="50" y="60.5" width="92.5" height="20.5"/>
+                                        <rect key="frame" x="50" y="60.5" width="250" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -446,7 +447,6 @@ Create a new one by pressing the '+' button.</string>
                                         <color key="backgroundColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="cGu-kT-xl9"/>
-                                            <constraint firstAttribute="width" constant="150" id="vfc-Es-OKt"/>
                                         </constraints>
                                         <state key="normal" title="Save">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -475,19 +475,23 @@ Create a new one by pressing the '+' button.</string>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="XW0-Vb-5Lu" firstAttribute="leading" relation="lessThanOrEqual" secondItem="qth-xj-hkY" secondAttribute="trailing" constant="50" id="1a4-Ca-QxP"/>
                                     <constraint firstItem="XW0-Vb-5Lu" firstAttribute="top" secondItem="DvD-qb-PM4" secondAttribute="top" constant="30" id="7I0-Tv-S4V"/>
                                     <constraint firstItem="qth-xj-hkY" firstAttribute="top" secondItem="DvD-qb-PM4" secondAttribute="top" constant="30" id="IEv-mV-LHa"/>
                                     <constraint firstItem="biZ-EN-xAb" firstAttribute="centerX" secondItem="DvD-qb-PM4" secondAttribute="centerX" id="PEZ-2f-xvc"/>
                                     <constraint firstItem="j0H-A2-46S" firstAttribute="top" secondItem="qth-xj-hkY" secondAttribute="bottom" constant="40" id="R48-6Z-rqu"/>
-                                    <constraint firstItem="iUL-Fx-w9e" firstAttribute="leading" secondItem="DvD-qb-PM4" secondAttribute="leading" constant="50" id="SX5-ab-b8A"/>
+                                    <constraint firstItem="iUL-Fx-w9e" firstAttribute="leading" relation="lessThanOrEqual" secondItem="DvD-qb-PM4" secondAttribute="leading" constant="50" id="SX5-ab-b8A"/>
                                     <constraint firstItem="O2w-tA-XeL" firstAttribute="top" secondItem="XW0-Vb-5Lu" secondAttribute="bottom" constant="10" id="d2E-CS-lL8"/>
                                     <constraint firstAttribute="trailing" secondItem="j0H-A2-46S" secondAttribute="trailing" constant="50" id="ezV-Qc-qxz"/>
                                     <constraint firstAttribute="bottom" secondItem="biZ-EN-xAb" secondAttribute="bottom" constant="20" id="fob-Rc-6US"/>
+                                    <constraint firstItem="O2w-tA-XeL" firstAttribute="leading" relation="lessThanOrEqual" secondItem="iUL-Fx-w9e" secondAttribute="trailing" constant="50" id="gFU-wx-s2T"/>
                                     <constraint firstAttribute="trailing" secondItem="XW0-Vb-5Lu" secondAttribute="trailing" constant="50" id="hw9-IF-An0"/>
                                     <constraint firstItem="XW0-Vb-5Lu" firstAttribute="centerY" secondItem="qth-xj-hkY" secondAttribute="centerY" id="mHb-NK-8Gv"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="biZ-EN-xAb" secondAttribute="trailing" constant="175" id="nZ4-Re-vwC"/>
                                     <constraint firstItem="j0H-A2-46S" firstAttribute="leading" secondItem="DvD-qb-PM4" secondAttribute="leading" constant="50" id="qjI-Ta-gV4"/>
-                                    <constraint firstItem="qth-xj-hkY" firstAttribute="leading" secondItem="DvD-qb-PM4" secondAttribute="leading" constant="50" id="rCG-8w-nS9"/>
+                                    <constraint firstItem="qth-xj-hkY" firstAttribute="leading" relation="lessThanOrEqual" secondItem="DvD-qb-PM4" secondAttribute="leading" constant="50" id="rCG-8w-nS9"/>
                                     <constraint firstAttribute="trailing" secondItem="O2w-tA-XeL" secondAttribute="trailing" constant="50" id="vA1-lV-24q"/>
+                                    <constraint firstItem="biZ-EN-xAb" firstAttribute="leading" relation="lessThanOrEqual" secondItem="DvD-qb-PM4" secondAttribute="leading" constant="175" id="voh-kU-DRm"/>
                                     <constraint firstItem="O2w-tA-XeL" firstAttribute="centerY" secondItem="iUL-Fx-w9e" secondAttribute="centerY" id="xTO-Lz-Py1"/>
                                     <constraint firstItem="iUL-Fx-w9e" firstAttribute="top" secondItem="qth-xj-hkY" secondAttribute="bottom" constant="10" id="zpu-9M-v2D"/>
                                 </constraints>
@@ -672,13 +676,13 @@ Create a new one by pressing the '+' button.</string>
                                 <rect key="frame" x="0.0" y="24" width="834" height="1150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7k-lt-xPn">
-                                        <rect key="frame" x="0.0" y="0.0" width="834" height="931.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="834" height="951.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray-wide multiple" translatesAutoresizingMaskIntoConstraints="NO" id="fPz-MU-ymw">
-                                                <rect key="frame" x="317" y="131" width="200" height="80"/>
+                                                <rect key="frame" x="367" y="131" width="100" height="100"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="OIv-2a-eZM"/>
-                                                    <constraint firstAttribute="height" constant="80" id="fVh-Ks-vHD"/>
+                                                    <constraint firstAttribute="width" constant="100" id="OIv-2a-eZM"/>
+                                                    <constraint firstAttribute="height" constant="100" id="fVh-Ks-vHD"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap or drag another image to replace logo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVR-vx-pbi">
@@ -688,7 +692,7 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Symbol:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bg-nS-EQ0">
-                                                <rect key="frame" x="40" y="612" width="200" height="21"/>
+                                                <rect key="frame" x="40" y="632" width="200" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="Q7L-eo-Vck"/>
                                                 </constraints>
@@ -697,7 +701,7 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPn-JH-HhH">
-                                                <rect key="frame" x="40" y="286" width="200" height="21"/>
+                                                <rect key="frame" x="40" y="306" width="200" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="C1w-dq-qjx"/>
                                                 </constraints>
@@ -706,28 +710,28 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Company X" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EwV-zG-ttM">
-                                                <rect key="frame" x="280" y="288" width="514" height="17"/>
+                                                <rect key="frame" x="280" y="308" width="514" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XoD-Sd-yQq">
-                                                <rect key="frame" x="280" y="680" width="514" height="17"/>
+                                                <rect key="frame" x="280" y="700" width="514" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" textContentType="tel"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tax (%):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFC-iF-dAF">
-                                                <rect key="frame" x="40" y="678" width="200" height="21"/>
+                                                <rect key="frame" x="40" y="698" width="200" height="21"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="XSn-z7-SLk"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="XSn-z7-SLk"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="og7-Oe-S7L">
-                                                <rect key="frame" x="40" y="547" width="200" height="20"/>
+                                                <rect key="frame" x="40" y="567" width="200" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="Fft-AK-Rbl"/>
                                                 </constraints>
@@ -736,7 +740,7 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All values can be changed later when filling the quote." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XW6-JJ-66W">
-                                                <rect key="frame" x="243.5" y="864.5" width="347.5" height="17"/>
+                                                <rect key="frame" x="243.5" y="884.5" width="347.5" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -762,43 +766,43 @@ Create a new one by pressing the '+' button.</string>
                                                 </items>
                                             </navigationBar>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The symbol used for currency display" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="882-3P-Pe9">
-                                                <rect key="frame" x="40" y="638" width="754" height="15"/>
+                                                <rect key="frame" x="40" y="658" width="754" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percent of tax added to value." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDk-fS-bPw">
-                                                <rect key="frame" x="40" y="704" width="754" height="15"/>
+                                                <rect key="frame" x="40" y="724" width="754" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prefix for an ID. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-it-KTx">
-                                                <rect key="frame" x="40" y="572" width="754" height="15"/>
+                                                <rect key="frame" x="40" y="592" width="754" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shown in every quote." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SB8-g9-o3H">
-                                                <rect key="frame" x="40" y="312" width="754" height="15"/>
+                                                <rect key="frame" x="40" y="332" width="754" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signature:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se2-2c-ypn">
-                                                <rect key="frame" x="40" y="794" width="82.5" height="20.5"/>
+                                                <rect key="frame" x="40" y="814" width="754" height="20.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CMX" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3D-th-qxO">
-                                                <rect key="frame" x="280" y="548.5" width="514" height="17"/>
+                                                <rect key="frame" x="280" y="568.5" width="514" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUs-gb-LkB">
-                                                <rect key="frame" x="40" y="352" width="200" height="20"/>
+                                                <rect key="frame" x="40" y="372" width="200" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="9jf-Od-JkE"/>
                                                 </constraints>
@@ -807,32 +811,32 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The address of your company." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkj-nj-5nc">
-                                                <rect key="frame" x="40" y="377" width="754" height="15"/>
+                                                <rect key="frame" x="40" y="397" width="754" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="5th Ave, Manhatten NY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Igv-gE-4k3">
-                                                <rect key="frame" x="280" y="353.5" width="153" height="17"/>
+                                                <rect key="frame" x="280" y="373.5" width="514" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-iv-uXY">
-                                                <rect key="frame" x="280" y="614" width="514" height="17"/>
+                                                <rect key="frame" x="280" y="634" width="514" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-Ns-5F5" customClass="CurrencyList" customModule="SimpleQuote3" customModuleProvider="target">
-                                                <rect key="frame" x="834" y="50" width="0.0" height="881.5"/>
+                                                <rect key="frame" x="834" y="50" width="0.0" height="901.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" id="VkV-uZ-MYT"/>
                                                 </constraints>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8Q-cj-Fg1">
-                                                <rect key="frame" x="40" y="417" width="200" height="20"/>
+                                                <rect key="frame" x="40" y="437" width="200" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="M7d-qc-36y"/>
                                                 </constraints>
@@ -841,19 +845,19 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email that will appear on the quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uV-gt-Emf">
-                                                <rect key="frame" x="40" y="442" width="754" height="15"/>
+                                                <rect key="frame" x="40" y="462" width="754" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="companyx@gmail.xym" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tUc-4H-ldG">
-                                                <rect key="frame" x="280" y="418.5" width="148.5" height="17"/>
+                                                <rect key="frame" x="280" y="438.5" width="514" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGY-ha-8d3">
-                                                <rect key="frame" x="40" y="482" width="200" height="20"/>
+                                                <rect key="frame" x="40" y="502" width="200" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="EKl-Il-SAc"/>
                                                 </constraints>
@@ -862,17 +866,26 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The company number for contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jO6-uf-Y0O">
-                                                <rect key="frame" x="40" y="507" width="754" height="15"/>
+                                                <rect key="frame" x="40" y="527" width="754" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="+1 (479) 302-8608" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="paG-sW-Ag6">
-                                                <rect key="frame" x="280" y="483.5" width="130" height="17"/>
+                                                <rect key="frame" x="280" y="503.5" width="514" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmV-wi-c3i">
+                                                <rect key="frame" x="329" y="151" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="4W0-cg-w0g"/>
+                                                    <constraint firstAttribute="width" secondItem="lmV-wi-c3i" secondAttribute="height" multiplier="1:1" id="Nne-LB-O4S"/>
+                                                    <constraint firstAttribute="height" constant="30" id="zi2-sn-zYI"/>
+                                                </constraints>
+                                                <state key="normal" image="icons8-cancel"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -880,7 +893,9 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstAttribute="trailing" secondItem="BKc-Ns-5F5" secondAttribute="trailing" id="2Xn-PL-dM5"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="882-3P-Pe9" secondAttribute="trailing" constant="40" id="2jN-Af-0sn"/>
                                             <constraint firstItem="dB4-it-KTx" firstAttribute="top" secondItem="og7-Oe-S7L" secondAttribute="bottom" constant="5" id="3gS-oO-WQe"/>
-                                            <constraint firstItem="EwV-zG-ttM" firstAttribute="leading" secondItem="lPn-JH-HhH" secondAttribute="trailing" constant="40" id="5Og-jh-cHf"/>
+                                            <constraint firstItem="BKc-Ns-5F5" firstAttribute="leading" relation="lessThanOrEqual" secondItem="paG-sW-Ag6" secondAttribute="trailing" constant="40" id="41o-Ff-8Md"/>
+                                            <constraint firstItem="EwV-zG-ttM" firstAttribute="leading" relation="lessThanOrEqual" secondItem="lPn-JH-HhH" secondAttribute="trailing" constant="40" id="5Og-jh-cHf"/>
+                                            <constraint firstItem="lmV-wi-c3i" firstAttribute="top" secondItem="fPz-MU-ymw" secondAttribute="top" constant="20" id="7Ac-eM-jgs"/>
                                             <constraint firstItem="V5U-kq-chQ" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" id="7i9-FI-PPm"/>
                                             <constraint firstItem="OFC-iF-dAF" firstAttribute="top" secondItem="882-3P-Pe9" secondAttribute="bottom" constant="25" id="99y-Ib-ntR"/>
                                             <constraint firstItem="7uV-gt-Emf" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="9Pj-LQ-uJd"/>
@@ -891,13 +906,13 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="xkj-nj-5nc" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="DS5-gM-IZW"/>
                                             <constraint firstItem="Igv-gE-4k3" firstAttribute="centerY" secondItem="fUs-gb-LkB" secondAttribute="centerY" id="Exd-Dt-ef7"/>
                                             <constraint firstItem="se2-2c-ypn" firstAttribute="top" secondItem="cDk-fS-bPw" secondAttribute="bottom" constant="75" id="G8h-YO-neq"/>
-                                            <constraint firstAttribute="trailing" secondItem="SB8-g9-o3H" secondAttribute="trailing" constant="40" id="Gsm-Yd-9MO"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="SB8-g9-o3H" secondAttribute="trailing" constant="40" id="Gsm-Yd-9MO"/>
                                             <constraint firstItem="XW6-JJ-66W" firstAttribute="centerX" secondItem="w7k-lt-xPn" secondAttribute="centerX" id="Guu-oy-Tfe"/>
                                             <constraint firstItem="cDk-fS-bPw" firstAttribute="top" secondItem="OFC-iF-dAF" secondAttribute="bottom" constant="5" id="HVv-t3-SUI"/>
                                             <constraint firstItem="og7-Oe-S7L" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="JaK-If-SEN"/>
-                                            <constraint firstItem="paG-sW-Ag6" firstAttribute="leading" secondItem="XGY-ha-8d3" secondAttribute="trailing" constant="40" id="KJ8-kZ-UMt"/>
+                                            <constraint firstItem="paG-sW-Ag6" firstAttribute="leading" relation="lessThanOrEqual" secondItem="XGY-ha-8d3" secondAttribute="trailing" constant="40" id="KJ8-kZ-UMt"/>
                                             <constraint firstItem="paG-sW-Ag6" firstAttribute="centerY" secondItem="XGY-ha-8d3" secondAttribute="centerY" id="L3H-NJ-Puz"/>
-                                            <constraint firstItem="Igv-gE-4k3" firstAttribute="leading" secondItem="fUs-gb-LkB" secondAttribute="trailing" constant="40" id="M2b-1O-dlT"/>
+                                            <constraint firstItem="Igv-gE-4k3" firstAttribute="leading" relation="lessThanOrEqual" secondItem="fUs-gb-LkB" secondAttribute="trailing" constant="40" id="M2b-1O-dlT"/>
                                             <constraint firstItem="lPn-JH-HhH" firstAttribute="top" secondItem="fPz-MU-ymw" secondAttribute="bottom" constant="75" id="MhA-m5-uto"/>
                                             <constraint firstItem="og7-Oe-S7L" firstAttribute="top" secondItem="jO6-uf-Y0O" secondAttribute="bottom" constant="25" id="N1R-s1-Q0m"/>
                                             <constraint firstItem="XW6-JJ-66W" firstAttribute="top" secondItem="se2-2c-ypn" secondAttribute="bottom" constant="50" id="NaS-JI-g5J"/>
@@ -906,9 +921,11 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstAttribute="bottom" secondItem="XW6-JJ-66W" secondAttribute="bottom" constant="50" id="Qbu-4f-DI4"/>
                                             <constraint firstAttribute="bottom" secondItem="BKc-Ns-5F5" secondAttribute="bottom" id="RFn-9C-loh"/>
                                             <constraint firstAttribute="trailing" secondItem="XoD-Sd-yQq" secondAttribute="trailing" constant="40" id="RW0-kp-g8U"/>
+                                            <constraint firstItem="BKc-Ns-5F5" firstAttribute="leading" secondItem="se2-2c-ypn" secondAttribute="trailing" constant="40" id="RhF-69-aZo"/>
+                                            <constraint firstItem="BKc-Ns-5F5" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Igv-gE-4k3" secondAttribute="trailing" constant="40" id="SYG-LL-2ZP"/>
                                             <constraint firstItem="fUs-gb-LkB" firstAttribute="top" secondItem="SB8-g9-o3H" secondAttribute="bottom" constant="25" id="SdU-6m-ix0"/>
                                             <constraint firstItem="XGY-ha-8d3" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="T95-ct-uFx"/>
-                                            <constraint firstAttribute="trailing" secondItem="dB4-it-KTx" secondAttribute="trailing" constant="40" id="VGF-1j-9CM"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="dB4-it-KTx" secondAttribute="trailing" constant="40" id="VGF-1j-9CM"/>
                                             <constraint firstItem="BKc-Ns-5F5" firstAttribute="leading" secondItem="jO6-uf-Y0O" secondAttribute="trailing" constant="40" id="W6C-p3-BaQ"/>
                                             <constraint firstItem="XoD-Sd-yQq" firstAttribute="leading" secondItem="OFC-iF-dAF" secondAttribute="trailing" constant="40" id="WpX-L7-TIT"/>
                                             <constraint firstItem="XoD-Sd-yQq" firstAttribute="centerY" secondItem="OFC-iF-dAF" secondAttribute="centerY" id="Wr5-VL-Vhq"/>
@@ -916,23 +933,24 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="fPz-MU-ymw" firstAttribute="centerX" secondItem="w7k-lt-xPn" secondAttribute="centerX" id="XiQ-Dm-Oem"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="cDk-fS-bPw" secondAttribute="trailing" constant="40" id="YRH-AP-rle"/>
                                             <constraint firstItem="se2-2c-ypn" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="aAm-L8-uCN"/>
+                                            <constraint firstItem="fPz-MU-ymw" firstAttribute="leading" secondItem="lmV-wi-c3i" secondAttribute="trailing" constant="8" id="bhF-St-Oa8"/>
                                             <constraint firstItem="XGY-ha-8d3" firstAttribute="top" secondItem="7uV-gt-Emf" secondAttribute="bottom" constant="25" id="ehR-sO-aBF"/>
-                                            <constraint firstItem="K3D-th-qxO" firstAttribute="leading" secondItem="og7-Oe-S7L" secondAttribute="trailing" constant="40" id="fPJ-1O-lgs"/>
-                                            <constraint firstItem="dB4-it-KTx" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="hEQ-GL-Anc"/>
+                                            <constraint firstItem="K3D-th-qxO" firstAttribute="leading" relation="lessThanOrEqual" secondItem="og7-Oe-S7L" secondAttribute="trailing" constant="40" id="fPJ-1O-lgs"/>
+                                            <constraint firstItem="dB4-it-KTx" firstAttribute="leading" relation="lessThanOrEqual" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="hEQ-GL-Anc"/>
                                             <constraint firstItem="jO6-uf-Y0O" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="iOo-Ir-SXm"/>
                                             <constraint firstItem="ICd-iv-uXY" firstAttribute="centerY" secondItem="5bg-nS-EQ0" secondAttribute="centerY" id="igf-8f-xXv"/>
-                                            <constraint firstAttribute="trailing" secondItem="EwV-zG-ttM" secondAttribute="trailing" constant="40" id="jkI-Mx-1NE"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="EwV-zG-ttM" secondAttribute="trailing" constant="40" id="jkI-Mx-1NE"/>
                                             <constraint firstItem="5bg-nS-EQ0" firstAttribute="top" secondItem="dB4-it-KTx" secondAttribute="bottom" constant="25" id="l72-SO-ZBr"/>
                                             <constraint firstItem="fUs-gb-LkB" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="mBE-ag-QdX"/>
                                             <constraint firstItem="fPz-MU-ymw" firstAttribute="top" secondItem="sVR-vx-pbi" secondAttribute="bottom" constant="40" id="n0I-1t-jMR"/>
                                             <constraint firstItem="ICd-iv-uXY" firstAttribute="leading" secondItem="5bg-nS-EQ0" secondAttribute="trailing" constant="40" id="nnM-Ny-hKR"/>
                                             <constraint firstItem="tUc-4H-ldG" firstAttribute="centerY" secondItem="T8Q-cj-Fg1" secondAttribute="centerY" id="nyw-hS-wOw"/>
-                                            <constraint firstItem="OFC-iF-dAF" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="oGs-Ua-55K"/>
+                                            <constraint firstItem="OFC-iF-dAF" firstAttribute="leading" relation="lessThanOrEqual" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="oGs-Ua-55K"/>
                                             <constraint firstItem="sVR-vx-pbi" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="25" id="pcf-6u-nCo"/>
                                             <constraint firstAttribute="trailing" secondItem="V5U-kq-chQ" secondAttribute="trailing" id="pg6-sB-8RN"/>
                                             <constraint firstItem="882-3P-Pe9" firstAttribute="top" secondItem="5bg-nS-EQ0" secondAttribute="bottom" constant="5" id="pod-EN-Led"/>
                                             <constraint firstItem="cDk-fS-bPw" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="qqX-hE-EqJ"/>
-                                            <constraint firstItem="SB8-g9-o3H" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="rzG-uG-eAa"/>
+                                            <constraint firstItem="SB8-g9-o3H" firstAttribute="leading" relation="lessThanOrEqual" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="rzG-uG-eAa"/>
                                             <constraint firstItem="BKc-Ns-5F5" firstAttribute="leading" secondItem="7uV-gt-Emf" secondAttribute="trailing" constant="40" id="s7J-ly-T3A"/>
                                             <constraint firstItem="K3D-th-qxO" firstAttribute="centerY" secondItem="og7-Oe-S7L" secondAttribute="centerY" id="tTv-vL-mYo"/>
                                             <constraint firstItem="EwV-zG-ttM" firstAttribute="centerY" secondItem="lPn-JH-HhH" secondAttribute="centerY" id="tXQ-gx-3zW"/>
@@ -940,9 +958,10 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="BKc-Ns-5F5" firstAttribute="top" secondItem="V5U-kq-chQ" secondAttribute="bottom" id="tpE-QO-tFQ"/>
                                             <constraint firstItem="T8Q-cj-Fg1" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="uJ4-MS-QOG"/>
                                             <constraint firstItem="sVR-vx-pbi" firstAttribute="top" secondItem="V5U-kq-chQ" secondAttribute="bottom" constant="25" id="upu-dJ-cA4"/>
-                                            <constraint firstAttribute="trailing" secondItem="K3D-th-qxO" secondAttribute="trailing" constant="40" id="vOg-RH-d8y"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="K3D-th-qxO" secondAttribute="trailing" constant="40" id="vOg-RH-d8y"/>
                                             <constraint firstItem="7uV-gt-Emf" firstAttribute="top" secondItem="T8Q-cj-Fg1" secondAttribute="bottom" constant="5" id="vRG-bf-EZb"/>
-                                            <constraint firstItem="tUc-4H-ldG" firstAttribute="leading" secondItem="T8Q-cj-Fg1" secondAttribute="trailing" constant="40" id="xVk-x6-a9n"/>
+                                            <constraint firstItem="BKc-Ns-5F5" firstAttribute="leading" relation="lessThanOrEqual" secondItem="tUc-4H-ldG" secondAttribute="trailing" constant="40" id="vak-qF-LtC"/>
+                                            <constraint firstItem="tUc-4H-ldG" firstAttribute="leading" relation="lessThanOrEqual" secondItem="T8Q-cj-Fg1" secondAttribute="trailing" constant="40" id="xVk-x6-a9n"/>
                                             <constraint firstItem="T8Q-cj-Fg1" firstAttribute="top" secondItem="xkj-nj-5nc" secondAttribute="bottom" constant="25" id="xpB-hh-iet"/>
                                             <constraint firstItem="xkj-nj-5nc" firstAttribute="top" secondItem="fUs-gb-LkB" secondAttribute="bottom" constant="5" id="zuk-ak-rLU"/>
                                         </constraints>
@@ -991,6 +1010,7 @@ Create a new one by pressing the '+' button.</string>
         <image name="Fill 4" width="28" height="30"/>
         <image name="edit" width="49" height="53"/>
         <image name="gray-wide multiple" width="437" height="345"/>
+        <image name="icons8-cancel" width="48" height="48"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
