@@ -197,7 +197,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let imagePath = "\(self.vm.quote.invoiceId)Image"
         
         if let image = self.header.logo.image {
-                self.saveImage(image: image, imagePath: imagePath)
+            self.saveImage(image: image, imagePath: imagePath)
         }
         self.vm.quote.imagePath = imagePath
         self.saveQuote()
@@ -248,7 +248,12 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func addButtonAction(_ sender: Any) {
+    @IBAction func addButtonAction(_ sender: UIButton) {
+        UIButton.animate(withDuration: 0.1, animations: {sender.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)}, completion: { finish in
+            UIButton.animate(withDuration: 0.1, animations: {
+                sender.transform = CGAffineTransform.identity
+            })
+        })
         addLineItem(item: inputItemView.getItem())
         self.itemsTableView.reloadData()
     }

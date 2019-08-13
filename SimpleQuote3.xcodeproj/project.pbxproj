@@ -15,6 +15,7 @@
 		4CC94E5B22FC5E8A00E786CC /* TextFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5A22FC5E8A00E786CC /* TextFactory.swift */; };
 		4CC94E5D22FC671B00E786CC /* Template1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5C22FC671B00E786CC /* Template1.swift */; };
 		4CC94E5F22FC67C100E786CC /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5E22FC67C100E786CC /* Template.swift */; };
+		4CC94E61230288A900E786CC /* HighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E60230288A900E786CC /* HighlightedButton.swift */; };
 		4CDEFCB622D5DCE400177660 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEFCB522D5DCE400177660 /* DateExtensions.swift */; };
 		4CF6353822D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */; };
 		4CF6353922D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */; };
@@ -72,6 +73,7 @@
 		4CC94E5A22FC5E8A00E786CC /* TextFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFactory.swift; sourceTree = "<group>"; };
 		4CC94E5C22FC671B00E786CC /* Template1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template1.swift; sourceTree = "<group>"; };
 		4CC94E5E22FC67C100E786CC /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
+		4CC94E60230288A900E786CC /* HighlightedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedButton.swift; sourceTree = "<group>"; };
 		4CDEFCB522D5DCE400177660 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCellItemTableViewCell.swift; sourceTree = "<group>"; };
 		4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteCellItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				D340142122F6A78600328CBE /* CurrencyCell.swift */,
 				D340142222F6A78600328CBE /* CurrencyCell.xib */,
 				D3A0907E2301933B004C6E88 /* ProgressView.swift */,
+				4CC94E60230288A900E786CC /* HighlightedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				D3B3212C22BA254500AB362A /* LineItemModel.swift in Sources */,
 				D3B3211922BA226700AB362A /* DoubleInputView.swift in Sources */,
 				4CC94E5B22FC5E8A00E786CC /* TextFactory.swift in Sources */,
+				4CC94E61230288A900E786CC /* HighlightedButton.swift in Sources */,
 				D3B3212D22BA254500AB362A /* Quote.swift in Sources */,
 				D3B3211522BA226700AB362A /* Footer.swift in Sources */,
 				D340142622F6B74300328CBE /* Countries.swift in Sources */,
