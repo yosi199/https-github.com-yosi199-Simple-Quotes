@@ -20,6 +20,7 @@ class Quote : Object {
     @objc dynamic  var email: String = "clientmail@mail.xyz"
     @objc dynamic  var notes: String = "Client notes"
     @objc dynamic  var imagePath:String = ""
+    @objc dynamic  var withLogo: Bool = true
     
     // Money related
     var items = List<LineItemModel>()

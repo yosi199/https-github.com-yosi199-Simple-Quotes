@@ -124,6 +124,8 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         header.email.text = quote.email
         header.logo.image = vm.getLogoImage()
         header.id.text = vm.getInvoiceID()
+        header.setLogoState(enabled: quote.withLogo)
+        header.logoSwitch.isOn = quote.withLogo
         
         itemsTableView.items = vm.quote.items.toArray()
         itemsTableView.reloadData()
@@ -213,6 +215,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.vm.quote.email = self.header.email.text.orEmpty()
         self.vm.quote.notes = self.notes.text.orEmpty()
         self.vm.quote.items = self.itemsTableView.items.toList()
+        self.vm.quote.withLogo = self.header.logoSwitch.isOn
         
         self.vm.saveQuote()
         self.menu.reloadData()

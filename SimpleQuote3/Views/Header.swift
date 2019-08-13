@@ -21,6 +21,7 @@ class Header: UIView, FileHandler {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var companyName: UITextField!
     @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var logoSwitch: UISwitch!
     
     private let userRepo = UserRepository.shared
     
@@ -45,6 +46,22 @@ class Header: UIView, FileHandler {
     private func setLogo(){
         if let image = UIImage(contentsOfFile: getFileForName(name: COMPANY_LOGO).path){
             logo.image = image
+        }
+    }
+    
+    @IBAction func onLogoToggled(_ sender: UISwitch) {
+        setLogoState(enabled: sender.isOn)
+    }
+    
+    func setLogoState(enabled: Bool){
+        self.logo.isUserInteractionEnabled = enabled
+        
+        UIView.animate(withDuration: 0.25) {
+            if (enabled) {
+                self.logo.alpha = 1
+            } else{
+                self.logo.alpha = 0.3
+            }
         }
     }
 }

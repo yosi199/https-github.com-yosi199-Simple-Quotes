@@ -217,4 +217,17 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
         currencyTableWidthConstraint.constant = constant
         UIView.animate(withDuration: 0.15, animations: {self.view.layoutIfNeeded()}, completion: nil)
     }
+    
+    @IBAction func onLogoToggled(_ sender: UISwitch) {
+        self.logo.isUserInteractionEnabled = sender.isOn
+  
+        UIView.animate(withDuration: 0.25) {
+            if (sender.isOn) {
+                self.logo.alpha = 1
+            } else{
+                self.logo.alpha = 0.3
+            }
+        }
+
+    }
 }

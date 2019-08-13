@@ -889,15 +889,19 @@ Create a new one by pressing the '+' button.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmV-wi-c3i">
-                                                <rect key="frame" x="329" y="151" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="4W0-cg-w0g"/>
-                                                    <constraint firstAttribute="width" secondItem="lmV-wi-c3i" secondAttribute="height" multiplier="1:1" id="Nne-LB-O4S"/>
-                                                    <constraint firstAttribute="height" constant="30" id="zi2-sn-zYI"/>
-                                                </constraints>
-                                                <state key="normal" image="icons8-cancel"/>
-                                            </button>
+                                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ivo-JK-Z9j">
+                                                <rect key="frame" x="88" y="165.5" width="51" height="31"/>
+                                                <color key="onTintColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="onLogoToggled:" destination="3Et-os-dTL" eventType="valueChanged" id="DQH-ea-KUH"/>
+                                                </connections>
+                                            </switch>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show logo in documents?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsg-Ar-B2y">
+                                                <rect key="frame" x="40" y="206.5" width="145" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -906,14 +910,15 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="882-3P-Pe9" secondAttribute="trailing" constant="40" id="2jN-Af-0sn"/>
                                             <constraint firstItem="dB4-it-KTx" firstAttribute="top" secondItem="og7-Oe-S7L" secondAttribute="bottom" constant="5" id="3gS-oO-WQe"/>
                                             <constraint firstItem="BKc-Ns-5F5" firstAttribute="leading" relation="lessThanOrEqual" secondItem="paG-sW-Ag6" secondAttribute="trailing" constant="40" id="41o-Ff-8Md"/>
+                                            <constraint firstItem="ivo-JK-Z9j" firstAttribute="centerY" secondItem="fPz-MU-ymw" secondAttribute="centerY" id="4Jd-Tx-etp"/>
                                             <constraint firstItem="EwV-zG-ttM" firstAttribute="leading" relation="lessThanOrEqual" secondItem="lPn-JH-HhH" secondAttribute="trailing" constant="40" id="5Og-jh-cHf"/>
-                                            <constraint firstItem="lmV-wi-c3i" firstAttribute="top" secondItem="fPz-MU-ymw" secondAttribute="top" constant="20" id="7Ac-eM-jgs"/>
                                             <constraint firstItem="V5U-kq-chQ" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" id="7i9-FI-PPm"/>
                                             <constraint firstItem="OFC-iF-dAF" firstAttribute="top" secondItem="882-3P-Pe9" secondAttribute="bottom" constant="25" id="99y-Ib-ntR"/>
                                             <constraint firstItem="7uV-gt-Emf" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="9Pj-LQ-uJd"/>
                                             <constraint firstItem="5bg-nS-EQ0" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="B13-UC-99v"/>
                                             <constraint firstItem="jO6-uf-Y0O" firstAttribute="top" secondItem="XGY-ha-8d3" secondAttribute="bottom" constant="5" id="Bv5-07-v2M"/>
                                             <constraint firstAttribute="trailing" secondItem="sVR-vx-pbi" secondAttribute="trailing" constant="25" id="C2V-c4-16s"/>
+                                            <constraint firstItem="Jsg-Ar-B2y" firstAttribute="top" secondItem="ivo-JK-Z9j" secondAttribute="bottom" constant="10" id="Cs4-ss-y5j"/>
                                             <constraint firstAttribute="trailing" secondItem="ICd-iv-uXY" secondAttribute="trailing" constant="40" id="DGv-dr-EEb"/>
                                             <constraint firstItem="xkj-nj-5nc" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="DS5-gM-IZW"/>
                                             <constraint firstItem="Igv-gE-4k3" firstAttribute="centerY" secondItem="fUs-gb-LkB" secondAttribute="centerY" id="Exd-Dt-ef7"/>
@@ -945,8 +950,9 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="fPz-MU-ymw" firstAttribute="centerX" secondItem="w7k-lt-xPn" secondAttribute="centerX" id="XiQ-Dm-Oem"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="cDk-fS-bPw" secondAttribute="trailing" constant="40" id="YRH-AP-rle"/>
                                             <constraint firstItem="se2-2c-ypn" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="aAm-L8-uCN"/>
-                                            <constraint firstItem="fPz-MU-ymw" firstAttribute="leading" secondItem="lmV-wi-c3i" secondAttribute="trailing" constant="8" id="bhF-St-Oa8"/>
+                                            <constraint firstItem="ivo-JK-Z9j" firstAttribute="centerX" secondItem="Jsg-Ar-B2y" secondAttribute="centerX" id="eX6-Wf-x7h"/>
                                             <constraint firstItem="XGY-ha-8d3" firstAttribute="top" secondItem="7uV-gt-Emf" secondAttribute="bottom" constant="25" id="ehR-sO-aBF"/>
+                                            <constraint firstItem="Jsg-Ar-B2y" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="eqU-ad-4gr"/>
                                             <constraint firstItem="K3D-th-qxO" firstAttribute="leading" relation="lessThanOrEqual" secondItem="og7-Oe-S7L" secondAttribute="trailing" constant="40" id="fPJ-1O-lgs"/>
                                             <constraint firstItem="dB4-it-KTx" firstAttribute="leading" relation="lessThanOrEqual" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="hEQ-GL-Anc"/>
                                             <constraint firstItem="jO6-uf-Y0O" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="iOo-Ir-SXm"/>
@@ -1022,7 +1028,6 @@ Create a new one by pressing the '+' button.</string>
         <image name="Fill 4" width="28" height="30"/>
         <image name="edit" width="49" height="53"/>
         <image name="gray-wide multiple" width="437" height="345"/>
-        <image name="icons8-cancel" width="48" height="48"/>
         <image name="icons8-chevron_down-1" width="18" height="12"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

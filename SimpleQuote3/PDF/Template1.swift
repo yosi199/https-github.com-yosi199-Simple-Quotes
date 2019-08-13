@@ -26,12 +26,14 @@ class Template1: Template {
     func setHeader(document: PDFDocument) {
         // Header/Title
         document.add(.headerLeft, attributedText: factory.normal(text: "\(quote.companyName)", size: .extra))
-        if let uiImage = UIImage(contentsOfFile: getFileForName(name: quote.imagePath).path){
-            let image = PDFImage(image: uiImage)
-            image.size = CGSize(width: 50, height: 50)
-            image.quality = 1.0
-            image.sizeFit = .widthHeight
-            document.add(.headerRight, image: image)
+        if(quote.withLogo){
+            if let uiImage = UIImage(contentsOfFile: getFileForName(name: quote.imagePath).path){
+                let image = PDFImage(image: uiImage)
+                image.size = CGSize(width: 50, height: 50)
+                image.quality = 1.0
+                image.sizeFit = .widthHeight
+                document.add(.headerRight, image: image)
+            }
         }
         document.add(space: Template1.SMALL_SPACE)
         
@@ -72,7 +74,7 @@ class Template1: Template {
     func setContent(document: PDFDocument) {
         // Items data table - where we list all of the LineItemModels.
         document.add(.contentCenter, table: lineItemsTable())
-    
+        
         document.add(space: Template1.SMALL_SPACE)
         
         // Notes and Summary sections

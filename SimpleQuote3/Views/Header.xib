@@ -20,6 +20,7 @@
                 <outlet property="email" destination="ys0-ZZ-0Sv" id="Tok-OG-han"/>
                 <outlet property="id" destination="Tqy-PK-eDK" id="XlX-RH-5lq"/>
                 <outlet property="logo" destination="PXH-Hl-JUa" id="Iwh-VU-a2r"/>
+                <outlet property="logoSwitch" destination="7bR-DV-foS" id="gBk-IB-EPD"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -77,6 +78,13 @@
                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7bR-DV-foS">
+                    <rect key="frame" x="1104.5" y="130" width="51" height="31"/>
+                    <color key="onTintColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="onLogoToggled:" destination="-1" eventType="valueChanged" id="02f-RD-DtZ"/>
+                    </connections>
+                </switch>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -84,6 +92,7 @@
                 <constraint firstItem="qMk-8Q-wEe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5Lk-vA-6i6"/>
                 <constraint firstItem="wWp-6c-sYJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="60I-EV-Hll"/>
                 <constraint firstItem="Tpm-ER-TdX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="6ek-bZ-cG7"/>
+                <constraint firstItem="7bR-DV-foS" firstAttribute="centerX" secondItem="PXH-Hl-JUa" secondAttribute="centerX" id="A0g-i9-2OM"/>
                 <constraint firstItem="PXH-Hl-JUa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GYv-rc-2qj"/>
                 <constraint firstItem="PXH-Hl-JUa" firstAttribute="leading" secondItem="49z-Oj-sy9" secondAttribute="trailing" constant="15" id="MPJ-bs-Rzw"/>
                 <constraint firstItem="2Cu-jO-nXg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="MyE-ti-oGO"/>
@@ -101,6 +110,7 @@
                 <constraint firstItem="qMk-8Q-wEe" firstAttribute="trailing" secondItem="2Cu-jO-nXg" secondAttribute="trailing" constant="25" id="pVF-dn-PRv"/>
                 <constraint firstItem="qMk-8Q-wEe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="pg9-B5-8vR"/>
                 <constraint firstItem="49z-Oj-sy9" firstAttribute="leading" secondItem="qMk-8Q-wEe" secondAttribute="trailing" constant="25" id="qfR-Ue-PqA"/>
+                <constraint firstItem="7bR-DV-foS" firstAttribute="top" secondItem="PXH-Hl-JUa" secondAttribute="bottom" constant="15" id="yM3-xQ-XN2"/>
                 <constraint firstAttribute="bottom" secondItem="qMk-8Q-wEe" secondAttribute="bottom" constant="10" id="yaP-UC-JxM"/>
                 <constraint firstItem="qMk-8Q-wEe" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="zGp-yV-vZ6"/>
                 <constraint firstItem="2Cu-jO-nXg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="zkl-Rf-Y6Z"/>
