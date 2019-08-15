@@ -43,6 +43,9 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         self.splitViewController?.preferredDisplayMode = UISplitViewController.DisplayMode.primaryOverlay
+        
+        fetchProducts()
+        
         setupItemsTable()
         setupInteractions()
         setupCallbacks()
@@ -355,5 +358,20 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         keyboardHelper.textFieldDidEndEditing(field: textField)
     }
     
-    
+    fileprivate func fetchProducts(){
+        if StoreObserver.shared.isAuthorizedForPayments {
+            let productsResource = ProductIdentifiers()
+            guard let identifiers = productsResource.identifiers else {
+                // Warn the user that the resource file could not be found.
+                print("Identifiers not found")
+                return
+            }
+            
+            if !identifiers.isEmpty {
+                
+                StoreManager.shared.fetchProducts(matchingIdentifiers: identifiers)
+            }
+        }
+    }
+
 }

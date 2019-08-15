@@ -8,9 +8,13 @@
 
 import UIKit
 import Firebase
+import StoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
+    
+    /// Indicates whether we have registered with the payment queue.
+    fileprivate var hasRegisteredForNotifications: Bool?
     
     private let firstLaunchKey = "firstLaunched"
     private var firstLaunch = false
@@ -19,6 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        if StoreObserver.shared.isAuthorizedForPayments {
+            // Attach an observer to the payment queue.
+            SKPaymentQueue.default().add(StoreObserver.shared)
+            hasRegisteredForNotifications = true
+        }
         
         firstLaunch = !UserDefaults.standard.bool(forKey: firstLaunchKey)
         if(firstLaunch){
@@ -58,6 +67,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        if hasRegisteredForNotifications ?? false {
+            // Remove the observer.
+            SKPaymentQueue.default().remove(StoreObserver.shared)
+        }
     }
     
     // MARK: - Split view
