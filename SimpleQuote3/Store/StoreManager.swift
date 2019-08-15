@@ -10,6 +10,11 @@
 import StoreKit
 import Foundation
 
+protocol StoreManagerDelegate {
+    func onAvailableProducts(products: [SKProduct])
+    func noAvailableProductsFound()
+}
+
 class StoreManager: NSObject {
     // MARK: - Types
     
@@ -17,14 +22,18 @@ class StoreManager: NSObject {
     
     fileprivate var productRequest: SKProductsRequest!
     fileprivate var availableProducts = [SKProduct]()
-//    fileprivate var storeResponse = [Section]()
+    //    fileprivate var storeResponse = [Section]()
     /// Keeps track of all invalid product identifiers.
     fileprivate var invalidProductIdentifiers = [String]()
-//    weak var delegate: StoreManagerDelegate?
-
+    var delegate: StoreManagerDelegate?
+    
     
     // MARK: - Initializer
     private override init() {}
+    
+    deinit {
+        delegate = nil
+    }
     
     func fetchProducts(matchingIdentifiers identifiers: [String]) {
         // Create a set for the product identifiers.
@@ -42,36 +51,35 @@ class StoreManager: NSObject {
 
 extension StoreManager: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        let available = response.products
         
-        available.forEach { (product) in
-            print("Identifier: \(product.productIdentifier)")
-            print("Regular price: \(product.regularPrice)")
-            
-            StoreObserver.shared.buy(product)
+        if(response.products.isEmpty){
+            delegate?.noAvailableProductsFound()
+        } else {
+            let available = response.products
+            delegate?.onAvailableProducts(products: available)
         }
         
-//        if !storeResponse.isEmpty {
-//            storeResponse.removeAll()
-//        }
-//
-//        // products contains products whose identifiers have been recognized by the App Store. As such, they can be purchased.
-//        if !response.products.isEmpty {
-//            availableProducts = response.products
-//            storeResponse.append(Section(type: .availableProducts, elements: availableProducts))
-//        }
-//
-//        // invalidProductIdentifiers contains all product identifiers not recognized by the App Store.
-//        if !response.invalidProductIdentifiers.isEmpty {
-//            invalidProductIdentifiers = response.invalidProductIdentifiers
-//            storeResponse.append(Section(type: .invalidProductIdentifiers, elements: invalidProductIdentifiers))
-//        }
-//
-//        if !storeResponse.isEmpty {
-//            DispatchQueue.main.async {
-//                self.delegate?.storeManagerDidReceiveResponse(self.storeResponse)
-//            }
-//        }
+        //        if !storeResponse.isEmpty {
+        //            storeResponse.removeAll()
+        //        }
+        //
+        //        // products contains products whose identifiers have been recognized by the App Store. As such, they can be purchased.
+        //        if !response.products.isEmpty {
+        //            availableProducts = response.products
+        //            storeResponse.append(Section(type: .availableProducts, elements: availableProducts))
+        //        }
+        //
+        //        // invalidProductIdentifiers contains all product identifiers not recognized by the App Store.
+        //        if !response.invalidProductIdentifiers.isEmpty {
+        //            invalidProductIdentifiers = response.invalidProductIdentifiers
+        //            storeResponse.append(Section(type: .invalidProductIdentifiers, elements: invalidProductIdentifiers))
+        //        }
+        //
+        //        if !storeResponse.isEmpty {
+        //            DispatchQueue.main.async {
+        //                self.delegate?.storeManagerDidReceiveResponse(self.storeResponse)
+        //            }
+        //        }
     }
     
     

@@ -137,7 +137,7 @@ extension StoreObserver: SKPaymentTransactionObserver {
     /// Logs all transactions that have been removed from the payment queue.
     func paymentQueue(_ queue: SKPaymentQueue, removedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
-            print ("\(transaction.payment.productIdentifier) Removed")
+            print ("\(transaction.payment.productIdentifier) Removed from payment queue")
         }
     }
     

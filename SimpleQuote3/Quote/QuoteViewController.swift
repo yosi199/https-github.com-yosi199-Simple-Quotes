@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import StoreKit
 
 class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler, UITextViewDelegate, UITextFieldDelegate {
     
@@ -40,11 +41,13 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     private let vm = QuoteViewModel()
     private let imagePicker = UIImagePickerController()
     private lazy var menu: MenuViewController = { return parent?.splitViewController?.children[0].children[0] as! MenuViewController }()
+   
+    // IN APP Purchases
+    private var availableInvoices = 0
+    private var products: [SKProduct]?
     
     override func viewDidLoad() {
         self.splitViewController?.preferredDisplayMode = UISplitViewController.DisplayMode.primaryOverlay
-        
-        fetchProducts()
         
         setupItemsTable()
         setupInteractions()
@@ -192,11 +195,22 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let controller = segue.destination as? PDFController else { return }
-        controller.quote = self.vm.quote
+        if(segue.destination is PDFController){
+            guard let controller = segue.destination as? PDFController else { return }
+            controller.quote = self.vm.quote
+        } else if segue.destination is BuyInvoicesVC {
+            let buyVC = segue.destination as! BuyInvoicesVC
+            buyVC.products = self.products
+        }
     }
     
     @IBAction func screenshow(_ sender: Any) {
+        if(availableInvoices <= 0){
+            StoreManager.shared.delegate = self
+            fetchProducts()
+            return
+        }
+        
         self.progress.show(parent: self)
         
         let imagePath = "\(self.vm.quote.invoiceId)Image"
@@ -368,10 +382,20 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
             }
             
             if !identifiers.isEmpty {
-                
                 StoreManager.shared.fetchProducts(matchingIdentifiers: identifiers)
             }
         }
     }
+    
+}
 
+extension QuoteViewController : StoreManagerDelegate {
+    func noAvailableProductsFound() {
+        
+    }
+    
+    func onAvailableProducts(products: [SKProduct]) {
+        self.products = products
+        performSegue(withIdentifier: "buyVC", sender: self)
+    }
 }

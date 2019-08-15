@@ -21,6 +21,7 @@
 		4CC94E6823052B9000E786CC /* ProductIds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CC94E6723052B9000E786CC /* ProductIds.plist */; };
 		4CC94E6A23052C3B00E786CC /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E6923052C3B00E786CC /* StoreManager.swift */; };
 		4CC94E742305331100E786CC /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E732305331100E786CC /* Types.swift */; };
+		4CC94E76230589C000E786CC /* BuyInvoicesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E75230589C000E786CC /* BuyInvoicesVC.swift */; };
 		4CDEFCB622D5DCE400177660 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEFCB522D5DCE400177660 /* DateExtensions.swift */; };
 		4CF6353822D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */; };
 		4CF6353922D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */; };
@@ -84,6 +85,7 @@
 		4CC94E6723052B9000E786CC /* ProductIds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProductIds.plist; sourceTree = "<group>"; };
 		4CC94E6923052C3B00E786CC /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		4CC94E732305331100E786CC /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		4CC94E75230589C000E786CC /* BuyInvoicesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyInvoicesVC.swift; sourceTree = "<group>"; };
 		4CDEFCB522D5DCE400177660 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCellItemTableViewCell.swift; sourceTree = "<group>"; };
 		4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteCellItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				4CC94E652305267C00E786CC /* StoreObserver.swift */,
 				4CC94E6923052C3B00E786CC /* StoreManager.swift */,
 				4CC94E732305331100E786CC /* Types.swift */,
+				4CC94E75230589C000E786CC /* BuyInvoicesVC.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				D3B3211422BA226700AB362A /* ItemView.swift in Sources */,
 				D3A0907F2301933B004C6E88 /* ProgressView.swift in Sources */,
 				D3B3213322BA25E300AB362A /* ResizeableTableViewTableViewController.swift in Sources */,
+				4CC94E76230589C000E786CC /* BuyInvoicesVC.swift in Sources */,
 				D3A0908123019C92004C6E88 /* DispatchQueues.swift in Sources */,
 				D340142822F6BF5300328CBE /* CurrencyHelper.swift in Sources */,
 				D35429B022F86288003ED36C /* DiscountVC.swift in Sources */,
