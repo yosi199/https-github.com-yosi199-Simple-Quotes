@@ -198,9 +198,13 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         if(segue.destination is PDFController){
             guard let controller = segue.destination as? PDFController else { return }
             controller.quote = self.vm.quote
-        } else if segue.destination is BuyInvoicesVC {
-            let buyVC = segue.destination as! BuyInvoicesVC
-            buyVC.products = self.products
+        }
+        
+        
+        if let vc = segue.destination.children[0] as? BuyInvoicesVC
+        {
+            vc.products = products
+            vc.dismissalDelegate = self
         }
     }
     
@@ -397,5 +401,12 @@ extension QuoteViewController : StoreManagerDelegate {
     func onAvailableProducts(products: [SKProduct]) {
         self.products = products
         performSegue(withIdentifier: "buyVC", sender: self)
+    }
+}
+
+extension QuoteViewController : DismissalDelegate {
+    
+    func finishedShowing(viewController: UIViewController){
+        viewController.dismiss(animated: true, completion: nil)
     }
 }

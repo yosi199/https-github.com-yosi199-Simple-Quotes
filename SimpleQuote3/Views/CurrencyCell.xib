@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="344" height="102.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ox-cV-rW7">
+                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ox-cV-rW7">
                         <rect key="frame" x="10" y="10" width="324" height="80"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZy-XB-M2H">
@@ -59,6 +59,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="0Ox-cV-rW7" secondAttribute="trailing" constant="10" id="2Pw-No-yzV"/>
                     <constraint firstItem="0Ox-cV-rW7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Hky-4h-MNw"/>

@@ -22,6 +22,7 @@
 		4CC94E6A23052C3B00E786CC /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E6923052C3B00E786CC /* StoreManager.swift */; };
 		4CC94E742305331100E786CC /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E732305331100E786CC /* Types.swift */; };
 		4CC94E76230589C000E786CC /* BuyInvoicesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E75230589C000E786CC /* BuyInvoicesVC.swift */; };
+		4CC94E7A2309255600E786CC /* DismissDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E792309255600E786CC /* DismissDelegate.swift */; };
 		4CDEFCB622D5DCE400177660 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEFCB522D5DCE400177660 /* DateExtensions.swift */; };
 		4CF6353822D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */; };
 		4CF6353922D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */; };
@@ -86,6 +87,7 @@
 		4CC94E6923052C3B00E786CC /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		4CC94E732305331100E786CC /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		4CC94E75230589C000E786CC /* BuyInvoicesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyInvoicesVC.swift; sourceTree = "<group>"; };
+		4CC94E792309255600E786CC /* DismissDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissDelegate.swift; sourceTree = "<group>"; };
 		4CDEFCB522D5DCE400177660 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCellItemTableViewCell.swift; sourceTree = "<group>"; };
 		4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteCellItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				D3B3211E22BA254500AB362A /* StringExtension.swift */,
 				4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */,
 				4CDEFCB522D5DCE400177660 /* DateExtensions.swift */,
+				4CC94E792309255600E786CC /* DismissDelegate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				D393E8CB22E707D300E8F034 /* AlertDeletion.swift in Sources */,
 				4CC94E5922FC15FE00E786CC /* PDFController.swift in Sources */,
 				4C68875A22DB8F9D00B16462 /* SettingsViewController.swift in Sources */,
+				4CC94E7A2309255600E786CC /* DismissDelegate.swift in Sources */,
 				D3B3211822BA226700AB362A /* Header.swift in Sources */,
 				D3B3213622BA2CAB00AB362A /* ItemCellTableViewCell.swift in Sources */,
 				D393E8DC22E750A400E8F034 /* MenuList.swift in Sources */,

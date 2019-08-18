@@ -24,11 +24,12 @@ class BuyInvoicesVC: UIViewController {
     @IBOutlet weak var product2: UIView!
     @IBOutlet weak var product3: UIView!
     
+    weak var dismissalDelegate: DismissalDelegate?
+    
     var products: [SKProduct]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         
         var identifiers: [String]? {
@@ -44,7 +45,7 @@ class BuyInvoicesVC: UIViewController {
         
         if(identifiers!.contains(products[1].productIdentifier)){
             let product = products[1]
-      
+            
             levelThreeName.text = "\(product.localizedTitle)"
             levelThreePrice.text = "\(String(describing: product.regularPrice!))"
         }
@@ -86,5 +87,9 @@ class BuyInvoicesVC: UIViewController {
     
     @objc func onProduct3Tapped() {
         StoreObserver.shared.buy(products[2])
+    }
+    
+    @IBAction func dismiss(_ sender: Any) {
+       dismissalDelegate?.finishedShowing(viewController: self)
     }
 }

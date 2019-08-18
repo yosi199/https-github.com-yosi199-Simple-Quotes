@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import StoreKit
 
 class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler {
     
@@ -30,6 +31,10 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     private var user: User?
     
     private var selectedLocale: Locale?
+    
+    // IN APP Purchases
+    private var availableInvoices = 0
+    private var products: [SKProduct]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -220,7 +225,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     
     @IBAction func onLogoToggled(_ sender: UISwitch) {
         self.logo.isUserInteractionEnabled = sender.isOn
-  
+        
         UIView.animate(withDuration: 0.25) {
             if (sender.isOn) {
                 self.logo.alpha = 1
@@ -228,6 +233,54 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
                 self.logo.alpha = 0.3
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination.children[0] as? BuyInvoicesVC
+        {
+            vc.products = products
+            vc.dismissalDelegate = self
+        }
+    }
+    
+    @IBAction func topUP(_ sender: Any) {
+        StoreManager.shared.delegate = self
+        fetchProducts()
+    }
+    
+    fileprivate func fetchProducts(){
+        if StoreObserver.shared.isAuthorizedForPayments {
+            let productsResource = ProductIdentifiers()
+            guard let identifiers = productsResource.identifiers else {
+                // Warn the user that the resource file could not be found.
+                print("Identifiers not found")
+                return
+            }
+            
+            if !identifiers.isEmpty {
+                StoreManager.shared.fetchProducts(matchingIdentifiers: identifiers)
+            }
+        }
+    }
+    
+}
 
+extension SettingsViewController : StoreManagerDelegate {
+    func noAvailableProductsFound() {
+        
+    }
+    
+    func onAvailableProducts(products: [SKProduct]) {
+        self.products = products
+        performSegue(withIdentifier: "buyVC", sender: self)
     }
 }
+
+extension SettingsViewController : DismissalDelegate {
+
+    func finishedShowing(viewController: UIViewController) {
+        viewController.dismiss(animated: true, completion: nil)
+    }
+}
+
+
