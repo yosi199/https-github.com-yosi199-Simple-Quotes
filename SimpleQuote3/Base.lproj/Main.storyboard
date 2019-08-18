@@ -617,14 +617,14 @@ Create a new one by pressing the '+' button.</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vhk-K1-VkC">
                                                 <rect key="frame" x="0.0" y="0.0" width="264.5" height="1100"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Pack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zN1-3f-ZmJ">
-                                                        <rect key="frame" x="76.5" y="529.5" width="112" height="41"/>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="35"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Pack" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zN1-3f-ZmJ">
+                                                        <rect key="frame" x="10" y="532.5" width="244.5" height="35"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6l-ME-UI9">
-                                                        <rect key="frame" x="111.5" y="585.5" width="42" height="23.5"/>
+                                                        <rect key="frame" x="111.5" y="582.5" width="42" height="23.5"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -632,6 +632,8 @@ Create a new one by pressing the '+' button.</string>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.01176470588" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="zN1-3f-ZmJ" firstAttribute="leading" secondItem="Vhk-K1-VkC" secondAttribute="leading" constant="10" id="0tI-aY-RbD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zN1-3f-ZmJ" secondAttribute="trailing" constant="10" id="NSc-az-LCn"/>
                                                     <constraint firstItem="S6l-ME-UI9" firstAttribute="top" secondItem="zN1-3f-ZmJ" secondAttribute="bottom" constant="15" id="Vp2-Hc-sck"/>
                                                     <constraint firstItem="S6l-ME-UI9" firstAttribute="centerX" secondItem="Vhk-K1-VkC" secondAttribute="centerX" id="f44-yJ-WbC"/>
                                                     <constraint firstItem="zN1-3f-ZmJ" firstAttribute="centerX" secondItem="Vhk-K1-VkC" secondAttribute="centerX" id="hlQ-JO-u5S"/>
@@ -641,14 +643,14 @@ Create a new one by pressing the '+' button.</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6o-wp-3Cv">
                                                 <rect key="frame" x="264.5" y="0.0" width="265" height="1100"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 Pack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uh3-f8-8aE">
-                                                        <rect key="frame" x="56.5" y="527" width="152" height="46.5"/>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 Pack" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uh3-f8-8aE">
+                                                        <rect key="frame" x="10" y="532.5" width="245" height="35"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSo-u8-BCy">
-                                                        <rect key="frame" x="111.5" y="585.5" width="42" height="23.5"/>
+                                                        <rect key="frame" x="111.5" y="582.5" width="42" height="23.5"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -656,6 +658,8 @@ Create a new one by pressing the '+' button.</string>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="Uh3-f8-8aE" firstAttribute="leading" secondItem="n6o-wp-3Cv" secondAttribute="leading" constant="10" id="9MP-bb-q0c"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Uh3-f8-8aE" secondAttribute="trailing" constant="10" id="HAV-Ve-Tdu"/>
                                                     <constraint firstItem="eSo-u8-BCy" firstAttribute="centerX" secondItem="n6o-wp-3Cv" secondAttribute="centerX" id="RFN-Vq-g9o"/>
                                                     <constraint firstItem="Uh3-f8-8aE" firstAttribute="centerY" secondItem="n6o-wp-3Cv" secondAttribute="centerY" id="gfp-Lh-rei"/>
                                                     <constraint firstItem="Uh3-f8-8aE" firstAttribute="centerX" secondItem="n6o-wp-3Cv" secondAttribute="centerX" id="yGS-Tu-YaZ"/>
@@ -664,14 +668,14 @@ Create a new one by pressing the '+' button.</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ID-ko-lHf">
                                                 <rect key="frame" x="529.5" y="0.0" width="264.5" height="1100"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 Pack!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRd-jI-6t2">
-                                                        <rect key="frame" x="29" y="521" width="206.5" height="58"/>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 Pack!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRd-jI-6t2">
+                                                        <rect key="frame" x="10" y="532.5" width="244.5" height="35"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRU-qG-whp">
-                                                        <rect key="frame" x="111" y="585.5" width="42" height="23.5"/>
+                                                        <rect key="frame" x="111" y="582.5" width="42" height="23.5"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -679,9 +683,11 @@ Create a new one by pressing the '+' button.</string>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="LRd-jI-6t2" firstAttribute="leading" secondItem="6ID-ko-lHf" secondAttribute="leading" constant="10" id="6fn-NY-rCb"/>
                                                     <constraint firstItem="KRU-qG-whp" firstAttribute="centerX" secondItem="6ID-ko-lHf" secondAttribute="centerX" id="9Li-GP-EiC"/>
                                                     <constraint firstItem="LRd-jI-6t2" firstAttribute="centerY" secondItem="6ID-ko-lHf" secondAttribute="centerY" id="MZn-74-y3v"/>
                                                     <constraint firstItem="LRd-jI-6t2" firstAttribute="centerX" secondItem="6ID-ko-lHf" secondAttribute="centerX" id="oer-N3-j7L"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LRd-jI-6t2" secondAttribute="trailing" constant="10" id="z1W-s4-GVX"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -816,27 +822,47 @@ Create a new one by pressing the '+' button.</string>
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5U-kq-chQ">
+                                <rect key="frame" x="0.0" y="24" width="834" height="50"/>
+                                <color key="barTintColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Settings" id="tsn-MS-UGc">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KtA-6e-VqB">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="cancel:" destination="3Et-os-dTL" id="Xuq-no-cFC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="28b-61-hq9">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="save:" destination="3Et-os-dTL" id="TFm-0b-Ox3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1I-Ut-Anb">
-                                <rect key="frame" x="0.0" y="24" width="834" height="1150"/>
+                                <rect key="frame" x="0.0" y="74" width="834" height="1100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7k-lt-xPn">
-                                        <rect key="frame" x="0.0" y="0.0" width="834" height="951.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="834" height="926.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gray-wide multiple" translatesAutoresizingMaskIntoConstraints="NO" id="fPz-MU-ymw">
-                                                <rect key="frame" x="367" y="131" width="100" height="100"/>
+                                                <rect key="frame" x="367" y="106" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="OIv-2a-eZM"/>
                                                     <constraint firstAttribute="height" constant="100" id="fVh-Ks-vHD"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap or drag another image to replace logo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVR-vx-pbi">
-                                                <rect key="frame" x="25" y="75" width="784" height="16"/>
+                                                <rect key="frame" x="25" y="50" width="784" height="16"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Symbol:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bg-nS-EQ0">
-                                                <rect key="frame" x="40" y="632" width="200" height="21"/>
+                                                <rect key="frame" x="40" y="607" width="200" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="Q7L-eo-Vck"/>
                                                 </constraints>
@@ -845,7 +871,7 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPn-JH-HhH">
-                                                <rect key="frame" x="40" y="306" width="200" height="21"/>
+                                                <rect key="frame" x="40" y="281" width="200" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="C1w-dq-qjx"/>
                                                 </constraints>
@@ -854,19 +880,19 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Company X" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EwV-zG-ttM">
-                                                <rect key="frame" x="280" y="308" width="514" height="17"/>
+                                                <rect key="frame" x="280" y="283" width="514" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XoD-Sd-yQq">
-                                                <rect key="frame" x="280" y="700" width="514" height="17"/>
+                                                <rect key="frame" x="280" y="675" width="514" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" textContentType="tel"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tax (%):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFC-iF-dAF">
-                                                <rect key="frame" x="40" y="698" width="200" height="21"/>
+                                                <rect key="frame" x="40" y="673" width="200" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="XSn-z7-SLk"/>
                                                 </constraints>
@@ -875,7 +901,7 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="og7-Oe-S7L">
-                                                <rect key="frame" x="40" y="567" width="200" height="20"/>
+                                                <rect key="frame" x="40" y="542" width="200" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="Fft-AK-Rbl"/>
                                                 </constraints>
@@ -884,69 +910,49 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All values can be changed later when filling the quote." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XW6-JJ-66W">
-                                                <rect key="frame" x="243.5" y="884.5" width="347.5" height="17"/>
+                                                <rect key="frame" x="243.5" y="859.5" width="347.5" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5U-kq-chQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="834" height="50"/>
-                                                <color key="barTintColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <items>
-                                                    <navigationItem title="Settings" id="tsn-MS-UGc">
-                                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KtA-6e-VqB">
-                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <connections>
-                                                                <action selector="cancel:" destination="3Et-os-dTL" id="Xuq-no-cFC"/>
-                                                            </connections>
-                                                        </barButtonItem>
-                                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="28b-61-hq9">
-                                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <connections>
-                                                                <action selector="save:" destination="3Et-os-dTL" id="TFm-0b-Ox3"/>
-                                                            </connections>
-                                                        </barButtonItem>
-                                                    </navigationItem>
-                                                </items>
-                                            </navigationBar>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The symbol used for currency display" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="882-3P-Pe9">
-                                                <rect key="frame" x="40" y="658" width="754" height="15"/>
+                                                <rect key="frame" x="40" y="633" width="754" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percent of tax added to value." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDk-fS-bPw">
-                                                <rect key="frame" x="40" y="724" width="754" height="15"/>
+                                                <rect key="frame" x="40" y="699" width="754" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prefix for an ID. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-it-KTx">
-                                                <rect key="frame" x="40" y="592" width="754" height="15"/>
+                                                <rect key="frame" x="40" y="567" width="754" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shown in every quote." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SB8-g9-o3H">
-                                                <rect key="frame" x="40" y="332" width="754" height="15"/>
+                                                <rect key="frame" x="40" y="307" width="754" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signature:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se2-2c-ypn">
-                                                <rect key="frame" x="40" y="814" width="754" height="20.5"/>
+                                                <rect key="frame" x="40" y="789" width="754" height="20.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="CMX" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3D-th-qxO">
-                                                <rect key="frame" x="280" y="568.5" width="514" height="17"/>
+                                                <rect key="frame" x="280" y="543.5" width="514" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUs-gb-LkB">
-                                                <rect key="frame" x="40" y="372" width="200" height="20"/>
+                                                <rect key="frame" x="40" y="347" width="200" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="9jf-Od-JkE"/>
                                                 </constraints>
@@ -955,32 +961,32 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The address of your company." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkj-nj-5nc">
-                                                <rect key="frame" x="40" y="397" width="754" height="15"/>
+                                                <rect key="frame" x="40" y="372" width="754" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="5th Ave, Manhatten NY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Igv-gE-4k3">
-                                                <rect key="frame" x="280" y="373.5" width="514" height="17"/>
+                                                <rect key="frame" x="280" y="348.5" width="514" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-iv-uXY">
-                                                <rect key="frame" x="280" y="634" width="514" height="17"/>
+                                                <rect key="frame" x="280" y="609" width="514" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-Ns-5F5" customClass="CurrencyList" customModule="SimpleQuote3" customModuleProvider="target">
-                                                <rect key="frame" x="834" y="50" width="0.0" height="901.5"/>
+                                                <rect key="frame" x="834" y="0.0" width="0.0" height="926.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" id="VkV-uZ-MYT"/>
                                                 </constraints>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8Q-cj-Fg1">
-                                                <rect key="frame" x="40" y="437" width="200" height="20"/>
+                                                <rect key="frame" x="40" y="412" width="200" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="M7d-qc-36y"/>
                                                 </constraints>
@@ -989,19 +995,19 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email that will appear on the quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uV-gt-Emf">
-                                                <rect key="frame" x="40" y="462" width="754" height="15"/>
+                                                <rect key="frame" x="40" y="437" width="754" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="companyx@gmail.xym" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tUc-4H-ldG">
-                                                <rect key="frame" x="280" y="438.5" width="514" height="17"/>
+                                                <rect key="frame" x="280" y="413.5" width="514" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGY-ha-8d3">
-                                                <rect key="frame" x="40" y="502" width="200" height="20"/>
+                                                <rect key="frame" x="40" y="477" width="200" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="EKl-Il-SAc"/>
                                                 </constraints>
@@ -1010,26 +1016,26 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The company number for contact" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jO6-uf-Y0O">
-                                                <rect key="frame" x="40" y="527" width="754" height="15"/>
+                                                <rect key="frame" x="40" y="502" width="754" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="+1 (479) 302-8608" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="paG-sW-Ag6">
-                                                <rect key="frame" x="280" y="503.5" width="514" height="17"/>
+                                                <rect key="frame" x="280" y="478.5" width="514" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
                                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ivo-JK-Z9j">
-                                                <rect key="frame" x="88" y="165.5" width="51" height="31"/>
+                                                <rect key="frame" x="88" y="140.5" width="51" height="31"/>
                                                 <color key="onTintColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="onLogoToggled:" destination="3Et-os-dTL" eventType="valueChanged" id="DQH-ea-KUH"/>
                                                 </connections>
                                             </switch>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show logo in documents?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsg-Ar-B2y">
-                                                <rect key="frame" x="40" y="206.5" width="145" height="14.5"/>
+                                                <rect key="frame" x="40" y="181.5" width="145" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1044,7 +1050,6 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="BKc-Ns-5F5" firstAttribute="leading" relation="lessThanOrEqual" secondItem="paG-sW-Ag6" secondAttribute="trailing" constant="40" id="41o-Ff-8Md"/>
                                             <constraint firstItem="ivo-JK-Z9j" firstAttribute="centerY" secondItem="fPz-MU-ymw" secondAttribute="centerY" id="4Jd-Tx-etp"/>
                                             <constraint firstItem="EwV-zG-ttM" firstAttribute="leading" relation="lessThanOrEqual" secondItem="lPn-JH-HhH" secondAttribute="trailing" constant="40" id="5Og-jh-cHf"/>
-                                            <constraint firstItem="V5U-kq-chQ" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" id="7i9-FI-PPm"/>
                                             <constraint firstItem="OFC-iF-dAF" firstAttribute="top" secondItem="882-3P-Pe9" secondAttribute="bottom" constant="25" id="99y-Ib-ntR"/>
                                             <constraint firstItem="7uV-gt-Emf" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="9Pj-LQ-uJd"/>
                                             <constraint firstItem="5bg-nS-EQ0" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="B13-UC-99v"/>
@@ -1058,7 +1063,9 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="SB8-g9-o3H" secondAttribute="trailing" constant="40" id="Gsm-Yd-9MO"/>
                                             <constraint firstItem="XW6-JJ-66W" firstAttribute="centerX" secondItem="w7k-lt-xPn" secondAttribute="centerX" id="Guu-oy-Tfe"/>
                                             <constraint firstItem="cDk-fS-bPw" firstAttribute="top" secondItem="OFC-iF-dAF" secondAttribute="bottom" constant="5" id="HVv-t3-SUI"/>
+                                            <constraint firstItem="sVR-vx-pbi" firstAttribute="top" secondItem="w7k-lt-xPn" secondAttribute="top" constant="50" id="IGw-Ue-iff"/>
                                             <constraint firstItem="og7-Oe-S7L" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="JaK-If-SEN"/>
+                                            <constraint firstItem="BKc-Ns-5F5" firstAttribute="top" secondItem="w7k-lt-xPn" secondAttribute="top" id="JtZ-Qc-IJl"/>
                                             <constraint firstItem="paG-sW-Ag6" firstAttribute="leading" relation="lessThanOrEqual" secondItem="XGY-ha-8d3" secondAttribute="trailing" constant="40" id="KJ8-kZ-UMt"/>
                                             <constraint firstItem="paG-sW-Ag6" firstAttribute="centerY" secondItem="XGY-ha-8d3" secondAttribute="centerY" id="L3H-NJ-Puz"/>
                                             <constraint firstItem="Igv-gE-4k3" firstAttribute="leading" relation="lessThanOrEqual" secondItem="fUs-gb-LkB" secondAttribute="trailing" constant="40" id="M2b-1O-dlT"/>
@@ -1078,7 +1085,6 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="BKc-Ns-5F5" firstAttribute="leading" secondItem="jO6-uf-Y0O" secondAttribute="trailing" constant="40" id="W6C-p3-BaQ"/>
                                             <constraint firstItem="XoD-Sd-yQq" firstAttribute="leading" secondItem="OFC-iF-dAF" secondAttribute="trailing" constant="40" id="WpX-L7-TIT"/>
                                             <constraint firstItem="XoD-Sd-yQq" firstAttribute="centerY" secondItem="OFC-iF-dAF" secondAttribute="centerY" id="Wr5-VL-Vhq"/>
-                                            <constraint firstItem="V5U-kq-chQ" firstAttribute="top" secondItem="w7k-lt-xPn" secondAttribute="top" id="Wsf-UI-FZf"/>
                                             <constraint firstItem="fPz-MU-ymw" firstAttribute="centerX" secondItem="w7k-lt-xPn" secondAttribute="centerX" id="XiQ-Dm-Oem"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="cDk-fS-bPw" secondAttribute="trailing" constant="40" id="YRH-AP-rle"/>
                                             <constraint firstItem="se2-2c-ypn" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="aAm-L8-uCN"/>
@@ -1097,7 +1103,6 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="tUc-4H-ldG" firstAttribute="centerY" secondItem="T8Q-cj-Fg1" secondAttribute="centerY" id="nyw-hS-wOw"/>
                                             <constraint firstItem="OFC-iF-dAF" firstAttribute="leading" relation="lessThanOrEqual" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="oGs-Ua-55K"/>
                                             <constraint firstItem="sVR-vx-pbi" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="25" id="pcf-6u-nCo"/>
-                                            <constraint firstAttribute="trailing" secondItem="V5U-kq-chQ" secondAttribute="trailing" id="pg6-sB-8RN"/>
                                             <constraint firstItem="882-3P-Pe9" firstAttribute="top" secondItem="5bg-nS-EQ0" secondAttribute="bottom" constant="5" id="pod-EN-Led"/>
                                             <constraint firstItem="cDk-fS-bPw" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="qqX-hE-EqJ"/>
                                             <constraint firstItem="SB8-g9-o3H" firstAttribute="leading" relation="lessThanOrEqual" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="rzG-uG-eAa"/>
@@ -1105,9 +1110,7 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="K3D-th-qxO" firstAttribute="centerY" secondItem="og7-Oe-S7L" secondAttribute="centerY" id="tTv-vL-mYo"/>
                                             <constraint firstItem="EwV-zG-ttM" firstAttribute="centerY" secondItem="lPn-JH-HhH" secondAttribute="centerY" id="tXQ-gx-3zW"/>
                                             <constraint firstItem="lPn-JH-HhH" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="tcf-zS-Ssn"/>
-                                            <constraint firstItem="BKc-Ns-5F5" firstAttribute="top" secondItem="V5U-kq-chQ" secondAttribute="bottom" id="tpE-QO-tFQ"/>
                                             <constraint firstItem="T8Q-cj-Fg1" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="uJ4-MS-QOG"/>
-                                            <constraint firstItem="sVR-vx-pbi" firstAttribute="top" secondItem="V5U-kq-chQ" secondAttribute="bottom" constant="25" id="upu-dJ-cA4"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="K3D-th-qxO" secondAttribute="trailing" constant="40" id="vOg-RH-d8y"/>
                                             <constraint firstItem="7uV-gt-Emf" firstAttribute="top" secondItem="T8Q-cj-Fg1" secondAttribute="bottom" constant="5" id="vRG-bf-EZb"/>
                                             <constraint firstItem="BKc-Ns-5F5" firstAttribute="leading" relation="lessThanOrEqual" secondItem="tUc-4H-ldG" secondAttribute="trailing" constant="40" id="vak-qF-LtC"/>
@@ -1130,10 +1133,13 @@ Create a new one by pressing the '+' button.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="V5U-kq-chQ" firstAttribute="trailing" secondItem="6cH-NY-yRR" secondAttribute="trailing" id="EHR-AM-AbJ"/>
                             <constraint firstItem="L1I-Ut-Anb" firstAttribute="trailing" secondItem="6cH-NY-yRR" secondAttribute="trailing" id="J18-Gm-pGy"/>
                             <constraint firstItem="L1I-Ut-Anb" firstAttribute="bottom" secondItem="6cH-NY-yRR" secondAttribute="bottom" id="OMU-yi-DzA"/>
                             <constraint firstItem="L1I-Ut-Anb" firstAttribute="leading" secondItem="6cH-NY-yRR" secondAttribute="leading" id="lQ5-Yl-iH1"/>
-                            <constraint firstItem="L1I-Ut-Anb" firstAttribute="top" secondItem="6cH-NY-yRR" secondAttribute="top" id="oLI-2M-Ni2"/>
+                            <constraint firstItem="L1I-Ut-Anb" firstAttribute="top" secondItem="V5U-kq-chQ" secondAttribute="bottom" id="oLI-2M-Ni2"/>
+                            <constraint firstItem="V5U-kq-chQ" firstAttribute="top" secondItem="6cH-NY-yRR" secondAttribute="top" id="ph5-i2-cW2"/>
+                            <constraint firstItem="V5U-kq-chQ" firstAttribute="leading" secondItem="6cH-NY-yRR" secondAttribute="leading" id="z56-ha-uag"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6cH-NY-yRR"/>
                     </view>

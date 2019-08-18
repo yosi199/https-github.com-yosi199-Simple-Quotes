@@ -29,21 +29,40 @@ class BuyInvoicesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        products.forEach { (product) in
-            print("Identifier: \(product.productIdentifier)")
-            print("Regular price: \(product.regularPrice)")
-            
-            //            StoreObserver.shared.buy(product)
+        
+        
+        var identifiers: [String]? {
+            guard let path = Bundle.main.path(forResource: "ProductIds", ofType: "plist") else { return nil }
+            return NSArray(contentsOfFile: path) as? [String]
         }
         
-        if(products.count == 3){
-            levelOneName.text = products[0].productIdentifier
-            levelTwoName.text = products[1].productIdentifier
-            levelThreeName.text = products[2].productIdentifier
-            
-            levelOnePrice.text = products[0].regularPrice
-            levelTwoPrice.text = products[1].regularPrice
-            levelThreePrice.text = products[2].regularPrice
+        if(identifiers!.contains(products[0].productIdentifier)){
+            let product = products[0]
+            levelTwoName.text = "\(product.localizedTitle)"
+            levelTwoPrice.text = "\(String(describing: product.regularPrice!))"
+        }
+        
+        if(identifiers!.contains(products[1].productIdentifier)){
+            let product = products[1]
+      
+            levelThreeName.text = "\(product.localizedTitle)"
+            levelThreePrice.text = "\(String(describing: product.regularPrice!))"
+        }
+        
+        if(identifiers!.contains(products[2].productIdentifier)){
+            let product = products[2]
+            levelOneName.text = "\(product.localizedTitle)"
+            levelOnePrice.text = "\(String(describing: product.regularPrice!))"
+        }
+        
+        products.forEach { (product) in
+            if(identifiers!.contains(product.productIdentifier)) {
+                print("Product Identifier \(product.productIdentifier)")
+                print("Identifier: \(product.localizedDescription)")
+                print("Title: \(product.localizedTitle)")
+                print("Regular price: \(String(describing: product.regularPrice!))")
+            }
+            //            StoreObserver.shared.buy(product)
         }
         
         let tapProduct1 = UITapGestureRecognizer(target: self, action: #selector(onProduct1Tapped))

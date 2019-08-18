@@ -3,5 +3,7 @@
 <plist version="1.0">
 <array>
 	<string>invoice_5_pack</string>
+	<string>invoice_20_pack</string>
+	<string>invoice_50_pack</string>
 </array>
 </plist>
