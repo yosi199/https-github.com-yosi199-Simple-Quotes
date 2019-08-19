@@ -34,9 +34,10 @@ class PDFController: UIViewController {
             } else{
                 let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
                 activityVC.popoverPresentationController?.barButtonItem = shareButton
-                self.present(activityVC, animated: true) {
-                    BuyInvoicesHelper.shared.useOneInvoice()
+                activityVC.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
+                    if completed { BuyInvoicesHelper.shared.useOneInvoice() }
                 }
+                self.present(activityVC, animated: true, completion: nil)
             }
         }
     }
@@ -73,7 +74,8 @@ class PDFController: UIViewController {
     
     private func generate(document: PDFDocument){
         do {
-            url = try PDFGenerator.generateURL(document: document, filename: "Example.pdf")
+            let fileName = DataRepository.Defaults.shared.quoteIDPrefix + String(quote?.invoiceId ?? "")
+            url = try PDFGenerator.generateURL(document: document, filename: "\(fileName).pdf")
             webview.loadFileURL(url!, allowingReadAccessTo: url!)
         } catch {
             print("Error while generating PDF: " + error.localizedDescription)
