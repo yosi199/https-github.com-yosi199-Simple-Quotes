@@ -75,6 +75,15 @@ class StoreObserver: NSObject {
         purchased.append(transaction)
         print("handlePurchased \(transaction.payment.productIdentifier).")
         
+        switch transaction.payment.productIdentifier {
+        case "invoice_50_pack": UserDefaults.standard.setValue(BuyInvoicesHelper.shared.getAvailableInvoicesCount() + 50, forKey: AVAILABLE_INVOICES_COUNT)
+        case "invoice_20_pack": UserDefaults.standard.setValue(BuyInvoicesHelper.shared.getAvailableInvoicesCount() + 20, forKey: AVAILABLE_INVOICES_COUNT)
+        case "invoice_5_pack": UserDefaults.standard.setValue(BuyInvoicesHelper.shared.getAvailableInvoicesCount() + 5, forKey: AVAILABLE_INVOICES_COUNT)
+            
+        default:
+            print("No products identifier found")
+        }
+        
         // Finish the successful transaction.
         SKPaymentQueue.default().finishTransaction(transaction)
     }

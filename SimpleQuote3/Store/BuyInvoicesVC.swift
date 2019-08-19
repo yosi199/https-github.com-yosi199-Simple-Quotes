@@ -31,7 +31,6 @@ class BuyInvoicesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         var identifiers: [String]? {
             guard let path = Bundle.main.path(forResource: "ProductIds", ofType: "plist") else { return nil }
             return NSArray(contentsOfFile: path) as? [String]
@@ -78,15 +77,15 @@ class BuyInvoicesVC: UIViewController {
     }
     
     @objc func onProduct1Tapped() {
-        StoreObserver.shared.buy(products[0])
+        StoreObserver.shared.buy(products[2])
     }
     
     @objc func onProduct2Tapped() {
-        StoreObserver.shared.buy(products[1])
+        StoreObserver.shared.buy(products[0])
     }
     
     @objc func onProduct3Tapped() {
-        StoreObserver.shared.buy(products[2])
+        StoreObserver.shared.buy(products[1])
     }
     
     @IBAction func dismiss(_ sender: Any) {

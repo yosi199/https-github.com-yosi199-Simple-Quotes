@@ -23,6 +23,7 @@
 		4CC94E742305331100E786CC /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E732305331100E786CC /* Types.swift */; };
 		4CC94E76230589C000E786CC /* BuyInvoicesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E75230589C000E786CC /* BuyInvoicesVC.swift */; };
 		4CC94E7A2309255600E786CC /* DismissDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E792309255600E786CC /* DismissDelegate.swift */; };
+		4CC94E7C230A83A800E786CC /* BuyInvoicesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E7B230A83A800E786CC /* BuyInvoicesHelper.swift */; };
 		4CDEFCB622D5DCE400177660 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDEFCB522D5DCE400177660 /* DateExtensions.swift */; };
 		4CF6353822D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */; };
 		4CF6353922D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */; };
@@ -88,6 +89,7 @@
 		4CC94E732305331100E786CC /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		4CC94E75230589C000E786CC /* BuyInvoicesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyInvoicesVC.swift; sourceTree = "<group>"; };
 		4CC94E792309255600E786CC /* DismissDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissDelegate.swift; sourceTree = "<group>"; };
+		4CC94E7B230A83A800E786CC /* BuyInvoicesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyInvoicesHelper.swift; sourceTree = "<group>"; };
 		4CDEFCB522D5DCE400177660 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		4CF6353622D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCellItemTableViewCell.swift; sourceTree = "<group>"; };
 		4CF6353722D3BAF800BB7BAD /* QuoteCellItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteCellItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				D3EAA40622E47F50000DD4CE /* DoubleInputValidator.swift */,
 				D393E8CA22E707D300E8F034 /* AlertDeletion.swift */,
 				D340142722F6BF5300328CBE /* CurrencyHelper.swift */,
+				4CC94E7B230A83A800E786CC /* BuyInvoicesHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				4CC94E6A23052C3B00E786CC /* StoreManager.swift in Sources */,
 				4CC94E5722FBFAE700E786CC /* KeyboardScrollHelper.swift in Sources */,
 				4C7D156322BE89BD008D4CF8 /* UIImageExtensions.swift in Sources */,
+				4CC94E7C230A83A800E786CC /* BuyInvoicesHelper.swift in Sources */,
 				D3EAA40722E47F50000DD4CE /* DoubleInputValidator.swift in Sources */,
 				D3B3213122BA255D00AB362A /* AppConstants.swift in Sources */,
 				D3209AAF22DFAF9100AA9C23 /* QuoteViewModel.swift in Sources */,

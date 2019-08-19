@@ -18,3 +18,5 @@ let SETTINGS_DEFAULT_TAX = "defaultTax"
 let SETTINGS_INVOICE_ID_PREFIX = "invoiceID"
 let SETTINGS_INVOICE_ID_COUNTER = "invoiceIDCounter"
 let SETTINGS_COMPANY_NAME = "companyName"
+
+let AVAILABLE_INVOICES_COUNT = "availableInvoicesCount"

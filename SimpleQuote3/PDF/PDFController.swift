@@ -9,6 +9,7 @@
 import UIKit
 import TPPDF
 import WebKit
+import StoreKit
 
 class PDFController: UIViewController {
     
@@ -21,11 +22,31 @@ class PDFController: UIViewController {
     private var url: URL?
     private let factory = TextFactory.shared
     
+    // IN APP Purchases
+    private var products: [SKProduct]?
+    
     @IBAction func shareAction(_ sender: Any) {
         if let url = self.url{
-            let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-            activityVC.popoverPresentationController?.barButtonItem = shareButton
-            self.present(activityVC, animated: true, completion: nil)
+            if (BuyInvoicesHelper.shared.getAvailableInvoicesCount() <= 0){
+                StoreManager.shared.delegate = self
+                fetchProducts()
+                return
+            } else{
+                let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+                activityVC.popoverPresentationController?.barButtonItem = shareButton
+                self.present(activityVC, animated: true) {
+                    BuyInvoicesHelper.shared.useOneInvoice()
+                }
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.destination.children.count > 0){
+            if let vc = segue.destination.children[0] as? BuyInvoicesVC {
+                vc.products = products
+                vc.dismissalDelegate = self
+            }
         }
     }
     
@@ -41,12 +62,12 @@ class PDFController: UIViewController {
         self.template =  Template1(quote: quote, user: user)
         
         let document = PDFDocument(format: .a4)
-
+        
         template?.setHeader(document: document)
         template?.setContent(document: document)
         template?.setFooter(document: document)
         
-  
+        
         generate(document: document)
     }
     
@@ -60,5 +81,39 @@ class PDFController: UIViewController {
         }
     }
     
+    
+    fileprivate func fetchProducts(){
+        if StoreObserver.shared.isAuthorizedForPayments {
+            let productsResource = ProductIdentifiers()
+            guard let identifiers = productsResource.identifiers else {
+                // Warn the user that the resource file could not be found.
+                print("Identifiers not found")
+                return
+            }
+            
+            if !identifiers.isEmpty {
+                StoreManager.shared.fetchProducts(matchingIdentifiers: identifiers)
+            }
+        }
+    }
+    
+}
 
+extension PDFController : StoreManagerDelegate {
+    func noAvailableProductsFound() {
+        
+    }
+    
+    func onAvailableProducts(products: [SKProduct]) {
+        self.products = products
+        performSegue(withIdentifier: "buyVC", sender: self)
+    }
+}
+
+extension PDFController : DismissalDelegate {
+    
+    func finishedShowing(viewController: UIViewController){
+        viewController.dismiss(animated: true, completion: nil)
+    }
+    
 }

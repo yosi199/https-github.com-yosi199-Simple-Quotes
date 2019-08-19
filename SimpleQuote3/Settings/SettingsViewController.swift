@@ -25,6 +25,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var address: UITextField!
     @IBOutlet weak var currencyTableWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var availableQuotes: UILabel!
     
     private let progress = ProgressView()
     private let viewModel = SettingsViewModel()
@@ -62,6 +63,8 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
             
             self.defaultTax.delegate = DoubleInputValidator.shared
             // Do any additional setup after loading the view.
+            
+            self.availableQuotes.text = "\(BuyInvoicesHelper.shared.getAvailableInvoicesCount()) Available invoices."
             
             setupInteractions()
             setupCallbacks()

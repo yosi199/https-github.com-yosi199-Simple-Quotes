@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-import StoreKit
 
 class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler, UITextViewDelegate, UITextFieldDelegate {
     
@@ -41,10 +40,6 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     private let vm = QuoteViewModel()
     private let imagePicker = UIImagePickerController()
     private lazy var menu: MenuViewController = { return parent?.splitViewController?.children[0].children[0] as! MenuViewController }()
-   
-    // IN APP Purchases
-    private var availableInvoices = 0
-    private var products: [SKProduct]?
     
     override func viewDidLoad() {
         self.splitViewController?.preferredDisplayMode = UISplitViewController.DisplayMode.primaryOverlay
@@ -199,22 +194,9 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
             guard let controller = segue.destination as? PDFController else { return }
             controller.quote = self.vm.quote
         }
-        
-        
-        if let vc = segue.destination.children[0] as? BuyInvoicesVC
-        {
-            vc.products = products
-            vc.dismissalDelegate = self
-        }
     }
     
     @IBAction func screenshow(_ sender: Any) {
-        if(availableInvoices <= 0){
-            StoreManager.shared.delegate = self
-            fetchProducts()
-            return
-        }
-        
         self.progress.show(parent: self)
         
         let imagePath = "\(self.vm.quote.invoiceId)Image"
@@ -376,37 +358,5 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         keyboardHelper.textFieldDidEndEditing(field: textField)
     }
     
-    fileprivate func fetchProducts(){
-        if StoreObserver.shared.isAuthorizedForPayments {
-            let productsResource = ProductIdentifiers()
-            guard let identifiers = productsResource.identifiers else {
-                // Warn the user that the resource file could not be found.
-                print("Identifiers not found")
-                return
-            }
-            
-            if !identifiers.isEmpty {
-                StoreManager.shared.fetchProducts(matchingIdentifiers: identifiers)
-            }
-        }
-    }
     
-}
-
-extension QuoteViewController : StoreManagerDelegate {
-    func noAvailableProductsFound() {
-        
-    }
-    
-    func onAvailableProducts(products: [SKProduct]) {
-        self.products = products
-        performSegue(withIdentifier: "buyVC", sender: self)
-    }
-}
-
-extension QuoteViewController : DismissalDelegate {
-    
-    func finishedShowing(viewController: UIViewController){
-        viewController.dismiss(animated: true, completion: nil)
-    }
 }
