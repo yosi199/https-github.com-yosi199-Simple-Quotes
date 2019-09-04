@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         firstLaunch = !UserDefaults.standard.bool(forKey: firstLaunchKey)
         if(firstLaunch){
+//            UserDefaults.standard.set(10, forKey: AVAILABLE_INVOICES_COUNT) // For testing
             UserDefaults.standard.set(3, forKey: AVAILABLE_INVOICES_COUNT)
             UserDefaults.standard.set(true, forKey: firstLaunchKey)
             firstTime = true
