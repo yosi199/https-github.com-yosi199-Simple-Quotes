@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="SimpleQuote3/Base.lproj/Main.storyboard" source-language="en" target-language="he" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
+    </header>
+    <body>
+      <trans-unit id="1Mw-yI-6O0.title">
+        <source>Back</source>
+        <target>Back</target>
+        <note>Class = "UIBarButtonItem"; title = "Back"; ObjectID = "1Mw-yI-6O0";</note>
+      </trans-unit>
+      <trans-unit id="3Et-os-dTL.title">
+        <source>Settings</source>
+        <target>Settings</target>
+        <note>Class = "UIViewController"; title = "Settings"; ObjectID = "3Et-os-dTL";</note>
+      </trans-unit>
+      <trans-unit id="5bg-nS-EQ0.text">
+        <source>Currency Symbol:</source>
+        <target>Currency Symbol:</target>
+        <note>Class = "UILabel"; text = "Currency Symbol:"; ObjectID = "5bg-nS-EQ0";</note>
+      </trans-unit>
+      <trans-unit id="7Jd-WH-eRl.text">
+        <source>Value</source>
+        <target>Value</target>
+        <note>Class = "UILabel"; text = "Value"; ObjectID = "7Jd-WH-eRl";</note>
+      </trans-unit>
+      <trans-unit id="7bK-jq-Zjz.title">
+        <source>Master</source>
+        <target>Master</target>
+        <note>Class = "UITableViewController"; title = "Master"; ObjectID = "7bK-jq-Zjz";</note>
+      </trans-unit>
+      <trans-unit id="7uV-gt-Emf.text">
+        <source>Email that will appear on the quote</source>
+        <target>Email that will appear on the quote</target>
+        <note>Class = "UILabel"; text = "האימייל שיופיע על ההצעה"; ObjectID = "7uV-gt-Emf";</note>
+      </trans-unit>
+      <trans-unit id="8tY-lk-M1f.title">
+        <source>PDF</source>
+        <target>PDF</target>
+        <note>Class = "UIViewController"; title = "PDF"; ObjectID = "8tY-lk-M1f";</note>
+      </trans-unit>
+      <trans-unit id="882-3P-Pe9.text">
+        <source>The symbol used for currency display</source>
+        <target>The symbol used for currency display</target>
+        <note>Class = "UILabel"; text = "The symbol used for currency display"; ObjectID = "882-3P-Pe9";</note>
+      </trans-unit>
+      <trans-unit id="AMz-H7-41f.text">
+        <source>Items:</source>
+        <target>Items:</target>
+        <note>Class = "UILabel"; text = "Items:"; ObjectID = "AMz-H7-41f";</note>
+      </trans-unit>
+      <trans-unit id="CYE-GF-d0A.text">
+        <source>There are no quotes available yet. 
+Create a new one by pressing the '+' button.</source>
+        <target>There are no quotes available yet. 
+Create a new one by pressing the '+' button.</target>
+        <note>Class = "UILabel"; text = "There are no quotes available yet. \nCreate a new one by pressing the '+' button."; ObjectID = "CYE-GF-d0A";</note>
+      </trans-unit>
+      <trans-unit id="EwV-zG-ttM.text">
+        <source>Company X</source>
+        <target>Company X</target>
+        <note>Class = "UITextField"; text = "Company X"; ObjectID = "EwV-zG-ttM";</note>
+      </trans-unit>
+      <trans-unit id="HOM-y7-Bf6.normalTitle">
+        <source>Top Up</source>
+        <target>Top Up</target>
+        <note>Class = "UIButton"; normalTitle = "Top Up"; ObjectID = "HOM-y7-Bf6";</note>
+      </trans-unit>
+      <trans-unit id="HVi-89-zBM.normalTitle">
+        <source>Add</source>
+        <target>Add</target>
+        <note>Class = "UIButton"; normalTitle = "Add"; ObjectID = "HVi-89-zBM";</note>
+      </trans-unit>
+      <trans-unit id="ICd-iv-uXY.text">
+        <source>USD</source>
+        <target>USD</target>
+        <note>Class = "UILabel"; text = "USD"; ObjectID = "ICd-iv-uXY";</note>
+      </trans-unit>
+      <trans-unit id="IeL-il-8fi.text">
+        <source>Available Quotes (3/3)</source>
+        <target>Available Quotes (3/3)</target>
+        <note>Class = "UILabel"; text = "Available Quotes (3/3)"; ObjectID = "IeL-il-8fi";</note>
+      </trans-unit>
+      <trans-unit id="Igv-gE-4k3.placeholder">
+        <source>5th Ave, Manhatten NY</source>
+        <target>5th Ave, Manhatten NY</target>
+        <note>Class = "UITextField"; placeholder = "5th Ave, Manhatten NY"; ObjectID = "Igv-gE-4k3";</note>
+      </trans-unit>
+      <trans-unit id="JEX-9P-axG.title">
+        <source>Quote</source>
+        <target>Quote</target>
+        <note>Class = "UIViewController"; title = "Quote"; ObjectID = "JEX-9P-axG";</note>
+      </trans-unit>
+      <trans-unit id="Jsg-Ar-B2y.text">
+        <source>Show logo in documents?</source>
+        <target>Show logo in documents?</target>
+        <note>Class = "UILabel"; text = "Show logo in documents?"; ObjectID = "Jsg-Ar-B2y";</note>
+      </trans-unit>
+      <trans-unit id="K3D-th-qxO.text">
+        <source>CMX</source>
+        <target>CMX</target>
+        <note>Class = "UITextField"; text = "CMX"; ObjectID = "K3D-th-qxO";</note>
+      </trans-unit>
+      <trans-unit id="KRU-qG-whp.text">
+        <source>3.99</source>
+        <target>3.99</target>
+        <note>Class = "UILabel"; text = "3.99"; ObjectID = "KRU-qG-whp";</note>
+      </trans-unit>
+      <trans-unit id="LRd-jI-6t2.text">
+        <source>50 Pack!</source>
+        <target>50 Pack!</target>
+        <note>Class = "UILabel"; text = "50 Pack!"; ObjectID = "LRd-jI-6t2";</note>
+      </trans-unit>
+      <trans-unit id="O2w-tA-XeL.text">
+        <source>10</source>
+        <target>10</target>
+        <note>Class = "UITextField"; text = "10"; ObjectID = "O2w-tA-XeL";</note>
+      </trans-unit>
+      <trans-unit id="OFC-iF-dAF.text">
+        <source>Default Tax (%):</source>
+        <target>Default Tax (%):</target>
+        <note>Class = "UILabel"; text = "Default Tax (%):"; ObjectID = "OFC-iF-dAF";</note>
+      </trans-unit>
+      <trans-unit id="QXy-fs-4lJ.text">
+        <source>Tax Percentage: 4%</source>
+        <target>Tax Percentage: 4%</target>
+        <note>Class = "UILabel"; text = "Tax Percentage: 4%"; ObjectID = "QXy-fs-4lJ";</note>
+      </trans-unit>
+      <trans-unit id="RMx-3f-FxP.title">
+        <source>Master</source>
+        <target>Master</target>
+        <note>Class = "UINavigationController"; title = "Master"; ObjectID = "RMx-3f-FxP";</note>
+      </trans-unit>
+      <trans-unit id="S6l-ME-UI9.text">
+        <source>3.99</source>
+        <target>3.99</target>
+        <note>Class = "UILabel"; text = "3.99"; ObjectID = "S6l-ME-UI9";</note>
+      </trans-unit>
+      <trans-unit id="SB8-g9-o3H.text">
+        <source>Shown in every quote.</source>
+        <target>Shown in every quote.</target>
+        <note>Class = "UILabel"; text = "Shown in every quote."; ObjectID = "SB8-g9-o3H";</note>
+      </trans-unit>
+      <trans-unit id="T8Q-cj-Fg1.text">
+        <source>Email:</source>
+        <target>Email:</target>
+        <note>Class = "UILabel"; text = "Email:"; ObjectID = "T8Q-cj-Fg1";</note>
+      </trans-unit>
+      <trans-unit id="Uh3-f8-8aE.text">
+        <source>20 Pack</source>
+        <target>20 Pack</target>
+        <note>Class = "UILabel"; text = "20 Pack"; ObjectID = "Uh3-f8-8aE";</note>
+      </trans-unit>
+      <trans-unit id="X7d-5c-4nX.text">
+        <source>Tax/VAT:</source>
+        <target>Tax/VAT:</target>
+        <note>Class = "UILabel"; text = "Tax/VAT:"; ObjectID = "X7d-5c-4nX";</note>
+      </trans-unit>
+      <trans-unit id="XGY-ha-8d3.text">
+        <source>Phone Number:</source>
+        <target>Phone Number:</target>
+        <note>Class = "UILabel"; text = "Phone Number:"; ObjectID = "XGY-ha-8d3";</note>
+      </trans-unit>
+      <trans-unit id="XMp-ee-e6D.text">
+        <source>$ 100</source>
+        <target>$ 100</target>
+        <note>Class = "UILabel"; text = "$ 100"; ObjectID = "XMp-ee-e6D";</note>
+      </trans-unit>
+      <trans-unit id="XW0-Vb-5Lu.text">
+        <source>499</source>
+        <target>499</target>
+        <note>Class = "UITextField"; text = "499"; ObjectID = "XW0-Vb-5Lu";</note>
+      </trans-unit>
+      <trans-unit id="XW6-JJ-66W.text">
+        <source>All values can be changed later when filling the quote.</source>
+        <target>All values can be changed later when filling the quote.</target>
+        <note>Class = "UILabel"; text = "All values can be changed later when filling the quote."; ObjectID = "XW6-JJ-66W";</note>
+      </trans-unit>
+      <trans-unit id="XoD-Sd-yQq.text">
+        <source>4</source>
+        <target>4</target>
+        <note>Class = "UITextField"; text = "4"; ObjectID = "XoD-Sd-yQq";</note>
+      </trans-unit>
+      <trans-unit id="YVD-cj-UtV.text">
+        <source>Total</source>
+        <target>Total</target>
+        <note>Class = "UILabel"; text = "Total"; ObjectID = "YVD-cj-UtV";</note>
+      </trans-unit>
+      <trans-unit id="Zdf-7t-Un8.title">
+        <source>Master</source>
+        <target>Master</target>
+        <note>Class = "UINavigationItem"; title = "Master"; ObjectID = "Zdf-7t-Un8";</note>
+      </trans-unit>
+      <trans-unit id="biZ-EN-xAb.normalTitle">
+        <source>Save</source>
+        <target>Save</target>
+        <note>Class = "UIButton"; normalTitle = "Save"; ObjectID = "biZ-EN-xAb";</note>
+      </trans-unit>
+      <trans-unit id="bov-ZX-9wU.text">
+        <source>$ 239</source>
+        <target>$ 239</target>
+        <note>Class = "UILabel"; text = "$ 239"; ObjectID = "bov-ZX-9wU";</note>
+      </trans-unit>
+      <trans-unit id="cDk-fS-bPw.text">
+        <source>Percent of tax added to value.</source>
+        <target>Percent of tax added to value.</target>
+        <note>Class = "UILabel"; text = "Percent of tax added to value."; ObjectID = "cDk-fS-bPw";</note>
+      </trans-unit>
+      <trans-unit id="dB4-it-KTx.text">
+        <source>Prefix for an ID. </source>
+        <target>Prefix for an ID. </target>
+        <note>Class = "UILabel"; text = "Prefix for an ID. "; ObjectID = "dB4-it-KTx";</note>
+      </trans-unit>
+      <trans-unit id="eSo-u8-BCy.text">
+        <source>3.99</source>
+        <target>3.99</target>
+        <note>Class = "UILabel"; text = "3.99"; ObjectID = "eSo-u8-BCy";</note>
+      </trans-unit>
+      <trans-unit id="em0-Sq-jkX.title">
+        <source>Item</source>
+        <target>Item</target>
+        <note>Class = "UIBarButtonItem"; title = "Item"; ObjectID = "em0-Sq-jkX";</note>
+      </trans-unit>
+      <trans-unit id="f0b-29-ugq.title">
+        <source>Save &amp; Review</source>
+        <target>Save &amp; Review</target>
+        <note>Class = "UIBarButtonItem"; title = "Save &amp; Review"; ObjectID = "f0b-29-ugq";</note>
+      </trans-unit>
+      <trans-unit id="fUs-gb-LkB.text">
+        <source>Address:</source>
+        <target>Address:</target>
+        <note>Class = "UILabel"; text = "Address:"; ObjectID = "fUs-gb-LkB";</note>
+      </trans-unit>
+      <trans-unit id="iQb-Hm-vXj.text">
+        <source>Discount:</source>
+        <target>Discount:</target>
+        <note>Class = "UILabel"; text = "Discount:"; ObjectID = "iQb-Hm-vXj";</note>
+      </trans-unit>
+      <trans-unit id="iUL-Fx-w9e.text">
+        <source>Percentage:</source>
+        <target>Percentage:</target>
+        <note>Class = "UILabel"; text = "Percentage:"; ObjectID = "iUL-Fx-w9e";</note>
+      </trans-unit>
+      <trans-unit id="jO6-uf-Y0O.text">
+        <source>The company number for contact</source>
+        <target>The company number for contact</target>
+        <note>Class = "UILabel"; text = "The company number for contact"; ObjectID = "jO6-uf-Y0O";</note>
+      </trans-unit>
+      <trans-unit id="kLp-sS-OZa.text">
+        <source>Currency: $</source>
+        <target>Currency: $</target>
+        <note>Class = "UILabel"; text = "Currency: $"; ObjectID = "kLp-sS-OZa";</note>
+      </trans-unit>
+      <trans-unit id="kof-N0-eEQ.text">
+        <source>Client agreed notes</source>
+        <target>Client agreed notes</target>
+        <note>Class = "UITextView"; text = "Client agreed notes"; ObjectID = "kof-N0-eEQ";</note>
+      </trans-unit>
+      <trans-unit id="lPn-JH-HhH.text">
+        <source>Company Name:</source>
+        <target>Company Name:</target>
+        <note>Class = "UILabel"; text = "Company Name:"; ObjectID = "lPn-JH-HhH";</note>
+      </trans-unit>
+      <trans-unit id="lhd-wz-xbM.text">
+        <source>Notes:</source>
+        <target>Notes:</target>
+        <note>Class = "UILabel"; text = "Notes:"; ObjectID = "lhd-wz-xbM";</note>
+      </trans-unit>
+      <trans-unit id="mOI-FS-AaM.title">
+        <source>New Quote</source>
+        <target>New Quote</target>
+        <note>Class = "UINavigationItem"; title = "New Quote"; ObjectID = "mOI-FS-AaM";</note>
+      </trans-unit>
+      <trans-unit id="og7-Oe-S7L.text">
+        <source>Quote ID:</source>
+        <target>Quote ID:</target>
+        <note>Class = "UILabel"; text = "Quote ID:"; ObjectID = "og7-Oe-S7L";</note>
+      </trans-unit>
+      <trans-unit id="oy9-pQ-rap.text">
+        <source>Sub Total:</source>
+        <target>Sub Total:</target>
+        <note>Class = "UILabel"; text = "Sub Total:"; ObjectID = "oy9-pQ-rap";</note>
+      </trans-unit>
+      <trans-unit id="paG-sW-Ag6.placeholder">
+        <source>+1 (479) 302-8608</source>
+        <target>+1 (479) 302-8608</target>
+        <note>Class = "UITextField"; placeholder = "+1 (479) 302-8608"; ObjectID = "paG-sW-Ag6";</note>
+      </trans-unit>
+      <trans-unit id="qth-xj-hkY.text">
+        <source>Value:</source>
+        <target>Value:</target>
+        <note>Class = "UILabel"; text = "Value:"; ObjectID = "qth-xj-hkY";</note>
+      </trans-unit>
+      <trans-unit id="sVR-vx-pbi.text">
+        <source>Tap or drag another image to replace logo</source>
+        <target>Tap or drag another image to replace logo</target>
+        <note>Class = "UILabel"; text = "Tap or drag another image to replace logo"; ObjectID = "sVR-vx-pbi";</note>
+      </trans-unit>
+      <trans-unit id="tUc-4H-ldG.placeholder">
+        <source>companyx@gmail.xym</source>
+        <target>companyx@gmail.xym</target>
+        <note>Class = "UITextField"; placeholder = "companyx@gmail.xym"; ObjectID = "tUc-4H-ldG";</note>
+      </trans-unit>
+      <trans-unit id="tWz-2u-QCS.text">
+        <source>$ 100</source>
+        <target>$ 100</target>
+        <note>Class = "UILabel"; text = "$ 100"; ObjectID = "tWz-2u-QCS";</note>
+      </trans-unit>
+      <trans-unit id="tsn-MS-UGc.title">
+        <source>Settings</source>
+        <target>Settings</target>
+        <note>Class = "UINavigationItem"; title = "Settings"; ObjectID = "tsn-MS-UGc";</note>
+      </trans-unit>
+      <trans-unit id="uqh-ni-aDG.title">
+        <source>PDF</source>
+        <target>PDF</target>
+        <note>Class = "UINavigationItem"; title = "PDF"; ObjectID = "uqh-ni-aDG";</note>
+      </trans-unit>
+      <trans-unit id="vMh-Fg-wNV.text">
+        <source>Qty</source>
+        <target>Qty</target>
+        <note>Class = "UILabel"; text = "Qty"; ObjectID = "vMh-Fg-wNV";</note>
+      </trans-unit>
+      <trans-unit id="xkj-nj-5nc.text">
+        <source>The address of your company.</source>
+        <target>The address of your company.</target>
+        <note>Class = "UILabel"; text = "The address of your company."; ObjectID = "xkj-nj-5nc";</note>
+      </trans-unit>
+      <trans-unit id="zN1-3f-ZmJ.text">
+        <source>5 Pack</source>
+        <target>5 Pack</target>
+        <note>Class = "UILabel"; text = "5 Pack"; ObjectID = "zN1-3f-ZmJ";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="SimpleQuote3/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="he">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="10.3" build-num="10G8"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>SimpleQuote3</source>
+        <note>Bundle name</note>
+      </trans-unit>
+      <trans-unit id="NSPhotoLibraryUsageDescription">
+        <source>We need access to images in order to upload your logo.</source>
+        <note>Privacy - Photo Library Usage Description</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

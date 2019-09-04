@@ -1,0 +1,4 @@
+/* Bundle name */
+"CFBundleName" = "SimpleQuote3";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "We need access to images in order to upload your logo.";

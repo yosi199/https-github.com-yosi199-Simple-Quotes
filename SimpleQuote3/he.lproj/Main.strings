@@ -1,0 +1,195 @@
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "1Mw-yI-6O0"; */
+"1Mw-yI-6O0.title" = "חזור";
+
+/* Class = "UIViewController"; title = "Settings"; ObjectID = "3Et-os-dTL"; */
+"3Et-os-dTL.title" = "הגדרות";
+
+/* Class = "UILabel"; text = "Currency Symbol:"; ObjectID = "5bg-nS-EQ0"; */
+"5bg-nS-EQ0.text" = "מטבע";
+
+/* Class = "UILabel"; text = "Value"; ObjectID = "7Jd-WH-eRl"; */
+"7Jd-WH-eRl.text" = "ערך";
+
+/* Class = "UITableViewController"; title = "Master"; ObjectID = "7bK-jq-Zjz"; */
+"7bK-jq-Zjz.title" = "Master";
+
+/* Class = "UILabel"; text = "Email that will appear on the quote"; ObjectID = "7uV-gt-Emf"; */
+"7uV-gt-Emf.text" = "האימייל שיופיע במסמך";
+
+/* Class = "UILabel"; text = "The symbol used for currency display"; ObjectID = "882-3P-Pe9"; */
+"882-3P-Pe9.text" = "סמל המטבע";
+
+/* Class = "UIViewController"; title = "PDF"; ObjectID = "8tY-lk-M1f"; */
+"8tY-lk-M1f.title" = "PDF";
+
+/* Class = "UILabel"; text = "Items:"; ObjectID = "AMz-H7-41f"; */
+"AMz-H7-41f.text" = "פריטים";
+
+/* Class = "UILabel"; text = "There are no quotes available yet. \nCreate a new one by pressing the '+' button."; ObjectID = "CYE-GF-d0A"; */
+"CYE-GF-d0A.text" = "אין עדיין הצעות מחיר שמורות. לחץ על ה+ כדי ליצור הצעה חדשה";
+
+/* Class = "UITextField"; text = "Company X"; ObjectID = "EwV-zG-ttM"; */
+"EwV-zG-ttM.text" = "שם חברה";
+
+/* Class = "UIButton"; normalTitle = "Top Up"; ObjectID = "HOM-y7-Bf6"; */
+"HOM-y7-Bf6.normalTitle" = "הוסף עוד";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "HVi-89-zBM"; */
+"HVi-89-zBM.normalTitle" = "הוסף";
+
+/* Class = "UILabel"; text = "USD"; ObjectID = "ICd-iv-uXY"; */
+"ICd-iv-uXY.text" = "USD";
+
+/* Class = "UILabel"; text = "Available Quotes (3/3)"; ObjectID = "IeL-il-8fi"; */
+"IeL-il-8fi.text" = "Available Quotes (3/3)";
+
+/* Class = "UITextField"; placeholder = "5th Ave, Manhatten NY"; ObjectID = "Igv-gE-4k3"; */
+"Igv-gE-4k3.placeholder" = "5th Ave, Manhatten NY";
+
+/* Class = "UIViewController"; title = "Quote"; ObjectID = "JEX-9P-axG"; */
+"JEX-9P-axG.title" = "הצעת מחיר";
+
+/* Class = "UILabel"; text = "Show logo in documents?"; ObjectID = "Jsg-Ar-B2y"; */
+"Jsg-Ar-B2y.text" = "להציג את הלוגו במסמכים?";
+
+/* Class = "UITextField"; text = "CMX"; ObjectID = "K3D-th-qxO"; */
+"K3D-th-qxO.text" = "CMX";
+
+/* Class = "UILabel"; text = "3.99"; ObjectID = "KRU-qG-whp"; */
+"KRU-qG-whp.text" = "3.99";
+
+/* Class = "UILabel"; text = "50 Pack!"; ObjectID = "LRd-jI-6t2"; */
+"LRd-jI-6t2.text" = "50 Pack!";
+
+/* Class = "UITextField"; text = "10"; ObjectID = "O2w-tA-XeL"; */
+"O2w-tA-XeL.text" = "10";
+
+/* Class = "UILabel"; text = "Default Tax (%):"; ObjectID = "OFC-iF-dAF"; */
+"OFC-iF-dAF.text" = "Default Tax (%):";
+
+/* Class = "UILabel"; text = "Tax Percentage: 4%"; ObjectID = "QXy-fs-4lJ"; */
+"QXy-fs-4lJ.text" = "Tax Percentage: 4%";
+
+/* Class = "UINavigationController"; title = "Master"; ObjectID = "RMx-3f-FxP"; */
+"RMx-3f-FxP.title" = "Master";
+
+/* Class = "UILabel"; text = "3.99"; ObjectID = "S6l-ME-UI9"; */
+"S6l-ME-UI9.text" = "3.99";
+
+/* Class = "UILabel"; text = "Shown in every quote."; ObjectID = "SB8-g9-o3H"; */
+"SB8-g9-o3H.text" = "Shown in every quote.";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "T8Q-cj-Fg1"; */
+"T8Q-cj-Fg1.text" = "אימייל:";
+
+/* Class = "UILabel"; text = "20 Pack"; ObjectID = "Uh3-f8-8aE"; */
+"Uh3-f8-8aE.text" = "20 Pack";
+
+/* Class = "UILabel"; text = "Tax/VAT:"; ObjectID = "X7d-5c-4nX"; */
+"X7d-5c-4nX.text" = "Tax/VAT:";
+
+/* Class = "UILabel"; text = "Phone Number:"; ObjectID = "XGY-ha-8d3"; */
+"XGY-ha-8d3.text" = "Phone Number:";
+
+/* Class = "UILabel"; text = "$ 100"; ObjectID = "XMp-ee-e6D"; */
+"XMp-ee-e6D.text" = "$ 100";
+
+/* Class = "UITextField"; text = "499"; ObjectID = "XW0-Vb-5Lu"; */
+"XW0-Vb-5Lu.text" = "499";
+
+/* Class = "UILabel"; text = "All values can be changed later when filling the quote."; ObjectID = "XW6-JJ-66W"; */
+"XW6-JJ-66W.text" = "All values can be changed later when filling the quote.";
+
+/* Class = "UITextField"; text = "4"; ObjectID = "XoD-Sd-yQq"; */
+"XoD-Sd-yQq.text" = "4";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "YVD-cj-UtV"; */
+"YVD-cj-UtV.text" = "סך הכל";
+
+/* Class = "UINavigationItem"; title = "Master"; ObjectID = "Zdf-7t-Un8"; */
+"Zdf-7t-Un8.title" = "Master";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "biZ-EN-xAb"; */
+"biZ-EN-xAb.normalTitle" = "שמור";
+
+/* Class = "UILabel"; text = "$ 239"; ObjectID = "bov-ZX-9wU"; */
+"bov-ZX-9wU.text" = "$ 239";
+
+/* Class = "UILabel"; text = "Percent of tax added to value."; ObjectID = "cDk-fS-bPw"; */
+"cDk-fS-bPw.text" = "אחוז מהמס שמתווסף לערך";
+
+/* Class = "UILabel"; text = "Prefix for an ID. "; ObjectID = "dB4-it-KTx"; */
+"dB4-it-KTx.text" = "Prefix for an ID. ";
+
+/* Class = "UILabel"; text = "3.99"; ObjectID = "eSo-u8-BCy"; */
+"eSo-u8-BCy.text" = "3.99";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "em0-Sq-jkX"; */
+"em0-Sq-jkX.title" = "פריט";
+
+/* Class = "UIBarButtonItem"; title = "Save & Review"; ObjectID = "f0b-29-ugq"; */
+"f0b-29-ugq.title" = "שמור";
+
+/* Class = "UILabel"; text = "Address:"; ObjectID = "fUs-gb-LkB"; */
+"fUs-gb-LkB.text" = "כתובת:";
+
+/* Class = "UILabel"; text = "Discount:"; ObjectID = "iQb-Hm-vXj"; */
+"iQb-Hm-vXj.text" = "הנחה:";
+
+/* Class = "UILabel"; text = "Percentage:"; ObjectID = "iUL-Fx-w9e"; */
+"iUL-Fx-w9e.text" = "אחוזים:";
+
+/* Class = "UILabel"; text = "The company number for contact"; ObjectID = "jO6-uf-Y0O"; */
+"jO6-uf-Y0O.text" = "The company number for contact";
+
+/* Class = "UILabel"; text = "Currency: $"; ObjectID = "kLp-sS-OZa"; */
+"kLp-sS-OZa.text" = "Currency: $";
+
+/* Class = "UITextView"; text = "Client agreed notes"; ObjectID = "kof-N0-eEQ"; */
+"kof-N0-eEQ.text" = "סעיפים נוספים עבור הלקוח.";
+
+/* Class = "UILabel"; text = "Company Name:"; ObjectID = "lPn-JH-HhH"; */
+"lPn-JH-HhH.text" = "שם חברה:";
+
+/* Class = "UILabel"; text = "Notes:"; ObjectID = "lhd-wz-xbM"; */
+"lhd-wz-xbM.text" = "תוספות והסכמים:";
+
+/* Class = "UINavigationItem"; title = "New Quote"; ObjectID = "mOI-FS-AaM"; */
+"mOI-FS-AaM.title" = "הצעה חדשה";
+
+/* Class = "UILabel"; text = "Quote ID:"; ObjectID = "og7-Oe-S7L"; */
+"og7-Oe-S7L.text" = "מזהה מסמך";
+
+/* Class = "UILabel"; text = "Sub Total:"; ObjectID = "oy9-pQ-rap"; */
+"oy9-pQ-rap.text" = "Sub Total:";
+
+/* Class = "UITextField"; placeholder = "+1 (479) 302-8608"; ObjectID = "paG-sW-Ag6"; */
+"paG-sW-Ag6.placeholder" = "+1 (479) 302-8608";
+
+/* Class = "UILabel"; text = "Value:"; ObjectID = "qth-xj-hkY"; */
+"qth-xj-hkY.text" = "ערך:";
+
+/* Class = "UILabel"; text = "Tap or drag another image to replace logo"; ObjectID = "sVR-vx-pbi"; */
+"sVR-vx-pbi.text" = "Tap or drag another image to replace logo";
+
+/* Class = "UITextField"; placeholder = "companyx@gmail.xym"; ObjectID = "tUc-4H-ldG"; */
+"tUc-4H-ldG.placeholder" = "companyx@gmail.xym";
+
+/* Class = "UILabel"; text = "$ 100"; ObjectID = "tWz-2u-QCS"; */
+"tWz-2u-QCS.text" = "$ 100";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "tsn-MS-UGc"; */
+"tsn-MS-UGc.title" = "הגדרות";
+
+/* Class = "UINavigationItem"; title = "PDF"; ObjectID = "uqh-ni-aDG"; */
+"uqh-ni-aDG.title" = "PDF";
+
+/* Class = "UILabel"; text = "Qty"; ObjectID = "vMh-Fg-wNV"; */
+"vMh-Fg-wNV.text" = "כמות";
+
+/* Class = "UILabel"; text = "The address of your company."; ObjectID = "xkj-nj-5nc"; */
+"xkj-nj-5nc.text" = "הכתובת של החברה שלך.";
+
+/* Class = "UILabel"; text = "5 Pack"; ObjectID = "zN1-3f-ZmJ"; */
+"zN1-3f-ZmJ.text" = "חבילה של 5";
