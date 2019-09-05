@@ -45,7 +45,7 @@
 "IeL-il-8fi.text" = "Available Quotes (3/3)";
 
 /* Class = "UITextField"; placeholder = "5th Ave, Manhatten NY"; ObjectID = "Igv-gE-4k3"; */
-"Igv-gE-4k3.placeholder" = "5th Ave, Manhatten NY";
+"Igv-gE-4k3.placeholder" = "אבן גבירול 100ֿ תל אביב";
 
 /* Class = "UIViewController"; title = "Quote"; ObjectID = "JEX-9P-axG"; */
 "JEX-9P-axG.title" = "הצעת מחיר";
@@ -60,7 +60,7 @@
 "KRU-qG-whp.text" = "3.99";
 
 /* Class = "UILabel"; text = "50 Pack!"; ObjectID = "LRd-jI-6t2"; */
-"LRd-jI-6t2.text" = "50 Pack!";
+"LRd-jI-6t2.text" = "חבילה של 50";
 
 /* Class = "UITextField"; text = "10"; ObjectID = "O2w-tA-XeL"; */
 "O2w-tA-XeL.text" = "10";
@@ -69,7 +69,7 @@
 "OFC-iF-dAF.text" = "Default Tax (%):";
 
 /* Class = "UILabel"; text = "Tax Percentage: 4%"; ObjectID = "QXy-fs-4lJ"; */
-"QXy-fs-4lJ.text" = "Tax Percentage: 4%";
+"QXy-fs-4lJ.text" = "אחוז מס: 16%;
 
 /* Class = "UINavigationController"; title = "Master"; ObjectID = "RMx-3f-FxP"; */
 "RMx-3f-FxP.title" = "Master";
@@ -78,19 +78,19 @@
 "S6l-ME-UI9.text" = "3.99";
 
 /* Class = "UILabel"; text = "Shown in every quote."; ObjectID = "SB8-g9-o3H"; */
-"SB8-g9-o3H.text" = "Shown in every quote.";
+"SB8-g9-o3H.text" = "מוצג בכל הצעת מחיר";
 
 /* Class = "UILabel"; text = "Email:"; ObjectID = "T8Q-cj-Fg1"; */
 "T8Q-cj-Fg1.text" = "אימייל:";
 
 /* Class = "UILabel"; text = "20 Pack"; ObjectID = "Uh3-f8-8aE"; */
-"Uh3-f8-8aE.text" = "20 Pack";
+"Uh3-f8-8aE.text" = "חבילה של 20";
 
 /* Class = "UILabel"; text = "Tax/VAT:"; ObjectID = "X7d-5c-4nX"; */
-"X7d-5c-4nX.text" = "Tax/VAT:";
+"X7d-5c-4nX.text" = "מס";
 
 /* Class = "UILabel"; text = "Phone Number:"; ObjectID = "XGY-ha-8d3"; */
-"XGY-ha-8d3.text" = "Phone Number:";
+"XGY-ha-8d3.text" = "מספר טלפון:";
 
 /* Class = "UILabel"; text = "$ 100"; ObjectID = "XMp-ee-e6D"; */
 "XMp-ee-e6D.text" = "$ 100";
@@ -99,7 +99,7 @@
 "XW0-Vb-5Lu.text" = "499";
 
 /* Class = "UILabel"; text = "All values can be changed later when filling the quote."; ObjectID = "XW6-JJ-66W"; */
-"XW6-JJ-66W.text" = "All values can be changed later when filling the quote.";
+"XW6-JJ-66W.text" = "כל הערכים ניתנים לשינוי בעת יצירת ההצעת מחיר";
 
 /* Class = "UITextField"; text = "4"; ObjectID = "XoD-Sd-yQq"; */
 "XoD-Sd-yQq.text" = "4";
@@ -141,7 +141,7 @@
 "iUL-Fx-w9e.text" = "אחוזים:";
 
 /* Class = "UILabel"; text = "The company number for contact"; ObjectID = "jO6-uf-Y0O"; */
-"jO6-uf-Y0O.text" = "The company number for contact";
+"jO6-uf-Y0O.text" = "מספר טלפון ליצירת קשר";
 
 /* Class = "UILabel"; text = "Currency: $"; ObjectID = "kLp-sS-OZa"; */
 "kLp-sS-OZa.text" = "Currency: $";
