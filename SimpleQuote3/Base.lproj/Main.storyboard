@@ -50,29 +50,34 @@ Create a new one by pressing the '+' button.</string>
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d11-nw-JJu">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1163"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1013"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCm-rE-d6L" customClass="Header" customModule="SimpleQuote3" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="cwL-Or-fZe"/>
                                                 </constraints>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <exclude reference="cwL-Or-fZe"/>
+                                                    </mask>
+                                                </variation>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency: $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLp-sS-OZa">
-                                                <rect key="frame" x="15" y="206" width="71.5" height="16"/>
+                                                <rect key="frame" x="15" y="56" width="71.5" height="16"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax Percentage: 4%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXy-fs-4lJ">
-                                                <rect key="frame" x="94.5" y="206" width="120" height="16"/>
+                                                <rect key="frame" x="94.5" y="56" width="120" height="16"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lT-KC-O9I" userLabel="header section">
-                                                <rect key="frame" x="15" y="230" width="290" height="36"/>
+                                                <rect key="frame" x="15" y="80" width="290" height="36"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMz-H7-41f">
                                                         <rect key="frame" x="15" y="10" width="41" height="16"/>
@@ -150,14 +155,14 @@ Create a new one by pressing the '+' button.</string>
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75T-KB-fid" customClass="ItemView" customModule="SimpleQuote3" customModuleProvider="target">
-                                                <rect key="frame" x="15" y="291" width="290" height="100"/>
+                                                <rect key="frame" x="15" y="141" width="290" height="100"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="1Gf-AT-SHB"/>
                                                 </constraints>
                                             </view>
                                             <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVi-89-zBM" customClass="HighlightedButton" customModule="SimpleQuote3" customModuleProvider="target">
-                                                <rect key="frame" x="85" y="416" width="150" height="50"/>
+                                                <rect key="frame" x="85" y="266" width="150" height="50"/>
                                                 <color key="backgroundColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="eYa-q5-ROq"/>
@@ -182,7 +187,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </connections>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="634" placeholderIntrinsicHeight="80" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YqS-dN-D1y" customClass="LineItemsList" customModule="SimpleQuote3" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="491" width="120" height="1"/>
+                                                <rect key="frame" x="100" y="341" width="120" height="1"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="UbR-gw-eHN"/>
@@ -191,7 +196,7 @@ Create a new one by pressing the '+' button.</string>
                                                 <sections/>
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8I-sI-aTM">
-                                                <rect key="frame" x="100" y="542" width="120" height="100"/>
+                                                <rect key="frame" x="100" y="392" width="120" height="100"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sim-uh-rGQ">
                                                         <rect key="frame" x="59.5" y="49.5" width="1" height="1"/>
@@ -284,14 +289,14 @@ Create a new one by pressing the '+' button.</string>
                                                 </constraints>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAH-SW-lSd" customClass="Footer" customModule="SimpleQuote3" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="642" width="120" height="50"/>
+                                                <rect key="frame" x="100" y="492" width="120" height="50"/>
                                                 <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="opF-Mm-5kY"/>
                                                 </constraints>
                                             </view>
                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KLu-rk-ZzC">
-                                                <rect key="frame" x="100" y="744" width="120" height="175"/>
+                                                <rect key="frame" x="100" y="594" width="120" height="175"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSq-WH-LvU">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="175"/>
@@ -330,7 +335,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </constraints>
                                             </stackView>
                                             <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="mpx-P7-Ter" userLabel="taxEdit">
-                                                <rect key="frame" x="235" y="617" width="15" height="15"/>
+                                                <rect key="frame" x="235" y="467" width="15" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="Mha-z0-j39"/>
                                                     <constraint firstAttribute="width" constant="15" id="dj7-oR-Uga"/>
@@ -338,7 +343,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="QRO-ni-Vbz" userLabel="discountEdit">
-                                                <rect key="frame" x="235" y="587" width="15" height="15"/>
+                                                <rect key="frame" x="235" y="437" width="15" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="15" id="2qE-LO-QwZ"/>
                                                     <constraint firstAttribute="width" secondItem="QRO-ni-Vbz" secondAttribute="height" multiplier="1:1" id="Kjp-sm-GCM"/>
