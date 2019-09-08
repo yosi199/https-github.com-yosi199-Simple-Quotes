@@ -187,7 +187,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </connections>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="634" placeholderIntrinsicHeight="80" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YqS-dN-D1y" customClass="LineItemsList" customModule="SimpleQuote3" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="341" width="120" height="1"/>
+                                                <rect key="frame" x="15" y="341" width="290" height="1"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="UbR-gw-eHN"/>
@@ -196,10 +196,10 @@ Create a new one by pressing the '+' button.</string>
                                                 <sections/>
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8I-sI-aTM">
-                                                <rect key="frame" x="100" y="392" width="120" height="100"/>
+                                                <rect key="frame" x="15" y="392" width="260" height="100"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sim-uh-rGQ">
-                                                        <rect key="frame" x="59.5" y="49.5" width="1" height="1"/>
+                                                        <rect key="frame" x="0.0" y="49.5" width="1" height="1"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="DGv-FT-7gQ"/>
@@ -207,20 +207,20 @@ Create a new one by pressing the '+' button.</string>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="tbd-fF-iPq">
-                                                        <rect key="frame" x="59.5" y="0.0" width="45.5" height="100"/>
+                                                        <rect key="frame" x="15" y="0.0" width="230" height="100"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="c3I-M8-v59">
-                                                                <rect key="frame" x="0.0" y="0.0" width="45.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="230" height="40"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Sub Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oy9-pQ-rap">
-                                                                        <rect key="frame" x="0.0" y="9.5" width="0.0" height="21.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oy9-pQ-rap">
+                                                                        <rect key="frame" x="0.0" y="9.5" width="82" height="21.5"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$ 100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMp-ee-e6D">
-                                                                        <rect key="frame" x="0.0" y="10" width="45.5" height="20.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMp-ee-e6D">
+                                                                        <rect key="frame" x="184.5" y="10" width="45.5" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -231,17 +231,17 @@ Create a new one by pressing the '+' button.</string>
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vRv-tc-eun">
-                                                                <rect key="frame" x="0.0" y="35" width="45.5" height="35"/>
+                                                                <rect key="frame" x="0.0" y="35" width="230" height="35"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQb-Hm-vXj">
-                                                                        <rect key="frame" x="0.0" y="7" width="23" height="21.5"/>
+                                                                        <rect key="frame" x="0.0" y="7" width="115" height="21.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 239" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bov-ZX-9wU">
-                                                                        <rect key="frame" x="23" y="7.5" width="22.5" height="20.5"/>
+                                                                        <rect key="frame" x="115" y="7.5" width="115" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -252,17 +252,17 @@ Create a new one by pressing the '+' button.</string>
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rxu-50-r36">
-                                                                <rect key="frame" x="0.0" y="65" width="45.5" height="35"/>
+                                                                <rect key="frame" x="0.0" y="65" width="230" height="35"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax/VAT:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7d-5c-4nX">
-                                                                        <rect key="frame" x="0.0" y="7" width="23" height="21.5"/>
+                                                                        <rect key="frame" x="0.0" y="7" width="115" height="21.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWz-2u-QCS">
-                                                                        <rect key="frame" x="23" y="7.5" width="22.5" height="20.5"/>
+                                                                        <rect key="frame" x="115" y="7.5" width="115" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -283,10 +283,27 @@ Create a new one by pressing the '+' button.</string>
                                                     <constraint firstItem="tbd-fF-iPq" firstAttribute="leading" secondItem="sim-uh-rGQ" secondAttribute="leading" id="4gT-Tg-mvi"/>
                                                     <constraint firstAttribute="trailing" secondItem="tbd-fF-iPq" secondAttribute="trailing" constant="15" id="Ts6-S2-PpL"/>
                                                     <constraint firstItem="sim-uh-rGQ" firstAttribute="centerX" secondItem="L8I-sI-aTM" secondAttribute="centerX" id="Vzo-l3-STx"/>
+                                                    <constraint firstItem="sim-uh-rGQ" firstAttribute="leading" secondItem="L8I-sI-aTM" secondAttribute="leading" id="YbP-c9-kY3"/>
+                                                    <constraint firstItem="tbd-fF-iPq" firstAttribute="leading" secondItem="L8I-sI-aTM" secondAttribute="leading" constant="15" id="bH9-yB-oMS"/>
                                                     <constraint firstItem="sim-uh-rGQ" firstAttribute="centerY" secondItem="L8I-sI-aTM" secondAttribute="centerY" id="dB7-NO-IuU"/>
                                                     <constraint firstItem="tbd-fF-iPq" firstAttribute="top" secondItem="L8I-sI-aTM" secondAttribute="top" id="kWO-mK-hzC"/>
                                                     <constraint firstAttribute="bottom" secondItem="tbd-fF-iPq" secondAttribute="bottom" id="zjf-dk-gcV"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="YbP-c9-kY3"/>
+                                                        <exclude reference="bH9-yB-oMS"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Vzo-l3-STx"/>
+                                                        <include reference="YbP-c9-kY3"/>
+                                                        <include reference="dB7-NO-IuU"/>
+                                                        <exclude reference="4gT-Tg-mvi"/>
+                                                        <include reference="bH9-yB-oMS"/>
+                                                    </mask>
+                                                </variation>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAH-SW-lSd" customClass="Footer" customModule="SimpleQuote3" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="492" width="120" height="50"/>
@@ -335,7 +352,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </constraints>
                                             </stackView>
                                             <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="mpx-P7-Ter" userLabel="taxEdit">
-                                                <rect key="frame" x="235" y="467" width="15" height="15"/>
+                                                <rect key="frame" x="290" y="467" width="15" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="Mha-z0-j39"/>
                                                     <constraint firstAttribute="width" constant="15" id="dj7-oR-Uga"/>
@@ -343,7 +360,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="QRO-ni-Vbz" userLabel="discountEdit">
-                                                <rect key="frame" x="235" y="437" width="15" height="15"/>
+                                                <rect key="frame" x="290" y="437" width="15" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="15" id="2qE-LO-QwZ"/>
                                                     <constraint firstAttribute="width" secondItem="QRO-ni-Vbz" secondAttribute="height" multiplier="1:1" id="Kjp-sm-GCM"/>
@@ -361,6 +378,7 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="ZCm-rE-d6L" firstAttribute="top" secondItem="d11-nw-JJu" secondAttribute="top" id="5ld-j1-Xn5"/>
                                             <constraint firstItem="4lT-KC-O9I" firstAttribute="top" secondItem="QXy-fs-4lJ" secondAttribute="bottom" constant="8" id="5o8-lQ-eMS"/>
                                             <constraint firstAttribute="trailing" secondItem="4lT-KC-O9I" secondAttribute="trailing" constant="15" id="COJ-qC-bu6"/>
+                                            <constraint firstItem="YqS-dN-D1y" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="15" id="FJU-zI-fTo"/>
                                             <constraint firstAttribute="trailing" secondItem="75T-KB-fid" secondAttribute="trailing" constant="15" id="Jwf-si-Cf6"/>
                                             <constraint firstItem="75T-KB-fid" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="KxC-Sv-LRA"/>
                                             <constraint firstItem="KLu-rk-ZzC" firstAttribute="top" secondItem="LAH-SW-lSd" secondAttribute="bottom" constant="52" id="LrY-Um-3af"/>
@@ -373,10 +391,13 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="4lT-KC-O9I" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="15" id="Q20-A3-tkS"/>
                                             <constraint firstAttribute="trailing" secondItem="4lT-KC-O9I" secondAttribute="trailing" constant="100" id="QIa-Br-K8F"/>
                                             <constraint firstItem="ZCm-rE-d6L" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" id="RB6-aM-3vf"/>
+                                            <constraint firstItem="mpx-P7-Ter" firstAttribute="leading" secondItem="L8I-sI-aTM" secondAttribute="trailing" constant="15" id="SVt-EE-rEm"/>
                                             <constraint firstItem="YqS-dN-D1y" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="SXX-cH-hmv"/>
+                                            <constraint firstAttribute="trailing" secondItem="mpx-P7-Ter" secondAttribute="trailing" constant="15" id="Shu-KQ-CmC"/>
                                             <constraint firstItem="mpx-P7-Ter" firstAttribute="leading" secondItem="L8I-sI-aTM" secondAttribute="trailing" constant="15" id="TKU-GP-DXY"/>
                                             <constraint firstItem="QRO-ni-Vbz" firstAttribute="width" secondItem="QRO-ni-Vbz" secondAttribute="height" multiplier="1:1" id="VHY-P1-I6N"/>
                                             <constraint firstAttribute="trailing" secondItem="L8I-sI-aTM" secondAttribute="trailing" constant="100" id="Vyg-Dr-kbA"/>
+                                            <constraint firstItem="L8I-sI-aTM" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="15" id="blI-dF-WWM"/>
                                             <constraint firstAttribute="trailing" secondItem="75T-KB-fid" secondAttribute="trailing" constant="100" id="dSC-nh-Q6a"/>
                                             <constraint firstItem="kLp-sS-OZa" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="e0x-gY-y0Q"/>
                                             <constraint firstItem="QRO-ni-Vbz" firstAttribute="centerY" secondItem="bov-ZX-9wU" secondAttribute="centerY" id="ixr-Cp-3HP"/>
@@ -391,6 +412,7 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="HVi-89-zBM" firstAttribute="centerX" secondItem="d11-nw-JJu" secondAttribute="centerX" id="tyT-UU-vHR"/>
                                             <constraint firstItem="QRO-ni-Vbz" firstAttribute="centerX" secondItem="mpx-P7-Ter" secondAttribute="centerX" id="u1K-xF-bWO"/>
                                             <constraint firstItem="L8I-sI-aTM" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="yUg-C7-X7n"/>
+                                            <constraint firstAttribute="trailing" secondItem="YqS-dN-D1y" secondAttribute="trailing" constant="15" id="yb3-qw-z6U"/>
                                             <constraint firstItem="4lT-KC-O9I" firstAttribute="top" secondItem="kLp-sS-OZa" secondAttribute="bottom" constant="8" id="ytM-Kj-DMk"/>
                                         </constraints>
                                         <variation key="default">
@@ -400,6 +422,11 @@ Create a new one by pressing the '+' button.</string>
                                                 <exclude reference="Q20-A3-tkS"/>
                                                 <exclude reference="Jwf-si-Cf6"/>
                                                 <exclude reference="PwO-BM-EhZ"/>
+                                                <exclude reference="FJU-zI-fTo"/>
+                                                <exclude reference="yb3-qw-z6U"/>
+                                                <exclude reference="blI-dF-WWM"/>
+                                                <exclude reference="SVt-EE-rEm"/>
+                                                <exclude reference="Shu-KQ-CmC"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -414,6 +441,16 @@ Create a new one by pressing the '+' button.</string>
                                                 <exclude reference="KxC-Sv-LRA"/>
                                                 <include reference="PwO-BM-EhZ"/>
                                                 <exclude reference="dSC-nh-Q6a"/>
+                                                <include reference="FJU-zI-fTo"/>
+                                                <exclude reference="SXX-cH-hmv"/>
+                                                <exclude reference="sFh-v3-dkd"/>
+                                                <include reference="yb3-qw-z6U"/>
+                                                <exclude reference="Vyg-Dr-kbA"/>
+                                                <include reference="blI-dF-WWM"/>
+                                                <exclude reference="yUg-C7-X7n"/>
+                                                <include reference="SVt-EE-rEm"/>
+                                                <include reference="Shu-KQ-CmC"/>
+                                                <exclude reference="TKU-GP-DXY"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -599,7 +636,7 @@ Create a new one by pressing the '+' button.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNo-aD-2rS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="558"/>
+            <point key="canvasLocation" x="-13" y="795"/>
         </scene>
         <!--PDF-->
         <scene sceneID="OjK-uH-9TC">
@@ -1274,7 +1311,7 @@ Create a new one by pressing the '+' button.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptA-tS-axO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695.68345323741016" y="1027.6381909547738"/>
+            <point key="canvasLocation" x="731" y="1496"/>
         </scene>
     </scenes>
     <resources>
