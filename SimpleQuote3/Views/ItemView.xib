@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="ipad11_0rounded" orientation="landscape">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -62,60 +62,90 @@
                     </constraints>
                 </view>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add new item" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cth-4g-UJs">
-                    <rect key="frame" x="16" y="6" width="977" height="50.5"/>
+                    <rect key="frame" x="16" y="6" width="1162" height="50.5"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    </variation>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ca9-d1-3sG">
-                    <rect key="frame" x="16" y="62.5" width="847" height="60.5"/>
+                    <rect key="frame" x="16" y="62.5" width="967" height="60.5"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    </variation>
                 </textField>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1oJ-3q-ipW">
-                    <rect key="frame" x="878" y="62.5" width="300" height="61.5"/>
+                    <rect key="frame" x="998" y="62.5" width="180" height="61.5"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="x1" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="tQG-wu-ZDS" customClass="NumberInputView" customModule="SimpleQuote3" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="93.5" height="61.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="53.5" height="61.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                             <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            </variation>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="3sn-zB-rP6"/>
                             </connections>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="DPz-mj-vUR" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
-                            <rect key="frame" x="103.5" y="0.0" width="93" height="61.5"/>
+                            <rect key="frame" x="63.5" y="0.0" width="53" height="61.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            </variation>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="l59-gR-OMl"/>
                             </connections>
                         </textField>
                         <textField hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="PUo-Vv-6Yo" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
-                            <rect key="frame" x="201.5" y="0.0" width="0.0" height="61.5"/>
+                            <rect key="frame" x="121.5" y="0.0" width="0.0" height="61.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            </variation>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="puJ-MW-Nt4"/>
                             </connections>
                         </textField>
                         <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="h5H-Yu-H97" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
-                            <rect key="frame" x="206.5" y="0.0" width="93.5" height="61.5"/>
+                            <rect key="frame" x="126.5" y="0.0" width="53.5" height="61.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            </variation>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="tWm-f1-2GU"/>
                             </connections>
                         </textField>
                     </subviews>
                     <constraints>
+                        <constraint firstAttribute="width" constant="180" id="4ek-um-hcl"/>
                         <constraint firstAttribute="width" constant="300" id="tqq-81-slk"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="4ek-um-hcl"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="4ek-um-hcl"/>
+                            <exclude reference="tqq-81-slk"/>
+                        </mask>
+                    </variation>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -139,16 +169,28 @@
                 <constraint firstAttribute="trailing" secondItem="cSU-MP-qvv" secondAttribute="trailing" id="dTQ-vR-ZpM"/>
                 <constraint firstItem="cth-4g-UJs" firstAttribute="top" secondItem="e50-GX-uCw" secondAttribute="bottom" constant="5" id="fCM-ux-1Fw"/>
                 <constraint firstItem="LpA-cL-act" firstAttribute="leading" secondItem="1oJ-3q-ipW" secondAttribute="trailing" constant="15" id="hMt-Db-7VI"/>
-                <constraint firstItem="LpA-cL-act" firstAttribute="leading" secondItem="cth-4g-UJs" secondAttribute="trailing" constant="200" id="iBe-KO-m33"/>
                 <constraint firstItem="Ca9-d1-3sG" firstAttribute="top" secondItem="C3d-Dl-9Fo" secondAttribute="bottom" id="juf-OJ-8HC"/>
                 <constraint firstItem="C3d-Dl-9Fo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="nTC-5z-Svp"/>
+                <constraint firstItem="LpA-cL-act" firstAttribute="leading" secondItem="cth-4g-UJs" secondAttribute="trailing" constant="15" id="o9P-Zt-twg"/>
                 <constraint firstItem="e50-GX-uCw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rtP-Ri-bu4"/>
                 <constraint firstItem="1oJ-3q-ipW" firstAttribute="leading" secondItem="Ca9-d1-3sG" secondAttribute="trailing" constant="15" id="ta3-Jc-OWE"/>
                 <constraint firstAttribute="trailing" secondItem="e50-GX-uCw" secondAttribute="trailing" id="xJU-Y1-fvE"/>
+                <constraint firstItem="LpA-cL-act" firstAttribute="leading" secondItem="cth-4g-UJs" secondAttribute="trailing" constant="200" id="zBj-2a-ly0"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LpA-cL-act" secondAttribute="trailing" id="zN4-WL-uEr"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="o9P-Zt-twg"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="constraints">
+                    <include reference="o9P-Zt-twg"/>
+                    <exclude reference="zBj-2a-ly0"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="132.66331658291458" y="625.17985611510801"/>
         </view>
     </objects>

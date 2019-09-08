@@ -59,14 +59,14 @@ Create a new one by pressing the '+' button.</string>
                                                     <constraint firstAttribute="height" constant="150" id="cwL-Or-fZe"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Currency: $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLp-sS-OZa">
-                                                <rect key="frame" x="100" y="206" width="71.5" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency: $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLp-sS-OZa">
+                                                <rect key="frame" x="15" y="206" width="71.5" height="16"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tax Percentage: 4%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXy-fs-4lJ">
-                                                <rect key="frame" x="179.5" y="206" width="120" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax Percentage: 4%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXy-fs-4lJ">
+                                                <rect key="frame" x="94.5" y="206" width="120" height="16"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -84,10 +84,10 @@ Create a new one by pressing the '+' button.</string>
                                                         </variation>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="38O-hS-hie">
-                                                        <rect key="frame" x="147" y="0.0" width="128" height="36"/>
+                                                        <rect key="frame" x="95" y="0.0" width="180" height="36"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMh-Fg-wNV">
-                                                                <rect key="frame" x="0.0" y="10" width="36" height="16"/>
+                                                                <rect key="frame" x="0.0" y="10" width="53.5" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -96,7 +96,7 @@ Create a new one by pressing the '+' button.</string>
                                                                 </variation>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jd-WH-eRl">
-                                                                <rect key="frame" x="46" y="10" width="36" height="16"/>
+                                                                <rect key="frame" x="63.5" y="10" width="53" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -105,7 +105,7 @@ Create a new one by pressing the '+' button.</string>
                                                                 </variation>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVD-cj-UtV">
-                                                                <rect key="frame" x="92" y="10" width="36" height="16"/>
+                                                                <rect key="frame" x="126.5" y="10" width="53.5" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -115,10 +115,17 @@ Create a new one by pressing the '+' button.</string>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstAttribute="width" constant="180" id="1no-Do-TJz"/>
                                                             <constraint firstAttribute="width" constant="300" id="664-o4-ENT"/>
                                                         </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="1no-Do-TJz"/>
+                                                            </mask>
+                                                        </variation>
                                                         <variation key="heightClass=regular-widthClass=compact">
                                                             <mask key="constraints">
+                                                                <include reference="1no-Do-TJz"/>
                                                                 <exclude reference="664-o4-ENT"/>
                                                             </mask>
                                                         </variation>
@@ -143,7 +150,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75T-KB-fid" customClass="ItemView" customModule="SimpleQuote3" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="291" width="120" height="100"/>
+                                                <rect key="frame" x="15" y="291" width="290" height="100"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="1Gf-AT-SHB"/>
@@ -349,13 +356,15 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="ZCm-rE-d6L" firstAttribute="top" secondItem="d11-nw-JJu" secondAttribute="top" id="5ld-j1-Xn5"/>
                                             <constraint firstItem="4lT-KC-O9I" firstAttribute="top" secondItem="QXy-fs-4lJ" secondAttribute="bottom" constant="8" id="5o8-lQ-eMS"/>
                                             <constraint firstAttribute="trailing" secondItem="4lT-KC-O9I" secondAttribute="trailing" constant="15" id="COJ-qC-bu6"/>
+                                            <constraint firstAttribute="trailing" secondItem="75T-KB-fid" secondAttribute="trailing" constant="15" id="Jwf-si-Cf6"/>
                                             <constraint firstItem="75T-KB-fid" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="KxC-Sv-LRA"/>
                                             <constraint firstItem="KLu-rk-ZzC" firstAttribute="top" secondItem="LAH-SW-lSd" secondAttribute="bottom" constant="52" id="LrY-Um-3af"/>
                                             <constraint firstItem="LAH-SW-lSd" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="MFM-Eq-BgU"/>
                                             <constraint firstItem="L8I-sI-aTM" firstAttribute="bottom" secondItem="LAH-SW-lSd" secondAttribute="top" id="NLN-AY-YLG"/>
                                             <constraint firstItem="KLu-rk-ZzC" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="Ndk-Vo-W0i"/>
                                             <constraint firstAttribute="trailing" secondItem="LAH-SW-lSd" secondAttribute="trailing" constant="100" id="OKc-fV-XRk"/>
-                                            <constraint firstItem="kLp-sS-OZa" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="Ocs-6b-M0k"/>
+                                            <constraint firstItem="kLp-sS-OZa" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="15" id="Ocs-6b-M0k"/>
+                                            <constraint firstItem="75T-KB-fid" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="15" id="PwO-BM-EhZ"/>
                                             <constraint firstItem="4lT-KC-O9I" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="15" id="Q20-A3-tkS"/>
                                             <constraint firstAttribute="trailing" secondItem="4lT-KC-O9I" secondAttribute="trailing" constant="100" id="QIa-Br-K8F"/>
                                             <constraint firstItem="ZCm-rE-d6L" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" id="RB6-aM-3vf"/>
@@ -364,6 +373,7 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="QRO-ni-Vbz" firstAttribute="width" secondItem="QRO-ni-Vbz" secondAttribute="height" multiplier="1:1" id="VHY-P1-I6N"/>
                                             <constraint firstAttribute="trailing" secondItem="L8I-sI-aTM" secondAttribute="trailing" constant="100" id="Vyg-Dr-kbA"/>
                                             <constraint firstAttribute="trailing" secondItem="75T-KB-fid" secondAttribute="trailing" constant="100" id="dSC-nh-Q6a"/>
+                                            <constraint firstItem="kLp-sS-OZa" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="e0x-gY-y0Q"/>
                                             <constraint firstItem="QRO-ni-Vbz" firstAttribute="centerY" secondItem="bov-ZX-9wU" secondAttribute="centerY" id="ixr-Cp-3HP"/>
                                             <constraint firstItem="QXy-fs-4lJ" firstAttribute="leading" secondItem="kLp-sS-OZa" secondAttribute="trailing" constant="8" id="jKN-3J-f5R"/>
                                             <constraint firstItem="75T-KB-fid" firstAttribute="top" secondItem="4lT-KC-O9I" secondAttribute="bottom" constant="25" id="k22-4l-6q3"/>
@@ -380,16 +390,25 @@ Create a new one by pressing the '+' button.</string>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="Ocs-6b-M0k"/>
                                                 <exclude reference="COJ-qC-bu6"/>
                                                 <exclude reference="Q20-A3-tkS"/>
+                                                <exclude reference="Jwf-si-Cf6"/>
+                                                <exclude reference="PwO-BM-EhZ"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
+                                                <include reference="Ocs-6b-M0k"/>
+                                                <exclude reference="e0x-gY-y0Q"/>
                                                 <include reference="COJ-qC-bu6"/>
                                                 <include reference="Q20-A3-tkS"/>
                                                 <exclude reference="QIa-Br-K8F"/>
                                                 <exclude reference="maA-se-4er"/>
+                                                <include reference="Jwf-si-Cf6"/>
+                                                <exclude reference="KxC-Sv-LRA"/>
+                                                <include reference="PwO-BM-EhZ"/>
+                                                <exclude reference="dSC-nh-Q6a"/>
                                             </mask>
                                         </variation>
                                     </view>
