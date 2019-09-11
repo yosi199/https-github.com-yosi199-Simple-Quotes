@@ -33,6 +33,8 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var discountAmount: UILabel!
     @IBOutlet weak var editDiscountButton: UIImageView!
     @IBOutlet weak var editTaxButton: UIImageView!
+    @IBOutlet weak var addButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var itemsTableBottomMargin: NSLayoutConstraint!
     
     private let progress = ProgressView()
     private let keyboardHelper = KeyboardScrollHelper()
@@ -43,6 +45,8 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         self.splitViewController?.preferredDisplayMode = UISplitViewController.DisplayMode.primaryOverlay
+        self.parent?.navigationController?.navigationBar.prefersLargeTitles = true
+        self.parent?.navigationController?.navigationItem.largeTitleDisplayMode = .always
         
         setupItemsTable()
         setupInteractions()
@@ -72,6 +76,16 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     private func setupCallbacks() {
         inputItemView.showButton = { show in
             self.addButton.isHidden = !show
+            if(show){
+                self.addButtonHeightConstraint.constant = 50
+                self.itemsTableBottomMargin.constant = 50
+            } else {
+                self.addButtonHeightConstraint.constant = 0
+                self.itemsTableBottomMargin.constant = 0
+            }
+            UIView.animate(withDuration: 0.2, animations: {
+                self.view.layoutIfNeeded()
+            })
         }
         
         vm.settingsChanged = {
