@@ -21,9 +21,12 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         title = "Menu"
-        
+                
         setupMenuList()
         setupCallbacks()
+        
+        detailViewController.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+        detailViewController.navigationItem.leftItemsSupplementBackButton = true
     }
     
     private func setupMenuList(){
@@ -35,6 +38,7 @@ class MenuViewController: UIViewController {
     
     private func setupCallbacks(){
         menuList.loadQuoteCallback = { quote, index in
+//            self.performSegue(withIdentifier: "quote", sender: self)
             self.detailViewController.loadQuote(existing: quote)
         }
         
@@ -60,7 +64,7 @@ class MenuViewController: UIViewController {
         maybeFirstTime()
         
         if(vm.isEmpty()){
-            detailViewController.showContent(show: false)
+            self.detailViewController.showContent(show: false)
             return
         }
         

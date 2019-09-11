@@ -33,7 +33,7 @@
         <!--Quote-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
-                <viewController title="Quote" id="JEX-9P-axG" customClass="QuoteViewController" customModule="SimpleQuote3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="quote" title="Quote" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JEX-9P-axG" customClass="QuoteViewController" customModule="SimpleQuote3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -540,7 +540,7 @@ Create a new one by pressing the '+' button.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="696" y="129"/>
+            <point key="canvasLocation" x="709" y="251"/>
         </scene>
         <!--DiscountVC-->
         <scene sceneID="FkM-Ok-8Yc">
@@ -923,6 +923,7 @@ Create a new one by pressing the '+' button.</string>
                     <connections>
                         <outlet property="deleteButton" destination="3ng-fq-0ZU" id="Z4d-oD-eNu"/>
                         <outlet property="menuList" destination="r7i-6Z-zg0" id="Ywv-UQ-gbo"/>
+                        <segue destination="JEX-9P-axG" kind="show" identifier="quote" id="ohi-Wx-jC0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
@@ -1340,7 +1341,8 @@ Create a new one by pressing the '+' button.</string>
         <image name="icons8-chevron_down-1" width="18" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wdv-Mu-wpu"/>
+        <segue reference="fbd-W9-Uvt"/>
+        <segue reference="ohi-Wx-jC0"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
