@@ -162,26 +162,6 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
         }
     }
     
-//    override var preferredContentSize: CGSize {
-//        get {
-//            let landscape = UIApplication.shared.statusBarOrientation.isLandscape
-//            let menuVC = self.presentingViewController?.children[0] as? MenuViewController
-//            if let fullSize = menuVC?.detailViewController.view.bounds.size {
-//                if(landscape){
-//                    return CGSize(width: fullSize.width * 0.5,
-//                                  height: fullSize.height * 0.75)
-//                } else {
-//                    return CGSize(width: fullSize.width * 2,
-//                                  height: fullSize.height * 0.75)
-//                }
-//            }
-//            return super.preferredContentSize
-//        }
-//        set {
-//            super.preferredContentSize = newValue
-//        }
-//    }
-    
     @IBAction func save(_ sender: Any) {
         self.progress.show(parent: self)
         
@@ -217,13 +197,29 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     }
     
     @objc func showCurrencyAlert(){
-        animateCurrencyTableWidth(constant: 250)
-        self.scrollView.isScrollEnabled = false
+        self.currencySymbol.text = "ARS"
+        self.view.setNeedsDisplay()
+        self.view.setNeedsUpdateConstraints()
+        self.view.setNeedsLayout()
+        UIView.animate(withDuration: 0.2, delay: 0.5, options: UIView.AnimationOptions.curveEaseIn, animations: {
+            self.view.updateConstraints()
+            self.view.updateConstraintsIfNeeded()
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+        
+        
+        //        animateCurrencyTableWidth(constant: 1)
+        //        self.scrollView.isScrollEnabled = false
     }
     
+//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+//        <#code#>
+//    }
+    
     private func animateCurrencyTableWidth(constant: CGFloat){
-        currencyTableWidthConstraint.constant = constant
-        UIView.animate(withDuration: 0.15, animations: {self.view.layoutIfNeeded()}, completion: nil)
+        //        currencyTableWidthConstraint.constant = constant
+        UIView.animate(withDuration: 0.15, animations: {self.currencyTable.alpha = constant}, completion: nil)
     }
     
     @IBAction func onLogoToggled(_ sender: UISwitch) {
@@ -280,7 +276,7 @@ extension SettingsViewController : StoreManagerDelegate {
 }
 
 extension SettingsViewController : DismissalDelegate {
-
+    
     func finishedShowing(viewController: UIViewController) {
         viewController.dismiss(animated: true, completion: nil)
     }

@@ -80,7 +80,7 @@ Create a new one by pressing the '+' button.</string>
                                                 <rect key="frame" x="15" y="80" width="290" height="36"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMz-H7-41f">
-                                                        <rect key="frame" x="15" y="10" width="41" height="16"/>
+                                                        <rect key="frame" x="15" y="10" width="110" height="16"/>
                                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -140,6 +140,7 @@ Create a new one by pressing the '+' button.</string>
                                                 <constraints>
                                                     <constraint firstItem="AMz-H7-41f" firstAttribute="top" secondItem="4lT-KC-O9I" secondAttribute="top" constant="10" id="4tc-M0-KMi"/>
                                                     <constraint firstItem="AMz-H7-41f" firstAttribute="leading" secondItem="4lT-KC-O9I" secondAttribute="leading" constant="15" id="5MH-xL-bhx"/>
+                                                    <constraint firstItem="38O-hS-hie" firstAttribute="leading" secondItem="AMz-H7-41f" secondAttribute="trailing" id="8sF-x0-1IZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="38O-hS-hie" secondAttribute="trailing" constant="15" id="INa-Fl-qua"/>
                                                     <constraint firstItem="38O-hS-hie" firstAttribute="leading" secondItem="AMz-H7-41f" secondAttribute="trailing" constant="15" id="SMq-Fc-jBu"/>
                                                     <constraint firstItem="AMz-H7-41f" firstAttribute="leading" secondItem="4lT-KC-O9I" secondAttribute="leading" constant="15" id="eJK-A7-Uyf"/>
@@ -147,9 +148,15 @@ Create a new one by pressing the '+' button.</string>
                                                     <constraint firstAttribute="bottom" secondItem="AMz-H7-41f" secondAttribute="bottom" constant="10" id="hyk-T7-Uas"/>
                                                     <constraint firstAttribute="bottom" secondItem="38O-hS-hie" secondAttribute="bottom" id="p5V-Lo-qK5"/>
                                                 </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="8sF-x0-1IZ"/>
+                                                    </mask>
+                                                </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
                                                         <exclude reference="5MH-xL-bhx"/>
+                                                        <include reference="8sF-x0-1IZ"/>
                                                         <exclude reference="SMq-Fc-jBu"/>
                                                     </mask>
                                                 </variation>
@@ -318,7 +325,7 @@ Create a new one by pressing the '+' button.</string>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSq-WH-LvU">
                                                         <rect key="frame" x="0.0" y="0.0" width="145" height="175"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhd-wz-xbM">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhd-wz-xbM">
                                                                 <rect key="frame" x="0.0" y="8" width="137" height="31.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                                 <nil key="textColor"/>
@@ -995,7 +1002,7 @@ Create a new one by pressing the '+' button.</string>
                                                 <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Symbol:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bg-nS-EQ0">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Symbol:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bg-nS-EQ0">
                                                 <rect key="frame" x="15" y="674" width="200" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="Q7L-eo-Vck"/>
@@ -1007,7 +1014,7 @@ Create a new one by pressing the '+' button.</string>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPn-JH-HhH">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPn-JH-HhH">
                                                 <rect key="frame" x="15" y="384" width="200" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="C1w-dq-qjx"/>
@@ -1037,7 +1044,7 @@ Create a new one by pressing the '+' button.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 </variation>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tax (%):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFC-iF-dAF">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tax (%):" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFC-iF-dAF">
                                                 <rect key="frame" x="15" y="732" width="200" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="XSn-z7-SLk"/>
@@ -1049,7 +1056,7 @@ Create a new one by pressing the '+' button.</string>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="og7-Oe-S7L">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote ID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="og7-Oe-S7L">
                                                 <rect key="frame" x="15" y="616" width="200" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="Fft-AK-Rbl"/>
@@ -1071,7 +1078,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The symbol used for currency display" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="882-3P-Pe9">
-                                                <rect key="frame" x="15" y="695" width="265" height="12"/>
+                                                <rect key="frame" x="15" y="695" width="290" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1080,7 +1087,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percent of tax added to value." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDk-fS-bPw">
-                                                <rect key="frame" x="15" y="753" width="265" height="12"/>
+                                                <rect key="frame" x="15" y="753" width="290" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1089,7 +1096,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prefix for an ID. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB4-it-KTx">
-                                                <rect key="frame" x="15" y="637" width="265" height="12"/>
+                                                <rect key="frame" x="15" y="637" width="290" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1098,7 +1105,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shown in every quote." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SB8-g9-o3H">
-                                                <rect key="frame" x="15" y="405" width="265" height="12"/>
+                                                <rect key="frame" x="15" y="405" width="290" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1115,8 +1122,8 @@ Create a new one by pressing the '+' button.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 </variation>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUs-gb-LkB">
-                                                <rect key="frame" x="15" y="442" width="200" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUs-gb-LkB">
+                                                <rect key="frame" x="15" y="442" width="58" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="9jf-Od-JkE"/>
                                                 </constraints>
@@ -1125,10 +1132,13 @@ Create a new one by pressing the '+' button.</string>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                    <mask key="constraints">
+                                                        <exclude reference="9jf-Od-JkE"/>
+                                                    </mask>
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The address of your company." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkj-nj-5nc">
-                                                <rect key="frame" x="15" y="463" width="146" height="12"/>
+                                                <rect key="frame" x="15" y="463" width="290" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1154,7 +1164,7 @@ Create a new one by pressing the '+' button.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8Q-cj-Fg1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8Q-cj-Fg1">
                                                 <rect key="frame" x="15" y="500" width="200" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="M7d-qc-36y"/>
@@ -1167,7 +1177,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email that will appear on the quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uV-gt-Emf">
-                                                <rect key="frame" x="15" y="521" width="167.5" height="12"/>
+                                                <rect key="frame" x="15" y="521" width="290" height="12"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1184,7 +1194,7 @@ Create a new one by pressing the '+' button.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 </variation>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGY-ha-8d3">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGY-ha-8d3">
                                                 <rect key="frame" x="15" y="558" width="200" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="EKl-Il-SAc"/>
@@ -1237,7 +1247,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </variation>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOM-y7-Bf6" customClass="HighlightedButton" customModule="SimpleQuote3" customModuleProvider="target">
-                                                <rect key="frame" x="60" y="280" width="200" height="29"/>
+                                                <rect key="frame" x="100" y="280" width="120" height="29"/>
                                                 <color key="backgroundColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="hcO-vT-NeF"/>
@@ -1251,16 +1261,19 @@ Create a new one by pressing the '+' button.</string>
                                                 </userDefinedRuntimeAttributes>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                                    <mask key="constraints">
+                                                        <exclude reference="hcO-vT-NeF"/>
+                                                    </mask>
                                                 </variation>
                                                 <connections>
                                                     <action selector="topUP:" destination="3Et-os-dTL" eventType="touchUpInside" id="mWd-4Y-XHn"/>
                                                 </connections>
                                             </button>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-Ns-5F5" customClass="CurrencyList" customModule="SimpleQuote3" customModuleProvider="target">
-                                                <rect key="frame" x="320" y="0.0" width="0.0" height="879.5"/>
+                                            <tableView clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-Ns-5F5" customClass="CurrencyList" customModule="SimpleQuote3" customModuleProvider="target">
+                                                <rect key="frame" x="70" y="0.0" width="250" height="879.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" id="VkV-uZ-MYT"/>
+                                                    <constraint firstAttribute="width" constant="250" id="VkV-uZ-MYT"/>
                                                 </constraints>
                                             </tableView>
                                         </subviews>
@@ -1269,10 +1282,13 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="SB8-g9-o3H" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="15" id="0ag-Fd-xn9"/>
                                             <constraint firstItem="882-3P-Pe9" firstAttribute="leading" relation="lessThanOrEqual" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="1a6-ME-Ffk"/>
                                             <constraint firstAttribute="trailing" secondItem="BKc-Ns-5F5" secondAttribute="trailing" id="2Xn-PL-dM5"/>
-                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="882-3P-Pe9" secondAttribute="trailing" constant="40" id="2jN-Af-0sn"/>
+                                            <constraint firstAttribute="trailing" secondItem="7uV-gt-Emf" secondAttribute="trailing" constant="15" id="2hI-G7-utg"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="882-3P-Pe9" secondAttribute="trailing" constant="40" id="2hh-W0-zX0"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="882-3P-Pe9" secondAttribute="trailing" constant="15" id="2jN-Af-0sn"/>
                                             <constraint firstItem="dB4-it-KTx" firstAttribute="top" secondItem="og7-Oe-S7L" secondAttribute="bottom" constant="5" id="3gS-oO-WQe"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="paG-sW-Ag6" secondAttribute="trailing" constant="40" id="41o-Ff-8Md"/>
                                             <constraint firstItem="fUs-gb-LkB" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="15" id="43s-1q-Wfe"/>
+                                            <constraint firstAttribute="trailing" secondItem="cDk-fS-bPw" secondAttribute="trailing" constant="15" id="4IK-NV-4JZ"/>
                                             <constraint firstItem="ivo-JK-Z9j" firstAttribute="centerY" secondItem="fPz-MU-ymw" secondAttribute="centerY" id="4Jd-Tx-etp"/>
                                             <constraint firstItem="EwV-zG-ttM" firstAttribute="leading" relation="lessThanOrEqual" secondItem="lPn-JH-HhH" secondAttribute="trailing" constant="40" id="5Og-jh-cHf"/>
                                             <constraint firstItem="XW6-JJ-66W" firstAttribute="top" secondItem="cDk-fS-bPw" secondAttribute="bottom" constant="50" id="6TS-w8-M7o"/>
@@ -1288,18 +1304,20 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="xkj-nj-5nc" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="DS5-gM-IZW"/>
                                             <constraint firstItem="OFC-iF-dAF" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="15" id="EMU-OO-7eR"/>
                                             <constraint firstItem="Igv-gE-4k3" firstAttribute="centerY" secondItem="fUs-gb-LkB" secondAttribute="centerY" id="Exd-Dt-ef7"/>
-                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="SB8-g9-o3H" secondAttribute="trailing" constant="40" id="Gsm-Yd-9MO"/>
+                                            <constraint firstAttribute="trailing" secondItem="SB8-g9-o3H" secondAttribute="trailing" constant="15" id="Gsm-Yd-9MO"/>
                                             <constraint firstItem="XW6-JJ-66W" firstAttribute="centerX" secondItem="w7k-lt-xPn" secondAttribute="centerX" id="Guu-oy-Tfe"/>
                                             <constraint firstItem="cDk-fS-bPw" firstAttribute="top" secondItem="OFC-iF-dAF" secondAttribute="bottom" constant="5" id="HVv-t3-SUI"/>
                                             <constraint firstItem="sVR-vx-pbi" firstAttribute="top" secondItem="w7k-lt-xPn" secondAttribute="top" constant="25" id="IGw-Ue-iff"/>
                                             <constraint firstItem="og7-Oe-S7L" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="JaK-If-SEN"/>
                                             <constraint firstItem="BKc-Ns-5F5" firstAttribute="top" secondItem="w7k-lt-xPn" secondAttribute="top" id="JtZ-Qc-IJl"/>
                                             <constraint firstItem="paG-sW-Ag6" firstAttribute="leading" relation="lessThanOrEqual" secondItem="XGY-ha-8d3" secondAttribute="trailing" constant="40" id="KJ8-kZ-UMt"/>
+                                            <constraint firstAttribute="trailing" secondItem="dB4-it-KTx" secondAttribute="trailing" constant="15" id="KXD-lO-Lk8"/>
                                             <constraint firstItem="jO6-uf-Y0O" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="15" id="KXl-4l-V3e"/>
                                             <constraint firstItem="paG-sW-Ag6" firstAttribute="centerY" secondItem="XGY-ha-8d3" secondAttribute="centerY" id="L3H-NJ-Puz"/>
                                             <constraint firstItem="Igv-gE-4k3" firstAttribute="leading" relation="lessThanOrEqual" secondItem="fUs-gb-LkB" secondAttribute="trailing" constant="40" id="M2b-1O-dlT"/>
                                             <constraint firstItem="cDk-fS-bPw" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="15" id="MDh-0Z-1RI"/>
                                             <constraint firstItem="HOM-y7-Bf6" firstAttribute="top" secondItem="IeL-il-8fi" secondAttribute="bottom" constant="8" id="MFk-AQ-YVB"/>
+                                            <constraint firstAttribute="trailing" secondItem="xkj-nj-5nc" secondAttribute="trailing" constant="15" id="MV3-AJ-KAH"/>
                                             <constraint firstItem="lPn-JH-HhH" firstAttribute="top" secondItem="HOM-y7-Bf6" secondAttribute="bottom" constant="75" id="MhA-m5-uto"/>
                                             <constraint firstAttribute="trailing" secondItem="paG-sW-Ag6" secondAttribute="trailing" constant="15" id="MuZ-LX-B90"/>
                                             <constraint firstItem="og7-Oe-S7L" firstAttribute="top" secondItem="jO6-uf-Y0O" secondAttribute="bottom" constant="25" id="N1R-s1-Q0m"/>
@@ -1318,6 +1336,7 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="XoD-Sd-yQq" firstAttribute="leading" relation="lessThanOrEqual" secondItem="OFC-iF-dAF" secondAttribute="trailing" constant="40" id="WpX-L7-TIT"/>
                                             <constraint firstItem="XoD-Sd-yQq" firstAttribute="centerY" secondItem="OFC-iF-dAF" secondAttribute="centerY" id="Wr5-VL-Vhq"/>
                                             <constraint firstItem="fPz-MU-ymw" firstAttribute="centerX" secondItem="w7k-lt-xPn" secondAttribute="centerX" id="XiQ-Dm-Oem"/>
+                                            <constraint firstAttribute="trailing" secondItem="HOM-y7-Bf6" secondAttribute="trailing" constant="100" id="Y1B-dY-CiU"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="cDk-fS-bPw" secondAttribute="trailing" constant="40" id="YRH-AP-rle"/>
                                             <constraint firstItem="HOM-y7-Bf6" firstAttribute="centerX" secondItem="w7k-lt-xPn" secondAttribute="centerX" id="ZbK-Pb-XeF"/>
                                             <constraint firstAttribute="trailing" secondItem="ICd-iv-uXY" secondAttribute="trailing" constant="15" id="alO-oH-EIx"/>
@@ -1364,17 +1383,18 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="T8Q-cj-Fg1" firstAttribute="top" secondItem="xkj-nj-5nc" secondAttribute="bottom" constant="25" id="xpB-hh-iet"/>
                                             <constraint firstAttribute="trailing" secondItem="EwV-zG-ttM" secondAttribute="trailing" constant="15" id="y4n-lN-ph3"/>
                                             <constraint firstAttribute="trailing" secondItem="XW6-JJ-66W" secondAttribute="trailing" constant="15" id="yzX-vF-uFI"/>
+                                            <constraint firstItem="HOM-y7-Bf6" firstAttribute="leading" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="100" id="zWU-LJ-jKp"/>
                                             <constraint firstItem="xkj-nj-5nc" firstAttribute="top" secondItem="fUs-gb-LkB" secondAttribute="bottom" constant="5" id="zuk-ak-rLU"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="alO-oH-EIx"/>
-                                                <exclude reference="nPT-9v-Pgh"/>
                                                 <exclude reference="xUC-BK-6S9"/>
                                                 <exclude reference="0ag-Fd-xn9"/>
+                                                <exclude reference="Gsm-Yd-9MO"/>
                                                 <exclude reference="43s-1q-Wfe"/>
                                                 <exclude reference="y4n-lN-ph3"/>
                                                 <exclude reference="Ci9-O3-GaO"/>
+                                                <exclude reference="MV3-AJ-KAH"/>
                                                 <exclude reference="76W-cA-tXe"/>
                                                 <exclude reference="ldT-tP-azR"/>
                                                 <exclude reference="p7m-da-DMs"/>
@@ -1383,12 +1403,17 @@ Create a new one by pressing the '+' button.</string>
                                                 <exclude reference="KXl-4l-V3e"/>
                                                 <exclude reference="MuZ-LX-B90"/>
                                                 <exclude reference="iEf-xh-Mkc"/>
+                                                <exclude reference="KXD-lO-Lk8"/>
                                                 <exclude reference="jIi-zF-PT8"/>
                                                 <exclude reference="wPP-07-gP3"/>
                                                 <exclude reference="TUF-KS-mVB"/>
+                                                <exclude reference="2jN-Af-0sn"/>
                                                 <exclude reference="tPb-mp-MwQ"/>
+                                                <exclude reference="alO-oH-EIx"/>
                                                 <exclude reference="EMU-OO-7eR"/>
+                                                <exclude reference="4IK-NV-4JZ"/>
                                                 <exclude reference="MDh-0Z-1RI"/>
+                                                <exclude reference="nPT-9v-Pgh"/>
                                                 <exclude reference="6TS-w8-M7o"/>
                                                 <exclude reference="duE-KQ-gXA"/>
                                                 <exclude reference="yzX-vF-uFI"/>
@@ -1396,14 +1421,10 @@ Create a new one by pressing the '+' button.</string>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
-                                                <exclude reference="P9H-HN-1vx"/>
-                                                <exclude reference="W6C-p3-BaQ"/>
-                                                <include reference="alO-oH-EIx"/>
-                                                <include reference="nPT-9v-Pgh"/>
-                                                <exclude reference="s7J-ly-T3A"/>
                                                 <exclude reference="tcf-zS-Ssn"/>
                                                 <include reference="xUC-BK-6S9"/>
                                                 <include reference="0ag-Fd-xn9"/>
+                                                <include reference="Gsm-Yd-9MO"/>
                                                 <exclude reference="rzG-uG-eAa"/>
                                                 <include reference="43s-1q-Wfe"/>
                                                 <exclude reference="mBE-ag-QdX"/>
@@ -1412,6 +1433,8 @@ Create a new one by pressing the '+' button.</string>
                                                 <include reference="y4n-lN-ph3"/>
                                                 <include reference="Ci9-O3-GaO"/>
                                                 <exclude reference="DS5-gM-IZW"/>
+                                                <include reference="MV3-AJ-KAH"/>
+                                                <exclude reference="P9H-HN-1vx"/>
                                                 <include reference="76W-cA-tXe"/>
                                                 <exclude reference="M2b-1O-dlT"/>
                                                 <exclude reference="SYG-LL-2ZP"/>
@@ -1419,18 +1442,22 @@ Create a new one by pressing the '+' button.</string>
                                                 <exclude reference="uJ4-MS-QOG"/>
                                                 <exclude reference="9Pj-LQ-uJd"/>
                                                 <include reference="p7m-da-DMs"/>
+                                                <exclude reference="s7J-ly-T3A"/>
                                                 <include reference="UM0-Tt-D4E"/>
                                                 <exclude reference="vak-qF-LtC"/>
                                                 <exclude reference="xVk-x6-a9n"/>
                                                 <exclude reference="T95-ct-uFx"/>
                                                 <include reference="eJR-y6-fgh"/>
                                                 <include reference="KXl-4l-V3e"/>
+                                                <exclude reference="W6C-p3-BaQ"/>
                                                 <exclude reference="iOo-Ir-SXm"/>
                                                 <exclude reference="41o-Ff-8Md"/>
                                                 <exclude reference="KJ8-kZ-UMt"/>
                                                 <include reference="MuZ-LX-B90"/>
                                                 <exclude reference="JaK-If-SEN"/>
                                                 <include reference="iEf-xh-Mkc"/>
+                                                <include reference="KXD-lO-Lk8"/>
+                                                <exclude reference="VGF-1j-9CM"/>
                                                 <exclude reference="hEQ-GL-Anc"/>
                                                 <include reference="jIi-zF-PT8"/>
                                                 <exclude reference="fPJ-1O-lgs"/>
@@ -1439,15 +1466,21 @@ Create a new one by pressing the '+' button.</string>
                                                 <exclude reference="B13-UC-99v"/>
                                                 <include reference="TUF-KS-mVB"/>
                                                 <exclude reference="1a6-ME-Ffk"/>
+                                                <exclude reference="2hh-W0-zX0"/>
+                                                <include reference="2jN-Af-0sn"/>
                                                 <include reference="tPb-mp-MwQ"/>
                                                 <exclude reference="DGv-dr-EEb"/>
+                                                <include reference="alO-oH-EIx"/>
                                                 <exclude reference="nnM-Ny-hKR"/>
                                                 <include reference="EMU-OO-7eR"/>
                                                 <exclude reference="oGs-Ua-55K"/>
+                                                <include reference="4IK-NV-4JZ"/>
                                                 <include reference="MDh-0Z-1RI"/>
+                                                <exclude reference="YRH-AP-rle"/>
                                                 <exclude reference="qqX-hE-EqJ"/>
                                                 <exclude reference="RW0-kp-g8U"/>
                                                 <exclude reference="WpX-L7-TIT"/>
+                                                <include reference="nPT-9v-Pgh"/>
                                                 <include reference="6TS-w8-M7o"/>
                                                 <include reference="Qbu-4f-DI4"/>
                                                 <include reference="duE-KQ-gXA"/>
