@@ -89,10 +89,10 @@ Create a new one by pressing the '+' button.</string>
                                                         </variation>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="38O-hS-hie">
-                                                        <rect key="frame" x="95" y="0.0" width="180" height="36"/>
+                                                        <rect key="frame" x="125" y="0.0" width="150" height="36"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMh-Fg-wNV">
-                                                                <rect key="frame" x="0.0" y="10" width="53.5" height="16"/>
+                                                                <rect key="frame" x="0.0" y="10" width="43.5" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -101,7 +101,7 @@ Create a new one by pressing the '+' button.</string>
                                                                 </variation>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jd-WH-eRl">
-                                                                <rect key="frame" x="63.5" y="10" width="53" height="16"/>
+                                                                <rect key="frame" x="53.5" y="10" width="43" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@ Create a new one by pressing the '+' button.</string>
                                                                 </variation>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVD-cj-UtV">
-                                                                <rect key="frame" x="126.5" y="10" width="53.5" height="16"/>
+                                                                <rect key="frame" x="106.5" y="10" width="43.5" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -120,7 +120,7 @@ Create a new one by pressing the '+' button.</string>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="180" id="1no-Do-TJz"/>
+                                                            <constraint firstAttribute="width" constant="150" id="1no-Do-TJz"/>
                                                             <constraint firstAttribute="width" constant="300" id="664-o4-ENT"/>
                                                         </constraints>
                                                         <variation key="default">

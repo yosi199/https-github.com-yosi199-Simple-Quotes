@@ -64,34 +64,34 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXk-st-QHL">
-                                <rect key="frame" x="16" y="50.5" width="847" height="48"/>
+                                <rect key="frame" x="16" y="50.5" width="997" height="48"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nR1-rF-jTc">
-                                <rect key="frame" x="878" y="50.5" width="300" height="48"/>
+                                <rect key="frame" x="1028" y="50.5" width="150" height="48"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="x1" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Lj3-Ls-g6X" customClass="NumberInputView" customModule="SimpleQuote3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="43.5" height="48"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ta0-wr-nla" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
-                                        <rect key="frame" x="103.5" y="0.0" width="93" height="48"/>
+                                        <rect key="frame" x="53.5" y="0.0" width="43" height="48"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                     </textField>
                                     <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="7X1-zp-Vc0" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
-                                        <rect key="frame" x="201.5" y="0.0" width="0.0" height="48"/>
+                                        <rect key="frame" x="101.5" y="0.0" width="0.0" height="48"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                     </textField>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="AeQ-q2-8hy" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
-                                        <rect key="frame" x="206.5" y="0.0" width="93.5" height="48"/>
+                                        <rect key="frame" x="106.5" y="0.0" width="43.5" height="48"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
@@ -99,7 +99,19 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="5oL-3u-t8H"/>
+                                    <constraint firstAttribute="width" constant="150" id="Olt-Jo-FBf"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Olt-Jo-FBf"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="5oL-3u-t8H"/>
+                                        <include reference="Olt-Jo-FBf"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
