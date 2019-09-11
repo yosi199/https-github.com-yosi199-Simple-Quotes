@@ -21,7 +21,7 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         title = "Menu"
-                
+        
         setupMenuList()
         setupCallbacks()
         
@@ -38,7 +38,11 @@ class MenuViewController: UIViewController {
     
     private func setupCallbacks(){
         menuList.loadQuoteCallback = { quote, index in
-//            self.performSegue(withIdentifier: "quote", sender: self)
+            // When running on iphone we don't have the split view controller correctly set
+            // so we explicitly tell the viewcontroller to load
+            if(UIDevice.current.userInterfaceIdiom == .phone){
+                self.performSegue(withIdentifier: "quote", sender: self)
+            }
             self.detailViewController.loadQuote(existing: quote)
         }
         
@@ -109,7 +113,7 @@ class MenuViewController: UIViewController {
         detailViewController.unregisterKeyboardHelper()
         
         let settingsVC = self.storyboard?.instantiateViewController(withIdentifier: "settings") as! SettingsViewController
-        settingsVC.modalPresentationStyle = UIModalPresentationStyle.formSheet
+        settingsVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         self.present(settingsVC, animated: true, completion: nil)
     }
     

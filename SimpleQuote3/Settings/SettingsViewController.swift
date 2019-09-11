@@ -162,25 +162,25 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
         }
     }
     
-    override var preferredContentSize: CGSize {
-        get {
-            let landscape = UIApplication.shared.statusBarOrientation.isLandscape
-            let menuVC = self.presentingViewController?.children[0] as? MenuViewController
-            if let fullSize = menuVC?.detailViewController.view.bounds.size {
-                if(landscape){
-                    return CGSize(width: fullSize.width * 0.5,
-                                  height: fullSize.height * 0.75)
-                } else {
-                    return CGSize(width: fullSize.width * 2,
-                                  height: fullSize.height * 0.75)
-                }
-            }
-            return super.preferredContentSize
-        }
-        set {
-            super.preferredContentSize = newValue
-        }
-    }
+//    override var preferredContentSize: CGSize {
+//        get {
+//            let landscape = UIApplication.shared.statusBarOrientation.isLandscape
+//            let menuVC = self.presentingViewController?.children[0] as? MenuViewController
+//            if let fullSize = menuVC?.detailViewController.view.bounds.size {
+//                if(landscape){
+//                    return CGSize(width: fullSize.width * 0.5,
+//                                  height: fullSize.height * 0.75)
+//                } else {
+//                    return CGSize(width: fullSize.width * 2,
+//                                  height: fullSize.height * 0.75)
+//                }
+//            }
+//            return super.preferredContentSize
+//        }
+//        set {
+//            super.preferredContentSize = newValue
+//        }
+//    }
     
     @IBAction func save(_ sender: Any) {
         self.progress.show(parent: self)
