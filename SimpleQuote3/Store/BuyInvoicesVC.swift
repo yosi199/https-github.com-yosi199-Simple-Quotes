@@ -25,6 +25,7 @@ class BuyInvoicesVC: UIViewController {
     @IBOutlet weak var product3: UIView!
     
     weak var dismissalDelegate: DismissalDelegate?
+    private let progress = ProgressView()
     
     var products: [SKProduct]!
     
@@ -78,17 +79,28 @@ class BuyInvoicesVC: UIViewController {
     
     @objc func onProduct1Tapped() {
         StoreObserver.shared.buy(products[2])
+        buyingInProgress()
     }
     
     @objc func onProduct2Tapped() {
         StoreObserver.shared.buy(products[0])
+        buyingInProgress()
     }
     
     @objc func onProduct3Tapped() {
         StoreObserver.shared.buy(products[1])
+        buyingInProgress()
     }
     
     @IBAction func dismiss(_ sender: Any) {
-       dismissalDelegate?.finishedShowing(viewController: self)
+        dismissalDelegate?.finishedShowing(viewController: self)
+    }
+    
+    private func buyingInProgress(){
+        self.progress.show(parent: self)
+        
+        StoreObserver.shared.purchaseStatusCallbacks = { self.progress.hide(parent: self)
+            self.dismiss(self)
+        }
     }
 }

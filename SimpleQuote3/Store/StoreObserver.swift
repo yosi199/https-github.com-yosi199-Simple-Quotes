@@ -24,6 +24,9 @@ class StoreObserver: NSObject {
     
     static let shared = StoreObserver()
     
+    var purchaseStatusCallbacks: (()-> Void)?
+
+    
     // MARK: - Properties
     
     /**
@@ -86,6 +89,7 @@ class StoreObserver: NSObject {
         
         // Finish the successful transaction.
         SKPaymentQueue.default().finishTransaction(transaction)
+        purchaseStatusCallbacks?()
     }
     
     /// Handles failed purchase transactions.

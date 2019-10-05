@@ -64,7 +64,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
             self.defaultTax.delegate = DoubleInputValidator.shared
             // Do any additional setup after loading the view.
             
-            self.availableQuotes.text = "\(BuyInvoicesHelper.shared.getAvailableInvoicesCount()) Available invoices."
+            loadAvailableQuotes()
             
             setupInteractions()
             setupCallbacks()
@@ -74,6 +74,10 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
             }
             
         }
+    }
+    
+    private func loadAvailableQuotes(){
+        self.availableQuotes.text = "\(BuyInvoicesHelper.shared.getAvailableInvoicesCount()) Available invoices."
     }
     
     private func setupInteractions(){
@@ -285,6 +289,7 @@ extension SettingsViewController : DismissalDelegate {
     
     func finishedShowing(viewController: UIViewController) {
         viewController.dismiss(animated: true, completion: nil)
+        self.loadAvailableQuotes()
     }
 }
 
