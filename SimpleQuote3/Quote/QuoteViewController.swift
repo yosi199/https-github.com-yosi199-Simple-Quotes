@@ -136,9 +136,9 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         editButton.isEnabled = !vm.quote.items.isEmpty
         reviewButton.isEnabled = !vm.quote.items.isEmpty
         if(vm.quote.items.isEmpty) {
-            self.reviewButton.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            blueReviewButton()
         } else {
-            self.reviewButton.tintColor = #colorLiteral(red: 0, green: 0.168627451, blue: 0.9803921569, alpha: 1)
+            blackReviewButton()
         }
         addButton.isHidden = vm.quote.items.isEmpty
         footer.isHidden = vm.quote.items.isEmpty
@@ -147,6 +147,24 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         taxPercentageText.text = "Tax Percentage: \(vm.getTaxPercentage())%"
         
         toggleFooter()
+    }
+    
+    private func blueReviewButton(){
+        if #available(iOS 13.0, *) {
+            self.reviewButton.tintColor = UIColor.systemBlue
+        } else {
+            self.reviewButton.tintColor = UIColor.blue
+        }
+        
+    }
+    
+    private func blackReviewButton(){
+        
+        if #available(iOS 13.0, *) {
+            self.reviewButton.tintColor = UIColor.label
+        } else {
+            self.reviewButton.tintColor = UIColor.black
+        }
     }
     
     @objc func chooseImage(){
@@ -242,7 +260,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
                     self.footerStackView.isHidden = true
                 }
                 self.itemsTableView.reloadData()
-            }.build()
+        }.build()
             .prepare()
         
         
@@ -267,7 +285,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     private func addLineItem(item: LineItemModel){
         self.itemsTableView.items.append(item)
         self.reviewButton.isEnabled = true
-        self.reviewButton.tintColor = #colorLiteral(red: 0, green: 0.1698517203, blue: 0.9812178016, alpha: 1)
+        blueReviewButton()
         self.editButton.isEnabled = true
         inputItemView.reset()
         toggleFooter()
@@ -285,7 +303,23 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.itemsTableView.reloadData()
         
         if(self.itemsTableView.isEditing){
+            redEditButton()
+        } else {
+            blackEditButton()
+        }
+    }
+    
+    private func redEditButton(){
+        if #available(iOS 13.0, *) {
+            self.editButton.tintColor = UIColor.systemRed
+        } else {
             self.editButton.tintColor = UIColor.red
+        }
+    }
+    
+    private func blackEditButton(){
+        if #available(iOS 13.0, *) {
+            self.editButton.tintColor = UIColor.label
         } else {
             self.editButton.tintColor = UIColor.black
         }

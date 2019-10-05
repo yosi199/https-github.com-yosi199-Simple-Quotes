@@ -32,13 +32,13 @@ class LineItemsList: ResizeableTableViewTableViewController, UITableViewDelegate
     // Make the background color show through
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
-        headerView.backgroundColor = UIColor.white
+//        headerView.backgroundColor = UIColor.systemBackground
         return headerView
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = UIView()
-        footerView.backgroundColor = UIColor.white
+//        footerView.backgroundColor = UIColor.systemBackground
         return footerView
     }
     
