@@ -25,6 +25,9 @@ class PDFController: UIViewController {
     // IN APP Purchases
     private var products: [SKProduct]?
     
+    // App review
+    var maybeShowReview: ((_ invoicesLeft: Int) -> Void)?
+    
     @IBAction func shareAction(_ sender: Any) {
         if let url = self.url{
             if (BuyInvoicesHelper.shared.getAvailableInvoicesCount() <= 0){
@@ -35,7 +38,9 @@ class PDFController: UIViewController {
                 let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
                 activityVC.popoverPresentationController?.barButtonItem = shareButton
                 activityVC.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
-                    if completed { BuyInvoicesHelper.shared.useOneInvoice() }
+                    if completed { BuyInvoicesHelper.shared.useOneInvoice()
+                        self.maybeShowReview?(BuyInvoicesHelper.shared.getAvailableInvoicesCount())
+                    }
                 }
                 self.present(activityVC, animated: true, completion: nil)
             }

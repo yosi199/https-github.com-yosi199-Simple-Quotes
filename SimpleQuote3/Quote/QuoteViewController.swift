@@ -43,7 +43,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         self.splitViewController?.preferredDisplayMode = UISplitViewController.DisplayMode.primaryOverlay
-
+        
         setupItemsTable()
         setupInteractions()
         setupCallbacks()
@@ -211,6 +211,9 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         if(segue.destination is PDFController){
             guard let controller = segue.destination as? PDFController else { return }
             controller.quote = self.vm.quote
+            controller.maybeShowReview = { count in
+                ReviewSuggester().maybeAskForReview(invoicesLeft: count, delay: 1.5)
+            }
         }
     }
     

@@ -10,6 +10,8 @@
 		4C68875A22DB8F9D00B16462 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68875922DB8F9D00B16462 /* SettingsViewController.swift */; };
 		4C68875C22E343E400B16462 /* LineItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68875B22E343E400B16462 /* LineItemsList.swift */; };
 		4C7D156322BE89BD008D4CF8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */; };
+		4C834A402348F11800948ADD /* ReviewSuggester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C834A3F2348F11800948ADD /* ReviewSuggester.swift */; };
+		4C834A422348F16500948ADD /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C834A412348F16500948ADD /* UserDefaultKeys.swift */; };
 		4CC94E5722FBFAE700E786CC /* KeyboardScrollHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5622FBFAE700E786CC /* KeyboardScrollHelper.swift */; };
 		4CC94E5922FC15FE00E786CC /* PDFController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5822FC15FE00E786CC /* PDFController.swift */; };
 		4CC94E5B22FC5E8A00E786CC /* TextFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5A22FC5E8A00E786CC /* TextFactory.swift */; };
@@ -76,6 +78,8 @@
 		4C68875922DB8F9D00B16462 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4C68875B22E343E400B16462 /* LineItemsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineItemsList.swift; sourceTree = "<group>"; };
 		4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		4C834A3F2348F11800948ADD /* ReviewSuggester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSuggester.swift; sourceTree = "<group>"; };
+		4C834A412348F16500948ADD /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
 		4CC94E5622FBFAE700E786CC /* KeyboardScrollHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardScrollHelper.swift; sourceTree = "<group>"; };
 		4CC94E5822FC15FE00E786CC /* PDFController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFController.swift; sourceTree = "<group>"; };
 		4CC94E5A22FC5E8A00E786CC /* TextFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFactory.swift; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 				D3B3210522BA218000AB362A /* Info.plist */,
 				D3A0907C23017936004C6E88 /* GoogleService-Info.plist */,
 				D3A0908023019C92004C6E88 /* DispatchQueues.swift */,
+				4C834A412348F16500948ADD /* UserDefaultKeys.swift */,
 			);
 			path = SimpleQuote3;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				D393E8CA22E707D300E8F034 /* AlertDeletion.swift */,
 				D340142722F6BF5300328CBE /* CurrencyHelper.swift */,
 				4CC94E7B230A83A800E786CC /* BuyInvoicesHelper.swift */,
+				4C834A3F2348F11800948ADD /* ReviewSuggester.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -499,6 +505,7 @@
 				D393E8CB22E707D300E8F034 /* AlertDeletion.swift in Sources */,
 				4CC94E5922FC15FE00E786CC /* PDFController.swift in Sources */,
 				4C68875A22DB8F9D00B16462 /* SettingsViewController.swift in Sources */,
+				4C834A422348F16500948ADD /* UserDefaultKeys.swift in Sources */,
 				4CC94E7A2309255600E786CC /* DismissDelegate.swift in Sources */,
 				D3B3211822BA226700AB362A /* Header.swift in Sources */,
 				D3B3213622BA2CAB00AB362A /* ItemCellTableViewCell.swift in Sources */,
@@ -508,6 +515,7 @@
 				D3B3212822BA254500AB362A /* DoubleExtensions.swift in Sources */,
 				4C68875C22E343E400B16462 /* LineItemsList.swift in Sources */,
 				D340142322F6A78600328CBE /* CurrencyCell.swift in Sources */,
+				4C834A402348F11800948ADD /* ReviewSuggester.swift in Sources */,
 				D35429B222F86B60003ED36C /* DiscountVM.swift in Sources */,
 				D340142022F6A6C100328CBE /* CurrencyList.swift in Sources */,
 				D3B3211422BA226700AB362A /* ItemView.swift in Sources */,
