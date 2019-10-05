@@ -17,14 +17,14 @@ class CurrencyCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 1
-        self.layer.shadowOffset = .zero
-        self.layer.shadowRadius = 10
-        self.layer.rasterizationScale = UIScreen.main.scale
-        
-        self.layer.cornerRadius = 8
-        self.layer.masksToBounds = true
+//        self.layer.shadowColor = UIColor.black.cgColor
+//        self.layer.shadowOpacity = 1
+//        self.layer.shadowOffset = .zero
+//        self.layer.shadowRadius = 5
+//        self.layer.rasterizationScale = UIScreen.main.scale
+//
+//        self.layer.cornerRadius = 8
+//        self.layer.masksToBounds = true
         // Initialization code
     }
 

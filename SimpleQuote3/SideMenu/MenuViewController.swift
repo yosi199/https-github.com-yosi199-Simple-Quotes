@@ -125,14 +125,30 @@ class MenuViewController: UIViewController {
     
     private func changeEditingColor() {
         if(self.menuList.isEditing) {
-            self.deleteButton.tintColor = UIColor.red
+            redDeleteButton()
         } else {
-            self.deleteButton.tintColor = UIColor.black
+            blackDeleteButton()
         }
     }
     
     func reloadData(){
         menuList.reloadData()
+    }
+    
+    private func redDeleteButton(){
+        if #available(iOS 13.0, *) {
+            self.deleteButton.tintColor = UIColor.systemRed
+        } else {
+            self.deleteButton.tintColor = UIColor.red
+        }
+    }
+    
+    private func blackDeleteButton(){
+        if #available(iOS 13.0, *) {
+            self.deleteButton.tintColor = UIColor.label
+        } else {
+            self.deleteButton.tintColor = UIColor.black
+        }
     }
 }
 

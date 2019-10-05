@@ -307,12 +307,13 @@ Create a new one by pressing the '+' button.</string>
                                                     <constraint firstAttribute="width" secondItem="mpx-P7-Ter" secondAttribute="height" multiplier="1:1" id="zCb-po-wxl"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="QRO-ni-Vbz" userLabel="discountEdit">
-                                                <rect key="frame" x="749" y="591" width="15" height="15"/>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QRO-ni-Vbz" userLabel="discountEdit">
+                                                <rect key="frame" x="741.5" y="584" width="30" height="29.5"/>
+                                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="15" id="2qE-LO-QwZ"/>
+                                                    <constraint firstAttribute="width" constant="30" id="2qE-LO-QwZ"/>
                                                     <constraint firstAttribute="width" secondItem="QRO-ni-Vbz" secondAttribute="height" multiplier="1:1" id="Kjp-sm-GCM"/>
-                                                    <constraint firstAttribute="height" constant="15" id="Mf5-fg-Plt"/>
+                                                    <constraint firstAttribute="height" constant="30" id="Mf5-fg-Plt"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -442,19 +443,17 @@ Create a new one by pressing the '+' button.</string>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qth-xj-hkY">
                                         <rect key="frame" x="50" y="30" width="250" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUL-Fx-w9e">
                                         <rect key="frame" x="50" y="60.5" width="250" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="j0H-A2-46S">
                                         <rect key="frame" x="48" y="90.5" width="404" height="31"/>
-                                        <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="minimumTrackTintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="maximumTrackTintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <color key="thumbTintColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="onValueChanged:" destination="azq-rw-GXa" eventType="valueChanged" id="C0j-qe-vSw"/>
@@ -482,7 +481,6 @@ Create a new one by pressing the '+' button.</string>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="uJC-zi-5VL"/>
                                         </constraints>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
@@ -492,12 +490,11 @@ Create a new one by pressing the '+' button.</string>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="Wix-XC-PaM"/>
                                         </constraints>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="XW0-Vb-5Lu" firstAttribute="leading" relation="lessThanOrEqual" secondItem="qth-xj-hkY" secondAttribute="trailing" constant="50" id="1a4-Ca-QxP"/>
                                     <constraint firstItem="XW0-Vb-5Lu" firstAttribute="top" secondItem="DvD-qb-PM4" secondAttribute="top" constant="30" id="7I0-Tv-S4V"/>
@@ -521,7 +518,7 @@ Create a new one by pressing the '+' button.</string>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="DvD-qb-PM4" firstAttribute="top" secondItem="gDI-FE-LJQ" secondAttribute="top" id="8xZ-IT-pFs"/>
                             <constraint firstItem="DvD-qb-PM4" firstAttribute="bottom" secondItem="gDI-FE-LJQ" secondAttribute="bottom" id="FMt-jn-N14"/>
@@ -553,16 +550,17 @@ Create a new one by pressing the '+' button.</string>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omR-eK-eV6">
                                 <rect key="frame" x="0.0" y="0.0" width="712" height="56"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <items>
                                     <navigationItem title="PDF" id="uqh-ni-aDG">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="1Mw-yI-6O0">
-                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <connections>
                                                 <segue destination="BH1-bg-VqF" kind="unwind" unwindAction="unwindFromPdf:" id="E48-gp-2o6"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="Aao-hq-M6G">
+                                            <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <connections>
                                                 <action selector="shareAction:" destination="8tY-lk-M1f" id="gzj-j5-aWr"/>
                                             </connections>
@@ -579,7 +577,7 @@ Create a new one by pressing the '+' button.</string>
                                 </wkWebViewConfiguration>
                             </wkWebView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Ob-Jn-yZX" firstAttribute="leading" secondItem="hhw-vJ-pFc" secondAttribute="leading" id="2gA-md-Yaz"/>
                             <constraint firstItem="hhw-vJ-pFc" firstAttribute="bottom" secondItem="6Ob-Jn-yZX" secondAttribute="bottom" id="6BZ-1h-jEl"/>
@@ -735,6 +733,7 @@ Create a new one by pressing the '+' button.</string>
                     </view>
                     <navigationItem key="navigationItem" id="PQJ-Ag-sBl">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2ds-1c-evG">
+                            <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
                                 <action selector="dismiss:" destination="drp-NQ-1I9" id="JB6-Bl-WDE"/>
                             </connections>
@@ -822,6 +821,7 @@ Create a new one by pressing the '+' button.</string>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="DjV-YW-jjY">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -848,7 +848,13 @@ Create a new one by pressing the '+' button.</string>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" verticalHuggingPriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="V5U-kq-chQ">
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="50"/>
-                                <color key="barTintColor" red="0.95686274510000002" green="0.79215686269999996" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Settings" id="tsn-MS-UGc">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KtA-6e-VqB">
@@ -1068,15 +1074,16 @@ Create a new one by pressing the '+' button.</string>
                                                     <action selector="topUP:" destination="3Et-os-dTL" eventType="touchUpInside" id="mWd-4Y-XHn"/>
                                                 </connections>
                                             </button>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-Ns-5F5" customClass="CurrencyList" customModule="SimpleQuote3" customModuleProvider="target">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-Ns-5F5" customClass="CurrencyList" customModule="SimpleQuote3" customModuleProvider="target">
                                                 <rect key="frame" x="834" y="0.0" width="0.0" height="1100"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" id="VkV-uZ-MYT"/>
                                                 </constraints>
+                                                <color key="separatorColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </tableView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="882-3P-Pe9" firstAttribute="leading" relation="lessThanOrEqual" secondItem="w7k-lt-xPn" secondAttribute="leading" constant="40" id="1a6-ME-Ffk"/>
                                             <constraint firstAttribute="trailing" secondItem="BKc-Ns-5F5" secondAttribute="trailing" id="2Xn-PL-dM5"/>
@@ -1167,7 +1174,7 @@ Create a new one by pressing the '+' button.</string>
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="V5U-kq-chQ" firstAttribute="trailing" secondItem="6cH-NY-yRR" secondAttribute="trailing" id="EHR-AM-AbJ"/>
                             <constraint firstItem="L1I-Ut-Anb" firstAttribute="trailing" secondItem="6cH-NY-yRR" secondAttribute="trailing" id="J18-Gm-pGy"/>
@@ -1207,6 +1214,13 @@ Create a new one by pressing the '+' button.</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XQH-u4-BBm">
                         <rect key="frame" x="0.0" y="0.0" width="712" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1220,12 +1234,13 @@ Create a new one by pressing the '+' button.</string>
     </scenes>
     <resources>
         <image name="Fill 4" width="28" height="30"/>
-        <image name="edit" width="49" height="53"/>
+        <image name="edit" width="24.5" height="26.5"/>
         <image name="gray-wide multiple" width="437" height="345"/>
         <image name="icons8-chevron_down-1" width="18" height="12"/>
+        <image name="pencil.circle.fill" catalog="system" width="64" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fbd-W9-Uvt"/>
+        <segue reference="Wdv-Mu-wpu"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

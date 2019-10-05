@@ -43,7 +43,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         self.splitViewController?.preferredDisplayMode = UISplitViewController.DisplayMode.primaryOverlay
-        
+
         setupItemsTable()
         setupInteractions()
         setupCallbacks()
