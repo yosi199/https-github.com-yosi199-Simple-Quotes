@@ -21,6 +21,7 @@ class ReviewSuggester {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay, execute: {
                 SKStoreReviewController.requestReview()
                 UserDefaults.standard.set(currentVersion, forKey: lastVersionPromptedForReviewKey)
+                AnalyticsManager.shared.askingForReview()
             })
         }
     }

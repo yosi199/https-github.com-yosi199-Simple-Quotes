@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Firebase
 
 class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FileHandler, UITextViewDelegate, UITextFieldDelegate {
     
@@ -198,6 +199,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.header.logo.contentMode = .scaleAspectFit
             self.header.logo.image = pickedImage
+            AnalyticsManager.shared.imageSelectedFromQuoteVC(value: UIImagePickerController.InfoKey.imageURL.rawValue)
         }
         dismiss(animated: true, completion: nil)
     }
@@ -218,6 +220,9 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func screenshow(_ sender: Any) {
+        
+        AnalyticsManager.shared.showPDFScreen(quote: vm.quote)
+
         self.progress.show(parent: self)
         
         let imagePath = "\(self.vm.quote.invoiceId)Image"

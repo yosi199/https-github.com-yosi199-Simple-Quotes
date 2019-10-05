@@ -123,6 +123,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.logo.contentMode = .scaleAspectFit
             self.logo.image = pickedImage
+            AnalyticsManager.shared.imageSelectedFromSettingsVC(value: UIImagePickerController.InfoKey.imageURL.rawValue)
         }
         picker.dismiss(animated: true, completion: nil)
     }

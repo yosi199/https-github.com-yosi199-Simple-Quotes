@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D42E1E985A66D166509957CBF12E0A22"
+               BlueprintIdentifier = "B844CBDD7385D64C7FFFBA477708F240"
                BlueprintName = "TPPDF"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "TPPDF.framework">

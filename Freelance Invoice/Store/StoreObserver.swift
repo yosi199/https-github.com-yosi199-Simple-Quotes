@@ -90,6 +90,8 @@ class StoreObserver: NSObject {
         // Finish the successful transaction.
         SKPaymentQueue.default().finishTransaction(transaction)
         purchaseStatusCallbacks?()
+        
+        AnalyticsManager.shared.buyItemSuccess(value: transaction.payment.productIdentifier)
     }
     
     /// Handles failed purchase transactions.
@@ -109,6 +111,7 @@ class StoreObserver: NSObject {
         }
         // Finish the failed transaction.
         SKPaymentQueue.default().finishTransaction(transaction)
+        AnalyticsManager.shared.buyItemFailure(value: message)
     }
     
     /// Handles restored purchase transactions.

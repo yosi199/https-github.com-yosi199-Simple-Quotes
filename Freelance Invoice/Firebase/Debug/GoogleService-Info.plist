@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>698913474384-gule61b79p8aa8ef1fb1dicq1m0rn76m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.698913474384-gule61b79p8aa8ef1fb1dicq1m0rn76m</string>
+	<key>API_KEY</key>
+	<string>AIzaSyASsvrkvzo2tVuCJHEXyw1LOXtjRR7EKDk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>698913474384</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.loop.to.infinity.freelancer.invoice</string>
+	<key>PROJECT_ID</key>
+	<string>simplequote-dev</string>
+	<key>STORAGE_BUCKET</key>
+	<string>simplequote-dev.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:698913474384:ios:f9f9415e68d2ab3f1f0e55</string>
+	<key>DATABASE_URL</key>
+	<string>https://simplequote-dev.firebaseio.com</string>
+</dict>
+</plist>
