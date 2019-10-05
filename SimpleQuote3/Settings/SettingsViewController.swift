@@ -290,6 +290,10 @@ extension SettingsViewController : DismissalDelegate {
     func finishedShowing(viewController: UIViewController) {
         viewController.dismiss(animated: true, completion: nil)
         self.loadAvailableQuotes()
+        self.availableQuotes.alpha = 0
+        UIView.animate(withDuration: 1.0, delay: 0.5, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.0, options: .curveLinear, animations: { () -> Void in
+            self.availableQuotes.alpha = 1
+        }, completion: nil)
     }
 }
 
