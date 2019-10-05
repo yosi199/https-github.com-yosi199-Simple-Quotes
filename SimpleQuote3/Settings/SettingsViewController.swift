@@ -275,12 +275,14 @@ extension SettingsViewController : StoreManagerDelegate {
     
     func onAvailableProducts(products: [SKProduct]) {
         self.products = products
-        performSegue(withIdentifier: "buyVC", sender: self)
+        DispatchQueue.main.sync {
+            performSegue(withIdentifier: "buyVC", sender: self)
+        }
     }
 }
 
 extension SettingsViewController : DismissalDelegate {
-
+    
     func finishedShowing(viewController: UIViewController) {
         viewController.dismiss(animated: true, completion: nil)
     }

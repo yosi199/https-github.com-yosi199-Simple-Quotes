@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SimpleQuote3.xcodeproj">
+      location = "group:/Users/unknown1/Documents/ios/https-github.com-yosi199-Simple-Quotes/Freelance Invoice.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
