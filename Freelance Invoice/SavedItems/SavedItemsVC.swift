@@ -10,12 +10,14 @@ import UIKit
 import RealmSwift
 
 class SavedItemsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var itemsTableView: UITableView!
     @IBOutlet weak var search: UISearchBar!
     
     private let vm = SavedItemsViewModel()
     private var items = [LineItemModel]()
+    
+    var callback: ((_ item: LineItemModel) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +44,23 @@ class SavedItemsVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         let item = items[indexPath.row]
         cell.loadCell(item: item)
         cell.hideBounds()
-        cell.interactionState(enabled: tableView.isEditing)
+        cell.isUserInteractionEnabled = true
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ItemCellTableViewCell
+        cell.container.backgroundColor = .gray
+        self.callback?(items[indexPath.row])
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ItemCellTableViewCell
+        if #available(iOS 13.0, *) {
+            cell.container.backgroundColor = .systemBackground
+        } else {
+            cell.container.backgroundColor = .white
+        }
+    }
 }

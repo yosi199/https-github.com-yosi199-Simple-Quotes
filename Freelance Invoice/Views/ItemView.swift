@@ -74,6 +74,11 @@ class ItemView: UIView {
         updatePreviews()
     }
     
+    func loadItem(item: LineItemModel) {
+        self.item = item
+        commonInit()
+    }
+    
     func isEmpty() -> Bool {
         let emptyItem = LineItemModel()
         return item.itemDescription == emptyItem.itemDescription &&

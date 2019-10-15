@@ -139,6 +139,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bottomBounds" destination="6pF-gM-T1h" id="AbV-Zp-ZzS"/>
+                <outlet property="container" destination="hGt-vU-Ebi" id="c0C-qs-VZo"/>
                 <outlet property="descriptionField" destination="FXk-st-QHL" id="5M4-hW-577"/>
                 <outlet property="itemValue" destination="Ta0-wr-nla" id="weh-at-7dn"/>
                 <outlet property="leading" destination="rH8-SR-dN5" id="qF5-09-Atr"/>

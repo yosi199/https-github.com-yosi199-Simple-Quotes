@@ -87,6 +87,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         itemsTableView.deleteCallback = { item, index in
             self.confirmDelete(item: item, indexPath: index)
         }
+        
     }
     
     private func setupItemsTable(){
@@ -203,6 +204,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         keyboardHelper.unregister()
         let popover = self.storyboard?.instantiateViewController(withIdentifier: "savedItemsVC") as! SavedItemsVC
         
+        popover.callback = { item in self.inputItemView.loadItem(item: item) }
         popover.modalPresentationStyle = UIModalPresentationStyle.popover
         popover.popoverPresentationController?.permittedArrowDirections = .right
         popover.popoverPresentationController?.sourceView = self.view

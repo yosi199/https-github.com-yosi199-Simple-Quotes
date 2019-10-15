@@ -20,6 +20,7 @@ class ItemCellTableViewCell: UITableViewCell {
     @IBOutlet weak var leading: NSLayoutConstraint!
     @IBOutlet weak var trailing: NSLayoutConstraint!
     
+    @IBOutlet weak var container: UIView!
     @IBOutlet weak var rightBounds: UIView!
     @IBOutlet weak var leftBounds: UIView!
     @IBOutlet weak var topBounds: UIView!
