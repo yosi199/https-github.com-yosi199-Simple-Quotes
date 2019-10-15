@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HighlightedButton: UIButton {
+class HighlightedButton: AnimatedButton {
     
     /*
     // Only override draw() if you perform custom drawing.

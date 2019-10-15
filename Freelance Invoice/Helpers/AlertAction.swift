@@ -9,25 +9,29 @@
 import Foundation
 import UIKit
 
-class AlertDeletion {
+class AlertAction {
     private let title: String
     private let message: String
     private let confirmHandler: ((_ alert: UIAlertAction) -> Void)?
     private let cancellationHandler: ((_ alert: UIAlertAction) -> Void)?
     private let frame: CGRect
+    private var positiveButtonText: String
+    private var negativeButtonText: String
     
-    private init(frame: CGRect, title:String, message: String, confirm:  ((_ alert: UIAlertAction) -> Void)?, cancellation:  ((_ alert: UIAlertAction) -> Void)?) {
+    private init(frame: CGRect, title:String, message: String, positiveButtonText:String, negativeButtonText:String, confirm:  ((_ alert: UIAlertAction) -> Void)?, cancellation:  ((_ alert: UIAlertAction) -> Void)?) {
         self.frame = frame
         self.title = title
         self.message = message
+        self.positiveButtonText = positiveButtonText
+        self.negativeButtonText = negativeButtonText
         self.confirmHandler = confirm
         self.cancellationHandler = cancellation
     }
     
     func prepare() -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-        let actionConfirm = UIAlertAction(title: "Delete", style: .destructive, handler: confirmHandler)
-        let actionCancel = UIAlertAction(title: "Cancel", style: .destructive, handler: cancellationHandler)
+        let actionConfirm = UIAlertAction(title: positiveButtonText, style: .destructive, handler: confirmHandler)
+        let actionCancel = UIAlertAction(title: negativeButtonText, style: .default, handler: cancellationHandler)
         alert.addAction(actionConfirm)
         alert.addAction(actionCancel)
         return alert
@@ -36,6 +40,8 @@ class AlertDeletion {
     class Builder {
         private var title: String = "Delete Item"
         private var message: String = ""
+        private var positiveButtonText: String = "Delete"
+        private var negativeButtonText: String = "Cancel"
         private var confirmHandler: ((_ alert: UIAlertAction) -> Void)? = nil
         private var cancellationHandler: ((_ alert: UIAlertAction) -> Void)? = nil
         private let frame: CGRect
@@ -64,8 +70,24 @@ class AlertDeletion {
             return self
         }
         
-        func build() -> AlertDeletion {
-            return AlertDeletion(frame: frame, title: title, message: message, confirm: confirmHandler, cancellation: cancellationHandler)
+        func setPositiveButtonText(text:String) -> Builder {
+            self.positiveButtonText = text
+            return self
+        }
+        
+        func setNegativeButtonText(text:String) -> Builder {
+            self.negativeButtonText = text
+            return self
+        }
+        
+        func build() -> AlertAction {
+            return AlertAction(frame: frame,
+                               title: title,
+                               message: message,
+                               positiveButtonText: positiveButtonText,
+                               negativeButtonText: negativeButtonText,
+                               confirm: confirmHandler,
+                               cancellation: cancellationHandler)
         }
     }
 }

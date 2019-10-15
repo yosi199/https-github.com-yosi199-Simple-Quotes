@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C240B5F234904A2000067C6 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C240B5E234904A2000067C6 /* AnalyticsManager.swift */; };
-		4C240B622355D554000067C6 /* AnimatedBUtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C240B612355D554000067C6 /* AnimatedBUtton.swift */; };
+		4C240B622355D554000067C6 /* AnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C240B612355D554000067C6 /* AnimatedButton.swift */; };
 		4C68875A22DB8F9D00B16462 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68875922DB8F9D00B16462 /* SettingsViewController.swift */; };
 		4C68875C22E343E400B16462 /* LineItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68875B22E343E400B16462 /* LineItemsList.swift */; };
 		4C7D156322BE89BD008D4CF8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */; };
@@ -41,7 +41,7 @@
 		D340142822F6BF5300328CBE /* CurrencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340142722F6BF5300328CBE /* CurrencyHelper.swift */; };
 		D35429B022F86288003ED36C /* DiscountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35429AF22F86288003ED36C /* DiscountVC.swift */; };
 		D35429B222F86B60003ED36C /* DiscountVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35429B122F86B60003ED36C /* DiscountVM.swift */; };
-		D393E8CB22E707D300E8F034 /* AlertDeletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393E8CA22E707D300E8F034 /* AlertDeletion.swift */; };
+		D393E8CB22E707D300E8F034 /* AlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393E8CA22E707D300E8F034 /* AlertAction.swift */; };
 		D393E8DC22E750A400E8F034 /* MenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393E8DB22E750A400E8F034 /* MenuList.swift */; };
 		D393E8DE22E7521000E8F034 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D393E8DD22E7521000E8F034 /* MenuViewModel.swift */; };
 		D3A0907F2301933B004C6E88 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0907E2301933B004C6E88 /* ProgressView.swift */; };
@@ -77,7 +77,7 @@
 
 /* Begin PBXFileReference section */
 		4C240B5E234904A2000067C6 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
-		4C240B612355D554000067C6 /* AnimatedBUtton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedBUtton.swift; sourceTree = "<group>"; };
+		4C240B612355D554000067C6 /* AnimatedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButton.swift; sourceTree = "<group>"; };
 		4C68875922DB8F9D00B16462 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4C68875B22E343E400B16462 /* LineItemsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineItemsList.swift; sourceTree = "<group>"; };
 		4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		D340142922F6C56D00328CBE /* FlagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FlagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35429AF22F86288003ED36C /* DiscountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountVC.swift; sourceTree = "<group>"; };
 		D35429B122F86B60003ED36C /* DiscountVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountVM.swift; sourceTree = "<group>"; };
-		D393E8CA22E707D300E8F034 /* AlertDeletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDeletion.swift; sourceTree = "<group>"; };
+		D393E8CA22E707D300E8F034 /* AlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertAction.swift; sourceTree = "<group>"; };
 		D393E8DB22E750A400E8F034 /* MenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuList.swift; sourceTree = "<group>"; };
 		D393E8DD22E7521000E8F034 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		D3A0907E2301933B004C6E88 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -179,7 +179,8 @@
 		4C240B602355D531000067C6 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				4C240B612355D554000067C6 /* AnimatedBUtton.swift */,
+				4CC94E60230288A900E786CC /* HighlightedButton.swift */,
+				4C240B612355D554000067C6 /* AnimatedButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -340,7 +341,6 @@
 				D340142122F6A78600328CBE /* CurrencyCell.swift */,
 				D340142222F6A78600328CBE /* CurrencyCell.xib */,
 				D3A0907E2301933B004C6E88 /* ProgressView.swift */,
-				4CC94E60230288A900E786CC /* HighlightedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -389,7 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				D3EAA40622E47F50000DD4CE /* DoubleInputValidator.swift */,
-				D393E8CA22E707D300E8F034 /* AlertDeletion.swift */,
+				D393E8CA22E707D300E8F034 /* AlertAction.swift */,
 				D340142722F6BF5300328CBE /* CurrencyHelper.swift */,
 				4CC94E7B230A83A800E786CC /* BuyInvoicesHelper.swift */,
 				4C834A3F2348F11800948ADD /* ReviewSuggester.swift */,
@@ -561,7 +561,7 @@
 				4CDEFCB622D5DCE400177660 /* DateExtensions.swift in Sources */,
 				D3B3212922BA254500AB362A /* StringExtension.swift in Sources */,
 				D3B320F822BA217E00AB362A /* AppDelegate.swift in Sources */,
-				D393E8CB22E707D300E8F034 /* AlertDeletion.swift in Sources */,
+				D393E8CB22E707D300E8F034 /* AlertAction.swift in Sources */,
 				4CC94E5922FC15FE00E786CC /* PDFController.swift in Sources */,
 				4C68875A22DB8F9D00B16462 /* SettingsViewController.swift in Sources */,
 				4C834A422348F16500948ADD /* UserDefaultKeys.swift in Sources */,
@@ -598,7 +598,7 @@
 				4CC94E61230288A900E786CC /* HighlightedButton.swift in Sources */,
 				D3B3212D22BA254500AB362A /* Quote.swift in Sources */,
 				4CC94E662305267C00E786CC /* StoreObserver.swift in Sources */,
-				4C240B622355D554000067C6 /* AnimatedBUtton.swift in Sources */,
+				4C240B622355D554000067C6 /* AnimatedButton.swift in Sources */,
 				D3B3211522BA226700AB362A /* Footer.swift in Sources */,
 				D340142622F6B74300328CBE /* Countries.swift in Sources */,
 				D3209AB222DFB38E00AA9C23 /* SettingsViewModel.swift in Sources */,

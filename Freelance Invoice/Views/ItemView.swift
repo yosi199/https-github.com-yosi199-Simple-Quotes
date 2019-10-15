@@ -55,7 +55,7 @@ class ItemView: UIView {
         updatePreviews()
         
         addTextListeners()
-  }
+    }
     
     func getItem() -> LineItemModel {
         return item
@@ -65,6 +65,16 @@ class ItemView: UIView {
         item = LineItemModel()
         updateViews()
         updatePreviews()
+    }
+    
+    func isEmpty() -> Bool {
+        let emptyItem = LineItemModel()
+        return item.itemDescription == emptyItem.itemDescription &&
+            item.qty == emptyItem.qty &&
+            item.tax == emptyItem.tax &&
+            item.title == emptyItem.title &&
+            item.total == emptyItem.total &&
+            item.value == emptyItem.value
     }
     
     private func updatePreviews(){
@@ -151,7 +161,7 @@ class ItemView: UIView {
         let sum = Double(self.item.qty) * (self.item.value)
         let tax = (sum * (UserDefaults.standard.double(forKey: SETTINGS_DEFAULT_TAX) )) / 100
         self.item.tax = tax
-//        self.item.total = sum + tax
+        //        self.item.total = sum + tax
         self.item.total = sum
         debugPrint(self.item.total)
     }

@@ -222,7 +222,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBAction func screenshow(_ sender: Any) {
         
         AnalyticsManager.shared.showPDFScreen(quote: vm.quote)
-
+        
         self.progress.show(parent: self)
         
         let imagePath = "\(self.vm.quote.invoiceId)Image"
@@ -257,7 +257,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     func confirmDelete(item: LineItemModel, indexPath: IndexPath) {
         let rect = itemsTableView.rect(forSection: indexPath.section)
         let frame = itemsTableView.convert(rect, to: itemsTableView.superview)
-        let alert =  AlertDeletion.Builder(frame: frame)
+        let alert =  AlertAction.Builder(frame: frame)
             .setTitle(title: "Delete Item")
             .setMessage(message: "Are you sure you want to delete \(item.title)?")
             .setConfirmationHandler { (UIAlertAction) in
@@ -281,14 +281,32 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func addButtonAction(_ sender: UIButton) {
-        UIButton.animate(withDuration: 0.1, animations: {sender.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)}, completion: { finish in
-            UIButton.animate(withDuration: 0.1, animations: {
-                sender.transform = CGAffineTransform.identity
-            })
-        })
+        // Check if the user is not adding an empty line
+        if(self.inputItemView.isEmpty()){
+            let frame = self.inputItemView.frame
+            let alert = AlertAction.Builder(frame: frame)
+                .setTitle(title: "Empty Item")
+                .setMessage(message: "Are you sure you want to add empty item to the list?")
+                .setPositiveButtonText(text: "Yes, Add empty")
+                .setConfirmationHandler(handler: { (UIAlertAction) in
+                    self.addLineItem(item: self.inputItemView.getItem())
+                    self.itemsTableView.reloadData()
+                })
+                .build()
+                .prepare()
+            
+            alert.popoverPresentationController?.sourceView = self.view
+            alert.popoverPresentationController?.permittedArrowDirections = .down
+            alert.popoverPresentationController?.sourceRect = CGRect(x: self.addButton.frame.midX , y: self.addButton.frame.maxY , width: 1.0, height: 1.0)
+            
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
         addLineItem(item: inputItemView.getItem())
         self.itemsTableView.reloadData()
     }
+    
     
     private func addLineItem(item: LineItemModel){
         self.itemsTableView.items.append(item)
