@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H1p-Uh-vWS">
     <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYE-GF-d0A">
-                                <rect key="frame" x="100" y="565.5" width="634" height="63.5"/>
+                                <rect key="frame" x="100" y="563.5" width="634" height="67.5"/>
                                 <string key="text">There are no quotes available yet. 
 Create a new one by pressing the '+' button.</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -147,7 +147,7 @@ Create a new one by pressing the '+' button.</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="addButtonAction:" destination="JEX-9P-axG" eventType="touchUpInside" id="B6C-vb-Elb"/>
+                                                    <action selector="addButtonAction:" destination="JEX-9P-axG" eventType="touchUpInside" id="uki-z8-3rR"/>
                                                 </connections>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="634" placeholderIntrinsicHeight="80" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YqS-dN-D1y" customClass="LineItemsList" customModule="Freelance_Invoice" customModuleProvider="target">
@@ -267,13 +267,13 @@ Create a new one by pressing the '+' button.</string>
                                                         <rect key="frame" x="0.0" y="0.0" width="317" height="175"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhd-wz-xbM">
-                                                                <rect key="frame" x="0.0" y="8" width="309" height="31.5"/>
+                                                                <rect key="frame" x="0.0" y="8" width="309" height="33.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" text="Client agreed notes" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kof-N0-eEQ">
-                                                                <rect key="frame" x="-5" y="47.5" width="314" height="119.5"/>
+                                                                <rect key="frame" x="-5" y="49.5" width="314" height="117.5"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -309,7 +309,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QRO-ni-Vbz" userLabel="discountEdit">
-                                                <rect key="frame" x="749" y="581.5" width="35" height="34.5"/>
+                                                <rect key="frame" x="749" y="581.5" width="35" height="34"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="2qE-LO-QwZ"/>
@@ -318,7 +318,7 @@ Create a new one by pressing the '+' button.</string>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6hK-Ud-eBr">
-                                                <rect key="frame" x="749" y="328.5" width="35" height="33"/>
+                                                <rect key="frame" x="749" y="328.5" width="35" height="32.5"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="7z8-UQ-yfU"/>
@@ -1308,10 +1308,10 @@ Create a new one by pressing the '+' button.</string>
     <resources>
         <image name="Fill 4" width="28" height="30"/>
         <image name="edit" width="24.5" height="26.5"/>
-        <image name="folder.fill" catalog="system" width="64" height="48"/>
+        <image name="folder.fill" catalog="system" width="64" height="46"/>
         <image name="gray-wide multiple" width="437" height="345"/>
         <image name="icons8-chevron_down-1" width="18" height="12"/>
-        <image name="pencil.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="pencil.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fbd-W9-Uvt"/>

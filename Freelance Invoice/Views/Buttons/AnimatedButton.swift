@@ -25,14 +25,14 @@ class AnimatedButton: UIButton {
         addTarget(self, action: #selector(up), for: .touchUpInside)
     }
     
-    @objc fileprivate func down(){
-        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+    @objc func down(){
+        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
             self.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
         }, completion: nil)
     }
     
-    @objc fileprivate func up(){
-        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+    @objc func up(){
+        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
             self.transform = .identity
         }, completion: nil)
     }

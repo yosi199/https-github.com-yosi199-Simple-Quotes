@@ -13,7 +13,7 @@ class MenuViewModel {
     private let notificationCenter = NotificationCenter.default
     private let userDefaults = UserDefaults.standard
     private let defaults = DataRepository.Defaults.shared
-    private let realm = try! Realm()
+    private lazy var realm: Realm = { try! Realm() }()
     private lazy var items:  Results<Quote> = {
         
         return realm.objects(Quote.self).sorted(byKeyPath: "invoiceId", ascending: false)

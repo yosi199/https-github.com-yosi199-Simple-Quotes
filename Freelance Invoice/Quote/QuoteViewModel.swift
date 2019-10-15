@@ -14,7 +14,7 @@ class QuoteViewModel: FileHandler {
     
     private let notificationCenter = NotificationCenter.default
     private let userDefaults = UserDefaults.standard
-    private let realm = try! Realm()
+    private lazy var realm: Realm = { try! Realm() }()
     
     var quote: Quote {
         didSet {

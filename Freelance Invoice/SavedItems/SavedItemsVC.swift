@@ -51,7 +51,8 @@ class SavedItemsVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! ItemCellTableViewCell
         cell.container.backgroundColor = .gray
-        self.callback?(items[indexPath.row])
+        let item = items[indexPath.row]
+        self.callback?(LineItemModel(value: item))
         self.dismiss(animated: true, completion: nil)
     }
     
