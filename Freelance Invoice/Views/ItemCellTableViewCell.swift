@@ -20,6 +20,23 @@ class ItemCellTableViewCell: UITableViewCell {
     @IBOutlet weak var leading: NSLayoutConstraint!
     @IBOutlet weak var trailing: NSLayoutConstraint!
     
+    @IBOutlet weak var rightBounds: UIView!
+    @IBOutlet weak var leftBounds: UIView!
+    @IBOutlet weak var topBounds: UIView!
+    @IBOutlet weak var middleBounds: UIView!
+    @IBOutlet weak var bottomBounds: UIView!
+    
+    func hideBounds(){
+        rightBounds.isHidden = true
+        leftBounds.isHidden = true
+        topBounds.isHidden = true
+        bottomBounds.isHidden = true
+        middleBounds.isHidden = true
+        
+        title.bottomAnchor.constraint(equalTo: middleBounds.topAnchor, constant: 0).isActive = true
+        
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

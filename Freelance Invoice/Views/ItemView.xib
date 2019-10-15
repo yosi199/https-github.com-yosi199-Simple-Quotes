@@ -10,12 +10,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemView" customModule="Freelance_Invoice" customModuleProvider="target">
             <connections>
+                <outlet property="bottomBounds" destination="cSU-MP-qvv" id="Ndo-hd-Hwa"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Kdv-1d-W6r"/>
                 <outlet property="descriptionField" destination="Ca9-d1-3sG" id="48u-V4-VI7"/>
                 <outlet property="itemValue" destination="DPz-mj-vUR" id="RRD-yL-RKY"/>
+                <outlet property="leftBounds" destination="uPD-RW-lT0" id="FDd-Af-vjw"/>
+                <outlet property="middleBounds" destination="C3d-Dl-9Fo" id="rIF-3E-a6h"/>
                 <outlet property="quantity" destination="tQG-wu-ZDS" id="N8U-t7-Zls"/>
+                <outlet property="rightBounds" destination="LpA-cL-act" id="icn-yv-hbJ"/>
                 <outlet property="taxValue" destination="PUo-Vv-6Yo" id="wqM-Pf-ObF"/>
                 <outlet property="title" destination="cth-4g-UJs" id="WDc-rh-lqH"/>
+                <outlet property="topBounds" destination="e50-GX-uCw" id="eYV-aJ-z52"/>
                 <outlet property="totalValue" destination="h5H-Yu-H97" id="lXo-La-fAp"/>
             </connections>
         </placeholder>

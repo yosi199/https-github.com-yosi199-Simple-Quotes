@@ -9,7 +9,7 @@
 import UIKit
 
 class LineItemsList: ResizeableTableViewTableViewController, UITableViewDelegate , UITableViewDataSource {
-
+    
     var items = [LineItemModel]()
     var deleteCallback: ((_ item: LineItemModel, _ indexPath: IndexPath)-> Void)?
     
@@ -32,13 +32,13 @@ class LineItemsList: ResizeableTableViewTableViewController, UITableViewDelegate
     // Make the background color show through
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
-//        headerView.backgroundColor = UIColor.systemBackground
+        //        headerView.backgroundColor = UIColor.systemBackground
         return headerView
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = UIView()
-//        footerView.backgroundColor = UIColor.systemBackground
+        //        footerView.backgroundColor = UIColor.systemBackground
         return footerView
     }
     
@@ -79,5 +79,23 @@ class LineItemsList: ResizeableTableViewTableViewController, UITableViewDelegate
             let item = items[indexPath.section]
             deleteCallback?(item, indexPath)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+            
+            let deleteTitle = NSLocalizedString("Delete", comment: "Delete action")
+            let deleteAction = UITableViewRowAction(style: .destructive, title: deleteTitle) { (action, indexPath) in
+                let item = self.items[indexPath.section]
+                self.deleteCallback?(item, indexPath)
+            }
+            
+            let favoriteTitle = NSLocalizedString("Favorite", comment: "Favorite action")
+            let favoriteAction = UITableViewRowAction(style: .normal, title: favoriteTitle) { (action, indexPath) in
+                let item = self.items[indexPath.section]
+                DataRepository.shared.saveLineItem(item: item)
+            }
+            
+            favoriteAction.backgroundColor = .gray
+            return [favoriteAction, deleteAction]
     }
 }

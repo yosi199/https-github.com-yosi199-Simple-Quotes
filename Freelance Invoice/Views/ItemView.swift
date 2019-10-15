@@ -9,6 +9,8 @@
 import UIKit
 
 class ItemView: UIView {
+ 
+    
     let NAME = "ItemView"
     
     @IBOutlet var contentView: UIView!
@@ -19,6 +21,11 @@ class ItemView: UIView {
     @IBOutlet weak var totalValue: UITextField!
     @IBOutlet weak var taxValue: UITextField!
     
+    @IBOutlet weak var rightBounds: UIView!
+    @IBOutlet weak var leftBounds: UIView!
+    @IBOutlet weak var topBounds: UIView!
+    @IBOutlet weak var middleBounds: UIView!
+    @IBOutlet weak var bottomBounds: UIView!
     private var activeField: UITextField?
     private let userRepo = UserRepository.shared
     private var item = LineItemModel()

@@ -12,6 +12,7 @@ import RealmSwift
 class DataRepository {
     static let shared = DataRepository()
     static let NEW_QUOTE_SAVED = "newQuoteSaved"
+    static let LINE_ITEM_SAVED = "lineItemSaved"
     
     private let notificationCenter = NotificationCenter.default
     private let realm: Realm
@@ -40,6 +41,18 @@ class DataRepository {
     func remove(quote:Quote){
         debugPrint("Removing quote \(quote.id) from db")
         realm.delete(quote)
+    }
+    
+    func saveLineItem(item: LineItemModel){
+        try! realm.write {
+            realm.add(item, update: .all)
+            NotificationCenter.default.post(name: Notification.Name(DataRepository.LINE_ITEM_SAVED), object: nil)
+            debugPrint("line item \(item.title) saved successfully")
+        }
+    }
+    
+    func getItems() -> Results<LineItemModel> {
+        return realm.objects(LineItemModel.self)
     }
     
     class Defaults: FileHandler {

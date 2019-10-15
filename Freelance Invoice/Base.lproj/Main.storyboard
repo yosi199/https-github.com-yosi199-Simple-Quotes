@@ -301,20 +301,28 @@ Create a new one by pressing the '+' button.</string>
                                                 </constraints>
                                             </stackView>
                                             <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="mpx-P7-Ter" userLabel="taxEdit">
-                                                <rect key="frame" x="749" y="621" width="15" height="15"/>
+                                                <rect key="frame" x="749" y="611" width="35" height="35"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="15" id="Mha-z0-j39"/>
-                                                    <constraint firstAttribute="width" constant="15" id="dj7-oR-Uga"/>
+                                                    <constraint firstAttribute="height" constant="35" id="Mha-z0-j39"/>
+                                                    <constraint firstAttribute="width" constant="35" id="dj7-oR-Uga"/>
                                                     <constraint firstAttribute="width" secondItem="mpx-P7-Ter" secondAttribute="height" multiplier="1:1" id="zCb-po-wxl"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QRO-ni-Vbz" userLabel="discountEdit">
-                                                <rect key="frame" x="741.5" y="584" width="30" height="29.5"/>
+                                                <rect key="frame" x="749" y="581.5" width="35" height="34.5"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="2qE-LO-QwZ"/>
+                                                    <constraint firstAttribute="width" constant="35" id="2qE-LO-QwZ"/>
                                                     <constraint firstAttribute="width" secondItem="QRO-ni-Vbz" secondAttribute="height" multiplier="1:1" id="Kjp-sm-GCM"/>
-                                                    <constraint firstAttribute="height" constant="30" id="Mf5-fg-Plt"/>
+                                                    <constraint firstAttribute="height" constant="35" id="Mf5-fg-Plt"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6hK-Ud-eBr">
+                                                <rect key="frame" x="749" y="328.5" width="35" height="33"/>
+                                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="7z8-UQ-yfU"/>
+                                                    <constraint firstAttribute="width" constant="35" id="THM-VL-bdB"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -328,6 +336,7 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="HVi-89-zBM" firstAttribute="top" secondItem="75T-KB-fid" secondAttribute="bottom" constant="25" id="5I8-5A-Qjf"/>
                                             <constraint firstItem="ZCm-rE-d6L" firstAttribute="top" secondItem="d11-nw-JJu" secondAttribute="top" id="5ld-j1-Xn5"/>
                                             <constraint firstItem="4lT-KC-O9I" firstAttribute="top" secondItem="QXy-fs-4lJ" secondAttribute="bottom" constant="8" id="5o8-lQ-eMS"/>
+                                            <constraint firstItem="6hK-Ud-eBr" firstAttribute="centerY" secondItem="75T-KB-fid" secondAttribute="centerY" id="7DH-xT-MX6"/>
                                             <constraint firstItem="75T-KB-fid" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="KxC-Sv-LRA"/>
                                             <constraint firstItem="KLu-rk-ZzC" firstAttribute="top" secondItem="LAH-SW-lSd" secondAttribute="bottom" constant="52" id="LrY-Um-3af"/>
                                             <constraint firstItem="LAH-SW-lSd" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="MFM-Eq-BgU"/>
@@ -351,6 +360,7 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="4lT-KC-O9I" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="maA-se-4er"/>
                                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="QXy-fs-4lJ" secondAttribute="trailing" constant="50" id="pyZ-g9-MaE"/>
                                             <constraint firstAttribute="trailing" secondItem="YqS-dN-D1y" secondAttribute="trailing" constant="100" id="sFh-v3-dkd"/>
+                                            <constraint firstItem="6hK-Ud-eBr" firstAttribute="leading" secondItem="75T-KB-fid" secondAttribute="trailing" constant="15" id="sTC-H1-rju"/>
                                             <constraint firstItem="HVi-89-zBM" firstAttribute="centerX" secondItem="d11-nw-JJu" secondAttribute="centerX" id="tyT-UU-vHR"/>
                                             <constraint firstItem="QRO-ni-Vbz" firstAttribute="centerX" secondItem="mpx-P7-Ter" secondAttribute="centerX" id="u1K-xF-bWO"/>
                                             <constraint firstItem="L8I-sI-aTM" firstAttribute="leading" secondItem="d11-nw-JJu" secondAttribute="leading" constant="100" id="yUg-C7-X7n"/>
@@ -419,6 +429,7 @@ Create a new one by pressing the '+' button.</string>
                         <outlet property="itemsTableView" destination="YqS-dN-D1y" id="sz0-6Z-Vzp"/>
                         <outlet property="notes" destination="kof-N0-eEQ" id="Dt0-Dn-D8p"/>
                         <outlet property="reviewButton" destination="f0b-29-ugq" id="pIS-nn-hrz"/>
+                        <outlet property="savedItemsIcon" destination="6hK-Ud-eBr" id="9oU-3F-8J1"/>
                         <outlet property="scrollView" destination="fFT-5I-pgN" id="c2y-Ox-6b3"/>
                         <outlet property="subTotalAmount" destination="XMp-ee-e6D" id="Qqb-ua-2qL"/>
                         <outlet property="taxAmount" destination="tWz-2u-QCS" id="kzi-Mz-d1Z"/>
@@ -428,7 +439,7 @@ Create a new one by pressing the '+' button.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="696" y="129"/>
+            <point key="canvasLocation" x="695.68345323741016" y="128.643216080402"/>
         </scene>
         <!--DiscountVC-->
         <scene sceneID="FkM-Ok-8Yc">
@@ -610,6 +621,60 @@ Create a new one by pressing the '+' button.</string>
                 <exit id="BH1-bg-VqF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1378" y="129"/>
+        </scene>
+        <!--Saved ItemsVC-->
+        <scene sceneID="5Ie-u6-fxP">
+            <objects>
+                <viewController storyboardIdentifier="savedItemsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bh3-XW-Fz9" customClass="SavedItemsVC" customModule="Freelance_Invoice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JcP-KD-sgO">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5H-Wz-yKS">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="1174"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="ODm-0n-zCl">
+                                        <rect key="frame" x="0.0" y="0.0" width="834" height="56"/>
+                                        <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lD2-Vy-5hb">
+                                        <rect key="frame" x="0.0" y="56" width="834" height="1118"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="lD2-Vy-5hb" firstAttribute="top" secondItem="ODm-0n-zCl" secondAttribute="bottom" id="5eZ-h7-qGN"/>
+                                    <constraint firstItem="ODm-0n-zCl" firstAttribute="leading" secondItem="k5H-Wz-yKS" secondAttribute="leading" id="87B-QB-At3"/>
+                                    <constraint firstAttribute="bottom" secondItem="lD2-Vy-5hb" secondAttribute="bottom" id="87R-ss-vFk"/>
+                                    <constraint firstItem="lD2-Vy-5hb" firstAttribute="top" secondItem="ODm-0n-zCl" secondAttribute="bottom" id="H1C-fv-2bk"/>
+                                    <constraint firstAttribute="trailing" secondItem="lD2-Vy-5hb" secondAttribute="trailing" id="JYr-5r-oBE"/>
+                                    <constraint firstItem="lD2-Vy-5hb" firstAttribute="top" secondItem="ODm-0n-zCl" secondAttribute="bottom" id="XZ7-mm-Fxi"/>
+                                    <constraint firstAttribute="trailing" secondItem="ODm-0n-zCl" secondAttribute="trailing" id="bcB-BI-oYY"/>
+                                    <constraint firstItem="lD2-Vy-5hb" firstAttribute="leading" secondItem="k5H-Wz-yKS" secondAttribute="leading" id="eZy-gZ-Ncw"/>
+                                    <constraint firstItem="ODm-0n-zCl" firstAttribute="top" secondItem="k5H-Wz-yKS" secondAttribute="top" id="mNB-D2-vgg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="k5H-Wz-yKS" firstAttribute="leading" secondItem="Hc7-AN-VYP" secondAttribute="leading" id="67h-KV-TYS"/>
+                            <constraint firstItem="k5H-Wz-yKS" firstAttribute="trailing" secondItem="Hc7-AN-VYP" secondAttribute="trailing" id="6hJ-4h-0qU"/>
+                            <constraint firstItem="k5H-Wz-yKS" firstAttribute="top" secondItem="Hc7-AN-VYP" secondAttribute="top" id="Olx-t8-nlA"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="k5H-Wz-yKS" secondAttribute="bottom" id="icg-kX-ise"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hc7-AN-VYP"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="600" height="800"/>
+                    <connections>
+                        <outlet property="itemsTableView" destination="lD2-Vy-5hb" id="hC0-W6-3pb"/>
+                        <outlet property="search" destination="ODm-0n-zCl" id="xPU-ZY-VE5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cJI-wX-gST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2034" y="121"/>
         </scene>
         <!--Buy InvoicesVC-->
         <scene sceneID="zQ2-2h-a7E">
@@ -1243,6 +1308,7 @@ Create a new one by pressing the '+' button.</string>
     <resources>
         <image name="Fill 4" width="28" height="30"/>
         <image name="edit" width="24.5" height="26.5"/>
+        <image name="folder.fill" catalog="system" width="64" height="48"/>
         <image name="gray-wide multiple" width="437" height="345"/>
         <image name="icons8-chevron_down-1" width="18" height="12"/>
         <image name="pencil.circle.fill" catalog="system" width="64" height="62"/>

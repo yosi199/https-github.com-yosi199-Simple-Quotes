@@ -34,6 +34,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var discountAmount: UILabel!
     @IBOutlet weak var editDiscountButton: UIImageView!
     @IBOutlet weak var editTaxButton: UIImageView!
+    @IBOutlet weak var savedItemsIcon: UIImageView!
     
     private let progress = ProgressView()
     private let keyboardHelper = KeyboardScrollHelper()
@@ -68,6 +69,9 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         let editDiscountTap = UITapGestureRecognizer(target: self, action: #selector(editDiscount))
         self.editDiscountButton.addGestureRecognizer(editDiscountTap)
+        
+        let savedItemsTap = UITapGestureRecognizer(target: self, action: #selector(showSavedItems))
+        self.savedItemsIcon.addGestureRecognizer(savedItemsTap)
     }
     
     private func setupCallbacks() {
@@ -191,6 +195,20 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         popover.popoverPresentationController?.sourceRect = self.discountAmount.frame
         popover.popoverPresentationController?.sourceView = self.discountAmount
         popover.popoverPresentationController?.backgroundColor = #colorLiteral(red: 0.1215686275, green: 0.1294117647, blue: 0.1411764706, alpha: 1)
+        
+        self.present(popover, animated: true, completion: nil)
+    }
+    
+    @objc func showSavedItems(){
+        keyboardHelper.unregister()
+        let popover = self.storyboard?.instantiateViewController(withIdentifier: "savedItemsVC") as! SavedItemsVC
+        
+        popover.modalPresentationStyle = UIModalPresentationStyle.popover
+        popover.popoverPresentationController?.permittedArrowDirections = .right
+        popover.popoverPresentationController?.sourceView = self.view
+        popover.popoverPresentationController?.sourceRect = CGRect(x: self.savedItemsIcon.frame.minX,
+                                                                   y: self.savedItemsIcon.frame.midY - self.scrollView.contentOffset.y + 80,
+                                                                   width: 1.0, height: 1.0)
         
         self.present(popover, animated: true, completion: nil)
     }

@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="100" id="KGk-i7-Jjw" customClass="ItemCellTableViewCell" customModule="SimpleQuote3" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="100" id="KGk-i7-Jjw" customClass="ItemCellTableViewCell" customModule="Freelance_Invoice" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="1194" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -68,22 +68,22 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nR1-rF-jTc">
                                 <rect key="frame" x="878" y="50.5" width="300" height="48.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="x1" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Lj3-Ls-g6X" customClass="NumberInputView" customModule="SimpleQuote3" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="x1" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Lj3-Ls-g6X" customClass="NumberInputView" customModule="Freelance_Invoice" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="93.5" height="48.5"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ta0-wr-nla" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Ta0-wr-nla" customClass="DoubleInputView" customModule="Freelance_Invoice" customModuleProvider="target">
                                         <rect key="frame" x="103.5" y="0.0" width="93" height="48.5"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                     </textField>
-                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="7X1-zp-Vc0" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="7X1-zp-Vc0" customClass="DoubleInputView" customModule="Freelance_Invoice" customModuleProvider="target">
                                         <rect key="frame" x="201.5" y="0.0" width="0.0" height="48.5"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                     </textField>
-                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="AeQ-q2-8hy" customClass="DoubleInputView" customModule="SimpleQuote3" customModuleProvider="target">
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="AeQ-q2-8hy" customClass="DoubleInputView" customModule="Freelance_Invoice" customModuleProvider="target">
                                         <rect key="frame" x="206.5" y="0.0" width="93.5" height="48.5"/>
                                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
@@ -138,16 +138,21 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bottomBounds" destination="6pF-gM-T1h" id="AbV-Zp-ZzS"/>
                 <outlet property="descriptionField" destination="FXk-st-QHL" id="5M4-hW-577"/>
                 <outlet property="itemValue" destination="Ta0-wr-nla" id="weh-at-7dn"/>
                 <outlet property="leading" destination="rH8-SR-dN5" id="qF5-09-Atr"/>
+                <outlet property="leftBounds" destination="gFo-4D-GyU" id="OVg-5F-yhf"/>
+                <outlet property="middleBounds" destination="eM5-rE-q74" id="dvK-So-QuC"/>
                 <outlet property="quantity" destination="Lj3-Ls-g6X" id="9pf-J3-S3y"/>
+                <outlet property="rightBounds" destination="cav-7V-yAq" id="dXl-T4-p8K"/>
                 <outlet property="taxValue" destination="7X1-zp-Vc0" id="GFL-ZU-U1h"/>
                 <outlet property="title" destination="Kmp-lt-r0i" id="wcl-AZ-TiA"/>
+                <outlet property="topBounds" destination="gKb-lM-TAG" id="wFu-M7-yrf"/>
                 <outlet property="totalValue" destination="AeQ-q2-8hy" id="L8H-2H-3Jw"/>
                 <outlet property="trailing" destination="IxM-Im-H70" id="55T-z2-GGk"/>
             </connections>
-            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
+            <point key="canvasLocation" x="47.826086956521742" y="34.821428571428569"/>
         </tableViewCell>
     </objects>
 </document>
