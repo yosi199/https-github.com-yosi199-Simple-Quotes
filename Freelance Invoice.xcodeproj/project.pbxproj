@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C240B5F234904A2000067C6 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C240B5E234904A2000067C6 /* AnalyticsManager.swift */; };
+		4C240B622355D554000067C6 /* AnimatedBUtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C240B612355D554000067C6 /* AnimatedBUtton.swift */; };
 		4C68875A22DB8F9D00B16462 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68875922DB8F9D00B16462 /* SettingsViewController.swift */; };
 		4C68875C22E343E400B16462 /* LineItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68875B22E343E400B16462 /* LineItemsList.swift */; };
 		4C7D156322BE89BD008D4CF8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */; };
@@ -76,6 +77,7 @@
 
 /* Begin PBXFileReference section */
 		4C240B5E234904A2000067C6 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		4C240B612355D554000067C6 /* AnimatedBUtton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedBUtton.swift; sourceTree = "<group>"; };
 		4C68875922DB8F9D00B16462 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4C68875B22E343E400B16462 /* LineItemsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineItemsList.swift; sourceTree = "<group>"; };
 		4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 				ECB05639F148722B2844C72D /* Pods_Freelance_Invoice.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C240B602355D531000067C6 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				4C240B612355D554000067C6 /* AnimatedBUtton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		4C834A472348F7CC00948ADD /* Firebase */ = {
@@ -313,6 +323,7 @@
 		D3B3210B22BA226700AB362A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4C240B602355D531000067C6 /* Buttons */,
 				D3B3210C22BA226700AB362A /* ItemView.swift */,
 				D3B3210D22BA226700AB362A /* Footer.swift */,
 				D3B3210E22BA226700AB362A /* ItemView.xib */,
@@ -587,6 +598,7 @@
 				4CC94E61230288A900E786CC /* HighlightedButton.swift in Sources */,
 				D3B3212D22BA254500AB362A /* Quote.swift in Sources */,
 				4CC94E662305267C00E786CC /* StoreObserver.swift in Sources */,
+				4C240B622355D554000067C6 /* AnimatedBUtton.swift in Sources */,
 				D3B3211522BA226700AB362A /* Footer.swift in Sources */,
 				D340142622F6B74300328CBE /* Countries.swift in Sources */,
 				D3209AB222DFB38E00AA9C23 /* SettingsViewModel.swift in Sources */,
