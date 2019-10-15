@@ -39,4 +39,8 @@ class AnalyticsManager {
     func imageSelectedFromSettingsVC(value: String){
          Analytics.logEvent("User_choose_image_from_SettingsVC", parameters: ["name" : value])
      }
+    
+    func addedToSavedItems(value: String){
+        Analytics.logEvent("Added_to_saved_items", parameters: ["name" : value])
+    }
 }

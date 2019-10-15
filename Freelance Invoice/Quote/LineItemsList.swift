@@ -89,10 +89,11 @@ class LineItemsList: ResizeableTableViewTableViewController, UITableViewDelegate
                 self.deleteCallback?(item, indexPath)
             }
             
-            let favoriteTitle = NSLocalizedString("Favorite", comment: "Favorite action")
+            let favoriteTitle = NSLocalizedString("Save Item", comment: "Favorite action")
             let favoriteAction = UITableViewRowAction(style: .normal, title: favoriteTitle) { (action, indexPath) in
                 let item = self.items[indexPath.section]
                 DataRepository.shared.saveLineItem(item: item)
+                AnalyticsManager.shared.addedToSavedItems(value: item.title)
             }
             
             favoriteAction.backgroundColor = .gray

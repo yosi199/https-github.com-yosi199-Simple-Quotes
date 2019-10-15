@@ -165,7 +165,6 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     private func blackReviewButton(){
-        
         if #available(iOS 13.0, *) {
             self.reviewButton.tintColor = UIColor.label
         } else {

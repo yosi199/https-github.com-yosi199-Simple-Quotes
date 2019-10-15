@@ -557,7 +557,7 @@ Create a new one by pressing the '+' button.</string>
             <objects>
                 <viewController title="PDF" id="8tY-lk-M1f" customClass="PDFController" customModule="Freelance_Invoice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AYM-nG-5tr">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="1006.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="1007"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omR-eK-eV6">
@@ -666,7 +666,7 @@ Create a new one by pressing the '+' button.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hc7-AN-VYP"/>
                     </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="600" height="800"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="600" height="400"/>
                     <connections>
                         <outlet property="itemsTableView" destination="lD2-Vy-5hb" id="hC0-W6-3pb"/>
                         <outlet property="search" destination="ODm-0n-zCl" id="xPU-ZY-VE5"/>
@@ -681,7 +681,7 @@ Create a new one by pressing the '+' button.</string>
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="drp-NQ-1I9" customClass="BuyInvoicesVC" customModule="Freelance_Invoice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mji-HL-QJb">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="1006.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="1007"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NL5-dr-ndg">
