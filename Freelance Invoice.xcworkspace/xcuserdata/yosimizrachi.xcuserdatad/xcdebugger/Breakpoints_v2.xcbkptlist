@@ -52,11 +52,11 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D659CB09-67AF-4CD6-BA25-7FEB84D76DA1 - 40b680869375fd39"
+                  uuid = "D659CB09-67AF-4CD6-BA25-7FEB84D76DA1 - d4b424204f3304e3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Freelance_Invoice.AnimatedButton.(down in _114CCE7509D9E836BA5545CAF9C39061)() -&gt; ()"
+                  symbolName = "Freelance_Invoice.AnimatedButton.down() -&gt; ()"
                   moduleName = "Freelance Invoice"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yosimizrachi/iOS-Projects/https-github.com-yosi199-Simple-Quotes/Freelance%20Invoice/Views/Buttons/AnimatedButton.swift"
@@ -64,14 +64,14 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "29"
                   endingLineNumber = "29"
-                  offsetFromSymbolStart = "68">
+                  offsetFromSymbolStart = "22">
                </Location>
                <Location
-                  uuid = "D659CB09-67AF-4CD6-BA25-7FEB84D76DA1 - 934ee94244996f93"
+                  uuid = "D659CB09-67AF-4CD6-BA25-7FEB84D76DA1 - a4a9556665cb59b7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Freelance_Invoice.AnimatedButton.(down in _114CCE7509D9E836BA5545CAF9C39061)() -&gt; ()"
+                  symbolName = "closure #1 () -&gt; () in Freelance_Invoice.AnimatedButton.down() -&gt; ()"
                   moduleName = "Freelance Invoice"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yosimizrachi/iOS-Projects/https-github.com-yosi199-Simple-Quotes/Freelance%20Invoice/Views/Buttons/AnimatedButton.swift"
@@ -79,7 +79,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "30"
                   endingLineNumber = "30"
-                  offsetFromSymbolStart = "48">
+                  offsetFromSymbolStart = "23">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -100,11 +100,11 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "40E26AA3-0D89-4D3B-98D1-F39A23AB6D41 - ece0fe29ac5c8812"
+                  uuid = "40E26AA3-0D89-4D3B-98D1-F39A23AB6D41 - a374ae82abc96834"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Freelance_Invoice.AnimatedButton.(up in _114CCE7509D9E836BA5545CAF9C39061)() -&gt; ()"
+                  symbolName = "Freelance_Invoice.AnimatedButton.up() -&gt; ()"
                   moduleName = "Freelance Invoice"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yosimizrachi/iOS-Projects/https-github.com-yosi199-Simple-Quotes/Freelance%20Invoice/Views/Buttons/AnimatedButton.swift"
@@ -112,14 +112,14 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "35"
                   endingLineNumber = "35"
-                  offsetFromSymbolStart = "68">
+                  offsetFromSymbolStart = "22">
                </Location>
                <Location
-                  uuid = "40E26AA3-0D89-4D3B-98D1-F39A23AB6D41 - 49a829ef7d801fb6"
+                  uuid = "40E26AA3-0D89-4D3B-98D1-F39A23AB6D41 - 49d483454bb37654"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Freelance_Invoice.AnimatedButton.(up in _114CCE7509D9E836BA5545CAF9C39061)() -&gt; ()"
+                  symbolName = "closure #1 () -&gt; () in Freelance_Invoice.AnimatedButton.up() -&gt; ()"
                   moduleName = "Freelance Invoice"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yosimizrachi/iOS-Projects/https-github.com-yosi199-Simple-Quotes/Freelance%20Invoice/Views/Buttons/AnimatedButton.swift"
@@ -127,9 +127,73 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "36"
                   endingLineNumber = "36"
-                  offsetFromSymbolStart = "48">
+                  offsetFromSymbolStart = "23">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E902ADDC-74D0-4B1B-98D1-AD81076941C6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Freelance Invoice/SavedItems/SavedItemsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "updateSearchResults(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23223B61-1FF1-45C8-ABBA-CE88E79B41F0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Freelance Invoice/SavedItems/SavedItemsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "updateSearchResults(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E5EB0B15-DB62-475F-81B1-E451388823E5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Freelance Invoice/SavedItems/SavedItemsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CD51367-EDEB-4190-96E1-6E78DF843F0D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Freelance Invoice/SavedItems/SavedItemsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

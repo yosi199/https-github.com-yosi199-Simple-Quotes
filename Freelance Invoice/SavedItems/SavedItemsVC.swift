@@ -9,20 +9,33 @@
 import UIKit
 import RealmSwift
 
-class SavedItemsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SavedItemsVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
     @IBOutlet weak var itemsTableView: UITableView!
-    @IBOutlet weak var search: UISearchBar!
     
     private let vm = SavedItemsViewModel()
     private var items = [LineItemModel]()
+    private var filteredItems = [LineItemModel]()
+    private var resultSearchController = UISearchController()
     
     var callback: ((_ item: LineItemModel) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resultSearchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.obscuresBackgroundDuringPresentation = false
+            controller.searchBar.delegate = self
+            itemsTableView.tableHeaderView = controller.searchBar            
+            return controller
+        })()
+        
         items = vm.getItems()
+        filteredItems = items
         setupItemsTable()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -30,18 +43,17 @@ class SavedItemsVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         itemsTableView.register(UINib(nibName: "ItemCellTableViewCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
         itemsTableView.rowHeight = UITableView.automaticDimension
         itemsTableView.estimatedRowHeight = UITableView.automaticDimension
-        itemsTableView.isScrollEnabled = false
         itemsTableView.delegate = self
         itemsTableView.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return filteredItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCellTableViewCell
-        let item = items[indexPath.row]
+        let item = filteredItems[indexPath.row]
         cell.loadCell(item: item)
         cell.hideBounds()
         cell.isUserInteractionEnabled = true
@@ -50,9 +62,21 @@ class SavedItemsVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! ItemCellTableViewCell
-        cell.container.backgroundColor = .gray
-        let item = items[indexPath.row]
+        if #available(iOS 13.0, *) {
+            cell.container.backgroundColor = .secondarySystemBackground
+        } else {
+            cell.container.backgroundColor = .lightGray
+        }
+        
+        let item = filteredItems[indexPath.row]
         self.callback?(LineItemModel(value: item))
+        
+        // If the user is searching - we need to dismiss the search first
+        // or else this controller won't be dismissed
+        if(resultSearchController.isActive){
+            resultSearchController.dismiss(animated: false, completion: nil)
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -62,6 +86,26 @@ class SavedItemsVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             cell.container.backgroundColor = .systemBackground
         } else {
             cell.container.backgroundColor = .white
+        }
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if(searchController.isActive){
+            filteredItems.removeAll()
+            
+            let text = searchController.searchBar.text!
+            if(text.isNotEmpty()){
+                for item in items {
+                    if(item.title.lowercased().contains(text.lowercased())
+                        || item.itemDescription.lowercased().contains(text.lowercased())){
+                        filteredItems.append(item)
+                    }
+                }
+            } else {
+                filteredItems = items
+            }
+            
+            self.itemsTableView.reloadData()
         }
     }
 }

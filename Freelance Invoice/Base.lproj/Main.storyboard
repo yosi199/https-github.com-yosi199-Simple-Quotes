@@ -557,7 +557,7 @@ Create a new one by pressing the '+' button.</string>
             <objects>
                 <viewController title="PDF" id="8tY-lk-M1f" customClass="PDFController" customModule="Freelance_Invoice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AYM-nG-5tr">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="1007"/>
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="1006.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omR-eK-eV6">
@@ -633,27 +633,67 @@ Create a new one by pressing the '+' button.</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5H-Wz-yKS">
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="1174"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="ODm-0n-zCl">
-                                        <rect key="frame" x="0.0" y="0.0" width="834" height="56"/>
-                                        <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
+                                    <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9CQ-9i-juK" userLabel="header section">
+                                        <rect key="frame" x="0.0" y="0.0" width="834" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWa-UM-kgC">
+                                                <rect key="frame" x="15" y="10" width="489" height="20"/>
+                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dh0-OU-3VE">
+                                                <rect key="frame" x="519" y="0.0" width="300" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzN-4m-sMK">
+                                                        <rect key="frame" x="0.0" y="10" width="93.5" height="20"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vG-v8-fKB">
+                                                        <rect key="frame" x="103.5" y="10" width="93" height="20"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XS-Q3-VCc">
+                                                        <rect key="frame" x="206.5" y="10" width="93.5" height="20"/>
+                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="u8B-Qk-fHT"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Dh0-OU-3VE" secondAttribute="trailing" constant="15" id="6O5-CP-kTi"/>
+                                            <constraint firstItem="Dh0-OU-3VE" firstAttribute="top" secondItem="9CQ-9i-juK" secondAttribute="top" id="AEy-ZG-GP8"/>
+                                            <constraint firstAttribute="bottom" secondItem="MWa-UM-kgC" secondAttribute="bottom" constant="10" id="Do9-lA-NT4"/>
+                                            <constraint firstItem="MWa-UM-kgC" firstAttribute="top" secondItem="9CQ-9i-juK" secondAttribute="top" constant="10" id="REj-9J-ppa"/>
+                                            <constraint firstAttribute="bottom" secondItem="Dh0-OU-3VE" secondAttribute="bottom" id="WB3-KA-sEC"/>
+                                            <constraint firstItem="Dh0-OU-3VE" firstAttribute="leading" secondItem="MWa-UM-kgC" secondAttribute="trailing" constant="15" id="YzZ-cB-gVq"/>
+                                            <constraint firstItem="MWa-UM-kgC" firstAttribute="leading" secondItem="9CQ-9i-juK" secondAttribute="leading" constant="15" id="tNq-cw-tr5"/>
+                                        </constraints>
+                                    </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lD2-Vy-5hb">
-                                        <rect key="frame" x="0.0" y="56" width="834" height="1118"/>
+                                        <rect key="frame" x="0.0" y="40" width="834" height="1134"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <sections/>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="lD2-Vy-5hb" firstAttribute="top" secondItem="ODm-0n-zCl" secondAttribute="bottom" id="5eZ-h7-qGN"/>
-                                    <constraint firstItem="ODm-0n-zCl" firstAttribute="leading" secondItem="k5H-Wz-yKS" secondAttribute="leading" id="87B-QB-At3"/>
                                     <constraint firstAttribute="bottom" secondItem="lD2-Vy-5hb" secondAttribute="bottom" id="87R-ss-vFk"/>
-                                    <constraint firstItem="lD2-Vy-5hb" firstAttribute="top" secondItem="ODm-0n-zCl" secondAttribute="bottom" id="H1C-fv-2bk"/>
+                                    <constraint firstAttribute="trailing" secondItem="9CQ-9i-juK" secondAttribute="trailing" id="H61-7b-8KU"/>
                                     <constraint firstAttribute="trailing" secondItem="lD2-Vy-5hb" secondAttribute="trailing" id="JYr-5r-oBE"/>
-                                    <constraint firstItem="lD2-Vy-5hb" firstAttribute="top" secondItem="ODm-0n-zCl" secondAttribute="bottom" id="XZ7-mm-Fxi"/>
-                                    <constraint firstAttribute="trailing" secondItem="ODm-0n-zCl" secondAttribute="trailing" id="bcB-BI-oYY"/>
+                                    <constraint firstItem="lD2-Vy-5hb" firstAttribute="top" secondItem="9CQ-9i-juK" secondAttribute="bottom" id="XZ7-mm-Fxi"/>
+                                    <constraint firstItem="9CQ-9i-juK" firstAttribute="top" secondItem="k5H-Wz-yKS" secondAttribute="top" id="Xy1-Lm-spn"/>
                                     <constraint firstItem="lD2-Vy-5hb" firstAttribute="leading" secondItem="k5H-Wz-yKS" secondAttribute="leading" id="eZy-gZ-Ncw"/>
-                                    <constraint firstItem="ODm-0n-zCl" firstAttribute="top" secondItem="k5H-Wz-yKS" secondAttribute="top" id="mNB-D2-vgg"/>
+                                    <constraint firstItem="9CQ-9i-juK" firstAttribute="leading" secondItem="k5H-Wz-yKS" secondAttribute="leading" id="kDR-Im-11g"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -666,10 +706,9 @@ Create a new one by pressing the '+' button.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hc7-AN-VYP"/>
                     </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="600" height="400"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="500" height="300"/>
                     <connections>
                         <outlet property="itemsTableView" destination="lD2-Vy-5hb" id="hC0-W6-3pb"/>
-                        <outlet property="search" destination="ODm-0n-zCl" id="xPU-ZY-VE5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJI-wX-gST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -681,7 +720,7 @@ Create a new one by pressing the '+' button.</string>
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="drp-NQ-1I9" customClass="BuyInvoicesVC" customModule="Freelance_Invoice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mji-HL-QJb">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="1007"/>
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="1006.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NL5-dr-ndg">
