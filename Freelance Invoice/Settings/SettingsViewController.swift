@@ -214,7 +214,7 @@ class SettingsViewController: UIViewController, UIDropInteractionDelegate, UIIma
     
     func finishActivity(){
         NotificationCenter.default.post(name: Notification.Name(SettingsViewController.EVENT_SETTINGS_CHANGED), object: nil)
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancel(_ sender: Any) {

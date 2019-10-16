@@ -12,6 +12,7 @@ class LineItemsList: ResizeableTableViewTableViewController, UITableViewDelegate
     
     var items = [LineItemModel]()
     var deleteCallback: ((_ item: LineItemModel, _ indexPath: IndexPath)-> Void)?
+    var addedToSavedItemsCallback: ((_ item: LineItemModel) -> Void)?
     
     func clearItems(){
         items.removeAll()
@@ -94,6 +95,7 @@ class LineItemsList: ResizeableTableViewTableViewController, UITableViewDelegate
                 let item = self.items[indexPath.section]
                 DataRepository.shared.saveLineItem(item: item)
                 AnalyticsManager.shared.addedToSavedItems(value: item.title)
+                self.addedToSavedItemsCallback?(item)
             }
             
             favoriteAction.backgroundColor = .gray

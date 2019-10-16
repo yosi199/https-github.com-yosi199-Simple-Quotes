@@ -88,6 +88,20 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
             self.confirmDelete(item: item, indexPath: index)
         }
         
+        itemsTableView.addedToSavedItemsCallback = { item in
+            UIView.animate(withDuration: 0.3, delay: 0.3, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+                self.savedItemsIcon.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+                self.savedItemsIcon.tintColor = .systemBlue
+            }) { (completed) in
+                self.savedItemsIcon.transform = .identity
+                if #available(iOS 13.0, *) {
+                    self.savedItemsIcon.tintColor = .label
+                } else {
+                    self.savedItemsIcon.tintColor = .darkGray
+                }
+            }
+        }
+        
     }
     
     private func setupItemsTable(){

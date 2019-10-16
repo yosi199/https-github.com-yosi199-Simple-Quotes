@@ -55,6 +55,12 @@ class DataRepository {
         return realm.objects(LineItemModel.self)
     }
     
+    func deleteLineItem(item: LineItemModel){
+        try! realm.write {
+            realm.delete(item)
+        }
+    }
+    
     class Defaults: FileHandler {
         static let shared = Defaults()
         

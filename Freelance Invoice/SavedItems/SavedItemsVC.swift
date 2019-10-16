@@ -89,6 +89,21 @@ class SavedItemsVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         }
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+            
+            let deleteTitle = NSLocalizedString("Delete", comment: "Delete action")
+            let deleteAction = UITableViewRowAction(style: .destructive, title: deleteTitle) { (action, indexPath) in
+                let item = self.items[indexPath.row]
+                DataRepository.shared.deleteLineItem(item: item)
+                self.items.remove(at: indexPath.row)
+                self.filteredItems = self.items
+                
+                tableView.reloadData()
+            }
+            
+            return [deleteAction]
+    }
+    
     func updateSearchResults(for searchController: UISearchController) {
         if(searchController.isActive){
             filteredItems.removeAll()
