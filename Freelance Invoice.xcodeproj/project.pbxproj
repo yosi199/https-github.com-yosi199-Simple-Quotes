@@ -74,6 +74,8 @@
 		D3B3213322BA25E300AB362A /* ResizeableTableViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3213222BA25E300AB362A /* ResizeableTableViewTableViewController.swift */; };
 		D3B3213622BA2CAB00AB362A /* ItemCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3213422BA2CAB00AB362A /* ItemCellTableViewCell.swift */; };
 		D3B3213722BA2CAB00AB362A /* ItemCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3B3213522BA2CAB00AB362A /* ItemCellTableViewCell.xib */; };
+		D3DA7F7A23570DFF00BDA349 /* ColorCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA7F7923570DFF00BDA349 /* ColorCircle.swift */; };
+		D3DA7F7C2357303700BDA349 /* ColorPaletteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DA7F7B2357303700BDA349 /* ColorPaletteVC.swift */; };
 		D3EAA40722E47F50000DD4CE /* DoubleInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EAA40622E47F50000DD4CE /* DoubleInputValidator.swift */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +153,8 @@
 		D3B3213422BA2CAB00AB362A /* ItemCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellTableViewCell.swift; sourceTree = "<group>"; };
 		D3B3213522BA2CAB00AB362A /* ItemCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCellTableViewCell.xib; sourceTree = "<group>"; };
 		D3DA7F782356E28900BDA349 /* Freelance Invoice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Freelance Invoice.entitlements"; sourceTree = "<group>"; };
+		D3DA7F7923570DFF00BDA349 /* ColorCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCircle.swift; sourceTree = "<group>"; };
+		D3DA7F7B2357303700BDA349 /* ColorPaletteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteVC.swift; sourceTree = "<group>"; };
 		D3EAA40622E47F50000DD4CE /* DoubleInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleInputValidator.swift; sourceTree = "<group>"; };
 		EBE9FB5286D84C19B8CF3F94 /* Pods-Freelance Invoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Freelance Invoice.release.xcconfig"; path = "Pods/Target Support Files/Pods-Freelance Invoice/Pods-Freelance Invoice.release.xcconfig"; sourceTree = "<group>"; };
 		ECB05639F148722B2844C72D /* Pods_Freelance_Invoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Freelance_Invoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,6 +288,7 @@
 				4CC94E5A22FC5E8A00E786CC /* TextFactory.swift */,
 				4CC94E5C22FC671B00E786CC /* Template1.swift */,
 				4CC94E5E22FC67C100E786CC /* Template.swift */,
+				D3DA7F7B2357303700BDA349 /* ColorPaletteVC.swift */,
 			);
 			path = PDF;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 				D340142122F6A78600328CBE /* CurrencyCell.swift */,
 				D340142222F6A78600328CBE /* CurrencyCell.xib */,
 				D3A0907E2301933B004C6E88 /* ProgressView.swift */,
+				D3DA7F7923570DFF00BDA349 /* ColorCircle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -590,6 +596,7 @@
 				D3B3212822BA254500AB362A /* DoubleExtensions.swift in Sources */,
 				4C68875C22E343E400B16462 /* LineItemsList.swift in Sources */,
 				D340142322F6A78600328CBE /* CurrencyCell.swift in Sources */,
+				D3DA7F7A23570DFF00BDA349 /* ColorCircle.swift in Sources */,
 				4C834A402348F11800948ADD /* ReviewSuggester.swift in Sources */,
 				D35429B222F86B60003ED36C /* DiscountVM.swift in Sources */,
 				D340142022F6A6C100328CBE /* CurrencyList.swift in Sources */,
@@ -606,6 +613,7 @@
 				D3B3212F22BA254500AB362A /* FileHandler.swift in Sources */,
 				D3B3212B22BA254500AB362A /* DataRepository.swift in Sources */,
 				4CC94E5F22FC67C100E786CC /* Template.swift in Sources */,
+				D3DA7F7C2357303700BDA349 /* ColorPaletteVC.swift in Sources */,
 				4CC94E5D22FC671B00E786CC /* Template1.swift in Sources */,
 				4CF6353822D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift in Sources */,
 				D3B3212C22BA254500AB362A /* LineItemModel.swift in Sources */,

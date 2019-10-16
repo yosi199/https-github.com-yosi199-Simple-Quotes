@@ -19,6 +19,9 @@ class PDFController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
+    @IBOutlet weak var colorPaletteButton: UIBarButtonItem!
+    @IBOutlet weak var colorPaletteContainerView: UIView!
+    @IBOutlet weak var colorPaletteHeight: NSLayoutConstraint!
     private var url: URL?
     private let factory = TextFactory.shared
     
@@ -55,6 +58,9 @@ class PDFController: UIViewController {
             }
         }
     }
+    @IBAction func pickColor(_ sender: Any) {
+        perform(#selector(anima), with: nil, afterDelay: 0.3)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,8 +79,24 @@ class PDFController: UIViewController {
         template?.setContent(document: document)
         template?.setFooter(document: document)
         
-        
         generate(document: document)
+        
+        self.colorPaletteContainerView.translatesAutoresizingMaskIntoConstraints = false
+
+    }
+    
+    @objc fileprivate func anima(){
+                // Do any additional setup after loading the view.
+                self.colorPaletteHeight.isActive = false
+                self.colorPaletteHeight = self.colorPaletteContainerView.heightAnchor.constraint(equalToConstant: 80)
+                self.colorPaletteHeight.isActive = true
+                
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+                    self.colorPaletteContainerView.alpha = 1
+                    self.view.layoutIfNeeded()
+                }) { (Bool) in
+                    
+                }
     }
     
     private func generate(document: PDFDocument){

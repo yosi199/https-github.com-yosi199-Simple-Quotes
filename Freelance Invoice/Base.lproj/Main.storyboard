@@ -557,7 +557,7 @@ Create a new one by pressing the '+' button.</string>
             <objects>
                 <viewController title="PDF" id="8tY-lk-M1f" customClass="PDFController" customModule="Freelance_Invoice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AYM-nG-5tr">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="1006.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="1007"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omR-eK-eV6">
@@ -571,12 +571,20 @@ Create a new one by pressing the '+' button.</string>
                                                 <segue destination="BH1-bg-VqF" kind="unwind" unwindAction="unwindFromPdf:" id="E48-gp-2o6"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Aao-hq-M6G">
-                                            <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <connections>
-                                                <action selector="shareAction:" destination="8tY-lk-M1f" id="gzj-j5-aWr"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem systemItem="action" id="Aao-hq-M6G">
+                                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <connections>
+                                                    <action selector="shareAction:" destination="8tY-lk-M1f" id="gzj-j5-aWr"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" image="circle.grid.3x3" catalog="system" id="Svs-5y-Nlm">
+                                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <connections>
+                                                    <action selector="pickColor:" destination="8tY-lk-M1f" id="yPp-ab-iic"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -588,13 +596,26 @@ Create a new one by pressing the '+' button.</string>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99J-od-06P">
+                                <rect key="frame" x="0.0" y="56" width="712" height="0.0"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="IDd-dk-9gE"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="5V0-MZ-3aD" kind="embed" id="zlJ-cI-tFc"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Ob-Jn-yZX" firstAttribute="leading" secondItem="hhw-vJ-pFc" secondAttribute="leading" id="2gA-md-Yaz"/>
                             <constraint firstItem="hhw-vJ-pFc" firstAttribute="bottom" secondItem="6Ob-Jn-yZX" secondAttribute="bottom" id="6BZ-1h-jEl"/>
+                            <constraint firstItem="99J-od-06P" firstAttribute="top" secondItem="omR-eK-eV6" secondAttribute="bottom" id="DgO-si-GGd"/>
                             <constraint firstItem="omR-eK-eV6" firstAttribute="trailing" secondItem="hhw-vJ-pFc" secondAttribute="trailing" id="E6C-hw-90T"/>
+                            <constraint firstItem="hhw-vJ-pFc" firstAttribute="trailing" secondItem="99J-od-06P" secondAttribute="trailing" id="Ooj-X4-csU"/>
                             <constraint firstItem="hhw-vJ-pFc" firstAttribute="trailing" secondItem="6Ob-Jn-yZX" secondAttribute="trailing" id="XBl-6R-RFK"/>
+                            <constraint firstItem="99J-od-06P" firstAttribute="leading" secondItem="hhw-vJ-pFc" secondAttribute="leading" id="d8h-qL-icn"/>
                             <constraint firstItem="6Ob-Jn-yZX" firstAttribute="top" secondItem="omR-eK-eV6" secondAttribute="bottom" id="gub-th-dwX"/>
                             <constraint firstItem="omR-eK-eV6" firstAttribute="top" secondItem="hhw-vJ-pFc" secondAttribute="top" id="jpE-kS-Cex"/>
                             <constraint firstItem="omR-eK-eV6" firstAttribute="leading" secondItem="hhw-vJ-pFc" secondAttribute="leading" id="v01-vN-P5C"/>
@@ -611,6 +632,9 @@ Create a new one by pressing the '+' button.</string>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="colorPaletteButton" destination="Svs-5y-Nlm" id="RQ1-zQ-BfM"/>
+                        <outlet property="colorPaletteContainerView" destination="99J-od-06P" id="u2t-OV-3Qb"/>
+                        <outlet property="colorPaletteHeight" destination="IDd-dk-9gE" id="ufC-TT-s2c"/>
                         <outlet property="navigationBar" destination="omR-eK-eV6" id="QAe-BC-QI1"/>
                         <outlet property="shareButton" destination="Aao-hq-M6G" id="erh-uu-gud"/>
                         <outlet property="webview" destination="6Ob-Jn-yZX" id="6wY-5T-iMU"/>
@@ -720,7 +744,7 @@ Create a new one by pressing the '+' button.</string>
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="drp-NQ-1I9" customClass="BuyInvoicesVC" customModule="Freelance_Invoice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mji-HL-QJb">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="1006.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="1007"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NL5-dr-ndg">
@@ -1343,9 +1367,132 @@ Create a new one by pressing the '+' button.</string>
             </objects>
             <point key="canvasLocation" x="695.68345323741016" y="1027.6381909547738"/>
         </scene>
+        <!--Color PaletteVC-->
+        <scene sceneID="Rea-cG-pdJ">
+            <objects>
+                <viewController id="5V0-MZ-3aD" customClass="ColorPaletteVC" customModule="Freelance_Invoice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8fE-So-5UV">
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="0.0"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="o0o-OM-kc8">
+                                <rect key="frame" x="0.0" y="0.0" width="712" height="0.0"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" restorationIdentifier="Color1" translatesAutoresizingMaskIntoConstraints="NO" id="ZVh-rP-9sj" userLabel="Color1" customClass="ColorCircle" customModule="Freelance_Invoice" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="colorOption">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfO-fl-g23" userLabel="Color2" customClass="ColorCircle" customModule="Freelance_Invoice" customModuleProvider="target">
+                                        <rect key="frame" x="71" y="0.0" width="71.5" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="colorOption">
+                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J64-9u-7gf" userLabel="Color3" customClass="ColorCircle" customModule="Freelance_Invoice" customModuleProvider="target">
+                                        <rect key="frame" x="142.5" y="0.0" width="71" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="colorOption">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fH-Il-ZuC" userLabel="Color4" customClass="ColorCircle" customModule="Freelance_Invoice" customModuleProvider="target">
+                                        <rect key="frame" x="213.5" y="0.0" width="71.5" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="colorOption">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixz-42-b9W" userLabel="Color5" customClass="ColorCircle" customModule="Freelance_Invoice" customModuleProvider="target">
+                                        <rect key="frame" x="285" y="0.0" width="71" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="colorOption">
+                                                <color key="value" red="0.95599907640000004" green="0.79653769730000001" blue="0.28216087820000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDl-ef-03s" userLabel="Color6" customClass="ColorCircle" customModule="Freelance_Invoice" customModuleProvider="target">
+                                        <rect key="frame" x="356" y="0.0" width="71" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="colorOption">
+                                                <color key="value" red="1" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ec-yf-nff" userLabel="Color7" customClass="ColorCircle" customModule="Freelance_Invoice" customModuleProvider="target">
+                                        <rect key="frame" x="427" y="0.0" width="71.5" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="colorOption">
+                                                <color key="value" red="0.20000000000000001" green="0.20000000000000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xor-sC-YKZ" userLabel="Color8" customClass="ColorCircle" customModule="Freelance_Invoice" customModuleProvider="target">
+                                        <rect key="frame" x="498.5" y="0.0" width="71" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="colorOption">
+                                                <color key="value" red="0.59999999999999998" green="1" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7R-hW-b7E" userLabel="Color9" customClass="ColorCircle" customModule="Freelance_Invoice" customModuleProvider="target">
+                                        <rect key="frame" x="569.5" y="0.0" width="71.5" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="colorOption">
+                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whq-hv-aJg" userLabel="Color10" customClass="ColorCircle" customModule="Freelance_Invoice" customModuleProvider="target">
+                                        <rect key="frame" x="641" y="0.0" width="71" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="colorOption">
+                                                <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="o0o-OM-kc8" secondAttribute="bottom" id="5Mw-VK-Tt8"/>
+                            <constraint firstItem="o0o-OM-kc8" firstAttribute="leading" secondItem="8fE-So-5UV" secondAttribute="leading" id="Nqb-oK-h3a"/>
+                            <constraint firstAttribute="trailing" secondItem="o0o-OM-kc8" secondAttribute="trailing" id="RGH-k6-uEx"/>
+                            <constraint firstItem="o0o-OM-kc8" firstAttribute="top" secondItem="8fE-So-5UV" secondAttribute="top" id="rtu-5c-nzC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="8fE-So-5UV" id="3zi-1a-Ucz"/>
+                        <outlet property="stackView" destination="o0o-OM-kc8" id="Mut-QF-3Bq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zSV-oZ-K7U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1363" y="576"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Fill 4" width="28" height="30"/>
+        <image name="circle.grid.3x3" catalog="system" width="64" height="54"/>
         <image name="edit" width="24.5" height="26.5"/>
         <image name="folder.fill" catalog="system" width="64" height="46"/>
         <image name="gray-wide multiple" width="437" height="345"/>
@@ -1353,7 +1500,7 @@ Create a new one by pressing the '+' button.</string>
         <image name="pencil.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fbd-W9-Uvt"/>
+        <segue reference="Wdv-Mu-wpu"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
