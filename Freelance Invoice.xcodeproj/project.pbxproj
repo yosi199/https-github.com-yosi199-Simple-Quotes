@@ -150,6 +150,7 @@
 		D3B3213222BA25E300AB362A /* ResizeableTableViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeableTableViewTableViewController.swift; sourceTree = "<group>"; };
 		D3B3213422BA2CAB00AB362A /* ItemCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellTableViewCell.swift; sourceTree = "<group>"; };
 		D3B3213522BA2CAB00AB362A /* ItemCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCellTableViewCell.xib; sourceTree = "<group>"; };
+		D3DA7F782356E28900BDA349 /* Freelance Invoice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Freelance Invoice.entitlements"; sourceTree = "<group>"; };
 		D3EAA40622E47F50000DD4CE /* DoubleInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleInputValidator.swift; sourceTree = "<group>"; };
 		EBE9FB5286D84C19B8CF3F94 /* Pods-Freelance Invoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Freelance Invoice.release.xcconfig"; path = "Pods/Target Support Files/Pods-Freelance Invoice/Pods-Freelance Invoice.release.xcconfig"; sourceTree = "<group>"; };
 		ECB05639F148722B2844C72D /* Pods_Freelance_Invoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Freelance_Invoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,6 +309,7 @@
 		D3B320F622BA217E00AB362A /* Freelance Invoice */ = {
 			isa = PBXGroup;
 			children = (
+				D3DA7F782356E28900BDA349 /* Freelance Invoice.entitlements */,
 				4C96B9602355EEFD006C67DA /* SavedItems */,
 				4C834A472348F7CC00948ADD /* Firebase */,
 				4CC94E6723052B9000E786CC /* ProductIds.plist */,
@@ -764,6 +766,7 @@
 			baseConfigurationReference = 57FB39C6A008F5C8B4FAA3A3 /* Pods-Freelance Invoice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Freelance Invoice/Freelance Invoice.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56S586KB3V;
 				INFOPLIST_FILE = "Freelance Invoice/Info.plist";
@@ -774,6 +777,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.loop.to.infinity.freelancer.invoice;
 				PRODUCT_NAME = "Freelance Invoice";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -784,6 +788,7 @@
 			baseConfigurationReference = EBE9FB5286D84C19B8CF3F94 /* Pods-Freelance Invoice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Freelance Invoice/Freelance Invoice.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56S586KB3V;
 				INFOPLIST_FILE = "Freelance Invoice/Info.plist";
@@ -794,6 +799,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.loop.to.infinity.freelancer.invoice;
 				PRODUCT_NAME = "Freelance Invoice";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};

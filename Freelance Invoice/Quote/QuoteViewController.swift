@@ -315,8 +315,8 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
                 .prepare()
             
             alert.popoverPresentationController?.sourceView = self.view
-            alert.popoverPresentationController?.permittedArrowDirections = .down
-            alert.popoverPresentationController?.sourceRect = CGRect(x: self.addButton.frame.midX , y: self.addButton.frame.maxY , width: 1.0, height: 1.0)
+            alert.popoverPresentationController?.permittedArrowDirections = .up
+            alert.popoverPresentationController?.sourceRect = CGRect(x: frame.midX , y: frame.midY - scrollView.contentOffset.y + (frame.height * 2) , width: 1.0, height: 1.0)
             
             self.present(alert, animated: true, completion: nil)
             return
