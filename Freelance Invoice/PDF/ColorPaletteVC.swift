@@ -13,18 +13,26 @@ class ColorPaletteVC: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet var contentView: UIView!
     
-    var chosenColorCallback: ((_ color: UIColor) -> Void)? {
-        didSet {
-            stackView.arrangedSubviews.forEach { (circle) in
-                guard let circle = circle as? ColorCircle else { return }
-                circle.chosenColorCallback = chosenColorCallback
-            }
-        }
-    }
+    var chosenColorCallback: ((_ color: UIColor) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        stackView.arrangedSubviews.forEach { (circle) in
+            guard let circle = circle as? ColorCircle else { return }
+            circle.chosenColorCallback = { color, circle in
+                self.chosenColorCallback?(color)
+                self.selectCircle(selectedCircle: circle)
+            }
+        }
+    }
+    
+    private func selectCircle(selectedCircle: ColorCircle){
+        stackView.arrangedSubviews.forEach { (colorCircle) in
+            guard let circle = colorCircle as? ColorCircle else { return }
+            circle.deSelect()
+        }
+        selectedCircle.select()
     }
     
     
