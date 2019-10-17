@@ -590,8 +590,8 @@
             filePath = "Freelance Invoice/Quote/QuoteViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "407"
-            endingLineNumber = "407"
+            startingLineNumber = "406"
+            endingLineNumber = "406"
             landmarkName = "updateSummary()"
             landmarkType = "7">
          </BreakpointContent>
