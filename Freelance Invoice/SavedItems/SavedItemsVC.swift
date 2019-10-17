@@ -9,28 +9,23 @@
 import UIKit
 import RealmSwift
 
-class SavedItemsVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate {
+class SavedItemsVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var itemsTableView: UITableView!
     
     private let vm = SavedItemsViewModel()
     private var items = [LineItemModel]()
     private var filteredItems = [LineItemModel]()
     private var resultSearchController = UISearchController()
+    private var searchActive = false
     
     var callback: ((_ item: LineItemModel) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        resultSearchController = ({
-            let controller = UISearchController(searchResultsController: nil)
-            controller.searchResultsUpdater = self
-            controller.obscuresBackgroundDuringPresentation = false
-            controller.searchBar.delegate = self
-            itemsTableView.tableHeaderView = controller.searchBar            
-            return controller
-        })()
+        searchBar.delegate = self
         
         items = vm.getItems()
         filteredItems = items
@@ -109,6 +104,43 @@ class SavedItemsVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             filteredItems.removeAll()
             
             let text = searchController.searchBar.text!
+            if(text.isNotEmpty()){
+                for item in items {
+                    if(item.title.lowercased().contains(text.lowercased())
+                        || item.itemDescription.lowercased().contains(text.lowercased())){
+                        filteredItems.append(item)
+                    }
+                }
+            } else {
+                filteredItems = items
+            }
+            
+            self.itemsTableView.reloadData()
+        }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true;
+    }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if(self.searchActive){
+            filteredItems.removeAll()
+            
+            let text = searchBar.text!
             if(text.isNotEmpty()){
                 for item in items {
                     if(item.title.lowercased().contains(text.lowercased())

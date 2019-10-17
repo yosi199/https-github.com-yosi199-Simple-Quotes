@@ -663,13 +663,12 @@ Create a new one by pressing the '+' button.</string>
                                             <navigationItem title="Saved Items" id="UqU-JN-oaX"/>
                                         </items>
                                     </navigationBar>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lD2-Vy-5hb">
-                                        <rect key="frame" x="0.0" y="90" width="834" height="1084"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <sections/>
-                                    </tableView>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rWi-Q0-4gY">
+                                        <rect key="frame" x="0.0" y="50" width="834" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
                                     <view alpha="0.55000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9CQ-9i-juK" userLabel="header section">
-                                        <rect key="frame" x="0.0" y="50" width="834" height="40"/>
+                                        <rect key="frame" x="0.0" y="106" width="834" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWa-UM-kgC">
                                                 <rect key="frame" x="15" y="10" width="489" height="20"/>
@@ -714,19 +713,27 @@ Create a new one by pressing the '+' button.</string>
                                             <constraint firstItem="MWa-UM-kgC" firstAttribute="leading" secondItem="9CQ-9i-juK" secondAttribute="leading" constant="15" id="tNq-cw-tr5"/>
                                         </constraints>
                                     </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lD2-Vy-5hb">
+                                        <rect key="frame" x="0.0" y="146" width="834" height="1028"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <sections/>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="lD2-Vy-5hb" secondAttribute="bottom" id="87R-ss-vFk"/>
                                     <constraint firstAttribute="trailing" secondItem="9CQ-9i-juK" secondAttribute="trailing" id="H61-7b-8KU"/>
                                     <constraint firstAttribute="trailing" secondItem="lD2-Vy-5hb" secondAttribute="trailing" id="JYr-5r-oBE"/>
-                                    <constraint firstItem="lD2-Vy-5hb" firstAttribute="top" secondItem="9CQ-9i-juK" secondAttribute="bottom" id="XZ7-mm-Fxi"/>
+                                    <constraint firstItem="Nfa-hU-Zjp" firstAttribute="bottom" secondItem="rWi-Q0-4gY" secondAttribute="top" id="Qwb-qH-f52"/>
+                                    <constraint firstItem="9CQ-9i-juK" firstAttribute="top" secondItem="rWi-Q0-4gY" secondAttribute="bottom" id="VoL-Fd-KBc"/>
                                     <constraint firstAttribute="trailing" secondItem="Nfa-hU-Zjp" secondAttribute="trailing" id="YXt-0Z-q6o"/>
                                     <constraint firstItem="Nfa-hU-Zjp" firstAttribute="leading" secondItem="k5H-Wz-yKS" secondAttribute="leading" id="Yr7-KX-lje"/>
+                                    <constraint firstItem="lD2-Vy-5hb" firstAttribute="top" secondItem="9CQ-9i-juK" secondAttribute="bottom" id="bLV-Lv-u7l"/>
+                                    <constraint firstItem="rWi-Q0-4gY" firstAttribute="leading" secondItem="k5H-Wz-yKS" secondAttribute="leading" id="co6-Qt-cQ7"/>
                                     <constraint firstItem="lD2-Vy-5hb" firstAttribute="leading" secondItem="k5H-Wz-yKS" secondAttribute="leading" id="eZy-gZ-Ncw"/>
                                     <constraint firstItem="Nfa-hU-Zjp" firstAttribute="top" secondItem="k5H-Wz-yKS" secondAttribute="top" id="jbk-6F-L1q"/>
                                     <constraint firstItem="9CQ-9i-juK" firstAttribute="leading" secondItem="k5H-Wz-yKS" secondAttribute="leading" id="kDR-Im-11g"/>
-                                    <constraint firstItem="9CQ-9i-juK" firstAttribute="top" secondItem="Nfa-hU-Zjp" secondAttribute="bottom" id="m21-JS-6u7"/>
+                                    <constraint firstAttribute="trailing" secondItem="rWi-Q0-4gY" secondAttribute="trailing" id="leE-u4-C0X"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -742,6 +749,7 @@ Create a new one by pressing the '+' button.</string>
                     <value key="contentSizeForViewInPopover" type="size" width="500" height="400"/>
                     <connections>
                         <outlet property="itemsTableView" destination="lD2-Vy-5hb" id="hC0-W6-3pb"/>
+                        <outlet property="searchBar" destination="rWi-Q0-4gY" id="sQp-Th-JZe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJI-wX-gST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
