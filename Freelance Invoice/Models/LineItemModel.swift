@@ -11,6 +11,7 @@ import RealmSwift
 
 class LineItemModel : Object {
     
+    @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var title: String = "Item maintenance"
     @objc dynamic var itemDescription: String = "repair/replace"
     @objc dynamic var qty: Int = 1
@@ -19,6 +20,6 @@ class LineItemModel : Object {
     @objc dynamic  var total: Double = 0.00
 
     override static func primaryKey() -> String? {
-        return "title"
+        return "id"
     }
 }
