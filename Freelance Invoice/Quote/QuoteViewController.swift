@@ -295,7 +295,6 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
             .setMessage(message: "Are you sure you want to delete \(item.title)?")
             .setConfirmationHandler { (UIAlertAction) in
                 self.itemsTableView.items.remove(at: indexPath.section)
-                self.editButtonClicked(self)
                 if (self.itemsTableView.items.count == 0) {
                     self.footer.isHidden = true
                     self.footerStackView.isHidden = true

@@ -596,5 +596,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB45FCCC-2ECC-40F0-A95F-A889B71CF41F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Freelance Invoice/Repositories/DataRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "saveLineItem(item:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BB45FCCC-2ECC-40F0-A95F-A889B71CF41F - e009cb86d76b267d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Freelance_Invoice.DataRepository.saveLineItem(item: Freelance_Invoice.LineItemModel) -&gt; ()"
+                  moduleName = "Freelance Invoice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/unknown1/Documents/ios/https-github.com-yosi199-Simple-Quotes/Freelance%20Invoice/Repositories/DataRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "BB45FCCC-2ECC-40F0-A95F-A889B71CF41F - 47c28db5989c69b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Freelance_Invoice.DataRepository.saveLineItem(item: Freelance_Invoice.LineItemModel) -&gt; ()"
+                  moduleName = "Freelance Invoice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/unknown1/Documents/ios/https-github.com-yosi199-Simple-Quotes/Freelance%20Invoice/Repositories/DataRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

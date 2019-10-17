@@ -45,19 +45,19 @@ class DataRepository {
     
     func saveLineItem(item: LineItemModel){
         try! realm.write {
-            realm.add(item, update: .all)
+            realm.add(SavedItem.fromLineItem(item: item), update: .all)
             NotificationCenter.default.post(name: Notification.Name(DataRepository.LINE_ITEM_SAVED), object: nil)
             debugPrint("line item \(item.title) saved successfully")
         }
     }
     
-    func getItems() -> Results<LineItemModel> {
-        return realm.objects(LineItemModel.self)
+    func getSavedItems() -> Results<SavedItem> {
+        return realm.objects(SavedItem.self)
     }
     
-    func deleteLineItem(item: LineItemModel){
+    func deleteSavedItem(item: SavedItem){
         try! realm.write {
-            realm.delete(item)
+            realm.delete(getSavedItems().filter(NSPredicate(format: "id == %@", item.id)))
         }
     }
     

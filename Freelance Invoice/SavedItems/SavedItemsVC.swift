@@ -94,7 +94,7 @@ class SavedItemsVC: UIViewController, UITableViewDataSource, UITableViewDelegate
             let deleteTitle = NSLocalizedString("Delete", comment: "Delete action")
             let deleteAction = UITableViewRowAction(style: .destructive, title: deleteTitle) { (action, indexPath) in
                 let item = self.items[indexPath.row]
-                DataRepository.shared.deleteLineItem(item: item)
+                DataRepository.shared.deleteSavedItem(item: SavedItem.fromLineItem(item: item))
                 self.items.remove(at: indexPath.row)
                 self.filteredItems = self.items
                 

@@ -16,6 +16,7 @@
 		4C834A422348F16500948ADD /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C834A412348F16500948ADD /* UserDefaultKeys.swift */; };
 		4C96B964235602EA006C67DA /* SavedItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96B963235602EA006C67DA /* SavedItemsVC.swift */; };
 		4C96B96623560980006C67DA /* SavedItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96B96523560980006C67DA /* SavedItemsViewModel.swift */; };
+		4C96B96823584C22006C67DA /* SavedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96B96723584C22006C67DA /* SavedItem.swift */; };
 		4CC94E5722FBFAE700E786CC /* KeyboardScrollHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5622FBFAE700E786CC /* KeyboardScrollHelper.swift */; };
 		4CC94E5922FC15FE00E786CC /* PDFController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5822FC15FE00E786CC /* PDFController.swift */; };
 		4CC94E5B22FC5E8A00E786CC /* TextFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5A22FC5E8A00E786CC /* TextFactory.swift */; };
@@ -91,6 +92,7 @@
 		4C834A4B2348F87E00948ADD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C96B963235602EA006C67DA /* SavedItemsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItemsVC.swift; sourceTree = "<group>"; };
 		4C96B96523560980006C67DA /* SavedItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItemsViewModel.swift; sourceTree = "<group>"; };
+		4C96B96723584C22006C67DA /* SavedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItem.swift; sourceTree = "<group>"; };
 		4CC94E5622FBFAE700E786CC /* KeyboardScrollHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardScrollHelper.swift; sourceTree = "<group>"; };
 		4CC94E5822FC15FE00E786CC /* PDFController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFController.swift; sourceTree = "<group>"; };
 		4CC94E5A22FC5E8A00E786CC /* TextFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFactory.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 				D3B3212422BA254500AB362A /* Quote.swift */,
 				D3B3212522BA254500AB362A /* User.swift */,
 				D340142522F6B74300328CBE /* Countries.swift */,
+				4C96B96723584C22006C67DA /* SavedItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				D3DA7F7A23570DFF00BDA349 /* ColorCircle.swift in Sources */,
 				4C834A402348F11800948ADD /* ReviewSuggester.swift in Sources */,
 				D35429B222F86B60003ED36C /* DiscountVM.swift in Sources */,
+				4C96B96823584C22006C67DA /* SavedItem.swift in Sources */,
 				D340142022F6A6C100328CBE /* CurrencyList.swift in Sources */,
 				4C240B5F234904A2000067C6 /* AnalyticsManager.swift in Sources */,
 				D3B3211422BA226700AB362A /* ItemView.swift in Sources */,

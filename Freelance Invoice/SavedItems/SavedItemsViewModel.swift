@@ -15,10 +15,10 @@ class SavedItemsViewModel {
 
     
     func getItems() -> [LineItemModel] {
-        let items = realm.objects(LineItemModel.self).sorted(byKeyPath: "title", ascending: false)
+        let items = realm.objects(SavedItem.self).sorted(byKeyPath: "title", ascending: false)
         var itemsArray = [LineItemModel]()
         items.forEach { item in
-            itemsArray.append(item)
+            itemsArray.append(item.toLineItem())
         }
         return itemsArray
     }
