@@ -13,7 +13,8 @@ import QuartzCore
 @IBDesignable class ColorCircle: UIView {
     
     private var circleView: UIView!
-    
+    var chosenColorCallback: ((_ color: UIColor) -> Void)?
+
     @IBInspectable var colorOption: UIColor = .blue {
       didSet {
         circleView.backgroundColor = self.colorOption
@@ -43,6 +44,20 @@ import QuartzCore
         circleView.layer.cornerRadius = 25
         circleView.layer.borderColor = UIColor.gray.cgColor
         circleView.layer.borderWidth = 2.0
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(selected))
+        self.addGestureRecognizer(tap)
+    }
+    
+    @objc fileprivate func selected(){
+        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+        }) { (Bool) in
+            self.chosenColorCallback?(self.colorOption)
+            UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+                self.transform = .identity
+            }, completion: nil)
+        }
     }
     
     override func prepareForInterfaceBuilder() {

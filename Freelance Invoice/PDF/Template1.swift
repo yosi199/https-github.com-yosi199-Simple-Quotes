@@ -10,6 +10,12 @@ import Foundation
 import TPPDF
 
 class Template1: Template {
+    private var color: UIColor = #colorLiteral(red: 0.9568627451, green: 0.7921568627, blue: 0.2823529412, alpha: 1)
+    
+    func setColor(color: UIColor) {
+        self.color = color
+    }
+    
     private static let SMALL_SPACE: CGFloat = 50
     private static let MEDIUM_SPACE: CGFloat = 100
     
@@ -56,7 +62,7 @@ class Template1: Template {
         document.add(space: Template1.SMALL_SPACE)
         
         // Customer info
-        let group = PDFGroup(allowsBreaks: false, backgroundColor: #colorLiteral(red: 0.9568627451, green: 0.7921568627, blue: 0.2823529412, alpha: 1), backgroundImage: nil, backgroundShape: nil, outline: .none, padding: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 100))
+        let group = PDFGroup(allowsBreaks: false, backgroundColor: color, backgroundImage: nil, backgroundShape: nil, outline: .none, padding: UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 100))
         group.add(attributedText: factory.bold(text: "CUSTOMER", size: .small))
         document.add(group: group)
         document.add(space: 10)
@@ -165,7 +171,7 @@ class Template1: Template {
         style.columnHeaderCount = 1
         
         style.alternatingContentStyle?.colors.fill = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        style.columnHeaderStyle.colors.fill = #colorLiteral(red: 0.9568627451, green: 0.7921568627, blue: 0.2823529412, alpha: 1)
+        style.columnHeaderStyle.colors.fill = color
         style.columnHeaderStyle.colors.text = UIColor.black
         style.columnHeaderStyle.font = UIFont.init(name: "ArialRoundedMTBold", size: 10)!
         

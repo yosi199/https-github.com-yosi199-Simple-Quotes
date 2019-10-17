@@ -13,4 +13,5 @@ protocol Template: FileHandler {
     func setHeader(document: PDFDocument)
     func setContent(document: PDFDocument)
     func setFooter(document: PDFDocument)
+    func setColor(color: UIColor)
 }

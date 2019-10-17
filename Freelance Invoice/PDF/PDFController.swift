@@ -23,6 +23,7 @@ class PDFController: UIViewController {
     @IBOutlet weak var colorPaletteContainerView: UIView!
     @IBOutlet weak var colorPaletteHeight: NSLayoutConstraint!
     private var url: URL?
+    private var userSelectedColor: UIColor? = nil
     private let factory = TextFactory.shared
     
     // IN APP Purchases
@@ -58,13 +59,25 @@ class PDFController: UIViewController {
             }
         }
     }
+    
     @IBAction func pickColor(_ sender: Any) {
-        perform(#selector(anima), with: nil, afterDelay: 0.3)
+        perform(#selector(showColorPalette), with: nil, afterDelay: 0.3)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupCallbacks()
+        self.create()
+        
+        self.colorPaletteContainerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        self.view.addGestureRecognizer(tap)
+        
+    }
+    
+    private func create(){
         // If for some reason our quote is unavailable - go back
         let user = UserRepository.shared.getUser()
         guard let quote = self.quote else {
@@ -75,28 +88,52 @@ class PDFController: UIViewController {
         
         let document = PDFDocument(format: .a4)
         
+        if let color = userSelectedColor {
+            template?.setColor(color: color)
+        }
         template?.setHeader(document: document)
         template?.setContent(document: document)
         template?.setFooter(document: document)
         
         generate(document: document)
-        
-        self.colorPaletteContainerView.translatesAutoresizingMaskIntoConstraints = false
-
     }
     
-    @objc fileprivate func anima(){
-                // Do any additional setup after loading the view.
-                self.colorPaletteHeight.isActive = false
-                self.colorPaletteHeight = self.colorPaletteContainerView.heightAnchor.constraint(equalToConstant: 80)
-                self.colorPaletteHeight.isActive = true
-                
-                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
-                    self.colorPaletteContainerView.alpha = 1
-                    self.view.layoutIfNeeded()
-                }) { (Bool) in
-                    
-                }
+    private func setupCallbacks(){
+        guard let colorPaletteVC = self.children[0] as? ColorPaletteVC else { return }
+        colorPaletteVC.chosenColorCallback = { color in
+            self.userSelectedColor = color
+            self.create()
+        }
+    }
+    
+    @objc fileprivate func viewTapped(){
+        if(self.colorPaletteHeight.constant == 80){
+            hideColorPalette()
+        }
+    }
+    
+    @objc fileprivate func showColorPalette(){
+        // Do any additional setup after loading the view.
+        self.colorPaletteHeight.isActive = false
+        self.colorPaletteHeight = self.colorPaletteContainerView.heightAnchor.constraint(equalToConstant: 80)
+        self.colorPaletteHeight.isActive = true
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+            self.colorPaletteContainerView.alpha = 1
+            self.view.layoutIfNeeded()
+        }) { (Bool) in}
+    }
+    
+    @objc fileprivate func hideColorPalette(){
+        // Do any additional setup after loading the view.
+        self.colorPaletteHeight.isActive = false
+        self.colorPaletteHeight = self.colorPaletteContainerView.heightAnchor.constraint(equalToConstant: 0)
+        self.colorPaletteHeight.isActive = true
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+            self.colorPaletteContainerView.alpha = 0
+            self.view.layoutIfNeeded()
+        }) { (Bool) in}
     }
     
     private func generate(document: PDFDocument){
@@ -109,7 +146,6 @@ class PDFController: UIViewController {
             
         }
     }
-    
     
     fileprivate func fetchProducts(){
         if StoreObserver.shared.isAuthorizedForPayments {
