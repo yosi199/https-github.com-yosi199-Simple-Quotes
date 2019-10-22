@@ -20,7 +20,7 @@ class ReviewSuggester {
         if(showForVersion) {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay, execute: {
                 SKStoreReviewController.requestReview()
-                UserDefaults.standard.set(currentVersion, forKey: lastVersionPromptedForReviewKey)
+                UserDefaults.standard.set(currentVersion, forKey: LAST_VERSION_PROMPTED_FOR_REVIEW_KEY)
                 AnalyticsManager.shared.askingForReview()
             })
         }
@@ -34,7 +34,7 @@ class ReviewSuggester {
     }
     
     private func maybeShowForVersion(currentAppVersion: String) -> Bool {
-        return currentAppVersion != UserDefaults.standard.string(forKey: lastVersionPromptedForReviewKey)
+        return currentAppVersion != UserDefaults.standard.string(forKey: LAST_VERSION_PROMPTED_FOR_REVIEW_KEY)
         
     }
 }

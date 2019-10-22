@@ -28,4 +28,15 @@ class UserRepository {
             debugPrint("created user successfully)")
         }
     }
+    
+    class Defaults: FileHandler {
+          static let shared = Defaults()
+          
+          private let userDefaults = UserDefaults.standard
+          
+          var pdfColor: UIColor? {
+            get { return userDefaults.string(forKey: CHOOSEN_PDF_ACCENT_COLOR) }
+              set { userDefaults.set(newValue, forKey: CHOOSEN_PDF_ACCENT_COLOR) }
+          }
+      }
 }
