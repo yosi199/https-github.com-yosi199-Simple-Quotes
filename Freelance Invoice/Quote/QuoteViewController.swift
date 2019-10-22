@@ -50,6 +50,7 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         setupInteractions()
         setupCallbacks()
         setupDelegations()
+        setupFallbacks()
         updateViews()
         keyboardHelper.register(hostView: self.view, scrollView: self.scrollView)
     }
@@ -129,6 +130,18 @@ class QuoteViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.inputItemView.totalValue.delegate = self
         
         self.notes.delegate = self
+    }
+    
+    private func setupFallbacks(){
+        if #available(iOS 13.0, *) {
+            self.savedItemsIcon.image = UIImage(systemName: "folder.fill")
+            self.editDiscountButton.image = UIImage(systemName: "pencil.circle.fill")
+            
+        } else {
+            self.savedItemsIcon.image = UIImage(named: "folder.fill")
+            self.editDiscountButton.image = UIImage(named: "pencil.fill")
+        }
+        
     }
     
     private func updateViews(){

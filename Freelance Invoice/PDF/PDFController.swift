@@ -23,7 +23,7 @@ class PDFController: UIViewController {
     @IBOutlet weak var colorPaletteContainerView: UIView!
     @IBOutlet weak var colorPaletteHeight: NSLayoutConstraint!
     private var url: URL?
-    private var userSelectedColor: UIColor? = nil
+    private var userSelectedColor: UIColor? = UserRepository.Defaults.shared.pdfColor
     private let factory = TextFactory.shared
     
     // IN APP Purchases
@@ -74,6 +74,12 @@ class PDFController: UIViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
         self.view.addGestureRecognizer(tap)
+        
+        if #available(iOS 13.0, *) {
+            self.colorPaletteButton.image = UIImage(systemName: "circle.grid.3x3")
+        } else {
+            self.colorPaletteButton.image = UIImage(named: "circle.grid.3x3")
+        }
         
     }
     

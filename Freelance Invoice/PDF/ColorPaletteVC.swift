@@ -9,7 +9,7 @@
 import UIKit
 
 class ColorPaletteVC: UIViewController {
-    
+    private let userRepo = UserRepository.Defaults.shared
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet var contentView: UIView!
     
@@ -23,7 +23,14 @@ class ColorPaletteVC: UIViewController {
             circle.chosenColorCallback = { color, circle in
                 self.chosenColorCallback?(color)
                 self.selectCircle(selectedCircle: circle)
+                self.userRepo.pdfColor = circle.colorOption
             }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let savedColor = userRepo.pdfColor {
+            selectCircle(by: savedColor)
         }
     }
     
@@ -33,6 +40,17 @@ class ColorPaletteVC: UIViewController {
             circle.deSelect()
         }
         selectedCircle.select()
+    }
+    
+    private func selectCircle(by color: UIColor){
+        stackView.arrangedSubviews.forEach { (colorCircle) in
+            guard let circle = colorCircle as? ColorCircle else { return }
+            if(circle.colorOption.toHexString() == color.toHexString()){
+                circle.select()
+            } else {
+                circle.deSelect()
+            }
+        }
     }
     
     

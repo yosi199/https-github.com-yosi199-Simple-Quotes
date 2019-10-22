@@ -17,6 +17,7 @@
 		4C96B964235602EA006C67DA /* SavedItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96B963235602EA006C67DA /* SavedItemsVC.swift */; };
 		4C96B96623560980006C67DA /* SavedItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96B96523560980006C67DA /* SavedItemsViewModel.swift */; };
 		4C96B96823584C22006C67DA /* SavedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96B96723584C22006C67DA /* SavedItem.swift */; };
+		4C96B96A235ECB41006C67DA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96B969235ECB41006C67DA /* UIColorExtension.swift */; };
 		4CC94E5722FBFAE700E786CC /* KeyboardScrollHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5622FBFAE700E786CC /* KeyboardScrollHelper.swift */; };
 		4CC94E5922FC15FE00E786CC /* PDFController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5822FC15FE00E786CC /* PDFController.swift */; };
 		4CC94E5B22FC5E8A00E786CC /* TextFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC94E5A22FC5E8A00E786CC /* TextFactory.swift */; };
@@ -93,6 +94,7 @@
 		4C96B963235602EA006C67DA /* SavedItemsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItemsVC.swift; sourceTree = "<group>"; };
 		4C96B96523560980006C67DA /* SavedItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItemsViewModel.swift; sourceTree = "<group>"; };
 		4C96B96723584C22006C67DA /* SavedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItem.swift; sourceTree = "<group>"; };
+		4C96B969235ECB41006C67DA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		4CC94E5622FBFAE700E786CC /* KeyboardScrollHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardScrollHelper.swift; sourceTree = "<group>"; };
 		4CC94E5822FC15FE00E786CC /* PDFController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFController.swift; sourceTree = "<group>"; };
 		4CC94E5A22FC5E8A00E786CC /* TextFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFactory.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				4C7D156222BE89BD008D4CF8 /* UIImageExtensions.swift */,
 				4CDEFCB522D5DCE400177660 /* DateExtensions.swift */,
 				4CC94E792309255600E786CC /* DismissDelegate.swift */,
+				4C96B969235ECB41006C67DA /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				D3DA7F7C2357303700BDA349 /* ColorPaletteVC.swift in Sources */,
 				4CC94E5D22FC671B00E786CC /* Template1.swift in Sources */,
 				4CF6353822D3BAF800BB7BAD /* QuoteCellItemTableViewCell.swift in Sources */,
+				4C96B96A235ECB41006C67DA /* UIColorExtension.swift in Sources */,
 				D3B3212C22BA254500AB362A /* LineItemModel.swift in Sources */,
 				D3B3211922BA226700AB362A /* DoubleInputView.swift in Sources */,
 				4CC94E5B22FC5E8A00E786CC /* TextFactory.swift in Sources */,

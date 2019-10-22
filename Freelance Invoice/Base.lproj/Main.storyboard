@@ -308,8 +308,8 @@ Create a new one by pressing the '+' button.</string>
                                                     <constraint firstAttribute="width" secondItem="mpx-P7-Ter" secondAttribute="height" multiplier="1:1" id="zCb-po-wxl"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QRO-ni-Vbz" userLabel="discountEdit">
-                                                <rect key="frame" x="749" y="581.5" width="35" height="34.5"/>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.fill" translatesAutoresizingMaskIntoConstraints="NO" id="QRO-ni-Vbz" userLabel="discountEdit">
+                                                <rect key="frame" x="749" y="581" width="35" height="35"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="2qE-LO-QwZ"/>
@@ -317,8 +317,8 @@ Create a new one by pressing the '+' button.</string>
                                                     <constraint firstAttribute="height" constant="35" id="Mf5-fg-Plt"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6hK-Ud-eBr">
-                                                <rect key="frame" x="749" y="328.5" width="35" height="33"/>
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder.fill" translatesAutoresizingMaskIntoConstraints="NO" id="6hK-Ud-eBr">
+                                                <rect key="frame" x="749" y="327.5" width="35" height="35"/>
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="7z8-UQ-yfU"/>
@@ -578,7 +578,7 @@ Create a new one by pressing the '+' button.</string>
                                                     <action selector="shareAction:" destination="8tY-lk-M1f" id="gzj-j5-aWr"/>
                                                 </connections>
                                             </barButtonItem>
-                                            <barButtonItem title="Item" image="circle.grid.3x3" catalog="system" id="Svs-5y-Nlm">
+                                            <barButtonItem title="Item" image="circle.grid.3x3" id="Svs-5y-Nlm">
                                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <connections>
                                                     <action selector="pickColor:" destination="8tY-lk-M1f" id="yPp-ab-iic"/>
@@ -1507,12 +1507,12 @@ Create a new one by pressing the '+' button.</string>
     </scenes>
     <resources>
         <image name="Fill 4" width="28" height="30"/>
-        <image name="circle.grid.3x3" catalog="system" width="64" height="56"/>
+        <image name="circle.grid.3x3" width="101" height="96.5"/>
         <image name="edit" width="24.5" height="26.5"/>
-        <image name="folder.fill" catalog="system" width="64" height="48"/>
+        <image name="folder.fill" width="112.5" height="91"/>
         <image name="gray-wide multiple" width="437" height="345"/>
         <image name="icons8-chevron_down-1" width="18" height="12"/>
-        <image name="pencil.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="pencil.fill" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fbd-W9-Uvt"/>
