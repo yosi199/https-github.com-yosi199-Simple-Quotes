@@ -137,7 +137,10 @@ class Template1: Template {
         
         // Add actual data.
         quote.items.forEach({ (item) in
-            value.append([item.itemDescription, String(item.qty), item.value.toString(), item.total.toString()])
+            value.append([item.title, String(item.qty), item.value.toString(), item.total.toString()])
+            alignments.append([.left, .center, .center, .center])
+            
+            value.append([item.itemDescription, "", "", ""])
             alignments.append([.left, .center, .center, .center])
         })
         
@@ -170,6 +173,7 @@ class Template1: Template {
         // Simply set the amount of footer and header rows
         style.columnHeaderCount = 1
         
+        // Table headers
         style.alternatingContentStyle?.colors.fill = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         style.columnHeaderStyle.colors.fill = color
         style.columnHeaderStyle.colors.text = UIColor.black
@@ -179,13 +183,26 @@ class Template1: Template {
         style.contentStyle.font = UIFont.init(name: "ArialMT", size: 10)!
         
         style.alternatingContentStyle?.font = UIFont.init(name: "ArialMT", size: 10)!
-        style.rowHeaderStyle.font = UIFont.init(name: "ArialMT", size: 10)!
+        
+        style.rowHeaderStyle.font = UIFont.init(name: "ArialRoundedMTBold", size: 12)!
+        style.rowHeaderStyle.colors.text = UIColor.black
         style.rowHeaderStyle.borders = PDFTableCellBorders.init()
         
         style.footerStyle.font = UIFont.init(name: "ArialRoundedMTBold", size: 10)!
         
         style.outline = PDFLineStyle.init(type: .full, color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1), width: 0.5, radius: 0.5)
         table.style = style
+        
+        for (index, item) in table.cells.enumerated() {
+            if(index % 2 == 0 && index != 0){
+                for column in item {
+                    let style = PDFTableCellStyle()
+                    column.style = style
+                    column.style?.font = UIFont.init(name: "ArialMT", size: 10)!
+                    column.style?.colors.text = UIColor.black
+                }
+            }
+        }
         
         //        do {
         //            // Style each cell individually
@@ -199,7 +216,7 @@ class Template1: Template {
         //        }
         
         // Set table padding and margin
-        table.padding = 5.0
+        table.padding = 5
         
         // In case of a linebreak during rendering we want to have table headers on each page.
         table.showHeadersOnEveryPage = true

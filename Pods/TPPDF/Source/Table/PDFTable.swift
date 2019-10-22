@@ -64,6 +64,7 @@ public class PDFTable: PDFJSONSerializable {
 
                 let cell = PDFTableCell(content: content, alignment: alignment)
                 contentRow.append(cell)
+                
             }
             self.cells.append(contentRow)
         }
