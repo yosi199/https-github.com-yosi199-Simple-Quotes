@@ -20,3 +20,5 @@ let SETTINGS_INVOICE_ID_COUNTER = "invoiceIDCounter"
 let SETTINGS_COMPANY_NAME = "companyName"
 
 let AVAILABLE_INVOICES_COUNT = "availableInvoicesCount"
+
+let APP_DEFAULT_ACCENT_COLOR = "F4CB48"
