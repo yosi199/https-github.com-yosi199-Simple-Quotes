@@ -80,7 +80,7 @@ class PDFController: UIViewController {
     private func generate(document: PDFDocument){
         do {
             let fileName = DataRepository.Defaults.shared.quoteIDPrefix + String(quote?.invoiceId ?? "")
-            url = try PDFGenerator.generateURL(document: document, filename: "\(fileName).pdf")
+            url = try PDFGenerator(document: document).generateURL(filename: "\(fileName).pdf")
             webview.loadFileURL(url!, allowingReadAccessTo: url!)
         } catch {
             print("Error while generating PDF: " + error.localizedDescription)
